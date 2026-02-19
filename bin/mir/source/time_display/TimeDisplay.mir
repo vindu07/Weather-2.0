@@ -1,0 +1,433 @@
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; @symbol_usingAlias = [Ui,1,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Graphics,2,13,21]; @symbol_usingAlias = [Gfx,2,25,28]; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [Time,3,13,17]; @symbol_usingAlias = [Time,3,21,25]; ]
+using Toybox.Time as :Time;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [Time,4,13,17]; @symbol_usingdef<2> = [Gregorian,4,18,27]; @symbol_usingAlias = [Greg,4,31,35]; ]
+using Toybox.Time.Gregorian as :Greg;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [Application,5,14,25]; ]
+import Toybox.Application;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [System,6,14,20]; ]
+import Toybox.System;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [Lang,7,14,18]; ]
+import Toybox.Lang;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 11; @symbol_classdef = [TimeDisplay,11,6,17]; @symbol_extends<0> = [Ui,11,26,28]; @symbol_extends<1> = [Drawable,11,29,37]; ]
+class TimeDisplay extends Ui.Drawable {
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 11; ]
+    <init> {
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 17 16 ]
+        symbol [ System %tmp.1 17 33 39 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ getDeviceSettings %tmp.2 17 40 57 ];
+        %tmp.2 = getv function %tmp.1 :getDeviceSettings;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        symbol [ screenWidth %tmp.4 17 60 71 ];
+        %tmp.4 = getv %tmp.3 :screenWidth;
+        %tmp.5 = 2;
+        %tmp.6 = div %tmp.4 %tmp.5;
+        putv self :xPOS %tmp.6;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 18 16 ]
+        symbol [ System %tmp.7 18 34 40 ];
+        %tmp.7 = getm $.Toybox.System;
+        symbol [ getDeviceSettings %tmp.8 18 41 58 ];
+        %tmp.8 = getv function %tmp.7 :getDeviceSettings;
+        %tmp.9 = invoke %tmp.7 %tmp.8();
+        symbol [ screenHeight %tmp.10 18 61 73 ];
+        %tmp.10 = getv %tmp.9 :screenHeight;
+        %tmp.11 = .45;
+        %tmp.12 = mul %tmp.10 %tmp.11;
+        putv self :yPOS %tmp.12;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 19 16 ]
+        symbol [ WatchUi %tmp.14 19 39 46 ];
+        %tmp.14 = getv ? :WatchUi;
+        symbol [ loadResource %tmp.15 19 47 59 ];
+        %tmp.15 = getv function %tmp.14 :loadResource;
+        symbol [ Rez %tmp.17 19 60 63 ];
+        %tmp.17 = getv ? :Rez;
+        symbol [ Fonts %tmp.18 19 64 69 ];
+        %tmp.18 = getv %tmp.17 :Fonts;
+        symbol [ FONT_40 %tmp.19 19 70 77 ];
+        %tmp.19 = getv %tmp.18 :FONT_40;
+        %tmp.20 = invoke %tmp.14 %tmp.15(%tmp.19);
+        %tmp.21 = as %tmp.20 Gfx.FontType;
+        symbol [ Gfx %tmp.21 19 82 85 ];
+        symbol [ FontType %tmp.21 19 86 94 ];
+        putv self :FONT %tmp.21;
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 11; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 13; @position = 16; @symbol_vardef = [useMilitaryFormat,13,16,33]; ]
+    private
+    var useMilitaryFormat;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 14; @position = 16; @symbol_vardef = [removeZerosFromHour,14,16,35]; ]
+    private
+    var removeZerosFromHour;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 15; @position = 16; @symbol_vardef = [is24Hour,15,16,24]; ]
+    private
+    var is24Hour;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 17; @position = 16; @symbol_vardef = [xPOS,17,16,20]; @symbol_type<0> = [Number,17,24,30]; ]
+    private
+    var xPOS as Number;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 18; @position = 16; @symbol_vardef = [yPOS,18,16,20]; @symbol_type<0> = [Numeric,18,24,31]; ]
+    private
+    var yPOS as Numeric;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 19; @position = 16; @symbol_vardef = [FONT,19,16,20]; @symbol_type<0> = [Gfx,19,24,27]; @symbol_type<1> = [FontType,19,28,36]; ]
+    private
+    var FONT as Gfx.FontType;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 20; @position = 16; @symbol_vardef = [TEXTCOLOR,20,16,25]; ]
+    private
+    var TEXTCOLOR;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 23; @symbol_functiondef = [initialize,23,13,23]; @symbol_param<0> = [params,23,24,30]; ]
+    function initialize(params) as Void {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_23_31_26_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 24 8 ]
+        symbol [ Drawable %tmp.2 24 8 16 ];
+        %tmp.2 = getv ? :Drawable;
+        symbol [ initialize %tmp.3 24 17 27 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        %tmp.4 = lgetv %params;
+        symbol [ params %tmp.4 24 28 34 ];
+        invoke %tmp.2 %tmp.3(%tmp.4);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 25 8 ]
+        %tmp.5 = self;
+        symbol [ getAppSettings %tmp.6 25 8 22 ];
+        %tmp.6 = getv function %tmp.5 :getAppSettings;
+        invoke %tmp.5 %tmp.6();
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_23_31_26_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 28; @symbol_functiondef = [draw,28,20,24]; @symbol_param<0> = [dc,28,25,27]; @symbol_param<0>_type<0> = [Gfx,28,31,34]; @symbol_param<0>_type<1> = [Dc,28,35,37]; ]
+    public
+    function draw(dc as Gfx.Dc) as Void {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_28_46_46_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 30 8 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_30_8_32_8_if_stmt:
+        symbol [ SETTINGSCHANGED %tmp.2 30 11 26 ];
+        %tmp.2 = getv ? :SETTINGSCHANGED;
+        bf %tmp.2 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_30_8_32_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_30_8_32_8_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_30_27_32_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 31 12 ]
+        %tmp.3 = self;
+        symbol [ getAppSettings %tmp.4 31 12 26 ];
+        %tmp.4 = getv function %tmp.3 :getAppSettings;
+        invoke %tmp.3 %tmp.4();
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_30_27_32_8_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_30_8_32_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_30_8_32_8_if_end:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 34 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_28_46_46_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_28_46_46_4_stop" ]
+        %time.1 = local;
+        symbol [ time %time.1 34 12 16 ];
+        %tmp.5 = self;
+        symbol [ getCurrentTime %tmp.6 34 19 33 ];
+        %tmp.6 = getv function %tmp.5 :getCurrentTime;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        lputv %time.1 %tmp.7;
+        symbol [ time %time.1 34 12 16 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 38 12 ]
+        %tmp.8 = lgetv %dc;
+        symbol [ dc %tmp.8 38 12 14 ];
+        symbol [ setClip %tmp.9 38 15 22 ];
+        %tmp.9 = getv function %tmp.8 :setClip;
+        symbol [ xPOS %tmp.11 38 23 27 ];
+        %tmp.11 = getv ? :xPOS;
+        %tmp.12 = 80;
+        %tmp.13 = sub %tmp.11 %tmp.12;
+        symbol [ yPOS %tmp.15 38 34 38 ];
+        %tmp.15 = getv ? :yPOS;
+        %tmp.16 = 160;
+        %tmp.17 = 41;
+        invoke %tmp.8 %tmp.9(%tmp.13, %tmp.15, %tmp.16, %tmp.17);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 39 12 ]
+        %tmp.18 = lgetv %dc;
+        symbol [ dc %tmp.18 39 12 14 ];
+        symbol [ setColor %tmp.19 39 15 23 ];
+        %tmp.19 = getv function %tmp.18 :setColor;
+        symbol [ Gfx %tmp.20 39 24 27 ];
+        %tmp.20 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.21 39 28 39 ];
+        %tmp.21 = getv %tmp.20 :COLOR_BLACK;
+        symbol [ Gfx %tmp.22 39 41 44 ];
+        %tmp.22 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.23 39 45 62 ];
+        %tmp.23 = getv %tmp.22 :COLOR_TRANSPARENT;
+        invoke %tmp.18 %tmp.19(%tmp.21, %tmp.23);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 40 12 ]
+        %tmp.24 = lgetv %dc;
+        symbol [ dc %tmp.24 40 12 14 ];
+        symbol [ fillRectangle %tmp.25 40 15 28 ];
+        %tmp.25 = getv function %tmp.24 :fillRectangle;
+        symbol [ xPOS %tmp.27 40 29 33 ];
+        %tmp.27 = getv ? :xPOS;
+        %tmp.28 = 80;
+        %tmp.29 = sub %tmp.27 %tmp.28;
+        symbol [ yPOS %tmp.31 40 40 44 ];
+        %tmp.31 = getv ? :yPOS;
+        %tmp.32 = 160;
+        %tmp.33 = 41;
+        invoke %tmp.24 %tmp.25(%tmp.29, %tmp.31, %tmp.32, %tmp.33);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 43 8 ]
+        %tmp.34 = lgetv %dc;
+        symbol [ dc %tmp.34 43 8 10 ];
+        symbol [ setColor %tmp.35 43 11 19 ];
+        %tmp.35 = getv function %tmp.34 :setColor;
+        symbol [ TEXTCOLOR %tmp.37 43 20 29 ];
+        %tmp.37 = getv ? :TEXTCOLOR;
+        symbol [ Gfx %tmp.38 43 31 34 ];
+        %tmp.38 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.39 43 35 52 ];
+        %tmp.39 = getv %tmp.38 :COLOR_TRANSPARENT;
+        invoke %tmp.34 %tmp.35(%tmp.37, %tmp.39);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 44 8 ]
+        %tmp.40 = lgetv %dc;
+        symbol [ dc %tmp.40 44 8 10 ];
+        symbol [ drawText %tmp.41 44 11 19 ];
+        %tmp.41 = getv function %tmp.40 :drawText;
+        symbol [ xPOS %tmp.43 44 20 24 ];
+        %tmp.43 = getv ? :xPOS;
+        symbol [ yPOS %tmp.45 44 26 30 ];
+        %tmp.45 = getv ? :yPOS;
+        symbol [ FONT %tmp.47 44 32 36 ];
+        %tmp.47 = getv ? :FONT;
+        %tmp.48 = lgetv %time.1;
+        symbol [ time %tmp.48 44 38 42 ];
+        symbol [ Graphics %tmp.50 44 44 52 ];
+        %tmp.50 = getv ? :Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.51 44 53 72 ];
+        %tmp.51 = getv %tmp.50 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.40 %tmp.41(%tmp.43, %tmp.45, %tmp.47, %tmp.48, %tmp.51);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 45 8 ]
+        %tmp.52 = lgetv %dc;
+        symbol [ dc %tmp.52 45 8 10 ];
+        symbol [ clearClip %tmp.53 45 11 20 ];
+        %tmp.53 = getv function %tmp.52 :clearClip;
+        invoke %tmp.52 %tmp.53();
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_28_46_46_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 49; @symbol_functiondef = [getCurrentTime,49,21,35]; @symbol_return<0> = [String,49,41,47]; ]
+    private
+    function getCurrentTime() as String {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_49_47_78_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 50 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_49_47_78_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_49_47_78_4_stop" ]
+        %timeString.1 = local;
+        symbol [ timeString %timeString.1 50 12 22 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 51 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_49_47_78_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_49_47_78_4_stop" ]
+        %timeFormat.2 = local;
+        symbol [ timeFormat %timeFormat.2 51 12 22 ];
+        %tmp.1 = "$1$:$2$";
+        lputv %timeFormat.2 %tmp.1;
+        symbol [ timeFormat %timeFormat.2 51 12 22 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 52 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_49_47_78_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_49_47_78_4_stop" ]
+        %hourFormat.3 = local;
+        symbol [ hourFormat %hourFormat.3 52 12 22 ];
+        %tmp.2 = "%02u";
+        lputv %hourFormat.3 %tmp.2;
+        symbol [ hourFormat %hourFormat.3 52 12 22 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 54 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_49_47_78_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_49_47_78_4_stop" ]
+        %currentTime.4 = local;
+        symbol [ currentTime %currentTime.4 54 12 23 ];
+        symbol [ Greg %tmp.3 54 26 30 ];
+        %tmp.3 = getm $.Toybox.Time.Gregorian;
+        symbol [ info %tmp.4 54 31 35 ];
+        %tmp.4 = getv function %tmp.3 :info;
+        symbol [ Time %tmp.5 54 36 40 ];
+        %tmp.5 = getm $.Toybox.Time;
+        symbol [ now %tmp.6 54 41 44 ];
+        %tmp.6 = getv function %tmp.5 :now;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        symbol [ Time %tmp.8 54 48 52 ];
+        %tmp.8 = getm $.Toybox.Time;
+        symbol [ FORMAT_SHORT %tmp.9 54 53 65 ];
+        %tmp.9 = getv %tmp.8 :FORMAT_SHORT;
+        %tmp.10 = invoke %tmp.3 %tmp.4(%tmp.7, %tmp.9);
+        lputv %currentTime.4 %tmp.10;
+        symbol [ currentTime %currentTime.4 54 12 23 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 55 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_49_47_78_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_49_47_78_4_stop" ]
+        %hour.5 = local;
+        symbol [ hour %hour.5 55 12 16 ];
+        %tmp.11 = lgetv %currentTime.4;
+        symbol [ currentTime %tmp.11 55 19 30 ];
+        symbol [ hour %tmp.12 55 31 35 ];
+        %tmp.12 = getv %tmp.11 :hour;
+        lputv %hour.5 %tmp.12;
+        symbol [ hour %hour.5 55 12 16 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 56 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_49_47_78_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_49_47_78_4_stop" ]
+        %min.6 = local;
+        symbol [ min %min.6 56 12 15 ];
+        %tmp.13 = lgetv %currentTime.4;
+        symbol [ currentTime %tmp.13 56 18 29 ];
+        symbol [ min %tmp.14 56 30 33 ];
+        %tmp.14 = getv %tmp.13 :min;
+        symbol [ format %tmp.15 56 34 40 ];
+        %tmp.15 = getv function %tmp.14 :format;
+        %tmp.16 = "%02u";
+        %tmp.17 = invoke %tmp.14 %tmp.15(%tmp.16);
+        lputv %min.6 %tmp.17;
+        symbol [ min %min.6 56 12 15 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 58 8 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_58_8_69_8_if_stmt:
+        symbol [ useMilitaryFormat %tmp.19 58 11 28 ];
+        %tmp.19 = getv ? :useMilitaryFormat;
+        bf %tmp.19 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_58_8_69_8_if_else_false;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_58_8_69_8_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_58_29_60_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 59 12 ]
+        %tmp.20 = "$1$$2$";
+        lputv %timeFormat.2 %tmp.20;
+        symbol [ timeFormat %timeFormat.2 59 12 22 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_58_29_60_8_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_58_8_69_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_58_8_69_8_if_else_false:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_61_12_69_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 62 12 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_62_12_64_12_if_stmt:
+        symbol [ removeZerosFromHour %tmp.22 62 15 34 ];
+        %tmp.22 = getv ? :removeZerosFromHour;
+        bf %tmp.22 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_62_12_64_12_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_62_12_64_12_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_62_35_64_12_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 63 16 ]
+        %tmp.23 = "%u";
+        lputv %hourFormat.3 %tmp.23;
+        symbol [ hourFormat %hourFormat.3 63 16 26 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_62_35_64_12_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_62_12_64_12_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_62_12_64_12_if_end:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 66 12 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_66_12_68_12_if_stmt:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_66_15_66_33_begin:
+        symbol [ is24Hour %tmp.25 66 16 24 ];
+        %tmp.25 = getv ? :is24Hour;
+        %tmp.26 = not %tmp.25;
+        bf %tmp.26 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_66_12_68_12_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_66_28_66_33_true:
+        %tmp.27 = lgetv %hour.5;
+        symbol [ hour %tmp.27 66 28 32 ];
+        %tmp.28 = 12;
+        %tmp.29 = gt %tmp.27 %tmp.28;
+        push %tmp.29;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_66_28_66_33_end:
+        %tmp.30 = phi [%tmp.26 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_66_15_66_33_begin] [%tmp.29 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_66_28_66_33_true] [%tmp.30 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_66_28_66_33_end];
+        bf %tmp.30 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_66_12_68_12_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_66_12_68_12_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_66_36_68_12_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 67 16 ]
+        %tmp.31 = lgetv %hour.5;
+        symbol [ hour %tmp.31 67 16 20 ];
+        %tmp.32 = 12;
+        %tmp.33 = mod %tmp.31 %tmp.32;
+        lputv %hour.5 %tmp.33;
+        symbol [ hour %hour.5 67 16 20 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_66_36_68_12_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_66_12_68_12_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_66_12_68_12_if_end:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_61_12_69_8_stop:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_58_8_69_8_if_end:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 72 8 ]
+        %tmp.34 = lgetv %hour.5;
+        symbol [ hour %tmp.34 72 15 19 ];
+        symbol [ format %tmp.35 72 20 26 ];
+        %tmp.35 = getv function %tmp.34 :format;
+        %tmp.36 = lgetv %hourFormat.3;
+        symbol [ hourFormat %tmp.36 72 27 37 ];
+        %tmp.37 = invoke %tmp.34 %tmp.35(%tmp.36);
+        symbol [ toString %tmp.38 72 39 47 ];
+        %tmp.38 = getv function %tmp.37 :toString;
+        %tmp.39 = invoke %tmp.37 %tmp.38();
+        lputv %hour.5 %tmp.39;
+        symbol [ hour %hour.5 72 8 12 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 74 8 ]
+        %tmp.40 = self;
+        symbol [ format %tmp.41 74 21 27 ];
+        %tmp.41 = getv function %tmp.40 :format;
+        %tmp.42 = lgetv %timeFormat.2;
+        symbol [ timeFormat %tmp.42 74 28 38 ];
+        %tmp.43 = newa 2;
+        %tmp.44 = lgetv %hour.5;
+        symbol [ hour %tmp.44 74 41 45 ];
+        %tmp.45 = dup %tmp.43;
+        %tmp.46 = aputv %tmp.45 0 %tmp.44;
+        %tmp.47 = lgetv %min.6;
+        symbol [ min %tmp.47 74 47 50 ];
+        %tmp.48 = dup %tmp.46;
+        %tmp.49 = aputv %tmp.48 1 %tmp.47;
+        %tmp.50 = invoke %tmp.40 %tmp.41(%tmp.42, %tmp.49);
+        %tmp.51 = as %tmp.50 String;
+        symbol [ String %tmp.51 74 56 62 ];
+        lputv %timeString.1 %tmp.51;
+        symbol [ timeString %timeString.1 74 8 18 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 77 8 ]
+        %tmp.52 = lgetv %timeString.1;
+        symbol [ timeString %tmp.52 77 15 25 ];
+        ret %tmp.52;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_49_47_78_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 80; @symbol_functiondef = [getAppSettings,80,21,35]; ]
+    private
+    function getAppSettings() as Void {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_80_45_86_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 81 8 ]
+        symbol [ Properties %tmp.2 81 28 38 ];
+        %tmp.2 = getv ? :Properties;
+        symbol [ getValue %tmp.3 81 39 47 ];
+        %tmp.3 = getv function %tmp.2 :getValue;
+        %tmp.4 = "UseMilitaryFormat";
+        %tmp.5 = as %tmp.4 PropertyKeyType;
+        symbol [ PropertyKeyType %tmp.5 81 71 86 ];
+        %tmp.6 = invoke %tmp.2 %tmp.3(%tmp.5);
+        %tmp.7 = as %tmp.6 Boolean;
+        symbol [ Boolean %tmp.7 81 91 98 ];
+        symbol [ useMilitaryFormat ? 81 8 25 ];
+        putv self :useMilitaryFormat %tmp.7;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 82 8 ]
+        symbol [ Properties %tmp.9 82 30 40 ];
+        %tmp.9 = getv ? :Properties;
+        symbol [ getValue %tmp.10 82 41 49 ];
+        %tmp.10 = getv function %tmp.9 :getValue;
+        %tmp.11 = "RemoveZerosFromHour";
+        %tmp.12 = as %tmp.11 PropertyKeyType;
+        symbol [ PropertyKeyType %tmp.12 82 75 90 ];
+        %tmp.13 = invoke %tmp.9 %tmp.10(%tmp.12);
+        %tmp.14 = as %tmp.13 Boolean;
+        symbol [ Boolean %tmp.14 82 95 102 ];
+        symbol [ removeZerosFromHour ? 82 8 27 ];
+        putv self :removeZerosFromHour %tmp.14;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 83 8 ]
+        symbol [ System %tmp.15 83 19 25 ];
+        %tmp.15 = getm $.Toybox.System;
+        symbol [ getDeviceSettings %tmp.16 83 26 43 ];
+        %tmp.16 = getv function %tmp.15 :getDeviceSettings;
+        %tmp.17 = invoke %tmp.15 %tmp.16();
+        symbol [ is24Hour %tmp.18 83 46 54 ];
+        %tmp.18 = getv %tmp.17 :is24Hour;
+        %tmp.19 = as %tmp.18 Boolean;
+        symbol [ Boolean %tmp.19 83 58 65 ];
+        symbol [ is24Hour ? 83 8 16 ];
+        putv self :is24Hour %tmp.19;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc" 85 8 ]
+        symbol [ Properties %tmp.21 85 20 30 ];
+        %tmp.21 = getv ? :Properties;
+        symbol [ getValue %tmp.22 85 31 39 ];
+        %tmp.22 = getv function %tmp.21 :getValue;
+        %tmp.23 = "TimeColor";
+        %tmp.24 = invoke %tmp.21 %tmp.22(%tmp.23);
+        %tmp.25 = as %tmp.24 Gfx.ColorType;
+        symbol [ Gfx %tmp.25 85 56 59 ];
+        symbol [ ColorType %tmp.25 85 60 69 ];
+        symbol [ TEXTCOLOR ? 85 8 17 ];
+        putv self :TEXTCOLOR %tmp.25;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_time_display_TimeDisplay_mc_80_45_86_4_stop:
+    }
+}
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\time_display\TimeDisplay.mc"; @line = 1; ]
+<init> {
+}

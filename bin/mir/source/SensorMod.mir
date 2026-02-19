@@ -1,0 +1,1519 @@
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [System,1,13,19]; ]
+using Toybox.System;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Lang,2,13,17]; ]
+using Toybox.Lang;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [ActivityMonitor,3,13,28]; ]
+using Toybox.ActivityMonitor;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [Activity,4,13,21]; ]
+using Toybox.Activity;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 5; @symbol_usingdef<0> = [Toybox,5,6,12]; @symbol_usingdef<1> = [SensorHistory,5,13,26]; ]
+using Toybox.SensorHistory;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 6; @symbol_usingdef<0> = [Toybox,6,6,12]; @symbol_usingdef<1> = [Weather,6,13,20]; ]
+using Toybox.Weather;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 7; @symbol_usingdef<0> = [Toybox,7,6,12]; @symbol_usingdef<1> = [Math,7,13,17]; ]
+using Toybox.Math;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 9; @symbol_moduledef = [SensorMod,9,7,16]; ]
+module SensorMod {
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 9; ]
+    <init> {
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 11; @symbol_enumdef = [Sensortype,11,9,19]; ]
+    enum Sensortype {
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 13; @position = 8; @symbol_enumdec = [SENSOR_HEARTRATE,13,8,24]; ]
+        SENSOR_HEARTRATE,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 14; @position = 8; @symbol_enumdec = [SENSOR_TEMPERATURE,14,8,26]; ]
+        SENSOR_TEMPERATURE,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 15; @position = 8; @symbol_enumdec = [SENSOR_ALTITUDE,15,8,23]; ]
+        SENSOR_ALTITUDE,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 16; @position = 8; @symbol_enumdec = [SENSOR_BAROMETER,16,8,24]; ]
+        SENSOR_BAROMETER,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 17; @position = 8; @symbol_enumdec = [SENSOR_COMPASS,17,8,22]; ]
+        SENSOR_COMPASS,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 18; @position = 8; @symbol_enumdec = [SENSOR_OXYGEN_SATURATION,18,8,32]; ]
+        SENSOR_OXYGEN_SATURATION,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 19; @position = 8; @symbol_enumdec = [SENSOR_RESPIRATION_RATE,19,8,31]; ]
+        SENSOR_RESPIRATION_RATE,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 20; @position = 8; @symbol_enumdec = [SENSOR_STEPS,20,8,20]; ]
+        SENSOR_STEPS,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 21; @position = 8; @symbol_enumdec = [SENSOR_DISTANCE,21,8,23]; ]
+        SENSOR_DISTANCE,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 22; @position = 8; @symbol_enumdec = [SENSOR_FLOORS,22,8,21]; ]
+        SENSOR_FLOORS,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 23; @position = 8; @symbol_enumdec = [SENSOR_ACTIVE_MINUTES,23,8,29]; ]
+        SENSOR_ACTIVE_MINUTES,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 24; @position = 8; @symbol_enumdec = [SENSOR_ACTIVE_CALORIES,24,8,30]; ]
+        SENSOR_ACTIVE_CALORIES,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 25; @position = 8; @symbol_enumdec = [SENSOR_STRESS_LEVEL,25,8,27]; ]
+        SENSOR_STRESS_LEVEL,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 26; @position = 8; @symbol_enumdec = [SENSOR_BODY_BATTERY,26,8,27]; ]
+        SENSOR_BODY_BATTERY,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 27; @position = 8; @symbol_enumdec = [SENSOR_BATTERY,27,8,22]; ]
+        SENSOR_BATTERY,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 28; @position = 8; @symbol_enumdec = [SENSOR_VO2_MAX,28,8,22]; ]
+        SENSOR_VO2_MAX,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 29; @position = 8; @symbol_enumdec = [SENSOR_RECOVERY_TIME,29,8,28]; ]
+        SENSOR_RECOVERY_TIME,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 30; @position = 8; @symbol_enumdec = [SENSOR_HR_VARIABILITY,30,8,29]; ]
+        SENSOR_HR_VARIABILITY,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 31; @position = 8; @symbol_enumdec = [SENSOR_NOTIFICATIONS,31,8,28]; ]
+        SENSOR_NOTIFICATIONS,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 32; @position = 8; @symbol_enumdec = [SENSOR_ALARMS,32,8,21]; ]
+        SENSOR_ALARMS,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 33; @position = 8; @symbol_enumdec = [SENSOR_SUNRISE,33,8,22]; ]
+        SENSOR_SUNRISE,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 34; @position = 8; @symbol_enumdec = [SENSOR_SUNSET,34,8,21]; ]
+        SENSOR_SUNSET,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 35; @position = 8; @symbol_enumdec = [SENSOR_WEATHER,35,8,22]; ]
+        SENSOR_WEATHER,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 36; @position = 8; @symbol_enumdec = [SENSOR_HUMIDITY,36,8,23]; ]
+        SENSOR_HUMIDITY,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 37; @position = 8; @symbol_enumdec = [SENSOR_MOONPHASE,37,8,24]; ]
+        SENSOR_MOONPHASE,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 38; @position = 8; @symbol_enumdec = [SENSOR_EMPTY,38,8,20]; ]
+        SENSOR_EMPTY,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 39; @position = 8; @symbol_enumdec = [SENSOR_NOTIFICATIONS_PHONE,39,8,34]; ]
+        SENSOR_NOTIFICATIONS_PHONE
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 43; @symbol_enumdef = [PressUnits,43,9,19]; ]
+    enum PressUnits {
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 44; @position = 8; @symbol_enumdec = [UNIT_HPASCAL,44,8,20]; ]
+        UNIT_HPASCAL,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 45; @position = 8; @symbol_enumdec = [UNIT_ATM,45,8,16]; ]
+        UNIT_ATM,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 46; @position = 8; @symbol_enumdec = [UNIT_MMHG,46,8,17]; ]
+        UNIT_MMHG
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 49; @symbol_enumdef = [InfoIcons,49,9,18]; ]
+    enum InfoIcons {
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 50; @position = 8; @symbol_enumdec = [ICON_ALARMS,50,8,19]; ]
+        ICON_ALARMS = "D",
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 51; @position = 8; @symbol_enumdec = [ICON_NOTIFICATIONS,51,8,26]; ]
+        ICON_NOTIFICATIONS = "E",
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 52; @position = 8; @symbol_enumdec = [ICON_BATTERY,52,8,20]; ]
+        ICON_BATTERY = "A",
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 53; @position = 8; @symbol_enumdec = [ICON_NOTIFICATIONS_ACTIVE,53,8,33]; ]
+        ICON_NOTIFICATIONS_ACTIVE = "F",
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 54; @position = 8; @symbol_enumdec = [ICON_NOTIFICATIONS_INACTIVE,54,8,35]; ]
+        ICON_NOTIFICATIONS_INACTIVE = "G",
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 55; @position = 8; @symbol_enumdec = [ICON_PHONE_CONNECTED,55,8,28]; ]
+        ICON_PHONE_CONNECTED = "H",
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 56; @position = 8; @symbol_enumdec = [ICON_PHONE_DISCONNECTED,56,8,31]; ]
+        ICON_PHONE_DISCONNECTED = "J",
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 57; @position = 8; @symbol_enumdec = [ICON_TEMPERATURE,57,8,24]; ]
+        ICON_TEMPERATURE = "B",
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 58; @position = 8; @symbol_enumdec = [ICON_HUMIDITY,58,8,21]; ]
+        ICON_HUMIDITY = "C"
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 63; @symbol_functiondef = [getSensorDataAndTitle,63,13,34]; @symbol_param<0> = [sensor,63,35,41]; @symbol_param<0>_type<0> = [Sensortype,63,45,55]; @symbol_return<0> = [Lang,63,61,65]; @symbol_return<1> = [String,63,66,72]; @symbol_return<2> = [Lang,63,75,79]; @symbol_return<3> = [String,63,80,86]; ]
+    function getSensorDataAndTitle(sensor as Sensortype) as [Lang.String or Null, Lang.String] {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_63_87_134_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 65 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_63_87_134_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_63_87_134_4_stop" ]
+        %data.1 = local;
+        symbol [ data %data.1 65 12 16 ];
+        %tmp.1 = "--";
+        lputv %data.1 %tmp.1;
+        symbol [ data %data.1 65 12 16 ];
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_63_87_134_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_63_87_134_4_stop" ]
+        %title.2 = local;
+        symbol [ title %title.2 65 25 30 ];
+        %tmp.2 = "";
+        lputv %title.2 %tmp.2;
+        symbol [ title %title.2 65 25 30 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 67 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_63_87_134_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_63_87_134_4_stop" ]
+        %systemStats.3 = local;
+        symbol [ systemStats %systemStats.3 67 12 23 ];
+        symbol [ System %tmp.3 67 26 32 ];
+        %tmp.3 = getm $.Toybox.System;
+        symbol [ getSystemStats %tmp.4 67 33 47 ];
+        %tmp.4 = getv function %tmp.3 :getSystemStats;
+        %tmp.5 = invoke %tmp.3 %tmp.4();
+        lputv %systemStats.3 %tmp.5;
+        symbol [ systemStats %systemStats.3 67 12 23 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 68 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_63_87_134_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_63_87_134_4_stop" ]
+        %activityMonitor.4 = local;
+        symbol [ activityMonitor %activityMonitor.4 68 12 27 ];
+        symbol [ ActivityMonitor %tmp.6 68 30 45 ];
+        %tmp.6 = getm $.Toybox.ActivityMonitor;
+        symbol [ getInfo %tmp.7 68 46 53 ];
+        %tmp.7 = getv function %tmp.6 :getInfo;
+        %tmp.8 = invoke %tmp.6 %tmp.7();
+        lputv %activityMonitor.4 %tmp.8;
+        symbol [ activityMonitor %activityMonitor.4 68 12 27 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 69 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_63_87_134_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_63_87_134_4_stop" ]
+        %weather.5 = local;
+        symbol [ weather %weather.5 69 12 19 ];
+        symbol [ Weather %tmp.9 69 22 29 ];
+        %tmp.9 = getm $.Toybox.Weather;
+        symbol [ getCurrentConditions %tmp.10 69 30 50 ];
+        %tmp.10 = getv function %tmp.9 :getCurrentConditions;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        lputv %weather.5 %tmp.11;
+        symbol [ weather %weather.5 69 12 19 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 70 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_63_87_134_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_63_87_134_4_stop" ]
+        %sunEvents.6 = local;
+        symbol [ sunEvents %sunEvents.6 70 12 21 ];
+        symbol [ Astronomy %tmp.13 70 24 33 ];
+        %tmp.13 = getv ? :Astronomy;
+        symbol [ SunEvents %tmp.14 70 34 43 ];
+        %tmp.14 = getv %tmp.13 :SunEvents;
+        lputv %sunEvents.6 %tmp.14;
+        symbol [ sunEvents %sunEvents.6 70 12 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 72 8 ]
+        %tmp.15 = lgetv %sensor;
+        symbol [ sensor %tmp.15 72 15 21 ];
+        push %tmp.15;
+        switch %tmp.15 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_72_8_131_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_72_8_131_8_switchStmtBegin:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 73 12 ]
+        %tmp.16 = dup %tmp.15;
+        symbol [ SENSOR_ALTITUDE %tmp.18 73 17 32 ];
+        %tmp.18 = getv ? :SENSOR_ALTITUDE;
+        %tmp.19 = getv function %tmp.16 :equals;
+        %tmp.20 = invoke %tmp.16 %tmp.19 (%tmp.18);
+        bt %tmp.20 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_73_12_76_21_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 77 12 ]
+        %tmp.21 = dup %tmp.15;
+        symbol [ SENSOR_HEARTRATE %tmp.23 77 17 33 ];
+        %tmp.23 = getv ? :SENSOR_HEARTRATE;
+        %tmp.24 = getv function %tmp.21 :equals;
+        %tmp.25 = invoke %tmp.21 %tmp.24 (%tmp.23);
+        bt %tmp.25 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_77_12_80_21_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 81 12 ]
+        %tmp.26 = dup %tmp.15;
+        symbol [ SENSOR_BAROMETER %tmp.28 81 17 33 ];
+        %tmp.28 = getv ? :SENSOR_BAROMETER;
+        %tmp.29 = getv function %tmp.26 :equals;
+        %tmp.30 = invoke %tmp.26 %tmp.29 (%tmp.28);
+        bt %tmp.30 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_81_12_84_21_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 85 12 ]
+        %tmp.31 = dup %tmp.15;
+        symbol [ SENSOR_OXYGEN_SATURATION %tmp.33 85 17 41 ];
+        %tmp.33 = getv ? :SENSOR_OXYGEN_SATURATION;
+        %tmp.34 = getv function %tmp.31 :equals;
+        %tmp.35 = invoke %tmp.31 %tmp.34 (%tmp.33);
+        bt %tmp.35 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_85_12_88_21_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 89 12 ]
+        %tmp.36 = dup %tmp.15;
+        symbol [ SENSOR_TEMPERATURE %tmp.38 89 17 35 ];
+        %tmp.38 = getv ? :SENSOR_TEMPERATURE;
+        %tmp.39 = getv function %tmp.36 :equals;
+        %tmp.40 = invoke %tmp.36 %tmp.39 (%tmp.38);
+        bt %tmp.40 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_89_12_92_21_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 93 12 ]
+        %tmp.41 = dup %tmp.15;
+        symbol [ SENSOR_ACTIVE_CALORIES %tmp.43 93 17 39 ];
+        %tmp.43 = getv ? :SENSOR_ACTIVE_CALORIES;
+        %tmp.44 = getv function %tmp.41 :equals;
+        %tmp.45 = invoke %tmp.41 %tmp.44 (%tmp.43);
+        bt %tmp.45 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_93_12_96_21_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 97 12 ]
+        %tmp.46 = dup %tmp.15;
+        symbol [ SENSOR_ACTIVE_MINUTES %tmp.48 97 17 38 ];
+        %tmp.48 = getv ? :SENSOR_ACTIVE_MINUTES;
+        %tmp.49 = getv function %tmp.46 :equals;
+        %tmp.50 = invoke %tmp.46 %tmp.49 (%tmp.48);
+        bt %tmp.50 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_97_12_100_21_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 101 12 ]
+        %tmp.51 = dup %tmp.15;
+        symbol [ SENSOR_BATTERY %tmp.53 101 17 31 ];
+        %tmp.53 = getv ? :SENSOR_BATTERY;
+        %tmp.54 = getv function %tmp.51 :equals;
+        %tmp.55 = invoke %tmp.51 %tmp.54 (%tmp.53);
+        bt %tmp.55 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_101_12_104_21_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 105 12 ]
+        %tmp.56 = dup %tmp.15;
+        symbol [ SENSOR_DISTANCE %tmp.58 105 17 32 ];
+        %tmp.58 = getv ? :SENSOR_DISTANCE;
+        %tmp.59 = getv function %tmp.56 :equals;
+        %tmp.60 = invoke %tmp.56 %tmp.59 (%tmp.58);
+        bt %tmp.60 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_105_12_108_21_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 109 12 ]
+        %tmp.61 = dup %tmp.15;
+        symbol [ SENSOR_FLOORS %tmp.63 109 17 30 ];
+        %tmp.63 = getv ? :SENSOR_FLOORS;
+        %tmp.64 = getv function %tmp.61 :equals;
+        %tmp.65 = invoke %tmp.61 %tmp.64 (%tmp.63);
+        bt %tmp.65 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_109_12_112_21_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 113 12 ]
+        %tmp.66 = dup %tmp.15;
+        symbol [ SENSOR_HUMIDITY %tmp.68 113 17 32 ];
+        %tmp.68 = getv ? :SENSOR_HUMIDITY;
+        %tmp.69 = getv function %tmp.66 :equals;
+        %tmp.70 = invoke %tmp.66 %tmp.69 (%tmp.68);
+        bt %tmp.70 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_113_12_116_21_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 117 12 ]
+        %tmp.71 = dup %tmp.15;
+        symbol [ SENSOR_STEPS %tmp.73 117 17 29 ];
+        %tmp.73 = getv ? :SENSOR_STEPS;
+        %tmp.74 = getv function %tmp.71 :equals;
+        %tmp.75 = invoke %tmp.71 %tmp.74 (%tmp.73);
+        bt %tmp.75 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_117_12_120_21_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 121 12 ]
+        %tmp.76 = dup %tmp.15;
+        symbol [ SENSOR_SUNRISE %tmp.78 121 17 31 ];
+        %tmp.78 = getv ? :SENSOR_SUNRISE;
+        %tmp.79 = getv function %tmp.76 :equals;
+        %tmp.80 = invoke %tmp.76 %tmp.79 (%tmp.78);
+        bt %tmp.80 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_121_12_124_21_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 125 12 ]
+        %tmp.81 = dup %tmp.15;
+        symbol [ SENSOR_SUNSET %tmp.83 125 17 30 ];
+        %tmp.83 = getv ? :SENSOR_SUNSET;
+        %tmp.84 = getv function %tmp.81 :equals;
+        %tmp.85 = invoke %tmp.81 %tmp.84 (%tmp.83);
+        bt %tmp.85 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_125_12_128_21_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 129 12 ]
+        %tmp.86 = dup %tmp.15;
+        symbol [ SENSOR_EMPTY %tmp.88 129 17 29 ];
+        %tmp.88 = getv ? :SENSOR_EMPTY;
+        %tmp.89 = getv function %tmp.86 :equals;
+        %tmp.90 = invoke %tmp.86 %tmp.89 (%tmp.88);
+        bt %tmp.90 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_129_12_130_25_switchCase;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_72_8_131_8_switchStmtDefault:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_72_8_131_8_defaultCodeBegin;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_73_12_76_21_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 74 16 ]
+        %tmp.91 = self;
+        symbol [ getAlt %tmp.92 74 23 29 ];
+        %tmp.92 = getv function %tmp.91 :getAlt;
+        %tmp.93 = invoke %tmp.91 %tmp.92();
+        lputv %data.1 %tmp.93;
+        symbol [ data %data.1 74 16 20 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 75 16 ]
+        %tmp.94 = "ALT";
+        lputv %title.2 %tmp.94;
+        symbol [ title %title.2 75 16 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 76 16 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_72_8_131_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_77_12_80_21_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 78 16 ]
+        symbol [ SensorHistory %tmp.95 78 23 36 ];
+        %tmp.95 = getm $.Toybox.SensorHistory;
+        symbol [ getHeartRateHistory %tmp.96 78 37 56 ];
+        %tmp.96 = getv function %tmp.95 :getHeartRateHistory;
+        %tmp.97 = newd 1;
+        %tmp.99 = const :period;
+        symbol [ period %tmp.99 78 59 65 const ];
+        %tmp.100 = 1;
+        %tmp.101 = dup %tmp.97;
+        %tmp.102 = aputv %tmp.101 %tmp.99 %tmp.100;
+        %tmp.103 = invoke %tmp.95 %tmp.96(%tmp.102);
+        symbol [ getMax %tmp.104 78 73 79 ];
+        %tmp.104 = getv function %tmp.103 :getMax;
+        %tmp.105 = invoke %tmp.103 %tmp.104();
+        symbol [ format %tmp.106 78 82 88 ];
+        %tmp.106 = getv function %tmp.105 :format;
+        %tmp.107 = "%d";
+        %tmp.108 = invoke %tmp.105 %tmp.106(%tmp.107);
+        lputv %data.1 %tmp.108;
+        symbol [ data %data.1 78 16 20 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 79 16 ]
+        %tmp.109 = "HR";
+        lputv %title.2 %tmp.109;
+        symbol [ title %title.2 79 16 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 80 16 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_72_8_131_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_81_12_84_21_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 82 16 ]
+        %tmp.110 = self;
+        symbol [ getPress %tmp.111 82 23 31 ];
+        %tmp.111 = getv function %tmp.110 :getPress;
+        symbol [ UNIT_HPASCAL %tmp.113 82 32 44 ];
+        %tmp.113 = getv ? :UNIT_HPASCAL;
+        %tmp.114 = invoke %tmp.110 %tmp.111(%tmp.113);
+        lputv %data.1 %tmp.114;
+        symbol [ data %data.1 82 16 20 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 83 16 ]
+        %tmp.115 = "PRES";
+        lputv %title.2 %tmp.115;
+        symbol [ title %title.2 83 16 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 84 16 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_72_8_131_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_85_12_88_21_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 86 16 ]
+        symbol [ SensorHistory %tmp.116 86 23 36 ];
+        %tmp.116 = getm $.Toybox.SensorHistory;
+        symbol [ getOxygenSaturationHistory %tmp.117 86 37 63 ];
+        %tmp.117 = getv function %tmp.116 :getOxygenSaturationHistory;
+        %tmp.118 = newd 1;
+        %tmp.120 = const :period;
+        symbol [ period %tmp.120 86 66 72 const ];
+        %tmp.121 = 1;
+        %tmp.122 = dup %tmp.118;
+        %tmp.123 = aputv %tmp.122 %tmp.120 %tmp.121;
+        %tmp.124 = invoke %tmp.116 %tmp.117(%tmp.123);
+        symbol [ getMax %tmp.125 86 80 86 ];
+        %tmp.125 = getv function %tmp.124 :getMax;
+        %tmp.126 = invoke %tmp.124 %tmp.125();
+        symbol [ format %tmp.127 86 89 95 ];
+        %tmp.127 = getv function %tmp.126 :format;
+        %tmp.128 = "%d";
+        %tmp.129 = invoke %tmp.126 %tmp.127(%tmp.128);
+        lputv %data.1 %tmp.129;
+        symbol [ data %data.1 86 16 20 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 87 16 ]
+        %tmp.130 = "SAT";
+        lputv %title.2 %tmp.130;
+        symbol [ title %title.2 87 16 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 88 16 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_72_8_131_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_89_12_92_21_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 90 16 ]
+        %tmp.131 = self;
+        symbol [ getTemp %tmp.132 90 23 30 ];
+        %tmp.132 = getv function %tmp.131 :getTemp;
+        %tmp.133 = invoke %tmp.131 %tmp.132();
+        lputv %data.1 %tmp.133;
+        symbol [ data %data.1 90 16 20 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 91 16 ]
+        %tmp.134 = "TEMP";
+        lputv %title.2 %tmp.134;
+        symbol [ title %title.2 91 16 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 92 16 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_72_8_131_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_93_12_96_21_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 94 16 ]
+        %tmp.135 = "CAL";
+        lputv %title.2 %tmp.135;
+        symbol [ title %title.2 94 16 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 95 16 ]
+        %tmp.136 = lgetv %activityMonitor.4;
+        symbol [ activityMonitor %tmp.136 95 23 38 ];
+        symbol [ calories %tmp.137 95 39 47 ];
+        %tmp.137 = getv %tmp.136 :calories;
+        symbol [ format %tmp.138 95 48 54 ];
+        %tmp.138 = getv function %tmp.137 :format;
+        %tmp.139 = "%d";
+        %tmp.140 = invoke %tmp.137 %tmp.138(%tmp.139);
+        lputv %data.1 %tmp.140;
+        symbol [ data %data.1 95 16 20 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 96 16 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_72_8_131_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_97_12_100_21_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 98 16 ]
+        %tmp.141 = lgetv %activityMonitor.4;
+        symbol [ activityMonitor %tmp.141 98 23 38 ];
+        symbol [ activeMinutesDay %tmp.142 98 39 55 ];
+        %tmp.142 = getv %tmp.141 :activeMinutesDay;
+        symbol [ total %tmp.143 98 56 61 ];
+        %tmp.143 = getv %tmp.142 :total;
+        symbol [ format %tmp.144 98 62 68 ];
+        %tmp.144 = getv function %tmp.143 :format;
+        %tmp.145 = "%d";
+        %tmp.146 = invoke %tmp.143 %tmp.144(%tmp.145);
+        lputv %data.1 %tmp.146;
+        symbol [ data %data.1 98 16 20 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 99 16 ]
+        %tmp.147 = "MIN";
+        lputv %title.2 %tmp.147;
+        symbol [ title %title.2 99 16 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 100 16 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_72_8_131_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_101_12_104_21_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 102 16 ]
+        %tmp.148 = lgetv %systemStats.3;
+        symbol [ systemStats %tmp.148 102 23 34 ];
+        symbol [ battery %tmp.149 102 35 42 ];
+        %tmp.149 = getv %tmp.148 :battery;
+        symbol [ format %tmp.150 102 43 49 ];
+        %tmp.150 = getv function %tmp.149 :format;
+        %tmp.151 = "%d";
+        %tmp.152 = invoke %tmp.149 %tmp.150(%tmp.151);
+        lputv %data.1 %tmp.152;
+        symbol [ data %data.1 102 16 20 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 103 16 ]
+        %tmp.153 = "BATT";
+        lputv %title.2 %tmp.153;
+        symbol [ title %title.2 103 16 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 104 16 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_72_8_131_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_105_12_108_21_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 106 16 ]
+        %tmp.154 = self;
+        symbol [ getDist %tmp.155 106 23 30 ];
+        %tmp.155 = getv function %tmp.154 :getDist;
+        %tmp.156 = invoke %tmp.154 %tmp.155();
+        lputv %data.1 %tmp.156;
+        symbol [ data %data.1 106 16 20 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 107 16 ]
+        %tmp.157 = "DIST";
+        lputv %title.2 %tmp.157;
+        symbol [ title %title.2 107 16 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 108 16 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_72_8_131_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_109_12_112_21_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 110 16 ]
+        %tmp.158 = lgetv %activityMonitor.4;
+        symbol [ activityMonitor %tmp.158 110 23 38 ];
+        symbol [ floorsClimbed %tmp.159 110 39 52 ];
+        %tmp.159 = getv %tmp.158 :floorsClimbed;
+        symbol [ format %tmp.160 110 53 59 ];
+        %tmp.160 = getv function %tmp.159 :format;
+        %tmp.161 = "%d";
+        %tmp.162 = invoke %tmp.159 %tmp.160(%tmp.161);
+        lputv %data.1 %tmp.162;
+        symbol [ data %data.1 110 16 20 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 111 16 ]
+        %tmp.163 = "FLOOR";
+        lputv %title.2 %tmp.163;
+        symbol [ title %title.2 111 16 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 112 16 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_72_8_131_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_113_12_116_21_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 114 16 ]
+        %tmp.164 = lgetv %weather.5;
+        symbol [ weather %tmp.164 114 23 30 ];
+        symbol [ relativeHumidity %tmp.165 114 31 47 ];
+        %tmp.165 = getv %tmp.164 :relativeHumidity;
+        symbol [ format %tmp.166 114 48 54 ];
+        %tmp.166 = getv function %tmp.165 :format;
+        %tmp.167 = "%.1f";
+        %tmp.168 = invoke %tmp.165 %tmp.166(%tmp.167);
+        lputv %data.1 %tmp.168;
+        symbol [ data %data.1 114 16 20 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 115 16 ]
+        %tmp.169 = "HUM";
+        lputv %title.2 %tmp.169;
+        symbol [ title %title.2 115 16 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 116 16 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_72_8_131_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_117_12_120_21_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 118 16 ]
+        %tmp.170 = self;
+        symbol [ getStep %tmp.171 118 23 30 ];
+        %tmp.171 = getv function %tmp.170 :getStep;
+        %tmp.172 = invoke %tmp.170 %tmp.171();
+        lputv %data.1 %tmp.172;
+        symbol [ data %data.1 118 16 20 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 119 16 ]
+        %tmp.173 = "STEP";
+        lputv %title.2 %tmp.173;
+        symbol [ title %title.2 119 16 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 120 16 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_72_8_131_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_121_12_124_21_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 122 16 ]
+        symbol [ Math %tmp.174 122 24 28 ];
+        %tmp.174 = getm $.Toybox.Math;
+        symbol [ floor %tmp.175 122 29 34 ];
+        %tmp.175 = getv function %tmp.174 :floor;
+        %tmp.176 = lgetv %sunEvents.6;
+        symbol [ sunEvents %tmp.176 122 35 44 ];
+        %tmp.178 = const :sunrise;
+        symbol [ sunrise %tmp.178 122 46 53 const ];
+        %tmp.179 = agetv %tmp.176 %tmp.178;
+        %tmp.180 = invoke %tmp.174 %tmp.175(%tmp.179);
+        %tmp.181 = 100;
+        %tmp.182 = as %tmp.181 Lang.Number;
+        symbol [ Lang %tmp.182 122 63 67 ];
+        symbol [ Number %tmp.182 122 68 74 ];
+        %tmp.183 = mul %tmp.180 %tmp.182;
+        %tmp.184 = lgetv %sunEvents.6;
+        symbol [ sunEvents %tmp.184 122 79 88 ];
+        %tmp.186 = const :sunrise;
+        symbol [ sunrise %tmp.186 122 90 97 const ];
+        %tmp.187 = agetv %tmp.184 %tmp.186;
+        symbol [ Math %tmp.188 122 99 103 ];
+        %tmp.188 = getm $.Toybox.Math;
+        symbol [ floor %tmp.189 122 104 109 ];
+        %tmp.189 = getv function %tmp.188 :floor;
+        %tmp.190 = lgetv %sunEvents.6;
+        symbol [ sunEvents %tmp.190 122 110 119 ];
+        %tmp.192 = const :sunrise;
+        symbol [ sunrise %tmp.192 122 121 128 const ];
+        %tmp.193 = agetv %tmp.190 %tmp.192;
+        %tmp.194 = invoke %tmp.188 %tmp.189(%tmp.193);
+        %tmp.195 = sub %tmp.187 %tmp.194;
+        %tmp.196 = as %tmp.195 Lang.Number;
+        symbol [ Lang %tmp.196 122 135 139 ];
+        symbol [ Number %tmp.196 122 140 146 ];
+        %tmp.197 = 60;
+        %tmp.198 = mul %tmp.196 %tmp.197;
+        %tmp.199 = add %tmp.183 %tmp.198;
+        symbol [ format %tmp.200 122 152 158 ];
+        %tmp.200 = getv function %tmp.199 :format;
+        %tmp.201 = "%04d";
+        %tmp.202 = invoke %tmp.199 %tmp.200(%tmp.201);
+        lputv %data.1 %tmp.202;
+        symbol [ data %data.1 122 16 20 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 123 16 ]
+        %tmp.203 = "RISE";
+        lputv %title.2 %tmp.203;
+        symbol [ title %title.2 123 16 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 124 16 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_72_8_131_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_125_12_128_21_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 126 16 ]
+        symbol [ Math %tmp.204 126 24 28 ];
+        %tmp.204 = getm $.Toybox.Math;
+        symbol [ floor %tmp.205 126 29 34 ];
+        %tmp.205 = getv function %tmp.204 :floor;
+        %tmp.206 = lgetv %sunEvents.6;
+        symbol [ sunEvents %tmp.206 126 35 44 ];
+        %tmp.208 = const :sunset;
+        symbol [ sunset %tmp.208 126 46 52 const ];
+        %tmp.209 = agetv %tmp.206 %tmp.208;
+        %tmp.210 = invoke %tmp.204 %tmp.205(%tmp.209);
+        %tmp.211 = 100;
+        %tmp.212 = as %tmp.211 Lang.Number;
+        symbol [ Lang %tmp.212 126 62 66 ];
+        symbol [ Number %tmp.212 126 67 73 ];
+        %tmp.213 = mul %tmp.210 %tmp.212;
+        %tmp.214 = lgetv %sunEvents.6;
+        symbol [ sunEvents %tmp.214 126 78 87 ];
+        %tmp.216 = const :sunset;
+        symbol [ sunset %tmp.216 126 89 95 const ];
+        %tmp.217 = agetv %tmp.214 %tmp.216;
+        symbol [ Math %tmp.218 126 97 101 ];
+        %tmp.218 = getm $.Toybox.Math;
+        symbol [ floor %tmp.219 126 102 107 ];
+        %tmp.219 = getv function %tmp.218 :floor;
+        %tmp.220 = lgetv %sunEvents.6;
+        symbol [ sunEvents %tmp.220 126 108 117 ];
+        %tmp.222 = const :sunset;
+        symbol [ sunset %tmp.222 126 119 125 const ];
+        %tmp.223 = agetv %tmp.220 %tmp.222;
+        %tmp.224 = invoke %tmp.218 %tmp.219(%tmp.223);
+        %tmp.225 = sub %tmp.217 %tmp.224;
+        %tmp.226 = as %tmp.225 Lang.Number;
+        symbol [ Lang %tmp.226 126 132 136 ];
+        symbol [ Number %tmp.226 126 137 143 ];
+        %tmp.227 = 60;
+        %tmp.228 = mul %tmp.226 %tmp.227;
+        %tmp.229 = add %tmp.213 %tmp.228;
+        symbol [ format %tmp.230 126 149 155 ];
+        %tmp.230 = getv function %tmp.229 :format;
+        %tmp.231 = "%04d";
+        %tmp.232 = invoke %tmp.229 %tmp.230(%tmp.231);
+        lputv %data.1 %tmp.232;
+        symbol [ data %data.1 126 16 20 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 127 16 ]
+        %tmp.233 = "SET";
+        lputv %title.2 %tmp.233;
+        symbol [ title %title.2 127 16 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 128 16 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_72_8_131_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_129_12_130_25_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 130 16 ]
+        %tmp.234 = "";
+        lputv %data.1 %tmp.234;
+        symbol [ data %data.1 130 16 20 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_72_8_131_8_defaultCodeBegin:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_72_8_131_8_switchStmtEnd:
+        pop;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 133 8 ]
+        %tmp.235 = newa 2;
+        %tmp.236 = lgetv %data.1;
+        symbol [ data %tmp.236 133 16 20 ];
+        %tmp.237 = dup %tmp.235;
+        %tmp.238 = aputv %tmp.237 0 %tmp.236;
+        %tmp.239 = lgetv %title.2;
+        symbol [ title %tmp.239 133 22 27 ];
+        %tmp.240 = dup %tmp.238;
+        %tmp.241 = aputv %tmp.240 1 %tmp.239;
+        ret %tmp.241;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_63_87_134_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 136; @symbol_functiondef = [getSensorInfo,136,13,26]; @symbol_param<0> = [sensor,136,27,33]; @symbol_param<0>_type<0> = [Sensortype,136,37,47]; @symbol_return<0> = [Lang,136,52,56]; @symbol_return<1> = [String,136,57,63]; ]
+    function getSensorInfo(sensor as Sensortype) as Lang.String or Null {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_136_64_166_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 138 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_136_64_166_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_136_64_166_4_stop" ]
+        %systemStats.1 = local;
+        symbol [ systemStats %systemStats.1 138 12 23 ];
+        symbol [ System %tmp.1 138 26 32 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ getSystemStats %tmp.2 138 33 47 ];
+        %tmp.2 = getv function %tmp.1 :getSystemStats;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %systemStats.1 %tmp.3;
+        symbol [ systemStats %systemStats.1 138 12 23 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 139 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_136_64_166_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_136_64_166_4_stop" ]
+        %settings.2 = local;
+        symbol [ settings %settings.2 139 12 20 ];
+        symbol [ System %tmp.4 139 23 29 ];
+        %tmp.4 = getm $.Toybox.System;
+        symbol [ getDeviceSettings %tmp.5 139 30 47 ];
+        %tmp.5 = getv function %tmp.4 :getDeviceSettings;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %settings.2 %tmp.6;
+        symbol [ settings %settings.2 139 12 20 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 140 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_136_64_166_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_136_64_166_4_stop" ]
+        %weather.3 = local;
+        symbol [ weather %weather.3 140 12 19 ];
+        symbol [ Weather %tmp.7 140 22 29 ];
+        %tmp.7 = getm $.Toybox.Weather;
+        symbol [ getCurrentConditions %tmp.8 140 30 50 ];
+        %tmp.8 = getv function %tmp.7 :getCurrentConditions;
+        %tmp.9 = invoke %tmp.7 %tmp.8();
+        lputv %weather.3 %tmp.9;
+        symbol [ weather %weather.3 140 12 19 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 141 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_136_64_166_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_136_64_166_4_stop" ]
+        %sunEvents.4 = local;
+        symbol [ sunEvents %sunEvents.4 141 12 21 ];
+        symbol [ Astronomy %tmp.11 141 24 33 ];
+        %tmp.11 = getv ? :Astronomy;
+        symbol [ SunEvents %tmp.12 141 34 43 ];
+        %tmp.12 = getv %tmp.11 :SunEvents;
+        lputv %sunEvents.4 %tmp.12;
+        symbol [ sunEvents %sunEvents.4 141 12 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 142 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_136_64_166_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_136_64_166_4_stop" ]
+        %returnValue.5 = local;
+        symbol [ returnValue %returnValue.5 142 12 23 ];
+        %tmp.13 = "^_^";
+        lputv %returnValue.5 %tmp.13;
+        symbol [ returnValue %returnValue.5 142 12 23 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 144 8 ]
+        %tmp.14 = lgetv %sensor;
+        symbol [ sensor %tmp.14 144 15 21 ];
+        push %tmp.14;
+        switch %tmp.14 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_144_8_163_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_144_8_163_8_switchStmtBegin:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 146 12 ]
+        %tmp.15 = dup %tmp.14;
+        symbol [ SENSOR_TEMPERATURE %tmp.17 146 17 35 ];
+        %tmp.17 = getv ? :SENSOR_TEMPERATURE;
+        %tmp.18 = getv function %tmp.15 :equals;
+        %tmp.19 = invoke %tmp.15 %tmp.18 (%tmp.17);
+        bt %tmp.19 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_146_12_147_17_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 148 12 ]
+        %tmp.20 = dup %tmp.14;
+        symbol [ SENSOR_ALARMS %tmp.22 148 17 30 ];
+        %tmp.22 = getv ? :SENSOR_ALARMS;
+        %tmp.23 = getv function %tmp.20 :equals;
+        %tmp.24 = invoke %tmp.20 %tmp.23 (%tmp.22);
+        bt %tmp.24 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_148_12_149_17_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 150 12 ]
+        %tmp.25 = dup %tmp.14;
+        symbol [ SENSOR_BATTERY %tmp.27 150 17 31 ];
+        %tmp.27 = getv ? :SENSOR_BATTERY;
+        %tmp.28 = getv function %tmp.25 :equals;
+        %tmp.29 = invoke %tmp.25 %tmp.28 (%tmp.27);
+        bt %tmp.29 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_150_12_151_17_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 152 12 ]
+        %tmp.30 = dup %tmp.14;
+        symbol [ SENSOR_HUMIDITY %tmp.32 152 17 32 ];
+        %tmp.32 = getv ? :SENSOR_HUMIDITY;
+        %tmp.33 = getv function %tmp.30 :equals;
+        %tmp.34 = invoke %tmp.30 %tmp.33 (%tmp.32);
+        bt %tmp.34 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_152_12_153_17_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 154 12 ]
+        %tmp.35 = dup %tmp.14;
+        symbol [ SENSOR_NOTIFICATIONS %tmp.37 154 17 37 ];
+        %tmp.37 = getv ? :SENSOR_NOTIFICATIONS;
+        %tmp.38 = getv function %tmp.35 :equals;
+        %tmp.39 = invoke %tmp.35 %tmp.38 (%tmp.37);
+        bt %tmp.39 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_154_12_155_17_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 156 12 ]
+        %tmp.40 = dup %tmp.14;
+        symbol [ SENSOR_SUNRISE %tmp.42 156 17 31 ];
+        %tmp.42 = getv ? :SENSOR_SUNRISE;
+        %tmp.43 = getv function %tmp.40 :equals;
+        %tmp.44 = invoke %tmp.40 %tmp.43 (%tmp.42);
+        bt %tmp.44 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_156_12_157_17_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 158 12 ]
+        %tmp.45 = dup %tmp.14;
+        symbol [ SENSOR_SUNSET %tmp.47 158 17 30 ];
+        %tmp.47 = getv ? :SENSOR_SUNSET;
+        %tmp.48 = getv function %tmp.45 :equals;
+        %tmp.49 = invoke %tmp.45 %tmp.48 (%tmp.47);
+        bt %tmp.49 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_158_12_159_17_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 160 12 ]
+        %tmp.50 = dup %tmp.14;
+        symbol [ SENSOR_NOTIFICATIONS_PHONE %tmp.52 160 17 43 ];
+        %tmp.52 = getv ? :SENSOR_NOTIFICATIONS_PHONE;
+        %tmp.53 = getv function %tmp.50 :equals;
+        %tmp.54 = invoke %tmp.50 %tmp.53 (%tmp.52);
+        bt %tmp.54 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_160_12_161_17_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 162 12 ]
+        %tmp.55 = dup %tmp.14;
+        symbol [ SENSOR_EMPTY %tmp.57 162 17 29 ];
+        %tmp.57 = getv ? :SENSOR_EMPTY;
+        %tmp.58 = getv function %tmp.55 :equals;
+        %tmp.59 = invoke %tmp.55 %tmp.58 (%tmp.57);
+        bt %tmp.59 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_162_12_162_47_switchCase;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_144_8_163_8_switchStmtDefault:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_144_8_163_8_defaultCodeBegin;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_146_12_147_17_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 146 37 ]
+        symbol [ ICON_TEMPERATURE %tmp.61 146 51 67 ];
+        %tmp.61 = getv ? :ICON_TEMPERATURE;
+        %tmp.62 = self;
+        symbol [ getTemp %tmp.63 146 70 77 ];
+        %tmp.63 = getv function %tmp.62 :getTemp;
+        %tmp.64 = invoke %tmp.62 %tmp.63();
+        %tmp.65 = add %tmp.61 %tmp.64;
+        lputv %returnValue.5 %tmp.65;
+        symbol [ returnValue %returnValue.5 146 37 48 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 147 12 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_144_8_163_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_148_12_149_17_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 148 32 ]
+        symbol [ ICON_ALARMS %tmp.67 148 46 57 ];
+        %tmp.67 = getv ? :ICON_ALARMS;
+        %tmp.68 = lgetv %settings.2;
+        symbol [ settings %tmp.68 148 60 68 ];
+        symbol [ alarmCount %tmp.69 148 69 79 ];
+        %tmp.69 = getv %tmp.68 :alarmCount;
+        symbol [ format %tmp.70 148 80 86 ];
+        %tmp.70 = getv function %tmp.69 :format;
+        %tmp.71 = "%d";
+        %tmp.72 = invoke %tmp.69 %tmp.70(%tmp.71);
+        %tmp.73 = add %tmp.67 %tmp.72;
+        lputv %returnValue.5 %tmp.73;
+        symbol [ returnValue %returnValue.5 148 32 43 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 149 12 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_144_8_163_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_150_12_151_17_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 150 33 ]
+        symbol [ ICON_BATTERY %tmp.75 150 47 59 ];
+        %tmp.75 = getv ? :ICON_BATTERY;
+        %tmp.76 = lgetv %systemStats.1;
+        symbol [ systemStats %tmp.76 150 62 73 ];
+        symbol [ battery %tmp.77 150 74 81 ];
+        %tmp.77 = getv %tmp.76 :battery;
+        symbol [ format %tmp.78 150 82 88 ];
+        %tmp.78 = getv function %tmp.77 :format;
+        %tmp.79 = "%d";
+        %tmp.80 = invoke %tmp.77 %tmp.78(%tmp.79);
+        %tmp.81 = add %tmp.75 %tmp.80;
+        lputv %returnValue.5 %tmp.81;
+        symbol [ returnValue %returnValue.5 150 33 44 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 151 12 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_144_8_163_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_152_12_153_17_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 152 34 ]
+        symbol [ ICON_HUMIDITY %tmp.83 152 48 61 ];
+        %tmp.83 = getv ? :ICON_HUMIDITY;
+        %tmp.84 = lgetv %weather.3;
+        symbol [ weather %tmp.84 152 64 71 ];
+        symbol [ relativeHumidity %tmp.85 152 72 88 ];
+        %tmp.85 = getv %tmp.84 :relativeHumidity;
+        symbol [ format %tmp.86 152 89 95 ];
+        %tmp.86 = getv function %tmp.85 :format;
+        %tmp.87 = "%.1f";
+        %tmp.88 = invoke %tmp.85 %tmp.86(%tmp.87);
+        %tmp.89 = add %tmp.83 %tmp.88;
+        lputv %returnValue.5 %tmp.89;
+        symbol [ returnValue %returnValue.5 152 34 45 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 153 12 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_144_8_163_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_154_12_155_17_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 154 39 ]
+        symbol [ ICON_NOTIFICATIONS %tmp.91 154 54 72 ];
+        %tmp.91 = getv ? :ICON_NOTIFICATIONS;
+        %tmp.92 = lgetv %settings.2;
+        symbol [ settings %tmp.92 154 75 83 ];
+        symbol [ notificationCount %tmp.93 154 84 101 ];
+        %tmp.93 = getv %tmp.92 :notificationCount;
+        symbol [ format %tmp.94 154 102 108 ];
+        %tmp.94 = getv function %tmp.93 :format;
+        %tmp.95 = "%d";
+        %tmp.96 = invoke %tmp.93 %tmp.94(%tmp.95);
+        %tmp.97 = add %tmp.91 %tmp.96;
+        lputv %returnValue.5 %tmp.97;
+        symbol [ returnValue %returnValue.5 154 39 50 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 155 12 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_144_8_163_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_156_12_157_17_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 156 33 ]
+        symbol [ Math %tmp.98 156 48 52 ];
+        %tmp.98 = getm $.Toybox.Math;
+        symbol [ floor %tmp.99 156 53 58 ];
+        %tmp.99 = getv function %tmp.98 :floor;
+        %tmp.100 = lgetv %sunEvents.4;
+        symbol [ sunEvents %tmp.100 156 59 68 ];
+        %tmp.102 = const :sunrise;
+        symbol [ sunrise %tmp.102 156 70 77 const ];
+        %tmp.103 = agetv %tmp.100 %tmp.102;
+        %tmp.104 = invoke %tmp.98 %tmp.99(%tmp.103);
+        %tmp.105 = 100;
+        %tmp.106 = as %tmp.105 Lang.Number;
+        symbol [ Lang %tmp.106 156 87 91 ];
+        symbol [ Number %tmp.106 156 92 98 ];
+        %tmp.107 = mul %tmp.104 %tmp.106;
+        %tmp.108 = lgetv %sunEvents.4;
+        symbol [ sunEvents %tmp.108 156 103 112 ];
+        %tmp.110 = const :sunrise;
+        symbol [ sunrise %tmp.110 156 114 121 const ];
+        %tmp.111 = agetv %tmp.108 %tmp.110;
+        symbol [ Math %tmp.112 156 123 127 ];
+        %tmp.112 = getm $.Toybox.Math;
+        symbol [ floor %tmp.113 156 128 133 ];
+        %tmp.113 = getv function %tmp.112 :floor;
+        %tmp.114 = lgetv %sunEvents.4;
+        symbol [ sunEvents %tmp.114 156 134 143 ];
+        %tmp.116 = const :sunrise;
+        symbol [ sunrise %tmp.116 156 145 152 const ];
+        %tmp.117 = agetv %tmp.114 %tmp.116;
+        %tmp.118 = invoke %tmp.112 %tmp.113(%tmp.117);
+        %tmp.119 = sub %tmp.111 %tmp.118;
+        %tmp.120 = as %tmp.119 Lang.Number;
+        symbol [ Lang %tmp.120 156 159 163 ];
+        symbol [ Number %tmp.120 156 164 170 ];
+        %tmp.121 = 60;
+        %tmp.122 = mul %tmp.120 %tmp.121;
+        %tmp.123 = add %tmp.107 %tmp.122;
+        symbol [ format %tmp.124 156 176 182 ];
+        %tmp.124 = getv function %tmp.123 :format;
+        %tmp.125 = "%04d";
+        %tmp.126 = invoke %tmp.123 %tmp.124(%tmp.125);
+        lputv %returnValue.5 %tmp.126;
+        symbol [ returnValue %returnValue.5 156 33 44 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 157 12 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_144_8_163_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_158_12_159_17_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 158 32 ]
+        symbol [ Math %tmp.127 158 47 51 ];
+        %tmp.127 = getm $.Toybox.Math;
+        symbol [ floor %tmp.128 158 52 57 ];
+        %tmp.128 = getv function %tmp.127 :floor;
+        %tmp.129 = lgetv %sunEvents.4;
+        symbol [ sunEvents %tmp.129 158 58 67 ];
+        %tmp.131 = const :sunset;
+        symbol [ sunset %tmp.131 158 69 75 const ];
+        %tmp.132 = agetv %tmp.129 %tmp.131;
+        %tmp.133 = invoke %tmp.127 %tmp.128(%tmp.132);
+        %tmp.134 = 100;
+        %tmp.135 = as %tmp.134 Lang.Number;
+        symbol [ Lang %tmp.135 158 85 89 ];
+        symbol [ Number %tmp.135 158 90 96 ];
+        %tmp.136 = mul %tmp.133 %tmp.135;
+        %tmp.137 = lgetv %sunEvents.4;
+        symbol [ sunEvents %tmp.137 158 101 110 ];
+        %tmp.139 = const :sunset;
+        symbol [ sunset %tmp.139 158 112 118 const ];
+        %tmp.140 = agetv %tmp.137 %tmp.139;
+        symbol [ Math %tmp.141 158 120 124 ];
+        %tmp.141 = getm $.Toybox.Math;
+        symbol [ floor %tmp.142 158 125 130 ];
+        %tmp.142 = getv function %tmp.141 :floor;
+        %tmp.143 = lgetv %sunEvents.4;
+        symbol [ sunEvents %tmp.143 158 131 140 ];
+        %tmp.145 = const :sunset;
+        symbol [ sunset %tmp.145 158 142 148 const ];
+        %tmp.146 = agetv %tmp.143 %tmp.145;
+        %tmp.147 = invoke %tmp.141 %tmp.142(%tmp.146);
+        %tmp.148 = sub %tmp.140 %tmp.147;
+        %tmp.149 = as %tmp.148 Lang.Number;
+        symbol [ Lang %tmp.149 158 155 159 ];
+        symbol [ Number %tmp.149 158 160 166 ];
+        %tmp.150 = 60;
+        %tmp.151 = mul %tmp.149 %tmp.150;
+        %tmp.152 = add %tmp.136 %tmp.151;
+        symbol [ format %tmp.153 158 172 178 ];
+        %tmp.153 = getv function %tmp.152 :format;
+        %tmp.154 = "%04d";
+        %tmp.155 = invoke %tmp.152 %tmp.153(%tmp.154);
+        lputv %returnValue.5 %tmp.155;
+        symbol [ returnValue %returnValue.5 158 32 43 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 159 12 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_144_8_163_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_160_12_161_17_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 160 45 ]
+        %tmp.156 = self;
+        symbol [ getNotifIcon %tmp.157 160 59 71 ];
+        %tmp.157 = getv function %tmp.156 :getNotifIcon;
+        %tmp.158 = invoke %tmp.156 %tmp.157();
+        %tmp.159 = self;
+        symbol [ getPhoneIcon %tmp.160 160 76 88 ];
+        %tmp.160 = getv function %tmp.159 :getPhoneIcon;
+        %tmp.161 = invoke %tmp.159 %tmp.160();
+        %tmp.162 = add %tmp.158 %tmp.161;
+        lputv %returnValue.5 %tmp.162;
+        symbol [ returnValue %returnValue.5 160 45 56 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 161 12 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_144_8_163_8_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_162_12_162_47_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 162 31 ]
+        %tmp.163 = "";
+        lputv %returnValue.5 %tmp.163;
+        symbol [ returnValue %returnValue.5 162 31 42 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_144_8_163_8_defaultCodeBegin:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_144_8_163_8_switchStmtEnd:
+        pop;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 165 8 ]
+        %tmp.164 = lgetv %returnValue.5;
+        symbol [ returnValue %tmp.164 165 15 26 ];
+        ret %tmp.164;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_136_64_166_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 167; @symbol_functiondef = [getNotifIcon,167,13,25]; ]
+    function getNotifIcon() {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_167_27_181_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 168 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_167_27_181_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_167_27_181_4_stop" ]
+        %temp.1 = local;
+        symbol [ temp %temp.1 168 12 16 ];
+        symbol [ System %tmp.1 168 19 25 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ getDeviceSettings %tmp.2 168 26 43 ];
+        %tmp.2 = getv function %tmp.1 :getDeviceSettings;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %temp.1 %tmp.3;
+        symbol [ temp %temp.1 168 12 16 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 169 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_167_27_181_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_167_27_181_4_stop" ]
+        %doNotDisturb.2 = local;
+        symbol [ doNotDisturb %doNotDisturb.2 169 12 24 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 170 8 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_170_8_175_8_if_stmt:
+        %tmp.4 = lgetv %temp.1;
+        symbol [ temp %tmp.4 170 11 15 ];
+        %tmp.6 = const :doNotDisturb;
+        symbol [ doNotDisturb %tmp.6 170 21 33 const ];
+        %tmp.7 = canhazplz %tmp.4 %tmp.6;
+        bf %tmp.7 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_170_8_175_8_if_else_false;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_170_8_175_8_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_170_34_172_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 171 12 ]
+        %tmp.8 = lgetv %temp.1;
+        symbol [ temp %tmp.8 171 27 31 ];
+        %tmp.9 = as %tmp.8 { (interface { var doNotDisturb; }) };
+        symbol [ doNotDisturb %tmp.10 171 32 44 ];
+        %tmp.10 = getv %tmp.9 :doNotDisturb;
+        lputv %doNotDisturb.2 %tmp.10;
+        symbol [ doNotDisturb %doNotDisturb.2 171 12 24 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_170_34_172_8_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_170_8_175_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_170_8_175_8_if_else_false:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_173_12_175_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 174 12 ]
+        %tmp.11 = false;
+        lputv %doNotDisturb.2 %tmp.11;
+        symbol [ doNotDisturb %doNotDisturb.2 174 12 24 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_173_12_175_8_stop:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_170_8_175_8_if_end:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 177 8 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_177_8_179_8_if_stmt:
+        %tmp.12 = lgetv %doNotDisturb.2;
+        symbol [ doNotDisturb %tmp.12 177 11 23 ];
+        bf %tmp.12 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_177_8_179_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_177_8_179_8_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_177_24_179_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 178 12 ]
+        symbol [ ICON_NOTIFICATIONS_INACTIVE %tmp.14 178 19 46 ];
+        %tmp.14 = getv ? :ICON_NOTIFICATIONS_INACTIVE;
+        ret %tmp.14;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_177_24_179_8_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_177_8_179_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_177_8_179_8_if_end:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 180 8 ]
+        symbol [ ICON_NOTIFICATIONS_ACTIVE %tmp.16 180 15 40 ];
+        %tmp.16 = getv ? :ICON_NOTIFICATIONS_ACTIVE;
+        ret %tmp.16;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_167_27_181_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 182; @symbol_functiondef = [getPhoneIcon,182,13,25]; ]
+    function getPhoneIcon() {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_182_27_190_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 183 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_182_27_190_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_182_27_190_4_stop" ]
+        %connected.1 = local;
+        symbol [ connected %connected.1 183 12 21 ];
+        symbol [ System %tmp.1 183 24 30 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ getDeviceSettings %tmp.2 183 31 48 ];
+        %tmp.2 = getv function %tmp.1 :getDeviceSettings;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        symbol [ phoneConnected %tmp.4 183 51 65 ];
+        %tmp.4 = getv %tmp.3 :phoneConnected;
+        lputv %connected.1 %tmp.4;
+        symbol [ connected %connected.1 183 12 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 186 8 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_186_8_188_8_if_stmt:
+        %tmp.5 = lgetv %connected.1;
+        symbol [ connected %tmp.5 186 11 20 ];
+        bf %tmp.5 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_186_8_188_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_186_8_188_8_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_186_21_188_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 187 12 ]
+        symbol [ ICON_PHONE_CONNECTED %tmp.7 187 19 39 ];
+        %tmp.7 = getv ? :ICON_PHONE_CONNECTED;
+        ret %tmp.7;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_186_21_188_8_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_186_8_188_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_186_8_188_8_if_end:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 189 8 ]
+        symbol [ ICON_PHONE_DISCONNECTED %tmp.9 189 15 38 ];
+        %tmp.9 = getv ? :ICON_PHONE_DISCONNECTED;
+        ret %tmp.9;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_182_27_190_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 195; @symbol_functiondef = [getAlt,195,13,19]; @symbol_return<0> = [Lang,195,25,29]; @symbol_return<1> = [String,195,30,36]; ]
+    function getAlt() as Lang.String {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_195_36_219_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 197 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_195_36_219_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_195_36_219_4_stop" ]
+        %altUnit.1 = local;
+        symbol [ altUnit %altUnit.1 197 12 19 ];
+        symbol [ System %tmp.1 197 22 28 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ getDeviceSettings %tmp.2 197 29 46 ];
+        %tmp.2 = getv function %tmp.1 :getDeviceSettings;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        symbol [ elevationUnits %tmp.4 197 49 63 ];
+        %tmp.4 = getv %tmp.3 :elevationUnits;
+        lputv %altUnit.1 %tmp.4;
+        symbol [ altUnit %altUnit.1 197 12 19 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 198 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_195_36_219_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_195_36_219_4_stop" ]
+        %value.2 = local;
+        symbol [ value %value.2 198 12 17 ];
+        symbol [ Activity %tmp.5 198 20 28 ];
+        %tmp.5 = getm $.Toybox.Activity;
+        symbol [ getActivityInfo %tmp.6 198 29 44 ];
+        %tmp.6 = getv function %tmp.5 :getActivityInfo;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        symbol [ altitude %tmp.8 198 47 55 ];
+        %tmp.8 = getv %tmp.7 :altitude;
+        lputv %value.2 %tmp.8;
+        symbol [ value %value.2 198 12 17 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 200 8 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_200_8_214_8_if_stmt:
+        %tmp.9 = lgetv %value.2;
+        symbol [ value %tmp.9 200 11 16 ];
+        %tmp.10 = null;
+        %tmp.11 = eq %tmp.9 %tmp.10;
+        bf %tmp.11 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_200_8_214_8_if_else_false;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_200_8_214_8_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_200_25_202_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 201 12 ]
+        %tmp.12 = "--";
+        lputv %value.2 %tmp.12;
+        symbol [ value %value.2 201 12 17 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_200_25_202_8_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_200_8_214_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_200_8_214_8_if_else_false:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_203_12_214_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 204 12 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_204_12_206_12_if_stmt:
+        %tmp.13 = lgetv %altUnit.1;
+        symbol [ altUnit %tmp.13 204 15 22 ];
+        symbol [ System %tmp.14 204 26 32 ];
+        %tmp.14 = getm $.Toybox.System;
+        symbol [ UNIT_STATUTE %tmp.15 204 33 45 ];
+        %tmp.15 = getv %tmp.14 :UNIT_STATUTE;
+        %tmp.16 = eq %tmp.13 %tmp.15;
+        bf %tmp.16 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_204_12_206_12_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_204_12_206_12_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_204_46_206_12_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 205 16 ]
+        %tmp.17 = lgetv %value.2;
+        symbol [ value %tmp.17 205 16 21 ];
+        %tmp.18 = as %tmp.17 { (!Null) };
+        %tmp.19 = 3.2808;
+        %tmp.20 = mul %tmp.18 %tmp.19;
+        lputv %value.2 %tmp.20;
+        symbol [ value %value.2 205 16 21 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_204_46_206_12_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_204_12_206_12_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_204_12_206_12_if_end:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 207 12 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_207_12_213_12_if_stmt:
+        %tmp.21 = lgetv %value.2;
+        symbol [ value %tmp.21 207 15 20 ];
+        %tmp.22 = 9000;
+        %tmp.23 = gt %tmp.21 %tmp.22;
+        bf %tmp.23 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_207_12_213_12_if_else_false;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_207_12_213_12_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_207_28_210_12_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 208 16 ]
+        %tmp.24 = lgetv %value.2;
+        symbol [ value %tmp.24 208 16 21 ];
+        %tmp.25 = 1000;
+        %tmp.26 = div %tmp.24 %tmp.25;
+        lputv %value.2 %tmp.26;
+        symbol [ value %value.2 208 16 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 209 16 ]
+        %tmp.27 = lgetv %value.2;
+        symbol [ value %tmp.27 209 24 29 ];
+        symbol [ format %tmp.28 209 30 36 ];
+        %tmp.28 = getv function %tmp.27 :format;
+        %tmp.29 = "%2.1f";
+        %tmp.30 = invoke %tmp.27 %tmp.28(%tmp.29);
+        %tmp.31 = "K";
+        %tmp.32 = add %tmp.30 %tmp.31;
+        lputv %value.2 %tmp.32;
+        symbol [ value %value.2 209 16 21 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_207_28_210_12_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_207_12_213_12_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_207_12_213_12_if_else_false:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_211_16_213_12_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 212 16 ]
+        %tmp.33 = lgetv %value.2;
+        symbol [ value %tmp.33 212 24 29 ];
+        symbol [ format %tmp.34 212 30 36 ];
+        %tmp.34 = getv function %tmp.33 :format;
+        %tmp.35 = "%d";
+        %tmp.36 = invoke %tmp.33 %tmp.34(%tmp.35);
+        lputv %value.2 %tmp.36;
+        symbol [ value %value.2 212 16 21 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_211_16_213_12_stop:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_207_12_213_12_if_end:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_203_12_214_8_stop:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_200_8_214_8_if_end:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 218 8 ]
+        %tmp.37 = lgetv %value.2;
+        symbol [ value %tmp.37 218 15 20 ];
+        ret %tmp.37;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_195_36_219_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 220; @symbol_functiondef = [getTemp,220,13,20]; @symbol_return<0> = [Lang,220,26,30]; @symbol_return<1> = [String,220,31,37]; ]
+    function getTemp() as Lang.String or Null {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_220_38_232_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 221 12 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_220_38_232_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_220_38_232_4_stop" ]
+        %value.1 = local;
+        symbol [ value %value.1 221 16 21 ];
+        symbol [ SensorHistory %tmp.1 221 24 37 ];
+        %tmp.1 = getm $.Toybox.SensorHistory;
+        symbol [ getTemperatureHistory %tmp.2 221 38 59 ];
+        %tmp.2 = getv function %tmp.1 :getTemperatureHistory;
+        %tmp.3 = newd 1;
+        %tmp.5 = const :period;
+        symbol [ period %tmp.5 221 62 68 const ];
+        %tmp.6 = 1;
+        %tmp.7 = dup %tmp.3;
+        %tmp.8 = aputv %tmp.7 %tmp.5 %tmp.6;
+        %tmp.9 = invoke %tmp.1 %tmp.2(%tmp.8);
+        symbol [ getMax %tmp.10 221 76 82 ];
+        %tmp.10 = getv function %tmp.9 :getMax;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        lputv %value.1 %tmp.11;
+        symbol [ value %value.1 221 16 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 223 12 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_220_38_232_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_220_38_232_4_stop" ]
+        %TempUnit.2 = local;
+        symbol [ TempUnit %TempUnit.2 223 16 24 ];
+        symbol [ System %tmp.12 223 27 33 ];
+        %tmp.12 = getm $.Toybox.System;
+        symbol [ getDeviceSettings %tmp.13 223 34 51 ];
+        %tmp.13 = getv function %tmp.12 :getDeviceSettings;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        symbol [ temperatureUnits %tmp.15 223 54 70 ];
+        %tmp.15 = getv %tmp.14 :temperatureUnits;
+        lputv %TempUnit.2 %tmp.15;
+        symbol [ TempUnit %TempUnit.2 223 16 24 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 225 12 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_225_12_228_12_if_stmt:
+        %tmp.16 = lgetv %TempUnit.2;
+        symbol [ TempUnit %tmp.16 225 15 23 ];
+        symbol [ System %tmp.17 225 27 33 ];
+        %tmp.17 = getm $.Toybox.System;
+        symbol [ UNIT_STATUTE %tmp.18 225 34 46 ];
+        %tmp.18 = getv %tmp.17 :UNIT_STATUTE;
+        %tmp.19 = eq %tmp.16 %tmp.18;
+        bf %tmp.19 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_225_12_228_12_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_225_12_228_12_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_225_47_228_12_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 226 16 ]
+        %tmp.20 = lgetv %value.1;
+        symbol [ value %tmp.20 226 24 29 ];
+        %tmp.21 = 1.8;
+        %tmp.22 = mul %tmp.20 %tmp.21;
+        %tmp.23 = 32;
+        %tmp.24 = add %tmp.22 %tmp.23;
+        lputv %value.1 %tmp.24;
+        symbol [ value %value.1 226 16 21 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_225_47_228_12_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_225_12_228_12_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_225_12_228_12_if_end:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 230 12 ]
+        %tmp.25 = lgetv %value.1;
+        symbol [ value %tmp.25 230 20 25 ];
+        symbol [ format %tmp.26 230 26 32 ];
+        %tmp.26 = getv function %tmp.25 :format;
+        %tmp.27 = "%.1f";
+        %tmp.28 = invoke %tmp.25 %tmp.26(%tmp.27);
+        lputv %value.1 %tmp.28;
+        symbol [ value %value.1 230 12 17 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 231 12 ]
+        %tmp.29 = lgetv %value.1;
+        symbol [ value %tmp.29 231 19 24 ];
+        ret %tmp.29;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_220_38_232_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 233; @symbol_functiondef = [getPress,233,13,21]; @symbol_param<0> = [unit,233,22,26]; @symbol_param<0>_type<0> = [PressUnits,233,30,40]; @symbol_return<0> = [Lang,233,45,49]; @symbol_return<1> = [String,233,50,56]; ]
+    function getPress(unit as PressUnits) as Lang.String or Null {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_233_57_245_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 235 12 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_233_57_245_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_233_57_245_4_stop" ]
+        %value.1 = local;
+        symbol [ value %value.1 235 16 21 ];
+        symbol [ SensorHistory %tmp.1 235 24 37 ];
+        %tmp.1 = getm $.Toybox.SensorHistory;
+        symbol [ getPressureHistory %tmp.2 235 38 56 ];
+        %tmp.2 = getv function %tmp.1 :getPressureHistory;
+        %tmp.3 = newd 1;
+        %tmp.5 = const :period;
+        symbol [ period %tmp.5 235 59 65 const ];
+        %tmp.6 = 1;
+        %tmp.7 = dup %tmp.3;
+        %tmp.8 = aputv %tmp.7 %tmp.5 %tmp.6;
+        %tmp.9 = invoke %tmp.1 %tmp.2(%tmp.8);
+        symbol [ getMax %tmp.10 235 73 79 ];
+        %tmp.10 = getv function %tmp.9 :getMax;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        lputv %value.1 %tmp.11;
+        symbol [ value %value.1 235 16 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 237 12 ]
+        %tmp.12 = lgetv %unit;
+        symbol [ unit %tmp.12 237 19 23 ];
+        push %tmp.12;
+        switch %tmp.12 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_237_12_241_12_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_237_12_241_12_switchStmtBegin:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 238 16 ]
+        %tmp.13 = dup %tmp.12;
+        symbol [ UNIT_HPASCAL %tmp.15 238 21 33 ];
+        %tmp.15 = getv ? :UNIT_HPASCAL;
+        %tmp.16 = getv function %tmp.13 :equals;
+        %tmp.17 = invoke %tmp.13 %tmp.16 (%tmp.15);
+        bt %tmp.17 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_238_16_238_54_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 239 16 ]
+        %tmp.18 = dup %tmp.12;
+        symbol [ UNIT_ATM %tmp.20 239 21 29 ];
+        %tmp.20 = getv ? :UNIT_ATM;
+        %tmp.21 = getv function %tmp.18 :equals;
+        %tmp.22 = invoke %tmp.18 %tmp.21 (%tmp.20);
+        bt %tmp.22 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_239_16_239_53_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 240 16 ]
+        %tmp.23 = dup %tmp.12;
+        symbol [ UNIT_MMHG %tmp.25 240 21 30 ];
+        %tmp.25 = getv ? :UNIT_MMHG;
+        %tmp.26 = getv function %tmp.23 :equals;
+        %tmp.27 = invoke %tmp.23 %tmp.26 (%tmp.25);
+        bt %tmp.27 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_240_16_240_47_switchCase;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_237_12_241_12_switchStmtDefault:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_237_12_241_12_defaultCodeBegin;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_238_16_238_54_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 238 35 ]
+        %tmp.28 = lgetv %value.1;
+        symbol [ value %tmp.28 238 35 40 ];
+        %tmp.29 = 100;
+        %tmp.30 = div %tmp.28 %tmp.29;
+        lputv %value.1 %tmp.30;
+        symbol [ value %value.1 238 35 40 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 238 49 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_237_12_241_12_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_239_16_239_53_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 239 31 ]
+        %tmp.31 = lgetv %value.1;
+        symbol [ value %tmp.31 239 31 36 ];
+        %tmp.32 = 101325;
+        %tmp.33 = div %tmp.31 %tmp.32;
+        lputv %value.1 %tmp.33;
+        symbol [ value %value.1 239 31 36 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 239 48 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_237_12_241_12_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_240_16_240_47_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 240 32 ]
+        %tmp.34 = lgetv %value.1;
+        symbol [ value %tmp.34 240 32 37 ];
+        %tmp.35 = 0.0075;
+        %tmp.36 = mul %tmp.34 %tmp.35;
+        lputv %value.1 %tmp.36;
+        symbol [ value %value.1 240 32 37 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_237_12_241_12_defaultCodeBegin:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_237_12_241_12_switchStmtEnd:
+        pop;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 242 12 ]
+        %tmp.37 = lgetv %value.1;
+        symbol [ value %tmp.37 242 20 25 ];
+        symbol [ format %tmp.38 242 26 32 ];
+        %tmp.38 = getv function %tmp.37 :format;
+        %tmp.39 = "%.1f";
+        %tmp.40 = invoke %tmp.37 %tmp.38(%tmp.39);
+        lputv %value.1 %tmp.40;
+        symbol [ value %value.1 242 12 17 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 244 12 ]
+        %tmp.41 = lgetv %value.1;
+        symbol [ value %tmp.41 244 19 24 ];
+        ret %tmp.41;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_233_57_245_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 246; @symbol_functiondef = [getDist,246,13,20]; @symbol_return<0> = [Lang,246,26,30]; @symbol_return<1> = [String,246,31,37]; ]
+    function getDist() as Lang.String or Null {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_246_38_260_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 248 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_246_38_260_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_246_38_260_4_stop" ]
+        %value.1 = local;
+        symbol [ value %value.1 248 12 17 ];
+        symbol [ ActivityMonitor %tmp.1 248 20 35 ];
+        %tmp.1 = getm $.Toybox.ActivityMonitor;
+        symbol [ getInfo %tmp.2 248 36 43 ];
+        %tmp.2 = getv function %tmp.1 :getInfo;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        symbol [ distance %tmp.4 248 46 54 ];
+        %tmp.4 = getv %tmp.3 :distance;
+        %tmp.5 = as %tmp.4 Lang.Float;
+        symbol [ Lang %tmp.5 248 58 62 ];
+        symbol [ Float %tmp.5 248 63 68 ];
+        lputv %value.1 %tmp.5;
+        symbol [ value %value.1 248 12 17 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 249 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_246_38_260_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_246_38_260_4_stop" ]
+        %DistUnit.2 = local;
+        symbol [ DistUnit %DistUnit.2 249 12 20 ];
+        symbol [ System %tmp.6 249 23 29 ];
+        %tmp.6 = getm $.Toybox.System;
+        symbol [ getDeviceSettings %tmp.7 249 30 47 ];
+        %tmp.7 = getv function %tmp.6 :getDeviceSettings;
+        %tmp.8 = invoke %tmp.6 %tmp.7();
+        symbol [ distanceUnits %tmp.9 249 50 63 ];
+        %tmp.9 = getv %tmp.8 :distanceUnits;
+        lputv %DistUnit.2 %tmp.9;
+        symbol [ DistUnit %DistUnit.2 249 12 20 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 251 8 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_251_8_256_8_if_stmt:
+        %tmp.10 = lgetv %DistUnit.2;
+        symbol [ DistUnit %tmp.10 251 11 19 ];
+        symbol [ System %tmp.11 251 23 29 ];
+        %tmp.11 = getm $.Toybox.System;
+        symbol [ UNIT_STATUTE %tmp.12 251 30 42 ];
+        %tmp.12 = getv %tmp.11 :UNIT_STATUTE;
+        %tmp.13 = eq %tmp.10 %tmp.12;
+        bf %tmp.13 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_251_8_256_8_if_else_false;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_251_8_256_8_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_251_43_253_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 252 12 ]
+        %tmp.14 = lgetv %value.1;
+        symbol [ value %tmp.14 252 12 17 ];
+        %tmp.15 = 160934.0;
+        %tmp.16 = as %tmp.15 Lang.Float;
+        symbol [ Lang %tmp.16 252 33 37 ];
+        symbol [ Float %tmp.16 252 38 43 ];
+        %tmp.17 = div %tmp.14 %tmp.16;
+        lputv %value.1 %tmp.17;
+        symbol [ value %value.1 252 12 17 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_251_43_253_8_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_251_8_256_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_251_8_256_8_if_else_false:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_254_12_256_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 255 12 ]
+        %tmp.18 = lgetv %value.1;
+        symbol [ value %tmp.18 255 12 17 ];
+        %tmp.19 = 100000.0;
+        %tmp.20 = as %tmp.19 Lang.Float;
+        symbol [ Lang %tmp.20 255 33 37 ];
+        symbol [ Float %tmp.20 255 38 43 ];
+        %tmp.21 = div %tmp.18 %tmp.20;
+        lputv %value.1 %tmp.21;
+        symbol [ value %value.1 255 12 17 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_254_12_256_8_stop:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_251_8_256_8_if_end:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 257 8 ]
+        %tmp.22 = lgetv %value.1;
+        symbol [ value %tmp.22 257 16 21 ];
+        symbol [ format %tmp.23 257 22 28 ];
+        %tmp.23 = getv function %tmp.22 :format;
+        %tmp.24 = "%.1f";
+        %tmp.25 = invoke %tmp.22 %tmp.23(%tmp.24);
+        lputv %value.1 %tmp.25;
+        symbol [ value %value.1 257 8 13 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 259 8 ]
+        %tmp.26 = lgetv %value.1;
+        symbol [ value %tmp.26 259 15 20 ];
+        ret %tmp.26;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_246_38_260_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 261; @symbol_functiondef = [getStep,261,13,20]; @symbol_return<0> = [Lang,261,26,30]; @symbol_return<1> = [String,261,31,37]; ]
+    function getStep() as Lang.String or Null {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_261_38_277_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 262 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_261_38_277_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_261_38_277_4_stop" ]
+        %value.1 = local;
+        symbol [ value %value.1 262 12 17 ];
+        symbol [ ActivityMonitor %tmp.1 262 20 35 ];
+        %tmp.1 = getm $.Toybox.ActivityMonitor;
+        symbol [ getInfo %tmp.2 262 36 43 ];
+        %tmp.2 = getv function %tmp.1 :getInfo;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        symbol [ steps %tmp.4 262 46 51 ];
+        %tmp.4 = getv %tmp.3 :steps;
+        lputv %value.1 %tmp.4;
+        symbol [ value %value.1 262 12 17 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 264 8 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_264_8_274_8_if_stmt:
+        %tmp.5 = lgetv %value.1;
+        symbol [ value %tmp.5 264 11 16 ];
+        %tmp.6 = 9999;
+        %tmp.7 = gt %tmp.5 %tmp.6;
+        bf %tmp.7 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_264_8_274_8_if_else_false;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_264_8_274_8_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_264_24_271_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 265 12 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_265_12_270_12_if_stmt:
+        %tmp.8 = lgetv %value.1;
+        symbol [ value %tmp.8 265 15 20 ];
+        %tmp.9 = 99000;
+        %tmp.10 = gt %tmp.8 %tmp.9;
+        bf %tmp.10 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_265_12_270_12_if_else_false;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_265_12_270_12_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_265_29_267_12_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 266 16 ]
+        %tmp.11 = lgetv %value.1;
+        symbol [ value %tmp.11 266 25 30 ];
+        %tmp.12 = 1000;
+        %tmp.13 = div %tmp.11 %tmp.12;
+        symbol [ format %tmp.14 266 37 43 ];
+        %tmp.14 = getv function %tmp.13 :format;
+        %tmp.15 = "%d";
+        %tmp.16 = invoke %tmp.13 %tmp.14(%tmp.15);
+        %tmp.17 = "K";
+        %tmp.18 = add %tmp.16 %tmp.17;
+        lputv %value.1 %tmp.18;
+        symbol [ value %value.1 266 16 21 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_265_29_267_12_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_265_12_270_12_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_265_12_270_12_if_else_false:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_268_16_270_12_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 269 16 ]
+        %tmp.19 = lgetv %value.1;
+        symbol [ value %tmp.19 269 25 30 ];
+        %tmp.20 = 1000.0;
+        %tmp.21 = div %tmp.19 %tmp.20;
+        symbol [ format %tmp.22 269 39 45 ];
+        %tmp.22 = getv function %tmp.21 :format;
+        %tmp.23 = "%.1f";
+        %tmp.24 = invoke %tmp.21 %tmp.22(%tmp.23);
+        %tmp.25 = "K";
+        %tmp.26 = add %tmp.24 %tmp.25;
+        lputv %value.1 %tmp.26;
+        symbol [ value %value.1 269 16 21 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_268_16_270_12_stop:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_265_12_270_12_if_end:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_264_24_271_8_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_264_8_274_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_264_8_274_8_if_else_false:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_272_12_274_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 273 12 ]
+        %tmp.27 = lgetv %value.1;
+        symbol [ value %tmp.27 273 20 25 ];
+        symbol [ format %tmp.28 273 26 32 ];
+        %tmp.28 = getv function %tmp.27 :format;
+        %tmp.29 = "%d";
+        %tmp.30 = invoke %tmp.27 %tmp.28(%tmp.29);
+        lputv %value.1 %tmp.30;
+        symbol [ value %value.1 273 12 17 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_272_12_274_8_stop:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_264_8_274_8_if_end:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc" 276 8 ]
+        %tmp.31 = lgetv %value.1;
+        symbol [ value %tmp.31 276 15 20 ];
+        ret %tmp.31;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_SensorMod_mc_261_38_277_4_stop:
+    }
+}
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\SensorMod.mc"; @line = 1; ]
+<init> {
+}

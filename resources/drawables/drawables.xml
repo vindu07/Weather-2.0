@@ -1,0 +1,33 @@
+<drawables xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+    
+    <bitmap id="LauncherIcon" filename="launcher_icon.png" dithering="none" />
+
+    
+    <bitmap id="MountainBackground" filename="MONTAGNE_280x280.png" dithering="none" />
+    <bitmap id="CountryBackground" filename="LONDON_280x280.png" dithering="none" />
+    <bitmap id="BeachBackground" filename="SPIAGGIA_280x280.png" dithering="none" />
+    
+    <bitmap id="LondonBackground" filename="LONDON_280x280.png" dithering="none" />
+    <bitmap id="ParisBackground" filename="PARIS_280x280.png" dithering="none" />
+    <bitmap id="RomeBackground" filename="SPIAGGIA_280x280.png" dithering="none" />
+    <bitmap id="VeniceBackground" filename="SPIAGGIA_280x280.png" dithering="none" />
+    
+    <bitmap id="EnergysavingBackground" filename="MONTAGNE_280x280_MONO.png" dithering="none" />
+
+    
+    <bitmap id="MoonPhases" filename="MoonPhases_20.png" dithering="none" />
+    <bitmap id="Stars" filename="Stars.png" dithering="none" />
+
+    <bitmap id="LightRain" filename="LightRain.png" dithering="none" />
+    <bitmap id="HeavyRain" filename="HeavyRain.png" dithering="none" />
+    <bitmap id="Thunderstorm" filename="Thunderstorm.png" dithering="none" />
+    <bitmap id="Snow" filename="Snow.png" dithering="none" />
+    <bitmap id="Wind" filename="Wind.png" dithering="none" />
+    <bitmap id="Fog" filename="Fog.png" dithering="none" />
+    <bitmap id="Cloudy" filename="Cloudy.png" dithering="none" />
+     <bitmap id="Extreme" filename="Extreme.png" dithering="none" />
+
+
+    
+</drawables>
+

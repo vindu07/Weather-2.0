@@ -1,0 +1,64 @@
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Background.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; @symbol_usingAlias = [Ui,1,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Background.mc"; @line = 3; @symbol_classdef = [Sky,3,6,9]; @symbol_extends<0> = [Ui,3,18,20]; @symbol_extends<1> = [Drawable,3,21,29]; ]
+class Sky extends Ui.Drawable {
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Background.mc"; @line = 3; ]
+    <init> {
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Background.mc"; @line = 3; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Background.mc"; @line = 5; @symbol_functiondef = [initialize,5,13,23]; ]
+    function initialize() as Void {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Background_mc_5_25_7_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Background.mc" 6 8 ]
+        symbol [ Drawable %tmp.2 6 8 16 ];
+        %tmp.2 = getv ? :Drawable;
+        symbol [ initialize %tmp.3 6 17 27 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        %tmp.4 = newd 1;
+        %tmp.6 = const :identifier;
+        symbol [ identifier %tmp.6 6 30 40 const ];
+        %tmp.7 = "Sky";
+        %tmp.8 = dup %tmp.4;
+        %tmp.9 = aputv %tmp.8 %tmp.6 %tmp.7;
+        invoke %tmp.2 %tmp.3(%tmp.9);
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Background_mc_5_25_7_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Background.mc"; @line = 9; @symbol_functiondef = [draw,9,13,17]; @symbol_param<0> = [dc,9,18,20]; ]
+    function draw(dc) {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Background_mc_9_21_12_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Background.mc" 10 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Background_mc_9_21_12_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Background_mc_9_21_12_4_stop" ]
+        %sky.1 = local;
+        symbol [ sky %sky.1 10 12 15 ];
+        symbol [ Ui %tmp.1 10 18 20 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.2 10 21 33 ];
+        %tmp.2 = getv function %tmp.1 :loadResource;
+        symbol [ Rez %tmp.4 10 34 37 ];
+        %tmp.4 = getv ? :Rez;
+        symbol [ Drawables %tmp.5 10 38 47 ];
+        %tmp.5 = getv %tmp.4 :Drawables;
+        symbol [ BlueSky %tmp.6 10 48 55 ];
+        %tmp.6 = getv %tmp.5 :BlueSky;
+        %tmp.7 = invoke %tmp.1 %tmp.2(%tmp.6);
+        lputv %sky.1 %tmp.7;
+        symbol [ sky %sky.1 10 12 15 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Background.mc" 11 8 ]
+        %tmp.8 = lgetv %dc;
+        symbol [ dc %tmp.8 11 8 10 ];
+        symbol [ drawBitmap %tmp.9 11 11 21 ];
+        %tmp.9 = getv function %tmp.8 :drawBitmap;
+        %tmp.10 = -10;
+        %tmp.11 = -10;
+        %tmp.12 = lgetv %sky.1;
+        symbol [ sky %tmp.12 11 32 35 ];
+        invoke %tmp.8 %tmp.9(%tmp.10, %tmp.11, %tmp.12);
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Background_mc_9_21_12_4_stop:
+    }
+}
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Background.mc"; @line = 1; ]
+<init> {
+}

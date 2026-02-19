@@ -1,0 +1,352 @@
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; @symbol_usingAlias = [Ui,1,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Lang,2,13,17]; ]
+using Toybox.Lang;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [Graphics,3,13,21]; @symbol_usingAlias = [Gfx,3,25,28]; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [Application,4,14,25]; ]
+import Toybox.Application;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [Math,5,14,18]; ]
+import Toybox.Math;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 8; @symbol_classdef = [IconIndicator,8,6,19]; @symbol_extends<0> = [Ui,8,28,30]; @symbol_extends<1> = [Drawable,8,31,39]; ]
+class IconIndicator extends Ui.Drawable {
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 8; ]
+    <init> {
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 16 16 ]
+        symbol [ Gfx %tmp.1 16 25 28 ];
+        %tmp.1 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.2 16 29 40 ];
+        %tmp.2 = getv %tmp.1 :COLOR_WHITE;
+        putv self :mcolor %tmp.2;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 17 16 ]
+        symbol [ WatchUi %tmp.4 17 30 37 ];
+        %tmp.4 = getv ? :WatchUi;
+        symbol [ loadResource %tmp.5 17 38 50 ];
+        %tmp.5 = getv function %tmp.4 :loadResource;
+        symbol [ Rez %tmp.7 17 51 54 ];
+        %tmp.7 = getv ? :Rez;
+        symbol [ Fonts %tmp.8 17 55 60 ];
+        %tmp.8 = getv %tmp.7 :Fonts;
+        symbol [ WEATHER_ICONS_20 %tmp.9 17 61 77 ];
+        %tmp.9 = getv %tmp.8 :WEATHER_ICONS_20;
+        %tmp.10 = invoke %tmp.4 %tmp.5(%tmp.9);
+        putv self :weatherFont %tmp.10;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 18 16 ]
+        symbol [ WatchUi %tmp.12 18 27 34 ];
+        %tmp.12 = getv ? :WatchUi;
+        symbol [ loadResource %tmp.13 18 35 47 ];
+        %tmp.13 = getv function %tmp.12 :loadResource;
+        symbol [ Rez %tmp.15 18 48 51 ];
+        %tmp.15 = getv ? :Rez;
+        symbol [ Fonts %tmp.16 18 52 57 ];
+        %tmp.16 = getv %tmp.15 :Fonts;
+        symbol [ MOON_ICONS_20 %tmp.17 18 58 71 ];
+        %tmp.17 = getv %tmp.16 :MOON_ICONS_20;
+        %tmp.18 = invoke %tmp.12 %tmp.13(%tmp.17);
+        putv self :moonFont %tmp.18;
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 8; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 10; @position = 16; @symbol_vardef = [mx,10,16,18]; ]
+    private
+    var mx;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 11; @position = 16; @symbol_vardef = [my,11,16,18]; ]
+    private
+    var my;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 12; @position = 16; @symbol_vardef = [mtype,12,16,21]; ]
+    private
+    var mtype;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 14; @position = 16; @symbol_vardef = [showIcons,14,16,25]; @symbol_type<0> = [Lang,14,29,33]; @symbol_type<1> = [Boolean,14,34,41]; ]
+    private
+    var showIcons as Lang.Boolean = false;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 16; @position = 16; @symbol_vardef = [mcolor,16,16,22]; ]
+    private
+    var mcolor;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 17; @position = 16; @symbol_vardef = [weatherFont,17,16,27]; ]
+    private
+    var weatherFont;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 18; @position = 16; @symbol_vardef = [moonFont,18,16,24]; ]
+    private
+    var moonFont;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 20; @symbol_enumdef = [iconType,20,9,17]; ]
+    static
+    enum iconType {
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 21; @position = 8; @symbol_enumdec = [ICON_WEATHER,21,8,20]; ]
+        ICON_WEATHER,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 22; @position = 8; @symbol_enumdec = [ICON_MOONPHASE,22,8,22]; ]
+        ICON_MOONPHASE,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 23; @position = 8; @symbol_enumdec = [ICON_GPS,23,8,16]; ]
+        ICON_GPS,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 24; @position = 8; @symbol_enumdec = [ICON_BLE_SILENT,24,8,23]; ]
+        ICON_BLE_SILENT,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 25; @position = 8; @symbol_enumdec = [ICON_BLE_WIFI,25,8,21]; ]
+        ICON_BLE_WIFI,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 26; @position = 8; @symbol_enumdec = [ICON_PHONE,26,8,18]; ]
+        ICON_PHONE
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 29; @symbol_functiondef = [initialize,29,13,23]; @symbol_param<0> = [params,29,24,30]; @symbol_param<0>_type<0> = [Lang,29,34,38]; @symbol_param<0>_type<1> = [Dictionary,29,39,49]; ]
+    function initialize(params as Lang.Dictionary) as Void {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_29_50_36_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 30 8 ]
+        symbol [ Drawable %tmp.2 30 8 16 ];
+        %tmp.2 = getv ? :Drawable;
+        symbol [ initialize %tmp.3 30 17 27 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        %tmp.4 = lgetv %params;
+        symbol [ params %tmp.4 30 28 34 ];
+        invoke %tmp.2 %tmp.3(%tmp.4);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 31 8 ]
+        %tmp.5 = self;
+        symbol [ getAppSettings %tmp.6 31 8 22 ];
+        %tmp.6 = getv function %tmp.5 :getAppSettings;
+        invoke %tmp.5 %tmp.6();
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 33 8 ]
+        %tmp.7 = lgetv %params;
+        symbol [ params %tmp.7 33 13 19 ];
+        %tmp.9 = const :x;
+        symbol [ x %tmp.9 33 21 22 const ];
+        %tmp.10 = agetv %tmp.7 %tmp.9;
+        %tmp.11 = as %tmp.10 Lang.Number;
+        symbol [ Lang %tmp.11 33 27 31 ];
+        symbol [ Number %tmp.11 33 32 38 ];
+        symbol [ mx ? 33 8 10 ];
+        putv self :mx %tmp.11;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 34 8 ]
+        %tmp.12 = lgetv %params;
+        symbol [ params %tmp.12 34 13 19 ];
+        %tmp.14 = const :y;
+        symbol [ y %tmp.14 34 21 22 const ];
+        %tmp.15 = agetv %tmp.12 %tmp.14;
+        %tmp.16 = as %tmp.15 Lang.Number;
+        symbol [ Lang %tmp.16 34 27 31 ];
+        symbol [ Number %tmp.16 34 32 38 ];
+        symbol [ my ? 34 8 10 ];
+        putv self :my %tmp.16;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 35 8 ]
+        %tmp.17 = lgetv %params;
+        symbol [ params %tmp.17 35 16 22 ];
+        %tmp.19 = const :type;
+        symbol [ type %tmp.19 35 24 28 const ];
+        %tmp.20 = agetv %tmp.17 %tmp.19;
+        %tmp.21 = as %tmp.20 iconType;
+        symbol [ iconType %tmp.21 35 33 41 ];
+        symbol [ mtype ? 35 8 13 ];
+        putv self :mtype %tmp.21;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_29_50_36_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 38; @symbol_functiondef = [draw,38,13,17]; @symbol_param<0> = [dc,38,18,20]; @symbol_param<0>_type<0> = [Gfx,38,24,27]; @symbol_param<0>_type<1> = [Dc,38,28,30]; ]
+    function draw(dc as Gfx.Dc) as Void {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_38_39_57_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 40 8 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_40_8_42_8_if_stmt:
+        symbol [ SETTINGSCHANGED %tmp.2 40 11 26 ];
+        %tmp.2 = getv ? :SETTINGSCHANGED;
+        bf %tmp.2 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_40_8_42_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_40_8_42_8_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_40_27_42_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 41 12 ]
+        %tmp.3 = self;
+        symbol [ getAppSettings %tmp.4 41 12 26 ];
+        %tmp.4 = getv function %tmp.3 :getAppSettings;
+        invoke %tmp.3 %tmp.4();
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_40_27_42_8_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_40_8_42_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_40_8_42_8_if_end:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 44 8 ]
+        %tmp.5 = lgetv %dc;
+        symbol [ dc %tmp.5 44 8 10 ];
+        symbol [ setColor %tmp.6 44 11 19 ];
+        %tmp.6 = getv function %tmp.5 :setColor;
+        symbol [ mcolor %tmp.8 44 20 26 ];
+        %tmp.8 = getv ? :mcolor;
+        symbol [ Graphics %tmp.10 44 28 36 ];
+        %tmp.10 = getv ? :Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.11 44 37 54 ];
+        %tmp.11 = getv %tmp.10 :COLOR_TRANSPARENT;
+        invoke %tmp.5 %tmp.6(%tmp.8, %tmp.11);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 46 8 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_46_8_55_8_if_stmt:
+        symbol [ showIcons %tmp.13 46 11 20 ];
+        %tmp.13 = getv ? :showIcons;
+        bf %tmp.13 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_46_8_55_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_46_8_55_8_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_46_21_55_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 47 12 ]
+        symbol [ mtype %tmp.15 47 19 24 ];
+        %tmp.15 = getv ? :mtype;
+        push %tmp.15;
+        switch %tmp.15 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_47_12_54_12_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_47_12_54_12_switchStmtBegin:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 48 16 ]
+        %tmp.16 = dup %tmp.15;
+        symbol [ ICON_WEATHER %tmp.18 48 21 33 ];
+        %tmp.18 = getv ? :ICON_WEATHER;
+        %tmp.19 = getv function %tmp.16 :equals;
+        %tmp.20 = invoke %tmp.16 %tmp.19 (%tmp.18);
+        bt %tmp.20 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_48_16_50_25_switchCase;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 51 16 ]
+        %tmp.21 = dup %tmp.15;
+        symbol [ ICON_MOONPHASE %tmp.23 51 21 35 ];
+        %tmp.23 = getv ? :ICON_MOONPHASE;
+        %tmp.24 = getv function %tmp.21 :equals;
+        %tmp.25 = invoke %tmp.21 %tmp.24 (%tmp.23);
+        bt %tmp.25 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_51_16_53_25_switchCase;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_47_12_54_12_switchStmtDefault:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_47_12_54_12_defaultCodeBegin;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_48_16_50_25_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 49 20 ]
+        %tmp.26 = self;
+        symbol [ drawWeatherIcon %tmp.27 49 20 35 ];
+        %tmp.27 = getv function %tmp.26 :drawWeatherIcon;
+        %tmp.28 = lgetv %dc;
+        symbol [ dc %tmp.28 49 36 38 ];
+        invoke %tmp.26 %tmp.27(%tmp.28);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 50 20 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_47_12_54_12_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_51_16_53_25_switchCase:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 52 20 ]
+        %tmp.29 = self;
+        symbol [ drawMoonIcon %tmp.30 52 20 32 ];
+        %tmp.30 = getv function %tmp.29 :drawMoonIcon;
+        %tmp.31 = lgetv %dc;
+        symbol [ dc %tmp.31 52 33 35 ];
+        invoke %tmp.29 %tmp.30(%tmp.31);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 53 20 ]
+        goto break @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_47_12_54_12_switchStmtEnd;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_47_12_54_12_defaultCodeBegin:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_47_12_54_12_switchStmtEnd:
+        pop;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_46_21_55_8_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_46_8_55_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_46_8_55_8_if_end:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_38_39_57_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 58; @symbol_functiondef = [drawWeatherIcon,58,13,28]; @symbol_param<0> = [dc,58,29,31]; @symbol_param<0>_type<0> = [Gfx,58,35,38]; @symbol_param<0>_type<1> = [Dc,58,39,41]; ]
+    function drawWeatherIcon(dc as Gfx.Dc) {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_58_42_66_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 60 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_58_42_66_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_58_42_66_4_stop" ]
+        %Condition.1 = local;
+        symbol [ Condition %Condition.1 60 12 21 ];
+        symbol [ WeatherMod %tmp.2 60 24 34 ];
+        %tmp.2 = getv ? :WeatherMod;
+        symbol [ getCondition %tmp.3 60 35 47 ];
+        %tmp.3 = getv function %tmp.2 :getCondition;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %Condition.1 %tmp.4;
+        symbol [ Condition %Condition.1 60 12 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 62 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_58_42_66_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_58_42_66_4_stop" ]
+        %iconChar.2 = local;
+        symbol [ iconChar %iconChar.2 62 12 20 ];
+        symbol [ UtilsMod %tmp.6 62 23 31 ];
+        %tmp.6 = getv ? :UtilsMod;
+        symbol [ toAsciiString %tmp.7 62 32 45 ];
+        %tmp.7 = getv function %tmp.6 :toAsciiString;
+        symbol [ UtilsMod %tmp.9 62 46 54 ];
+        %tmp.9 = getv ? :UtilsMod;
+        symbol [ toAsciiCode %tmp.10 62 55 66 ];
+        %tmp.10 = getv function %tmp.9 :toAsciiCode;
+        %tmp.11 = "A";
+        %tmp.12 = invoke %tmp.9 %tmp.10(%tmp.11);
+        %tmp.13 = lgetv %Condition.1;
+        symbol [ Condition %tmp.13 62 74 83 ];
+        %tmp.14 = add %tmp.12 %tmp.13;
+        %tmp.15 = invoke %tmp.6 %tmp.7(%tmp.14);
+        lputv %iconChar.2 %tmp.15;
+        symbol [ iconChar %iconChar.2 62 12 20 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 65 8 ]
+        %tmp.16 = lgetv %dc;
+        symbol [ dc %tmp.16 65 8 10 ];
+        symbol [ drawText %tmp.17 65 11 19 ];
+        %tmp.17 = getv function %tmp.16 :drawText;
+        symbol [ mx %tmp.19 65 20 22 ];
+        %tmp.19 = getv ? :mx;
+        symbol [ my %tmp.21 65 24 26 ];
+        %tmp.21 = getv ? :my;
+        symbol [ weatherFont %tmp.23 65 28 39 ];
+        %tmp.23 = getv ? :weatherFont;
+        %tmp.24 = lgetv %iconChar.2;
+        symbol [ iconChar %tmp.24 65 41 49 ];
+        symbol [ Graphics %tmp.26 65 51 59 ];
+        %tmp.26 = getv ? :Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.27 65 60 79 ];
+        %tmp.27 = getv %tmp.26 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.16 %tmp.17(%tmp.19, %tmp.21, %tmp.23, %tmp.24, %tmp.27);
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_58_42_66_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 67; @symbol_functiondef = [drawMoonIcon,67,13,25]; @symbol_param<0> = [dc,67,26,28]; @symbol_param<0>_type<0> = [Gfx,67,32,35]; @symbol_param<0>_type<1> = [Dc,67,36,38]; ]
+    function drawMoonIcon(dc as Gfx.Dc) {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_67_39_71_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 69 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_67_39_71_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_67_39_71_4_stop" ]
+        %phase.1 = local;
+        symbol [ phase %phase.1 69 12 17 ];
+        symbol [ Astronomy %tmp.2 69 20 29 ];
+        %tmp.2 = getv ? :Astronomy;
+        symbol [ MoonPhase %tmp.3 69 30 39 ];
+        %tmp.3 = getv %tmp.2 :MoonPhase;
+        %tmp.4 = as %tmp.3 Lang.Number;
+        symbol [ Lang %tmp.4 69 43 47 ];
+        symbol [ Number %tmp.4 69 48 54 ];
+        lputv %phase.1 %tmp.4;
+        symbol [ phase %phase.1 69 12 17 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 70 8 ]
+        %tmp.5 = lgetv %dc;
+        symbol [ dc %tmp.5 70 8 10 ];
+        symbol [ drawText %tmp.6 70 11 19 ];
+        %tmp.6 = getv function %tmp.5 :drawText;
+        symbol [ mx %tmp.8 70 20 22 ];
+        %tmp.8 = getv ? :mx;
+        symbol [ my %tmp.10 70 24 26 ];
+        %tmp.10 = getv ? :my;
+        symbol [ moonFont %tmp.12 70 28 36 ];
+        %tmp.12 = getv ? :moonFont;
+        symbol [ UtilsMod %tmp.14 70 38 46 ];
+        %tmp.14 = getv ? :UtilsMod;
+        symbol [ toAsciiString %tmp.15 70 47 60 ];
+        %tmp.15 = getv function %tmp.14 :toAsciiString;
+        %tmp.16 = 65;
+        %tmp.17 = lgetv %phase.1;
+        symbol [ phase %tmp.17 70 67 72 ];
+        %tmp.18 = add %tmp.16 %tmp.17;
+        %tmp.19 = invoke %tmp.14 %tmp.15(%tmp.18);
+        symbol [ Gfx %tmp.20 70 75 78 ];
+        %tmp.20 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.21 70 79 98 ];
+        %tmp.21 = getv %tmp.20 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.5 %tmp.6(%tmp.8, %tmp.10, %tmp.12, %tmp.19, %tmp.21);
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_67_39_71_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 74; @symbol_functiondef = [getAppSettings,74,13,27]; ]
+    function getAppSettings() as Void {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_74_37_78_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 76 8 ]
+        symbol [ Properties %tmp.2 76 17 27 ];
+        %tmp.2 = getv ? :Properties;
+        symbol [ getValue %tmp.3 76 28 36 ];
+        %tmp.3 = getv function %tmp.2 :getValue;
+        %tmp.4 = "IconColor";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        symbol [ mcolor ? 76 8 14 ];
+        putv self :mcolor %tmp.5;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc" 77 8 ]
+        symbol [ Properties %tmp.7 77 20 30 ];
+        %tmp.7 = getv ? :Properties;
+        symbol [ getValue %tmp.8 77 31 39 ];
+        %tmp.8 = getv function %tmp.7 :getValue;
+        %tmp.9 = "ShowIcons";
+        %tmp.10 = invoke %tmp.7 %tmp.8(%tmp.9);
+        %tmp.11 = as %tmp.10 Lang.Boolean;
+        symbol [ Lang %tmp.11 77 56 60 ];
+        symbol [ Boolean %tmp.11 77 61 68 ];
+        symbol [ showIcons ? 77 8 17 ];
+        putv self :showIcons %tmp.11;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_info_fields_IconIndicator_mc_74_37_78_4_stop:
+    }
+}
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\info_fields\IconIndicator.mc"; @line = 1; ]
+<init> {
+}

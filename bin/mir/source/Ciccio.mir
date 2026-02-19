@@ -1,0 +1,72 @@
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\Ciccio.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [WatchUi,1,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\Ciccio.mc"; @line = 3; @symbol_classdef = [Ciccione,3,6,14]; @symbol_extends<0> = [WatchUi,3,23,30]; @symbol_extends<1> = [Drawable,3,31,39]; ]
+class Ciccione extends WatchUi.Drawable {
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\Ciccio.mc"; @line = 3; ]
+    <init> {
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\Ciccio.mc"; @line = 3; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\Ciccio.mc"; @line = 5; @symbol_functiondef = [initialize,5,13,23]; ]
+    function initialize() as Void {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_Ciccio_mc_5_25_12_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\Ciccio.mc" 7 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_Ciccio_mc_5_25_12_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_Ciccio_mc_5_25_12_4_stop" ]
+        %optDictionary.1 = local;
+        symbol [ optDictionary %optDictionary.1 7 12 25 ];
+        %tmp.1 = newd 1;
+        %tmp.3 = const :identifier;
+        symbol [ identifier %tmp.3 8 13 23 const ];
+        %tmp.4 = "Ciccio";
+        %tmp.5 = dup %tmp.1;
+        %tmp.6 = aputv %tmp.5 %tmp.3 %tmp.4;
+        lputv %optDictionary.1 %tmp.6;
+        symbol [ optDictionary %optDictionary.1 7 12 25 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\Ciccio.mc" 11 8 ]
+        symbol [ Drawable %tmp.8 11 8 16 ];
+        %tmp.8 = getv ? :Drawable;
+        symbol [ initialize %tmp.9 11 17 27 ];
+        %tmp.9 = getv function %tmp.8 :initialize;
+        %tmp.10 = lgetv %optDictionary.1;
+        symbol [ optDictionary %tmp.10 11 28 41 ];
+        invoke %tmp.8 %tmp.9(%tmp.10);
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_Ciccio_mc_5_25_12_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\Ciccio.mc"; @line = 14; @symbol_functiondef = [draw,14,13,17]; @symbol_param<0> = [dc,14,18,20]; ]
+    function draw(dc) {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_Ciccio_mc_14_21_17_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\Ciccio.mc" 15 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_Ciccio_mc_14_21_17_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_Ciccio_mc_14_21_17_4_stop" ]
+        %bitmap.1 = local;
+        symbol [ bitmap %bitmap.1 15 12 18 ];
+        symbol [ WatchUi %tmp.1 15 21 28 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.2 15 29 41 ];
+        %tmp.2 = getv function %tmp.1 :loadResource;
+        symbol [ Rez %tmp.4 15 42 45 ];
+        %tmp.4 = getv ? :Rez;
+        symbol [ Drawables %tmp.5 15 46 55 ];
+        %tmp.5 = getv %tmp.4 :Drawables;
+        symbol [ MountainBackground %tmp.6 15 56 74 ];
+        %tmp.6 = getv %tmp.5 :MountainBackground;
+        %tmp.7 = invoke %tmp.1 %tmp.2(%tmp.6);
+        lputv %bitmap.1 %tmp.7;
+        symbol [ bitmap %bitmap.1 15 12 18 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\Ciccio.mc" 16 8 ]
+        %tmp.8 = lgetv %dc;
+        symbol [ dc %tmp.8 16 8 10 ];
+        symbol [ drawBitmap %tmp.9 16 11 21 ];
+        %tmp.9 = getv function %tmp.8 :drawBitmap;
+        %tmp.10 = -10;
+        %tmp.11 = 0;
+        %tmp.12 = lgetv %bitmap.1;
+        symbol [ bitmap %tmp.12 16 30 36 ];
+        invoke %tmp.8 %tmp.9(%tmp.10, %tmp.11, %tmp.12);
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_Ciccio_mc_14_21_17_4_stop:
+    }
+}
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\Ciccio.mc"; @line = 1; ]
+<init> {
+}

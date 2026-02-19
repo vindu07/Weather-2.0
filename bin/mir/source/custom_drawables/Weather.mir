@@ -1,0 +1,78 @@
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Weather.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; @symbol_usingAlias = [Ui,1,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Weather.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Graphics,2,13,21]; @symbol_usingAlias = [Gfx,2,25,28]; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Weather.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [Weather,3,13,20]; @symbol_usingAlias = [Wtr,3,24,27]; ]
+using Toybox.Weather as :Wtr;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Weather.mc"; @line = 5; @symbol_classdef = [Weather,5,6,13]; @symbol_extends<0> = [Ui,5,22,24]; @symbol_extends<1> = [Drawable,5,25,33]; ]
+class Weather extends Ui.Drawable {
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Weather.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Weather.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Weather.mc"; @line = 7; @symbol_functiondef = [initialize,7,13,23]; @symbol_param<0> = [params,7,24,30]; ]
+    function initialize(params) as Void {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Weather_mc_7_31_9_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Weather.mc" 8 8 ]
+        symbol [ Drawable %tmp.2 8 8 16 ];
+        %tmp.2 = getv ? :Drawable;
+        symbol [ initialize %tmp.3 8 17 27 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        %tmp.4 = lgetv %params;
+        symbol [ params %tmp.4 8 28 34 ];
+        invoke %tmp.2 %tmp.3(%tmp.4);
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Weather_mc_7_31_9_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Weather.mc"; @line = 11; @symbol_functiondef = [draw,11,20,24]; @symbol_param<0> = [dc,11,25,27]; @symbol_param<0>_type<0> = [Gfx,11,32,35]; @symbol_param<0>_type<1> = [Dc,11,36,38]; ]
+    public
+    function draw(dc as Gfx.Dc) {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Weather_mc_11_39_16_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Weather.mc" 12 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Weather_mc_11_39_16_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Weather_mc_11_39_16_4_stop" ]
+        %cloud.1 = local;
+        symbol [ cloud %cloud.1 12 12 17 ];
+        symbol [ Ui %tmp.1 12 20 22 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.2 12 23 35 ];
+        %tmp.2 = getv function %tmp.1 :loadResource;
+        symbol [ Rez %tmp.4 12 36 39 ];
+        %tmp.4 = getv ? :Rez;
+        symbol [ Drawables %tmp.5 12 40 49 ];
+        %tmp.5 = getv %tmp.4 :Drawables;
+        symbol [ LittleCloud %tmp.6 12 50 61 ];
+        %tmp.6 = getv %tmp.5 :LittleCloud;
+        %tmp.7 = invoke %tmp.1 %tmp.2(%tmp.6);
+        %tmp.8 = as %tmp.7 Ui.BitmapResource;
+        symbol [ Ui %tmp.8 12 66 68 ];
+        symbol [ BitmapResource %tmp.8 12 69 83 ];
+        lputv %cloud.1 %tmp.8;
+        symbol [ cloud %cloud.1 12 12 17 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Weather.mc" 13 8 ]
+        %tmp.9 = lgetv %dc;
+        symbol [ dc %tmp.9 13 8 10 ];
+        symbol [ drawBitmap %tmp.10 13 11 21 ];
+        %tmp.10 = getv function %tmp.9 :drawBitmap;
+        %tmp.11 = 160;
+        %tmp.12 = 40;
+        %tmp.13 = lgetv %cloud.1;
+        symbol [ cloud %tmp.13 13 31 36 ];
+        invoke %tmp.9 %tmp.10(%tmp.11, %tmp.12, %tmp.13);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Weather.mc" 14 8 ]
+        %tmp.14 = lgetv %dc;
+        symbol [ dc %tmp.14 14 8 10 ];
+        symbol [ drawBitmap %tmp.15 14 11 21 ];
+        %tmp.15 = getv function %tmp.14 :drawBitmap;
+        %tmp.16 = 60;
+        %tmp.17 = 50;
+        %tmp.18 = lgetv %cloud.1;
+        symbol [ cloud %tmp.18 14 30 35 ];
+        invoke %tmp.14 %tmp.15(%tmp.16, %tmp.17, %tmp.18);
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Weather_mc_11_39_16_4_stop:
+    }
+}
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Weather.mc"; @line = 1; ]
+<init> {
+}

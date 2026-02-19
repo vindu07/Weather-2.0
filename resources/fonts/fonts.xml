@@ -1,0 +1,23 @@
+<resources>
+    <font
+        id = "FONT_40"
+        filename = "Hour_Squared_40.fnt"
+    />
+    <font
+        id = "FONT_12"
+        filename = "FONT12.fnt"
+    />
+    <font
+        id = "INFO_FIELD_FONT_12"
+        filename = "Info_Font_12.fnt"
+    />
+    <font
+        id = "WEATHER_ICONS_20"
+        filename = "WEATHER_ICONS_h20x54.fnt"
+    />
+    <font
+        id = "MOON_ICONS_20"
+        filename = "MOON_ICONS_h20x8.fnt"
+    />
+
+</resources>

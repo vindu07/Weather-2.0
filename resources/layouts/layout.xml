@@ -1,0 +1,120 @@
+<layout id="WatchFace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+    
+<!--BACKGROUND-->
+
+        <drawable id="Sky" class="Sky">
+			<param name="height">120</param>
+		</drawable>
+        <drawable id="SunOrMoon" class="SunOrMoon">
+			<param name="xCenter">130</param>
+            <param name="yCenter">100</param>
+			<param name="radius">80</param>
+		</drawable>
+		<drawable id="CustomWeather" class="CustomWeather">
+			
+		</drawable>
+        <drawable id="Landscape" class="Landscape">
+			<param name="x">-10</param>
+			<param name="y">-20</param>
+		</drawable>
+        
+
+
+<!--TIME-->
+
+        <drawable id="TimeDisplay" class="TimeDisplay">
+			<param name="x">130</param>
+            <param name="y">130</param>
+		</drawable>
+		<drawable id="DateDisplay" class="DateDisplay">
+			<param name="x">130</param>
+            <param name="y">162</param>
+		</drawable>
+
+
+		
+<!--DATA FIELDS-->
+
+		<drawable id="FieldLayout" class="FieldLayout">
+			<param name="y">200</param>
+		</drawable>
+		
+		<drawable id="DataField1" class="DataFields">
+			<param name="x">60</param>
+			<param name="y">195</param>
+			<param name="width">40</param>
+			<param name="height">40</param>
+			<param name="roundRadius">4</param>
+			<param name="number">1</param>
+		</drawable>
+		<drawable id="DataField2" class="DataFields">
+			<param name="x">110</param>
+			<param name="y">195</param>
+			<param name="width">40</param>
+			<param name="height">40</param>
+			<param name="roundRadius">4</param>
+			<param name="number">2</param>
+		</drawable>
+		<drawable id="DataField3" class="DataFields">
+			<param name="x">160</param>
+			<param name="y">195</param>
+			<param name="width">40</param>
+			<param name="height">40</param>
+			<param name="roundRadius">4</param>
+			<param name="number">3</param>
+		</drawable>
+		
+		
+		<drawable id="InfoField1" class="InfoFields">
+			<param name="x">5</param>
+			<param name="y">119</param>
+			<param name="width">40</param>
+			<param name="height">18</param>
+			<param name="roundRadius">4</param>
+			<param name="number">1</param>
+		</drawable>
+		<drawable id="InfoField2" class="InfoFields">
+			<param name="x">5</param>
+			<param name="y">140</param>
+			<param name="width">40</param>
+			<param name="height">18</param>
+			<param name="roundRadius">4</param>
+			<param name="number">2</param>
+		</drawable>
+		<drawable id="InfoField3" class="InfoFields">
+			<param name="x">215</param>
+			<param name="y">119</param>
+			<param name="width">40</param>
+			<param name="height">18</param>
+			<param name="roundRadius">4</param>
+			<param name="number">3</param>
+		</drawable>
+		<drawable id="InfoField4" class="InfoFields">
+			<param name="x">215</param>
+			<param name="y">140</param>
+			<param name="width">40</param>
+			<param name="height">18</param>
+			<param name="roundRadius">4</param>
+			<param name="number">4</param>
+		</drawable>
+
+		<drawable id="BatteryIndicator" class="BatteryIndicator">
+			<param name="x">115</param>
+			<param name="y">245</param>
+			<param name="width">28</param>
+			<param name="height">14</param>
+		</drawable>
+
+		<drawable id="WeatherIndicator" class="IconIndicator">
+			<param name="x">35</param>
+			<param name="y">166</param>
+			<param name="type">0</param>
+		</drawable>
+		<drawable id="MoonIndicator" class="IconIndicator">
+			<param name="x">220</param>
+			<param name="y">166</param>
+			<param name="type">1</param>
+		</drawable>
+
+
+</layout>

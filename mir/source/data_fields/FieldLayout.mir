@@ -1,0 +1,215 @@
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; @symbol_usingAlias = [Ui,1,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Lang,2,13,17]; ]
+using Toybox.Lang;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [Graphics,3,13,21]; @symbol_usingAlias = [Gfx,3,25,28]; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [Application,4,14,25]; ]
+import Toybox.Application;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc"; @line = 7; @symbol_classdef = [FieldLayout,7,6,17]; @symbol_extends<0> = [Ui,7,26,28]; @symbol_extends<1> = [Drawable,7,29,37]; ]
+class FieldLayout extends Ui.Drawable {
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc"; @line = 7; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc"; @line = 9; @position = 16; @symbol_vardef = [showFields,9,16,26]; @symbol_type<0> = [Lang,9,30,34]; @symbol_type<1> = [Boolean,9,35,42]; ]
+    private
+    var showFields as Lang.Boolean = false;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc"; @line = 11; @position = 16; @symbol_vardef = [my,11,16,18]; ]
+    private
+    var my;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc"; @line = 12; @position = 16; @symbol_vardef = [mcolor,12,16,22]; ]
+    private
+    var mcolor;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc"; @line = 14; @symbol_functiondef = [initialize,14,13,23]; @symbol_param<0> = [params,14,24,30]; @symbol_param<0>_type<0> = [Lang,14,34,38]; @symbol_param<0>_type<1> = [Dictionary,14,39,49]; ]
+    function initialize(params as Lang.Dictionary) as Void {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_FieldLayout_mc_14_50_20_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc" 15 8 ]
+        symbol [ Drawable %tmp.2 15 8 16 ];
+        %tmp.2 = getv ? :Drawable;
+        symbol [ initialize %tmp.3 15 17 27 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        %tmp.4 = lgetv %params;
+        symbol [ params %tmp.4 15 28 34 ];
+        invoke %tmp.2 %tmp.3(%tmp.4);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc" 16 8 ]
+        %tmp.5 = self;
+        symbol [ getAppSettings %tmp.6 16 8 22 ];
+        %tmp.6 = getv function %tmp.5 :getAppSettings;
+        invoke %tmp.5 %tmp.6();
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc" 18 8 ]
+        %tmp.7 = lgetv %params;
+        symbol [ params %tmp.7 18 13 19 ];
+        %tmp.9 = const :y;
+        symbol [ y %tmp.9 18 21 22 const ];
+        %tmp.10 = agetv %tmp.7 %tmp.9;
+        %tmp.11 = as %tmp.10 Lang.Number;
+        symbol [ Lang %tmp.11 18 27 31 ];
+        symbol [ Number %tmp.11 18 32 38 ];
+        symbol [ my ? 18 8 10 ];
+        putv self :my %tmp.11;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_FieldLayout_mc_14_50_20_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc"; @line = 22; @symbol_functiondef = [draw,22,13,17]; @symbol_param<0> = [dc,22,18,20]; @symbol_param<0>_type<0> = [Gfx,22,24,27]; @symbol_param<0>_type<1> = [Dc,22,28,30]; ]
+    function draw(dc as Gfx.Dc) as Void {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_FieldLayout_mc_22_39_43_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc" 24 8 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_FieldLayout_mc_24_8_26_8_if_stmt:
+        symbol [ SETTINGSCHANGED %tmp.2 24 11 26 ];
+        %tmp.2 = getv ? :SETTINGSCHANGED;
+        bf %tmp.2 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_FieldLayout_mc_24_8_26_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_FieldLayout_mc_24_8_26_8_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_FieldLayout_mc_24_27_26_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc" 25 12 ]
+        %tmp.3 = self;
+        symbol [ getAppSettings %tmp.4 25 12 26 ];
+        %tmp.4 = getv function %tmp.3 :getAppSettings;
+        invoke %tmp.3 %tmp.4();
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_FieldLayout_mc_24_27_26_8_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_FieldLayout_mc_24_8_26_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_FieldLayout_mc_24_8_26_8_if_end:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc" 28 8 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_FieldLayout_mc_28_8_41_8_if_stmt:
+        symbol [ showFields %tmp.6 28 11 21 ];
+        %tmp.6 = getv ? :showFields;
+        bf %tmp.6 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_FieldLayout_mc_28_8_41_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_FieldLayout_mc_28_8_41_8_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_FieldLayout_mc_28_22_41_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc" 29 12 ]
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 29 12 14 ];
+        symbol [ setColor %tmp.8 29 15 23 ];
+        %tmp.8 = getv function %tmp.7 :setColor;
+        symbol [ mcolor %tmp.10 29 24 30 ];
+        %tmp.10 = getv ? :mcolor;
+        symbol [ Gfx %tmp.11 29 32 35 ];
+        %tmp.11 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.12 29 36 53 ];
+        %tmp.12 = getv %tmp.11 :COLOR_TRANSPARENT;
+        invoke %tmp.7 %tmp.8(%tmp.10, %tmp.12);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc" 31 12 ]
+        %tmp.13 = lgetv %dc;
+        symbol [ dc %tmp.13 31 12 14 ];
+        symbol [ setPenWidth %tmp.14 31 15 26 ];
+        %tmp.14 = getv function %tmp.13 :setPenWidth;
+        %tmp.15 = 3;
+        invoke %tmp.13 %tmp.14(%tmp.15);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc" 32 12 ]
+        %tmp.16 = lgetv %dc;
+        symbol [ dc %tmp.16 32 12 14 ];
+        symbol [ drawLine %tmp.17 32 15 23 ];
+        %tmp.17 = getv function %tmp.16 :drawLine;
+        %tmp.18 = 0;
+        symbol [ my %tmp.20 32 27 29 ];
+        %tmp.20 = getv ? :my;
+        %tmp.21 = lgetv %dc;
+        symbol [ dc %tmp.21 32 31 33 ];
+        symbol [ getWidth %tmp.22 32 34 42 ];
+        %tmp.22 = getv function %tmp.21 :getWidth;
+        %tmp.23 = invoke %tmp.21 %tmp.22();
+        symbol [ my %tmp.25 32 46 48 ];
+        %tmp.25 = getv ? :my;
+        invoke %tmp.16 %tmp.17(%tmp.18, %tmp.20, %tmp.23, %tmp.25);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc" 34 12 ]
+        %tmp.26 = lgetv %dc;
+        symbol [ dc %tmp.26 34 12 14 ];
+        symbol [ setPenWidth %tmp.27 34 15 26 ];
+        %tmp.27 = getv function %tmp.26 :setPenWidth;
+        %tmp.28 = 2;
+        invoke %tmp.26 %tmp.27(%tmp.28);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc" 35 12 ]
+        %tmp.29 = lgetv %dc;
+        symbol [ dc %tmp.29 35 12 14 ];
+        symbol [ drawLine %tmp.30 35 15 23 ];
+        %tmp.30 = getv function %tmp.29 :drawLine;
+        %tmp.31 = 0;
+        symbol [ my %tmp.33 35 27 29 ];
+        %tmp.33 = getv ? :my;
+        %tmp.34 = 5;
+        %tmp.35 = add %tmp.33 %tmp.34;
+        %tmp.36 = lgetv %dc;
+        symbol [ dc %tmp.36 35 33 35 ];
+        symbol [ getWidth %tmp.37 35 36 44 ];
+        %tmp.37 = getv function %tmp.36 :getWidth;
+        %tmp.38 = invoke %tmp.36 %tmp.37();
+        symbol [ my %tmp.40 35 48 50 ];
+        %tmp.40 = getv ? :my;
+        %tmp.41 = 5;
+        %tmp.42 = add %tmp.40 %tmp.41;
+        invoke %tmp.29 %tmp.30(%tmp.31, %tmp.35, %tmp.38, %tmp.42);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc" 37 12 ]
+        %tmp.43 = lgetv %dc;
+        symbol [ dc %tmp.43 37 12 14 ];
+        symbol [ setColor %tmp.44 37 15 23 ];
+        %tmp.44 = getv function %tmp.43 :setColor;
+        symbol [ Gfx %tmp.45 37 24 27 ];
+        %tmp.45 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.46 37 28 39 ];
+        %tmp.46 = getv %tmp.45 :COLOR_BLACK;
+        symbol [ Gfx %tmp.47 37 41 44 ];
+        %tmp.47 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.48 37 45 62 ];
+        %tmp.48 = getv %tmp.47 :COLOR_TRANSPARENT;
+        invoke %tmp.43 %tmp.44(%tmp.46, %tmp.48);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc" 38 12 ]
+        %tmp.49 = lgetv %dc;
+        symbol [ dc %tmp.49 38 12 14 ];
+        symbol [ fillRectangle %tmp.50 38 15 28 ];
+        %tmp.50 = getv function %tmp.49 :fillRectangle;
+        %tmp.51 = 50;
+        symbol [ my %tmp.53 38 33 35 ];
+        %tmp.53 = getv ? :my;
+        %tmp.54 = 2;
+        %tmp.55 = sub %tmp.53 %tmp.54;
+        %tmp.56 = 260;
+        %tmp.57 = 50;
+        %tmp.58 = 2;
+        %tmp.59 = mul %tmp.57 %tmp.58;
+        %tmp.60 = sub %tmp.56 %tmp.59;
+        %tmp.61 = 9;
+        invoke %tmp.49 %tmp.50(%tmp.51, %tmp.55, %tmp.60, %tmp.61);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc" 40 12 ]
+        %tmp.62 = lgetv %dc;
+        symbol [ dc %tmp.62 40 12 14 ];
+        symbol [ setPenWidth %tmp.63 40 15 26 ];
+        %tmp.63 = getv function %tmp.62 :setPenWidth;
+        %tmp.64 = 1;
+        invoke %tmp.62 %tmp.63(%tmp.64);
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_FieldLayout_mc_28_22_41_8_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_FieldLayout_mc_28_8_41_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_FieldLayout_mc_28_8_41_8_if_end:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_FieldLayout_mc_22_39_43_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc"; @line = 46; @symbol_functiondef = [getAppSettings,46,13,27]; ]
+    function getAppSettings() as Void {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_FieldLayout_mc_46_37_51_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc" 48 8 ]
+        symbol [ Properties %tmp.2 48 17 27 ];
+        %tmp.2 = getv ? :Properties;
+        symbol [ getValue %tmp.3 48 28 36 ];
+        %tmp.3 = getv function %tmp.2 :getValue;
+        %tmp.4 = "FieldColor";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        symbol [ mcolor ? 48 8 14 ];
+        putv self :mcolor %tmp.5;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc" 50 8 ]
+        symbol [ Properties %tmp.7 50 21 31 ];
+        %tmp.7 = getv ? :Properties;
+        symbol [ getValue %tmp.8 50 32 40 ];
+        %tmp.8 = getv function %tmp.7 :getValue;
+        %tmp.9 = "ShowDataFields";
+        %tmp.10 = invoke %tmp.7 %tmp.8(%tmp.9);
+        %tmp.11 = as %tmp.10 Lang.Boolean;
+        symbol [ Lang %tmp.11 50 62 66 ];
+        symbol [ Boolean %tmp.11 50 67 74 ];
+        symbol [ showFields ? 50 8 18 ];
+        putv self :showFields %tmp.11;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_FieldLayout_mc_46_37_51_4_stop:
+    }
+}
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\data_fields\FieldLayout.mc"; @line = 1; ]
+<init> {
+}

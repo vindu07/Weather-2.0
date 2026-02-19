@@ -1,0 +1,134 @@
+<strings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+
+    <string id="AppName">Wetter 2.0</string>
+
+    <!--TITOLI GRUPPI-->
+
+    <string id="GeneralGroupTitle">Allgemeine Einstellungen</string>
+    <string id="BatteryIndicatorGroupTitle">Batterieanzeige</string>
+    <string id="ColorsGroupTitle">Farben</string>
+    <string id="DataFieldsGroupTitle">Datenfelder</string>
+    <string id="InfoFieldsGroupTitle">Infofelder</string>
+    <string id="FontsGroupTitle">Schriftarten</string>
+
+    <!--TITOLI IMPOSTAZIONI-->
+
+    <string id="DynamicSky">Dynamische Himmelsfarbe</string>
+    <string id="DynamicSun">Dynamische Sonnenposition</string>
+
+    <string id="TimeColorTitle">Uhrzeitfarbe</string>
+    <string id="FieldColorTitle">Feldfarbe</string>
+    <string id="IconColorTitle">Symbolfarbe</string>
+
+    <string id="TimeFontTitle">Uhrzeitschriftart</string>
+    <string id="DateFontTitle">Datumschriftart</string>
+    <string id="FieldFontTitle">Feldschriftart</string>
+
+    <string id="MilitaryFormatTitle">Militär-24-Stunden-Format</string>
+    <string id="RemoveZeroTitle">Null vor Stunden entfernen</string>
+    <string id="ShowIconsTitle">Symbole anzeigen</string>
+    <string id="ShowBatteryIconTitle">Batteriesymbol anzeigen</string>
+    <string id="ShowWeatherTitle">Wetter anzeigen</string>
+    <string id="ShowDataFieldsTitle">Datenfelder anzeigen</string>
+    <string id="ShowInfoFieldsTitle">Infofelder anzeigen</string>
+    <string id="EnergySavingTitle">Energiesparmodus</string>
+    <string id="LandscapeTypeTitle">Landschaft</string>
+
+    <string id="DataField1Title">Datenfeld 1</string>
+    <string id="DataField2Title">Datenfeld 2</string>
+    <string id="DataField3Title">Datenfeld 3</string>
+
+    <string id="InfoField1Title">Infofeld 1</string>
+    <string id="InfoField2Title">Infofeld 2</string>
+    <string id="InfoField3Title">Infofeld 3</string>
+    <string id="InfoField4Title">Infofeld 4</string>
+
+    <string id="DefaultPositionLatTitle">Standardbreitengrad</string>
+    <string id="DefaultPositionLonTitle">Standardlängengrad</string>
+
+    <string id="BatteryIndicatorFullColorTitle">Farbe volle Batterie</string>
+    <string id="BatteryIndicatorGoodColorTitle">Farbe gute Batterie</string>
+    <string id="BatteryIndicatorMedColorTitle">Farbe mittlere Batterie</string>
+    <string id="BatteryIndicatorLowColorTitle">Farbe niedrige Batterie</string>
+
+    <string id="BatteryIndicatorFullTitle">Wert volle Batterie</string>
+    <string id="BatteryIndicatorGoodTitle">Wert gute Batterie</string>
+    <string id="BatteryIndicatorMedTitle">Wert mittlere Batterie</string>
+    <string id="BatteryIndicatorLowTitle">Wert niedrige Batterie</string>
+    
+    <!--COLORI-->
+
+    <string id="ColorBlack">Schwarz</string>
+    <string id="ColorRed">Rot</string>
+    <string id="ColorYellow">Gelb</string>
+    <string id="ColorBlue">Blau</string>
+    <string id="ColorGreen">Grün</string>
+    <string id="ColorSkyBlue">Himmelblau</string>
+    <string id="ColorPurple">Lila</string>
+    <string id="ColorPink">Rosa</string>
+    <string id="ColorWhite">Weiß</string>
+    <string id="ColorDarkBlue">Dunkelblau</string>
+    <string id="ColorOrange">Orange</string>
+    <string id="ColorDarkGreen">Dunkelgrün</string>
+    <string id="ColorGray">Grau</string>
+    <string id="ColorMagenta">Magenta</string>
+    <string id="ColorCyan">Cyan</string>
+
+    <!--NOMI CAMPI-->
+
+    <string id="Heartrate">Herzfrequenz</string>
+    <string id="Temperature">Temperatur</string>
+    <string id="Altitude">Höhe</string>
+    <string id="Barometer">Druck</string>
+    <string id="Compass">Richtung</string>
+    <string id="Saturation">Sauerstoffsättigung</string>
+    <string id="RespirationRate">Atemfrequenz</string>
+    <string id="Steps">Schritte</string>
+    <string id="Distance">Entfernung</string>
+    <string id="FloorsClimbed">Stockwerke erklommen</string>
+    <string id="ActiveMinutes">Aktive Minuten</string>
+    <string id="ActiveCalories">Kalorien</string>
+    <string id="StressLevel">Stresslevel</string>
+    <string id="BodyBattery">Körperbatterie</string>
+    <string id="Battery">Gerätebatterie</string>
+    <string id="Vo2Max">VO2 Max</string>
+    <string id="RecoveryTime">Erholungszeit</string>
+    <string id="HrVariability">Herzfrequenzvariabilität</string>
+    <string id="Notifications">Benachrichtigungen</string>
+    <string id="Alarms">Alarme</string>
+    <string id="Sunrise">Sonnenaufgang</string>
+    <string id="Sunset">Sonnenuntergang</string>
+    <string id="Weather">Wetterbedingungen</string>
+    <string id="Humidity">Relative Luftfeuchtigkeit</string>
+    <string id="Moonphase">Aktuelle Mondphase</string>
+    <string id="NotifPhone">Benachrichtigungen und Telefon-Symbole</string>
+    <string id="Empty">Leer</string>
+
+    <!--PAESAGGI-->
+
+    <string id="LandscapeMountains">Berge</string>
+    <string id="LandscapeHills">Landschaft</string>
+    <string id="LandscapeBeach">Strand</string>
+    <string id="LandscapeLondon">London</string>
+    <string id="LandscapeParis">Paris</string>
+    <string id="LandscapeRome">Rom</string>
+    <string id="LandscapeVenice">Venedig</string>
+
+    <!--FONT-->
+
+    <string id="TimeFont1">Uhrzeitschriftart 1</string>
+    <string id="TimeFont2">Uhrzeitschriftart 2</string>
+    <string id="TimeFont3">Uhrzeitschriftart 3</string>
+    <string id="TimeFont4">Uhrzeitschriftart 4</string>
+
+    <string id="DateFont1">Datumschriftart 1</string>
+    <string id="DateFont2">Datumschriftart 2</string>
+    <string id="DateFont3">Datumschriftart 3</string>
+    <string id="DateFont4">Datumschriftart 4</string>
+
+    <string id="FieldFont1">Feldschriftart 1</string>
+    <string id="FieldFont2">Feldschriftart 2</string>
+    <string id="FieldFont3">Feldschriftart 3</string>
+    <string id="FieldFont4">Feldschriftart 4</string>
+
+</strings>

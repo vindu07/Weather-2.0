@@ -1,0 +1,393 @@
+<settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+
+   
+    <!-- GENERALI -->
+    <group id="GeneralGroup" title="@Strings.GeneralGroupTitle">
+
+
+
+        <setting propertyKey="@Properties.UseMilitaryFormat" title="@Strings.MilitaryFormatTitle">
+            <settingConfig type="boolean" />
+        </setting>
+        
+        <setting propertyKey="@Properties.RemoveZerosFromHour" title="@Strings.RemoveZeroTitle">
+            <settingConfig type="boolean" />
+        </setting>
+
+        <setting propertyKey="@Properties.ShowIcons" title="@Strings.ShowIconsTitle">
+            <settingConfig type="boolean" />
+        </setting>
+
+        <setting propertyKey="@Properties.ShowBatteryIcon" title="@Strings.ShowBatteryIconTitle">
+            <settingConfig type="boolean" />
+        </setting>
+
+        <setting propertyKey="@Properties.ShowDataFields" title="@Strings.ShowDataFieldsTitle">
+            <settingConfig type="boolean" />
+        </setting>
+
+        <setting propertyKey="@Properties.ShowInfoFields" title="@Strings.ShowInfoFieldsTitle">
+            <settingConfig type="boolean" />
+        </setting>
+
+        <setting propertyKey="@Properties.ShowWeather" title="@Strings.ShowWeatherTitle">
+            <settingConfig type="boolean" />
+        </setting>
+
+        <setting propertyKey="@Properties.DynamicSkyColor" title="@Strings.DynamicSky">
+            <settingConfig type="boolean" />
+        </setting>
+
+        <setting propertyKey="@Properties.DynamicSunPosition" title="@Strings.DynamicSun">
+            <settingConfig type="boolean" />
+        </setting>
+
+        <setting propertyKey="@Properties.EnergySavingMode" title="@Strings.EnergySavingTitle">
+            <settingConfig type="boolean" />
+        </setting>
+
+        <setting propertyKey="@Properties.LandscapeType" title="@Strings.LandscapeTypeTitle">
+            <settingConfig type="list">
+                <listEntry value="0">@Strings.LandscapeMountains</listEntry>
+                <!--listEntry value="1">@Strings.LandscapeHills</listEntry-->
+                <listEntry value="2">@Strings.LandscapeBeach</listEntry>
+                <listEntry value="3">@Strings.LandscapeLondon</listEntry>
+                <listEntry value="4">@Strings.LandscapeParis</listEntry>
+                <!--listEntry value="6">@Strings.LandscapeRome</listEntry-->
+                <!--listEntry value="5">@Strings.LandscapeVenice</listEntry-->  
+            </settingConfig> 
+        </setting>
+
+        <setting propertyKey="@Properties.DefaultPositionLat" title="@Strings.DefaultPositionLatTitle">
+            <settingConfig type="numeric" min="-72" max="72" errorMessage="Value out of range"/>
+        </setting>
+        <setting propertyKey="@Properties.DefaultPositionLon" title="@Strings.DefaultPositionLonTitle">
+            <settingConfig type="numeric" min="-180" max="180" errorMessage="Value out of range"/>
+        </setting>
+
+
+
+    </group>
+
+    <!-- COLORI -->
+    <group id="Colors" title="@Strings.ColorsGroupTitle">
+        
+
+        <setting propertyKey="@Properties.TimeColor" title="@Strings.TimeColorTitle">
+            <settingConfig type="list">
+                <listEntry value="0xFF0000">@Strings.ColorRed</listEntry>          <!-- Rosso -->
+                <listEntry value="0xFFFF00">@Strings.ColorYellow</listEntry>       <!-- Giallo -->
+                <listEntry value="0x0000FF">@Strings.ColorBlue</listEntry>         <!-- Blu -->
+                <listEntry value="0x00FF00">@Strings.ColorGreen</listEntry>        <!-- Verde -->
+                <listEntry value="0x00AAFF">@Strings.ColorSkyBlue</listEntry>      <!-- Azzurro -->
+                <listEntry value="0xAA00AA">@Strings.ColorPurple</listEntry>       <!-- Viola -->
+                <listEntry value="0xFFAAAA">@Strings.ColorPink</listEntry>         <!-- Rosa -->
+                <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>        <!-- Bianco -->
+                <listEntry value="0x000055">@Strings.ColorDarkBlue</listEntry>     <!-- Blu scuro -->
+                <listEntry value="0xFFAA00">@Strings.ColorOrange</listEntry>       <!-- Arancio -->
+                <listEntry value="0x005500">@Strings.ColorDarkGreen</listEntry>    <!-- Verde scuro -->
+                <listEntry value="0xAAAAAA">@Strings.ColorGray</listEntry>         <!-- Grigio -->
+                <listEntry value="0xFF00FF">@Strings.ColorMagenta</listEntry>      <!-- Magenta -->
+                <listEntry value="0x00FFFF">@Strings.ColorCyan</listEntry>         <!-- Ciano -->
+            </settingConfig>
+        </setting>
+
+        <setting propertyKey="@Properties.FieldColor" title="@Strings.FieldColorTitle">
+            <settingConfig type="list">
+                <listEntry value="0xFF0000">@Strings.ColorRed</listEntry>          <!-- Rosso -->
+                <listEntry value="0xFFFF00">@Strings.ColorYellow</listEntry>       <!-- Giallo -->
+                <listEntry value="0x0000FF">@Strings.ColorBlue</listEntry>         <!-- Blu -->
+                <listEntry value="0x00FF00">@Strings.ColorGreen</listEntry>        <!-- Verde -->
+                <listEntry value="0x00AAFF">@Strings.ColorSkyBlue</listEntry>      <!-- Azzurro -->
+                <listEntry value="0xAA00AA">@Strings.ColorPurple</listEntry>       <!-- Viola -->
+                <listEntry value="0xFFAAAA">@Strings.ColorPink</listEntry>         <!-- Rosa -->
+                <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>        <!-- Bianco -->
+                <listEntry value="0x000055">@Strings.ColorDarkBlue</listEntry>     <!-- Blu scuro -->
+                <listEntry value="0xFFAA00">@Strings.ColorOrange</listEntry>       <!-- Arancio -->
+                <listEntry value="0x005500">@Strings.ColorDarkGreen</listEntry>    <!-- Verde scuro -->
+                <listEntry value="0xAAAAAA">@Strings.ColorGray</listEntry>         <!-- Grigio -->
+                <listEntry value="0xFF00FF">@Strings.ColorMagenta</listEntry>      <!-- Magenta -->
+                <listEntry value="0x00FFFF">@Strings.ColorCyan</listEntry>         <!-- Ciano -->
+            </settingConfig>
+        </setting>
+
+        <setting propertyKey="@Properties.IconColor" title="@Strings.IconColorTitle">
+            <settingConfig type="list">
+                <listEntry value="0xFF0000">@Strings.ColorRed</listEntry>          <!-- Rosso -->
+                <listEntry value="0xFFFF00">@Strings.ColorYellow</listEntry>       <!-- Giallo -->
+                <listEntry value="0x0000FF">@Strings.ColorBlue</listEntry>         <!-- Blu -->
+                <listEntry value="0x00FF00">@Strings.ColorGreen</listEntry>        <!-- Verde -->
+                <listEntry value="0x00AAFF">@Strings.ColorSkyBlue</listEntry>      <!-- Azzurro -->
+                <listEntry value="0xAA00AA">@Strings.ColorPurple</listEntry>       <!-- Viola -->
+                <listEntry value="0xFFAAAA">@Strings.ColorPink</listEntry>         <!-- Rosa -->
+                <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>        <!-- Bianco -->
+                <listEntry value="0x000055">@Strings.ColorDarkBlue</listEntry>     <!-- Blu scuro -->
+                <listEntry value="0xFFAA00">@Strings.ColorOrange</listEntry>       <!-- Arancio -->
+                <listEntry value="0x005500">@Strings.ColorDarkGreen</listEntry>    <!-- Verde scuro -->
+                <listEntry value="0xAAAAAA">@Strings.ColorGray</listEntry>         <!-- Grigio -->
+                <listEntry value="0xFF00FF">@Strings.ColorMagenta</listEntry>      <!-- Magenta -->
+                <listEntry value="0x00FFFF">@Strings.ColorCyan</listEntry>         <!-- Ciano -->
+            </settingConfig>
+        </setting>
+
+    
+    </group>
+
+    <!-- CAMPI DATI -->
+
+    <group id="DataFields" title="@Strings.DataFieldsGroupTitle">
+    
+        <setting propertyKey="@Properties.DataField1" title="@Strings.DataField1Title">
+            <settingConfig type="list">
+                <!--listEntry value="0">@Strings.Heartrate</listEntry-->
+                <listEntry value="1">@Strings.Temperature</listEntry>
+                <listEntry value="2">@Strings.Altitude</listEntry>
+                <listEntry value="3">@Strings.Barometer</listEntry>
+                <!--listEntry value="5">@Strings.Saturation</listEntry-->
+                <listEntry value="7">@Strings.Steps</listEntry>
+                <listEntry value="8">@Strings.Distance</listEntry>
+                <listEntry value="9">@Strings.FloorsClimbed</listEntry>
+                <listEntry value="10">@Strings.ActiveMinutes</listEntry>
+                <listEntry value="11">@Strings.ActiveCalories</listEntry>
+                <listEntry value="14">@Strings.Battery</listEntry>
+                <listEntry value="20">@Strings.Sunrise</listEntry>
+                <listEntry value="21">@Strings.Sunset</listEntry>
+                <listEntry value="23">@Strings.Humidity</listEntry>
+                <listEntry value="25">@Strings.Empty</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.DataField2" title="@Strings.DataField2Title">
+            <settingConfig type="list">
+                <!--listEntry value="0">@Strings.Heartrate</listEntry-->
+                <listEntry value="1">@Strings.Temperature</listEntry>
+                <listEntry value="2">@Strings.Altitude</listEntry>
+                <listEntry value="3">@Strings.Barometer</listEntry>
+                <!--listEntry value="5">@Strings.Saturation</listEntry-->
+                <listEntry value="7">@Strings.Steps</listEntry>
+                <listEntry value="8">@Strings.Distance</listEntry>
+                <listEntry value="9">@Strings.FloorsClimbed</listEntry>
+                <listEntry value="10">@Strings.ActiveMinutes</listEntry>
+                <listEntry value="11">@Strings.ActiveCalories</listEntry>
+                <listEntry value="14">@Strings.Battery</listEntry>
+                <listEntry value="20">@Strings.Sunrise</listEntry>
+                <listEntry value="21">@Strings.Sunset</listEntry>
+                <listEntry value="23">@Strings.Humidity</listEntry>
+                <listEntry value="25">@Strings.Empty</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.DataField3" title="@Strings.DataField3Title">
+            <settingConfig type="list">
+                <!--listEntry value="0">@Strings.Heartrate</listEntry-->
+                <listEntry value="1">@Strings.Temperature</listEntry>
+                <listEntry value="2">@Strings.Altitude</listEntry>
+                <listEntry value="3">@Strings.Barometer</listEntry>
+                <!--listEntry value="5">@Strings.Saturation</listEntry-->
+                <listEntry value="7">@Strings.Steps</listEntry>
+                <listEntry value="8">@Strings.Distance</listEntry>
+                <listEntry value="9">@Strings.FloorsClimbed</listEntry>
+                <listEntry value="10">@Strings.ActiveMinutes</listEntry>
+                <listEntry value="11">@Strings.ActiveCalories</listEntry>
+                <listEntry value="14">@Strings.Battery</listEntry>
+                <listEntry value="20">@Strings.Sunrise</listEntry>
+                <listEntry value="21">@Strings.Sunset</listEntry>
+                <listEntry value="23">@Strings.Humidity</listEntry>
+                <listEntry value="25">@Strings.Empty</listEntry>
+            </settingConfig>
+        </setting>
+
+    </group>
+
+    <!-- CAMPI INFO -->
+
+    <group id="InfoFields" title="@Strings.InfoFieldsGroupTitle">
+    
+        <setting propertyKey="@Properties.InfoField1" title="@Strings.InfoField1Title">
+            <settingConfig type="list">
+                <listEntry value="1">@Strings.Temperature</listEntry>
+                <listEntry value="14">@Strings.Battery</listEntry>
+                <listEntry value="18">@Strings.Notifications</listEntry>
+                <listEntry value="19">@Strings.Alarms</listEntry>
+                <listEntry value="20">@Strings.Sunrise</listEntry>
+                <listEntry value="21">@Strings.Sunset</listEntry>
+                <listEntry value="23">@Strings.Humidity</listEntry>
+                <listEntry value="26">@Strings.NotifPhone</listEntry>
+                <listEntry value="25">@Strings.Empty</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.InfoField2" title="@Strings.InfoField2Title">
+            <settingConfig type="list">
+                <listEntry value="1">@Strings.Temperature</listEntry>
+                <listEntry value="14">@Strings.Battery</listEntry>
+                <listEntry value="18">@Strings.Notifications</listEntry>
+                <listEntry value="19">@Strings.Alarms</listEntry>
+                <listEntry value="20">@Strings.Sunrise</listEntry>
+                <listEntry value="21">@Strings.Sunset</listEntry>
+                <listEntry value="23">@Strings.Humidity</listEntry>
+                <listEntry value="26">@Strings.NotifPhone</listEntry>
+                <listEntry value="25">@Strings.Empty</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.InfoField3" title="@Strings.InfoField3Title">
+            <settingConfig type="list">
+                <listEntry value="1">@Strings.Temperature</listEntry>
+                <listEntry value="14">@Strings.Battery</listEntry>
+                <listEntry value="18">@Strings.Notifications</listEntry>
+                <listEntry value="19">@Strings.Alarms</listEntry>
+                <listEntry value="20">@Strings.Sunrise</listEntry>
+                <listEntry value="21">@Strings.Sunset</listEntry>
+                <listEntry value="23">@Strings.Humidity</listEntry>
+                <listEntry value="26">@Strings.NotifPhone</listEntry>
+                <listEntry value="25">@Strings.Empty</listEntry>
+            </settingConfig>
+        </setting>
+        <setting propertyKey="@Properties.InfoField4" title="@Strings.InfoField4Title">
+            <settingConfig type="list">
+                <listEntry value="1">@Strings.Temperature</listEntry>
+                <listEntry value="14">@Strings.Battery</listEntry>
+                <listEntry value="18">@Strings.Notifications</listEntry>
+                <listEntry value="19">@Strings.Alarms</listEntry>
+                <listEntry value="20">@Strings.Sunrise</listEntry>
+                <listEntry value="21">@Strings.Sunset</listEntry>
+                <listEntry value="23">@Strings.Humidity</listEntry>
+                <listEntry value="26">@Strings.NotifPhone</listEntry>
+                <listEntry value="25">@Strings.Empty</listEntry>
+            </settingConfig>
+        </setting>
+
+    </group>
+
+    <!-- INDICATORE BATTERIA -->
+
+    <group id="BatteryIndicator" title="@Strings.BatteryIndicatorGroupTitle"> 
+        
+        <setting propertyKey="@Properties.BatteryIndicatorFullColor" title="@Strings.BatteryIndicatorFullColorTitle">
+            <settingConfig type="list">
+                <listEntry value="0xFF0000">@Strings.ColorRed</listEntry>          <!-- Rosso -->
+                <listEntry value="0xFFFF00">@Strings.ColorYellow</listEntry>       <!-- Giallo -->
+                <listEntry value="0x0000FF">@Strings.ColorBlue</listEntry>         <!-- Blu -->
+                <listEntry value="0x00FF00">@Strings.ColorGreen</listEntry>        <!-- Verde -->
+                <listEntry value="0x00AAFF">@Strings.ColorSkyBlue</listEntry>      <!-- Azzurro -->
+                <listEntry value="0xAA00AA">@Strings.ColorPurple</listEntry>       <!-- Viola -->
+                <listEntry value="0xFFAAAA">@Strings.ColorPink</listEntry>         <!-- Rosa -->
+                <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>        <!-- Bianco -->
+                <listEntry value="0x000055">@Strings.ColorDarkBlue</listEntry>     <!-- Blu scuro -->
+                <listEntry value="0xFFAA00">@Strings.ColorOrange</listEntry>       <!-- Arancio -->
+                <listEntry value="0x005500">@Strings.ColorDarkGreen</listEntry>    <!-- Verde scuro -->
+                <listEntry value="0xAAAAAA">@Strings.ColorGray</listEntry>         <!-- Grigio -->
+                <listEntry value="0xFF00FF">@Strings.ColorMagenta</listEntry>      <!-- Magenta -->
+                <listEntry value="0x00FFFF">@Strings.ColorCyan</listEntry>         <!-- Ciano -->
+            </settingConfig>
+        </setting>
+
+        <setting propertyKey="@Properties.BatteryIndicatorGoodColor" title="@Strings.BatteryIndicatorGoodColorTitle">
+            <settingConfig type="list">
+                <listEntry value="0xFF0000">@Strings.ColorRed</listEntry>          <!-- Rosso -->
+                <listEntry value="0xFFFF00">@Strings.ColorYellow</listEntry>       <!-- Giallo -->
+                <listEntry value="0x0000FF">@Strings.ColorBlue</listEntry>         <!-- Blu -->
+                <listEntry value="0x00FF00">@Strings.ColorGreen</listEntry>        <!-- Verde -->
+                <listEntry value="0x00AAFF">@Strings.ColorSkyBlue</listEntry>      <!-- Azzurro -->
+                <listEntry value="0xAA00AA">@Strings.ColorPurple</listEntry>       <!-- Viola -->
+                <listEntry value="0xFFAAAA">@Strings.ColorPink</listEntry>         <!-- Rosa -->
+                <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>        <!-- Bianco -->
+                <listEntry value="0x000055">@Strings.ColorDarkBlue</listEntry>     <!-- Blu scuro -->
+                <listEntry value="0xFFAA00">@Strings.ColorOrange</listEntry>       <!-- Arancio -->
+                <listEntry value="0x005500">@Strings.ColorDarkGreen</listEntry>    <!-- Verde scuro -->
+                <listEntry value="0xAAAAAA">@Strings.ColorGray</listEntry>         <!-- Grigio -->
+                <listEntry value="0xFF00FF">@Strings.ColorMagenta</listEntry>      <!-- Magenta -->
+                <listEntry value="0x00FFFF">@Strings.ColorCyan</listEntry>         <!-- Ciano -->
+            </settingConfig>
+        </setting>
+
+        <setting propertyKey="@Properties.BatteryIndicatorMedColor" title="@Strings.BatteryIndicatorMedColorTitle">
+            <settingConfig type="list">
+                <listEntry value="0xFF0000">@Strings.ColorRed</listEntry>          <!-- Rosso -->
+                <listEntry value="0xFFFF00">@Strings.ColorYellow</listEntry>       <!-- Giallo -->
+                <listEntry value="0x0000FF">@Strings.ColorBlue</listEntry>         <!-- Blu -->
+                <listEntry value="0x00FF00">@Strings.ColorGreen</listEntry>        <!-- Verde -->
+                <listEntry value="0x00AAFF">@Strings.ColorSkyBlue</listEntry>      <!-- Azzurro -->
+                <listEntry value="0xAA00AA">@Strings.ColorPurple</listEntry>       <!-- Viola -->
+                <listEntry value="0xFFAAAA">@Strings.ColorPink</listEntry>         <!-- Rosa -->
+                <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>        <!-- Bianco -->
+                <listEntry value="0x000055">@Strings.ColorDarkBlue</listEntry>     <!-- Blu scuro -->
+                <listEntry value="0xFFAA00">@Strings.ColorOrange</listEntry>       <!-- Arancio -->
+                <listEntry value="0x005500">@Strings.ColorDarkGreen</listEntry>    <!-- Verde scuro -->
+                <listEntry value="0xAAAAAA">@Strings.ColorGray</listEntry>         <!-- Grigio -->
+                <listEntry value="0xFF00FF">@Strings.ColorMagenta</listEntry>      <!-- Magenta -->
+                <listEntry value="0x00FFFF">@Strings.ColorCyan</listEntry>         <!-- Ciano -->
+            </settingConfig>
+        </setting>
+
+        <setting propertyKey="@Properties.BatteryIndicatorLowColor" title="@Strings.BatteryIndicatorLowColorTitle">
+            <settingConfig type="list">
+                <listEntry value="0xFF0000">@Strings.ColorRed</listEntry>          <!-- Rosso -->
+                <listEntry value="0xFFFF00">@Strings.ColorYellow</listEntry>       <!-- Giallo -->
+                <listEntry value="0x0000FF">@Strings.ColorBlue</listEntry>         <!-- Blu -->
+                <listEntry value="0x00FF00">@Strings.ColorGreen</listEntry>        <!-- Verde -->
+                <listEntry value="0x00AAFF">@Strings.ColorSkyBlue</listEntry>      <!-- Azzurro -->
+                <listEntry value="0xAA00AA">@Strings.ColorPurple</listEntry>       <!-- Viola -->
+                <listEntry value="0xFFAAAA">@Strings.ColorPink</listEntry>         <!-- Rosa -->
+                <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>        <!-- Bianco -->
+                <listEntry value="0x000055">@Strings.ColorDarkBlue</listEntry>     <!-- Blu scuro -->
+                <listEntry value="0xFFAA00">@Strings.ColorOrange</listEntry>       <!-- Arancio -->
+                <listEntry value="0x005500">@Strings.ColorDarkGreen</listEntry>    <!-- Verde scuro -->
+                <listEntry value="0xAAAAAA">@Strings.ColorGray</listEntry>         <!-- Grigio -->
+                <listEntry value="0xFF00FF">@Strings.ColorMagenta</listEntry>      <!-- Magenta -->
+                <listEntry value="0x00FFFF">@Strings.ColorCyan</listEntry>         <!-- Ciano -->
+            </settingConfig>
+        </setting>
+
+        <setting propertyKey="@Properties.BatteryIndicatorFull" title="@Strings.BatteryIndicatorFullTitle">
+            <settingConfig type="numeric">
+            </settingConfig>
+        </setting>
+
+        <setting propertyKey="@Properties.BatteryIndicatorGood" title="@Strings.BatteryIndicatorGoodTitle">
+            <settingConfig type="numeric">
+            </settingConfig>
+        </setting>
+
+        <setting propertyKey="@Properties.BatteryIndicatorMed" title="@Strings.BatteryIndicatorMedTitle">
+            <settingConfig type="numeric">
+            </settingConfig>
+        </setting>
+
+        <setting propertyKey="@Properties.BatteryIndicatorLow" title="@Strings.BatteryIndicatorLowTitle">
+            <settingConfig type="numeric">
+            </settingConfig>
+        </setting>
+
+    </group>
+
+     <!-- FONT -->
+    <!--group id="Fonts" title="@Strings.FontsGroupTitle">
+
+        <setting propertyKey="@Properties.TimeFont" title="@Strings.TimeFontTitle">
+            <settingConfig type="list">
+                <listEntry value="0">@Strings.TimeFont1</listEntry>
+                <listEntry value="1">@Strings.TimeFont2</listEntry>
+                <listEntry value="2">@Strings.TimeFont3</listEntry>
+                <listEntry value="3">@Strings.TimeFont4</listEntry>  
+            </settingConfig>
+        </setting>
+
+        <setting propertyKey="@Properties.DateFont" title="@Strings.DateFontTitle">
+            <settingConfig type="list">
+                <listEntry value="0">@Strings.DateFont1</listEntry>
+                <listEntry value="1">@Strings.DateFont2</listEntry>
+                <listEntry value="2">@Strings.DateFont3</listEntry>
+                <listEntry value="3">@Strings.DateFont4</listEntry>  
+            </settingConfig>
+        </setting>
+
+        <setting propertyKey="@Properties.FieldFont" title="@Strings.FieldFontTitle">
+            <settingConfig type="list">
+                <listEntry value="0">@Strings.FieldFont1</listEntry>
+                <listEntry value="1">@Strings.FieldFont2</listEntry>
+                <listEntry value="2">@Strings.FieldFont3</listEntry>
+                <listEntry value="3">@Strings.FieldFont4</listEntry>  
+            </settingConfig>
+        </setting>
+
+    </group-->
+
+</settings>

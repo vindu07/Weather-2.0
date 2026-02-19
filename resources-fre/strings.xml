@@ -1,0 +1,134 @@
+<strings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+
+    <string id="AppName">Météo 2.0</string>
+
+    <!--TITOLI GRUPPI-->
+
+    <string id="GeneralGroupTitle">Paramètres Généraux</string>
+    <string id="BatteryIndicatorGroupTitle">Indicateur de Batterie</string>
+    <string id="ColorsGroupTitle">Couleurs</string>
+    <string id="DataFieldsGroupTitle">Champs de Données</string>
+    <string id="InfoFieldsGroupTitle">Champs d'Informations</string>
+    <string id="FontsGroupTitle">Polices</string>
+
+    <!--TITOLI IMPOSTAZIONI-->
+
+    <string id="DynamicSky">Couleur du ciel dynamique</string>
+    <string id="DynamicSun">Position dynamique du soleil</string>
+
+    <string id="TimeColorTitle">Couleur de l'Heure</string>
+    <string id="FieldColorTitle">Couleur du Champ</string>
+    <string id="IconColorTitle">Couleur de l'Icône</string>
+
+    <string id="TimeFontTitle">Police de l'Heure</string>
+    <string id="DateFontTitle">Police de la Date</string>
+    <string id="FieldFontTitle">Police des Champs</string>
+
+    <string id="MilitaryFormatTitle">Format 24 Heures</string>
+    <string id="RemoveZeroTitle">Supprimer le 0 Avant les Heures</string>
+    <string id="ShowIconsTitle">Afficher les Icônes</string>
+    <string id="ShowBatteryIconTitle">Afficher l'Icône Batterie</string>
+    <string id="ShowWeatherTitle">Afficher la Météo</string>
+    <string id="ShowDataFieldsTitle">Afficher les Champs de Données</string>
+    <string id="ShowInfoFieldsTitle">Afficher les Champs d'Informations</string>
+    <string id="EnergySavingTitle">Mode Économie d'Énergie</string>
+    <string id="LandscapeTypeTitle">Paysage</string>
+
+    <string id="DataField1Title">Champ de Données 1</string>
+    <string id="DataField2Title">Champ de Données 2</string>
+    <string id="DataField3Title">Champ de Données 3</string>
+
+    <string id="InfoField1Title">Champ d'Information 1</string>
+    <string id="InfoField2Title">Champ d'Information 2</string>
+    <string id="InfoField3Title">Champ d'Information 3</string>
+    <string id="InfoField4Title">Champ d'Information 4</string>
+
+    <string id="DefaultPositionLatTitle">Latitude par Défaut</string>
+    <string id="DefaultPositionLonTitle">Longitude par Défaut</string>
+
+    <string id="BatteryIndicatorFullColorTitle">Couleur Batterie Pleine</string>
+    <string id="BatteryIndicatorGoodColorTitle">Couleur Batterie Bonne</string>
+    <string id="BatteryIndicatorMedColorTitle">Couleur Batterie Moyenne</string>
+    <string id="BatteryIndicatorLowColorTitle">Couleur Batterie Faible</string>
+
+    <string id="BatteryIndicatorFullTitle">Valeur Batterie Pleine</string>
+    <string id="BatteryIndicatorGoodTitle">Valeur Batterie Bonne</string>
+    <string id="BatteryIndicatorMedTitle">Valeur Batterie Moyenne</string>
+    <string id="BatteryIndicatorLowTitle">Valeur Batterie Faible</string>
+    
+    <!--COLORI-->
+
+    <string id="ColorBlack">Noir</string>
+    <string id="ColorRed">Rouge</string>
+    <string id="ColorYellow">Jaune</string>
+    <string id="ColorBlue">Bleu</string>
+    <string id="ColorGreen">Vert</string>
+    <string id="ColorSkyBlue">Bleu Ciel</string>
+    <string id="ColorPurple">Violet</string>
+    <string id="ColorPink">Rose</string>
+    <string id="ColorWhite">Blanc</string>
+    <string id="ColorDarkBlue">Bleu Foncé</string>
+    <string id="ColorOrange">Orange</string>
+    <string id="ColorDarkGreen">Vert Foncé</string>
+    <string id="ColorGray">Gris</string>
+    <string id="ColorMagenta">Magenta</string>
+    <string id="ColorCyan">Cyan</string>
+
+    <!--NOMI CAMPI-->
+
+    <string id="Heartrate">Fréquence Cardiaque</string>
+    <string id="Temperature">Température</string>
+    <string id="Altitude">Altitude</string>
+    <string id="Barometer">Pression</string>
+    <string id="Compass">Cap</string>
+    <string id="Saturation">Saturation en Oxygène</string>
+    <string id="RespirationRate">Fréquence Respiratoire</string>
+    <string id="Steps">Pas</string>
+    <string id="Distance">Distance</string>
+    <string id="FloorsClimbed">Étages Montés</string>
+    <string id="ActiveMinutes">Minutes Actives</string>
+    <string id="ActiveCalories">Calories</string>
+    <string id="StressLevel">Niveau de Stress</string>
+    <string id="BodyBattery">Batterie Corporelle</string>
+    <string id="Battery">Batterie de l'Appareil</string>
+    <string id="Vo2Max">VO2 Max</string>
+    <string id="RecoveryTime">Temps de Récupération</string>
+    <string id="HrVariability">Variabilité Cardiaque</string>
+    <string id="Notifications">Notifications</string>
+    <string id="Alarms">Alarmes</string>
+    <string id="Sunrise">Heure du Lever du Soleil</string>
+    <string id="Sunset">Heure du Coucher du Soleil</string>
+    <string id="Weather">Conditions Météorologiques</string>
+    <string id="Humidity">Humidité Relative</string>
+    <string id="Moonphase">Phase Lunaire Actuelle</string>
+    <string id="NotifPhone">Notifications et Icônes Téléphone</string>
+    <string id="Empty">Vide</string>
+
+    <!--PAESAGGI-->
+
+    <string id="LandscapeMountains">Montagnes</string>
+    <string id="LandscapeHills">Campagne</string>
+    <string id="LandscapeBeach">Bord de Mer</string>
+    <string id="LandscapeLondon">Londres</string>
+    <string id="LandscapeParis">Paris</string>
+    <string id="LandscapeRome">Rome</string>
+    <string id="LandscapeVenice">Venise</string>
+
+    <!--FONT-->
+
+    <string id="TimeFont1">Police Heure 1</string>
+    <string id="TimeFont2">Police Heure 2</string>
+    <string id="TimeFont3">Police Heure 3</string>
+    <string id="TimeFont4">Police Heure 4</string>
+
+    <string id="DateFont1">Police Date 1</string>
+    <string id="DateFont2">Police Date 2</string>
+    <string id="DateFont3">Police Date 3</string>
+    <string id="DateFont4">Police Date 4</string>
+
+    <string id="FieldFont1">Police Champs 1</string>
+    <string id="FieldFont2">Police Champs 2</string>
+    <string id="FieldFont3">Police Champs 3</string>
+    <string id="FieldFont4">Police Champs 4</string>
+
+</strings>

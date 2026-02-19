@@ -1,0 +1,631 @@
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; @symbol_usingAlias = [Ui,1,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Graphics,2,13,21]; @symbol_usingAlias = [Gfx,2,25,28]; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [Weather,3,13,20]; ]
+using Toybox.Weather;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [Position,4,13,21]; ]
+using Toybox.Position;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 5; @symbol_usingdef<0> = [Toybox,5,6,12]; @symbol_usingdef<1> = [Time,5,13,17]; ]
+using Toybox.Time;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 6; @symbol_usingdef<0> = [Toybox,6,6,12]; @symbol_usingdef<1> = [Time,6,13,17]; @symbol_usingdef<2> = [Gregorian,6,18,27]; @symbol_usingAlias = [Greg,6,31,35]; ]
+using Toybox.Time.Gregorian as :Greg;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 7; @symbol_usingdef<0> = [Toybox,7,6,12]; @symbol_usingdef<1> = [Lang,7,13,17]; ]
+using Toybox.Lang;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 10; @symbol_classdef = [Sky,10,6,9]; @symbol_extends<0> = [Ui,10,18,20]; @symbol_extends<1> = [Drawable,10,21,29]; ]
+class Sky extends Ui.Drawable {
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 10; ]
+    <init> {
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 17 8 ]
+        symbol [ Gfx %tmp.1 17 25 28 ];
+        %tmp.1 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLUE %tmp.2 17 29 39 ];
+        %tmp.2 = getv %tmp.1 :COLOR_BLUE;
+        putv self :SKY_COLOR_BLUE %tmp.2;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 18 8 ]
+        symbol [ Gfx %tmp.3 18 25 28 ];
+        %tmp.3 = getm $.Toybox.Graphics;
+        symbol [ COLOR_LT_GRAY %tmp.4 18 29 42 ];
+        %tmp.4 = getv %tmp.3 :COLOR_LT_GRAY;
+        putv self :SKY_COLOR_GREY %tmp.4;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 19 8 ]
+        symbol [ Gfx %tmp.5 19 27 30 ];
+        %tmp.5 = getm $.Toybox.Graphics;
+        symbol [ COLOR_YELLOW %tmp.6 19 31 43 ];
+        %tmp.6 = getv %tmp.5 :COLOR_YELLOW;
+        putv self :SKY_COLOR_SUNSET %tmp.6;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 20 8 ]
+        symbol [ Gfx %tmp.7 20 26 29 ];
+        %tmp.7 = getm $.Toybox.Graphics;
+        symbol [ COLOR_DK_BLUE %tmp.8 20 30 43 ];
+        %tmp.8 = getv %tmp.7 :COLOR_DK_BLUE;
+        putv self :SKY_COLOR_NIGHT %tmp.8;
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 10; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 12; @position = 16; @symbol_vardef = [minSinceSunriseUpdate,12,16,37]; @symbol_type<0> = [Lang,12,41,45]; @symbol_type<1> = [Number,12,46,52]; ]
+    private
+    var minSinceSunriseUpdate as Lang.Number = 0;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 15; @symbol_enumdef = [SKYCOLORS,15,17,26]; ]
+    private static
+    enum SKYCOLORS {
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 17; @position = 8; @symbol_enumdec = [SKY_COLOR_BLUE,17,8,22]; ]
+        SKY_COLOR_BLUE = ,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 18; @position = 8; @symbol_enumdec = [SKY_COLOR_GREY,18,8,22]; ]
+        SKY_COLOR_GREY = ,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 19; @position = 8; @symbol_enumdec = [SKY_COLOR_SUNSET,19,8,24]; ]
+        SKY_COLOR_SUNSET = ,
+        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 20; @position = 8; @symbol_enumdec = [SKY_COLOR_NIGHT,20,8,23]; ]
+        SKY_COLOR_NIGHT = 
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 24; @position = 16; @symbol_vardef = [currentPosition,24,16,31]; @symbol_type<0> = [Position,24,35,43]; @symbol_type<1> = [Location,24,44,52]; ]
+    private
+    var currentPosition as Position.Location or Null;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 25; @position = 16; @symbol_vardef = [currentTime,25,16,27]; @symbol_type<0> = [Time,25,31,35]; @symbol_type<1> = [Moment,25,36,42]; ]
+    private
+    var currentTime as Time.Moment or Null;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 27; @position = 16; @symbol_vardef = [SUNRISE,27,16,23]; @symbol_type<0> = [Time,27,27,31]; @symbol_type<1> = [Moment,27,32,38]; ]
+    private
+    var SUNRISE as Time.Moment or Null;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 28; @position = 16; @symbol_vardef = [SUNSET,28,16,22]; @symbol_type<0> = [Time,28,26,30]; @symbol_type<1> = [Moment,28,31,37]; ]
+    private
+    var SUNSET as Time.Moment or Null;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 31; @symbol_typedef = [SkyParams,31,12,21]; @symbol_type<0> = [Lang,33,23,27]; @symbol_type<1> = [String,33,28,34]; @symbol_type_const<0> = [identifier,33,9,19]; ]
+    type SkyParams as {:identifier as Lang.String};
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 37; @symbol_functiondef = [initialize,37,13,23]; @symbol_param<0> = [params,37,24,30]; @symbol_param<0>_type<0> = [SkyParams,37,34,43]; ]
+    function initialize(params as SkyParams) as Void {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_37_44_41_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 38 8 ]
+        symbol [ Drawable %tmp.2 38 8 16 ];
+        %tmp.2 = getv ? :Drawable;
+        symbol [ initialize %tmp.3 38 17 27 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        %tmp.4 = lgetv %params;
+        symbol [ params %tmp.4 38 28 34 ];
+        invoke %tmp.2 %tmp.3(%tmp.4);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 40 8 ]
+        %tmp.5 = self;
+        symbol [ getSunriseAndSunset %tmp.6 40 8 27 ];
+        %tmp.6 = getv function %tmp.5 :getSunriseAndSunset;
+        invoke %tmp.5 %tmp.6();
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_37_44_41_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 43; @symbol_functiondef = [draw,43,20,24]; @symbol_param<0> = [dc,43,25,27]; @symbol_param<0>_type<0> = [Gfx,43,31,34]; @symbol_param<0>_type<1> = [Dc,43,35,37]; ]
+    public
+    function draw(dc as Gfx.Dc) {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_43_38_53_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 45 8 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_45_8_47_8_if_stmt:
+        symbol [ minSinceSunriseUpdate %tmp.2 45 11 32 ];
+        %tmp.2 = getv ? :minSinceSunriseUpdate;
+        %tmp.3 = 120;
+        %tmp.4 = gt %tmp.2 %tmp.3;
+        bf %tmp.4 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_45_8_47_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_45_8_47_8_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_45_39_47_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 46 12 ]
+        %tmp.5 = self;
+        symbol [ getSunriseAndSunset %tmp.6 46 12 31 ];
+        %tmp.6 = getv function %tmp.5 :getSunriseAndSunset;
+        invoke %tmp.5 %tmp.6();
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_45_39_47_8_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_45_8_47_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_45_8_47_8_if_end:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 49 8 ]
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 49 8 10 ];
+        symbol [ setColor %tmp.8 49 11 19 ];
+        %tmp.8 = getv function %tmp.7 :setColor;
+        %tmp.9 = self;
+        symbol [ getSkyColor %tmp.10 49 20 31 ];
+        %tmp.10 = getv function %tmp.9 :getSkyColor;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        symbol [ Graphics %tmp.13 49 35 43 ];
+        %tmp.13 = getv ? :Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.14 49 44 61 ];
+        %tmp.14 = getv %tmp.13 :COLOR_TRANSPARENT;
+        invoke %tmp.7 %tmp.8(%tmp.11, %tmp.14);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 50 8 ]
+        %tmp.15 = lgetv %dc;
+        symbol [ dc %tmp.15 50 8 10 ];
+        symbol [ fillRectangle %tmp.16 50 11 24 ];
+        %tmp.16 = getv function %tmp.15 :fillRectangle;
+        %tmp.17 = 0;
+        %tmp.18 = 0;
+        %tmp.19 = lgetv %dc;
+        symbol [ dc %tmp.19 50 31 33 ];
+        symbol [ getWidth %tmp.20 50 34 42 ];
+        %tmp.20 = getv function %tmp.19 :getWidth;
+        %tmp.21 = invoke %tmp.19 %tmp.20();
+        %tmp.22 = lgetv %dc;
+        symbol [ dc %tmp.22 50 46 48 ];
+        symbol [ getHeight %tmp.23 50 49 58 ];
+        %tmp.23 = getv function %tmp.22 :getHeight;
+        %tmp.24 = invoke %tmp.22 %tmp.23();
+        %tmp.25 = 2;
+        %tmp.26 = div %tmp.24 %tmp.25;
+        invoke %tmp.15 %tmp.16(%tmp.17, %tmp.18, %tmp.21, %tmp.26);
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 52 8 ]
+        symbol [ minSinceSunriseUpdate %tmp.27 52 8 29 ];
+        %tmp.27 = getv self :minSinceSunriseUpdate;
+        %tmp.28 = 1;
+        %tmp.29 = add %tmp.27 %tmp.28;
+        symbol [ minSinceSunriseUpdate ? 52 8 29 ];
+        putv self :minSinceSunriseUpdate dup %tmp.29;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_43_38_53_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 55; @symbol_functiondef = [getSunriseAndSunset,55,21,40]; ]
+    private
+    function getSunriseAndSunset() as Void {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_55_50_66_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 56 8 ]
+        symbol [ Position %tmp.1 56 26 34 ];
+        %tmp.1 = getm $.Toybox.Position;
+        symbol [ getInfo %tmp.2 56 35 42 ];
+        %tmp.2 = getv function %tmp.1 :getInfo;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        symbol [ position %tmp.4 56 45 53 ];
+        %tmp.4 = getv %tmp.3 :position;
+        %tmp.5 = as %tmp.4 Position.Location;
+        symbol [ Position %tmp.5 56 57 65 ];
+        symbol [ Location %tmp.5 56 66 74 ];
+        symbol [ currentPosition ? 56 8 23 ];
+        putv self :currentPosition %tmp.5;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 57 8 ]
+        symbol [ Time %tmp.6 57 22 26 ];
+        %tmp.6 = getm $.Toybox.Time;
+        symbol [ now %tmp.7 57 27 30 ];
+        %tmp.7 = getv function %tmp.6 :now;
+        %tmp.8 = invoke %tmp.6 %tmp.7();
+        symbol [ currentTime ? 57 8 19 ];
+        putv self :currentTime %tmp.8;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 59 8 ]
+        symbol [ Weather %tmp.9 59 18 25 ];
+        %tmp.9 = getm $.Toybox.Weather;
+        symbol [ getSunrise %tmp.10 59 26 36 ];
+        %tmp.10 = getv function %tmp.9 :getSunrise;
+        symbol [ currentPosition %tmp.12 59 37 52 ];
+        %tmp.12 = getv ? :currentPosition;
+        symbol [ currentTime %tmp.14 59 54 65 ];
+        %tmp.14 = getv ? :currentTime;
+        %tmp.15 = invoke %tmp.9 %tmp.10(%tmp.12, %tmp.14);
+        symbol [ SUNRISE ? 59 8 15 ];
+        putv self :SUNRISE %tmp.15;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 60 8 ]
+        symbol [ Weather %tmp.16 60 17 24 ];
+        %tmp.16 = getm $.Toybox.Weather;
+        symbol [ getSunset %tmp.17 60 25 34 ];
+        %tmp.17 = getv function %tmp.16 :getSunset;
+        symbol [ currentPosition %tmp.19 60 35 50 ];
+        %tmp.19 = getv ? :currentPosition;
+        symbol [ currentTime %tmp.21 60 52 63 ];
+        %tmp.21 = getv ? :currentTime;
+        %tmp.22 = invoke %tmp.16 %tmp.17(%tmp.19, %tmp.21);
+        symbol [ SUNSET ? 60 8 14 ];
+        putv self :SUNSET %tmp.22;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 62 8 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_62_8_65_8_if_stmt:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_62_11_62_40_begin:
+        symbol [ SUNRISE %tmp.24 62 11 18 ];
+        %tmp.24 = getv ? :SUNRISE;
+        %tmp.25 = null;
+        %tmp.26 = ne %tmp.24 %tmp.25;
+        bf %tmp.26 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_62_8_65_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_62_30_62_40_true:
+        symbol [ SUNSET %tmp.28 62 30 36 ];
+        %tmp.28 = getv ? :SUNSET;
+        %tmp.29 = null;
+        %tmp.30 = ne %tmp.28 %tmp.29;
+        push %tmp.30;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_62_30_62_40_end:
+        %tmp.31 = phi [%tmp.26 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_62_11_62_40_begin] [%tmp.30 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_62_30_62_40_true] [%tmp.31 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_62_30_62_40_end];
+        bf %tmp.31 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_62_8_65_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_62_8_65_8_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_62_45_65_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 63 12 ]
+        symbol [ Time %tmp.34 63 26 30 ];
+        %tmp.34 = getm $.Toybox.Time;
+        symbol [ Moment %tmp.35 63 31 37 ];
+        %tmp.35 = getv function ? %tmp.34 :Moment;
+        symbol [ SUNRISE %tmp.37 63 38 45 ];
+        %tmp.37 = getv ? :SUNRISE;
+        %tmp.38 = as %tmp.37 { (!Null) };
+        symbol [ value %tmp.39 63 46 51 ];
+        %tmp.39 = getv function %tmp.38 :value;
+        %tmp.40 = invoke %tmp.38 %tmp.39();
+        %tmp.32 = newc %tmp.35 (%tmp.40);
+        %tmp.41 = as %tmp.32 Time.Moment;
+        symbol [ Time %tmp.41 63 58 62 ];
+        symbol [ Moment %tmp.41 63 63 69 ];
+        symbol [ SUNRISE ? 63 12 19 ];
+        putv self :SUNRISE %tmp.41;
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 64 12 ]
+        symbol [ Time %tmp.44 64 25 29 ];
+        %tmp.44 = getm $.Toybox.Time;
+        symbol [ Moment %tmp.45 64 30 36 ];
+        %tmp.45 = getv function ? %tmp.44 :Moment;
+        symbol [ SUNSET %tmp.47 64 37 43 ];
+        %tmp.47 = getv ? :SUNSET;
+        symbol [ value %tmp.48 64 44 49 ];
+        %tmp.48 = getv function %tmp.47 :value;
+        %tmp.49 = invoke %tmp.47 %tmp.48();
+        %tmp.42 = newc %tmp.45 (%tmp.49);
+        %tmp.50 = as %tmp.42 Time.Moment;
+        symbol [ Time %tmp.50 64 56 60 ];
+        symbol [ Moment %tmp.50 64 61 67 ];
+        symbol [ SUNSET ? 64 12 18 ];
+        putv self :SUNSET %tmp.50;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_62_45_65_8_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_62_8_65_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_62_8_65_8_if_end:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_55_50_66_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 68; @symbol_functiondef = [getSkyColor,68,21,32]; @symbol_return<0> = [Gfx,68,38,41]; @symbol_return<1> = [ColorType,68,42,51]; ]
+    private
+    function getSkyColor() as Gfx.ColorType {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_68_51_94_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 69 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_68_51_94_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_68_51_94_4_stop" ]
+        %DELTA.1 = local;
+        symbol [ DELTA %DELTA.1 69 12 17 ];
+        %tmp.1 = 15;
+        %tmp.2 = 60;
+        %tmp.3 = mul %tmp.1 %tmp.2;
+        lputv %DELTA.1 %tmp.3;
+        symbol [ DELTA %DELTA.1 69 12 17 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 70 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_68_51_94_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_68_51_94_4_stop" ]
+        %condition.2 = local;
+        symbol [ condition %condition.2 70 12 21 ];
+        symbol [ Weather %tmp.4 70 24 31 ];
+        %tmp.4 = getm $.Toybox.Weather;
+        symbol [ getCurrentConditions %tmp.5 70 32 52 ];
+        %tmp.5 = getv function %tmp.4 :getCurrentConditions;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        symbol [ condition %tmp.7 70 55 64 ];
+        %tmp.7 = getv %tmp.6 :condition;
+        lputv %condition.2 %tmp.7;
+        symbol [ condition %condition.2 70 12 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 71 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_68_51_94_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_68_51_94_4_stop" ]
+        %color.3 = local;
+        symbol [ color %color.3 71 12 17 ];
+        symbol [ SKY_COLOR_BLUE %tmp.9 71 20 34 ];
+        %tmp.9 = getv ? :SKY_COLOR_BLUE;
+        lputv %color.3 %tmp.9;
+        symbol [ color %color.3 71 12 17 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 72 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_68_51_94_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_68_51_94_4_stop" ]
+        %coveredWeather.4 = local;
+        symbol [ coveredWeather %coveredWeather.4 72 12 26 ];
+        %tmp.10 = newa 12;
+        %tmp.11 = 3;
+        %tmp.12 = dup %tmp.10;
+        %tmp.13 = aputv %tmp.12 0 %tmp.11;
+        %tmp.14 = 4;
+        %tmp.15 = dup %tmp.13;
+        %tmp.16 = aputv %tmp.15 1 %tmp.14;
+        %tmp.17 = 7;
+        %tmp.18 = dup %tmp.16;
+        %tmp.19 = aputv %tmp.18 2 %tmp.17;
+        %tmp.20 = 15;
+        %tmp.21 = dup %tmp.19;
+        %tmp.22 = aputv %tmp.21 3 %tmp.20;
+        %tmp.23 = 17;
+        %tmp.24 = dup %tmp.22;
+        %tmp.25 = aputv %tmp.24 4 %tmp.23;
+        %tmp.26 = 33;
+        %tmp.27 = dup %tmp.25;
+        %tmp.28 = aputv %tmp.27 5 %tmp.26;
+        %tmp.29 = 36;
+        %tmp.30 = dup %tmp.28;
+        %tmp.31 = aputv %tmp.30 6 %tmp.29;
+        %tmp.32 = 38;
+        %tmp.33 = dup %tmp.31;
+        %tmp.34 = aputv %tmp.33 7 %tmp.32;
+        %tmp.35 = 41;
+        %tmp.36 = dup %tmp.34;
+        %tmp.37 = aputv %tmp.36 8 %tmp.35;
+        %tmp.38 = 42;
+        %tmp.39 = dup %tmp.37;
+        %tmp.40 = aputv %tmp.39 9 %tmp.38;
+        %tmp.41 = 45;
+        %tmp.42 = dup %tmp.40;
+        %tmp.43 = aputv %tmp.42 10 %tmp.41;
+        %tmp.44 = 46;
+        %tmp.45 = dup %tmp.43;
+        %tmp.46 = aputv %tmp.45 11 %tmp.44;
+        lputv %coveredWeather.4 %tmp.46;
+        symbol [ coveredWeather %coveredWeather.4 72 12 26 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 74 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_68_51_94_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_68_51_94_4_stop" ]
+        %currentTime.5 = local;
+        symbol [ currentTime %currentTime.5 74 12 23 ];
+        symbol [ Time %tmp.49 74 30 34 ];
+        %tmp.49 = getm $.Toybox.Time;
+        symbol [ Moment %tmp.50 74 35 41 ];
+        %tmp.50 = getv function ? %tmp.49 :Moment;
+        symbol [ Time %tmp.51 74 42 46 ];
+        %tmp.51 = getm $.Toybox.Time;
+        symbol [ now %tmp.52 74 47 50 ];
+        %tmp.52 = getv function %tmp.51 :now;
+        %tmp.53 = invoke %tmp.51 %tmp.52();
+        symbol [ value %tmp.54 74 53 58 ];
+        %tmp.54 = getv function %tmp.53 :value;
+        %tmp.55 = invoke %tmp.53 %tmp.54();
+        %tmp.47 = newc %tmp.50 (%tmp.55);
+        %tmp.56 = as %tmp.47 Time.Moment;
+        symbol [ Time %tmp.56 74 65 69 ];
+        symbol [ Moment %tmp.56 74 70 76 ];
+        lputv %currentTime.5 %tmp.56;
+        symbol [ currentTime %currentTime.5 74 12 23 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 76 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_68_51_94_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_68_51_94_4_stop" ]
+        %isNight.6 = local;
+        symbol [ isNight %isNight.6 76 12 19 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_76_23_76_139_begin:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_76_23_76_52_begin:
+        symbol [ SUNSET %tmp.58 76 23 29 ];
+        %tmp.58 = getv ? :SUNSET;
+        %tmp.59 = null;
+        %tmp.60 = ne %tmp.58 %tmp.59;
+        %tmp.61 = dup %tmp.60;
+        bf %tmp.61 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_76_41_76_52_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_76_41_76_52_true:
+        symbol [ SUNRISE %tmp.63 76 41 48 ];
+        %tmp.63 = getv ? :SUNRISE;
+        %tmp.64 = null;
+        %tmp.65 = ne %tmp.63 %tmp.64;
+        %tmp.66 = and %tmp.60 %tmp.65;
+        push %tmp.66;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_76_41_76_52_end:
+        %tmp.67 = phi [%tmp.61 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_76_23_76_52_begin] [%tmp.66 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_76_41_76_52_true] [%tmp.67 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_76_41_76_52_end];
+        %tmp.68 = dup %tmp.67;
+        bf %tmp.68 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_76_60_76_139_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_76_60_76_139_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_76_61_76_134_begin:
+        %tmp.69 = lgetv %currentTime.5;
+        symbol [ currentTime %tmp.69 76 61 72 ];
+        symbol [ compare %tmp.70 76 73 80 ];
+        %tmp.70 = getv function %tmp.69 :compare;
+        symbol [ SUNSET %tmp.72 76 81 87 ];
+        %tmp.72 = getv ? :SUNSET;
+        %tmp.73 = as %tmp.72 { (!Null) };
+        %tmp.74 = invoke %tmp.69 %tmp.70(%tmp.73);
+        %tmp.75 = lgetv %DELTA.1;
+        symbol [ DELTA %tmp.75 76 92 97 ];
+        %tmp.76 = gte %tmp.74 %tmp.75;
+        %tmp.77 = dup %tmp.76;
+        bt %tmp.77 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_76_101_76_134_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_76_101_76_134_false:
+        %tmp.78 = lgetv %currentTime.5;
+        symbol [ currentTime %tmp.78 76 101 112 ];
+        symbol [ compare %tmp.79 76 113 120 ];
+        %tmp.79 = getv function %tmp.78 :compare;
+        symbol [ SUNRISE %tmp.81 76 121 128 ];
+        %tmp.81 = getv ? :SUNRISE;
+        %tmp.82 = invoke %tmp.78 %tmp.79(%tmp.81);
+        %tmp.83 = lgetv %DELTA.1;
+        symbol [ DELTA %tmp.83 76 134 139 ];
+        %tmp.84 = sub 0 %tmp.83;
+        %tmp.85 = lte %tmp.82 %tmp.84;
+        %tmp.86 = or %tmp.76 %tmp.85;
+        push %tmp.86;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_76_101_76_134_end:
+        %tmp.87 = phi [%tmp.77 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_76_61_76_134_begin] [%tmp.86 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_76_101_76_134_false] [%tmp.87 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_76_101_76_134_end];
+        %tmp.88 = and %tmp.67 %tmp.87;
+        push %tmp.88;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_76_60_76_139_end:
+        %tmp.89 = phi [%tmp.68 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_76_23_76_139_begin] [%tmp.88 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_76_60_76_139_true] [%tmp.89 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_76_60_76_139_end];
+        lputv %isNight.6 %tmp.89;
+        symbol [ isNight %isNight.6 76 12 19 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 77 8 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_77_8_77_134_if_stmt:
+        %tmp.90 = lgetv %isNight.6;
+        symbol [ isNight %tmp.90 77 12 19 ];
+        %tmp.91 = not %tmp.90;
+        bf %tmp.91 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_77_8_77_134_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_77_8_77_134_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_77_20_77_134_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 77 21 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_77_31_77_132_begin:
+        %tmp.92 = lgetv %currentTime.5;
+        symbol [ currentTime %tmp.92 77 31 42 ];
+        symbol [ greaterThan %tmp.93 77 43 54 ];
+        %tmp.93 = getv function %tmp.92 :greaterThan;
+        symbol [ Greg %tmp.94 77 55 59 ];
+        %tmp.94 = getm $.Toybox.Time.Gregorian;
+        symbol [ moment %tmp.95 77 60 66 ];
+        %tmp.95 = getv function %tmp.94 :moment;
+        %tmp.96 = newd 1;
+        %tmp.98 = const :hour;
+        symbol [ hour %tmp.98 77 69 73 const ];
+        %tmp.99 = 21;
+        %tmp.100 = dup %tmp.96;
+        %tmp.101 = aputv %tmp.100 %tmp.98 %tmp.99;
+        %tmp.102 = invoke %tmp.94 %tmp.95(%tmp.101);
+        %tmp.103 = invoke %tmp.92 %tmp.93(%tmp.102);
+        %tmp.104 = dup %tmp.103;
+        bt %tmp.104 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_77_86_77_132_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_77_86_77_132_false:
+        %tmp.105 = lgetv %currentTime.5;
+        symbol [ currentTime %tmp.105 77 86 97 ];
+        symbol [ lessThan %tmp.106 77 98 106 ];
+        %tmp.106 = getv function %tmp.105 :lessThan;
+        symbol [ Greg %tmp.107 77 107 111 ];
+        %tmp.107 = getm $.Toybox.Time.Gregorian;
+        symbol [ moment %tmp.108 77 112 118 ];
+        %tmp.108 = getv function %tmp.107 :moment;
+        %tmp.109 = newd 1;
+        %tmp.111 = const :hour;
+        symbol [ hour %tmp.111 77 121 125 const ];
+        %tmp.112 = 6;
+        %tmp.113 = dup %tmp.109;
+        %tmp.114 = aputv %tmp.113 %tmp.111 %tmp.112;
+        %tmp.115 = invoke %tmp.107 %tmp.108(%tmp.114);
+        %tmp.116 = invoke %tmp.105 %tmp.106(%tmp.115);
+        %tmp.117 = or %tmp.103 %tmp.116;
+        push %tmp.117;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_77_86_77_132_end:
+        %tmp.118 = phi [%tmp.104 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_77_31_77_132_begin] [%tmp.117 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_77_86_77_132_false] [%tmp.118 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_77_86_77_132_end];
+        lputv %isNight.6 %tmp.118;
+        symbol [ isNight %isNight.6 77 21 28 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_77_20_77_134_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_77_8_77_134_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_77_8_77_134_if_end:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 79 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_68_51_94_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_68_51_94_4_stop" ]
+        %isTwiLight.7 = local;
+        symbol [ isTwiLight %isTwiLight.7 79 12 22 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_79_26_79_151_begin:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_79_26_79_55_begin:
+        symbol [ SUNSET %tmp.120 79 26 32 ];
+        %tmp.120 = getv ? :SUNSET;
+        %tmp.121 = null;
+        %tmp.122 = ne %tmp.120 %tmp.121;
+        %tmp.123 = dup %tmp.122;
+        bf %tmp.123 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_79_44_79_55_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_79_44_79_55_true:
+        symbol [ SUNRISE %tmp.125 79 44 51 ];
+        %tmp.125 = getv ? :SUNRISE;
+        %tmp.126 = null;
+        %tmp.127 = ne %tmp.125 %tmp.126;
+        %tmp.128 = and %tmp.122 %tmp.127;
+        push %tmp.128;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_79_44_79_55_end:
+        %tmp.129 = phi [%tmp.123 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_79_26_79_55_begin] [%tmp.128 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_79_44_79_55_true] [%tmp.129 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_79_44_79_55_end];
+        %tmp.130 = dup %tmp.129;
+        bf %tmp.130 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_79_63_79_151_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_79_63_79_151_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_79_64_79_146_begin:
+        %tmp.131 = lgetv %currentTime.5;
+        symbol [ currentTime %tmp.131 79 64 75 ];
+        symbol [ compare %tmp.132 79 76 83 ];
+        %tmp.132 = getv function %tmp.131 :compare;
+        symbol [ SUNSET %tmp.134 79 84 90 ];
+        %tmp.134 = getv ? :SUNSET;
+        %tmp.135 = as %tmp.134 { (!Null) };
+        %tmp.136 = invoke %tmp.131 %tmp.132(%tmp.135);
+        symbol [ abs %tmp.137 79 92 95 ];
+        %tmp.137 = getv function %tmp.136 :abs;
+        %tmp.138 = invoke %tmp.136 %tmp.137();
+        %tmp.139 = lgetv %DELTA.1;
+        symbol [ DELTA %tmp.139 79 100 105 ];
+        %tmp.140 = lt %tmp.138 %tmp.139;
+        %tmp.141 = dup %tmp.140;
+        bt %tmp.141 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_79_109_79_146_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_79_109_79_146_false:
+        %tmp.142 = lgetv %currentTime.5;
+        symbol [ currentTime %tmp.142 79 109 120 ];
+        symbol [ compare %tmp.143 79 121 128 ];
+        %tmp.143 = getv function %tmp.142 :compare;
+        symbol [ SUNRISE %tmp.145 79 129 136 ];
+        %tmp.145 = getv ? :SUNRISE;
+        %tmp.146 = invoke %tmp.142 %tmp.143(%tmp.145);
+        symbol [ abs %tmp.147 79 138 141 ];
+        %tmp.147 = getv function %tmp.146 :abs;
+        %tmp.148 = invoke %tmp.146 %tmp.147();
+        %tmp.149 = lgetv %DELTA.1;
+        symbol [ DELTA %tmp.149 79 146 151 ];
+        %tmp.150 = lt %tmp.148 %tmp.149;
+        %tmp.151 = or %tmp.140 %tmp.150;
+        push %tmp.151;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_79_109_79_146_end:
+        %tmp.152 = phi [%tmp.141 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_79_64_79_146_begin] [%tmp.151 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_79_109_79_146_false] [%tmp.152 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_79_109_79_146_end];
+        %tmp.153 = and %tmp.129 %tmp.152;
+        push %tmp.153;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_79_63_79_151_end:
+        %tmp.154 = phi [%tmp.130 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_79_26_79_151_begin] [%tmp.153 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_79_63_79_151_true] [%tmp.154 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_79_63_79_151_end];
+        lputv %isTwiLight.7 %tmp.154;
+        symbol [ isTwiLight %isTwiLight.7 79 12 22 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 80 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_68_51_94_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_68_51_94_4_stop" ]
+        %isCovered.8 = local;
+        symbol [ isCovered %isCovered.8 80 12 21 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_80_25_80_99_begin:
+        %tmp.155 = lgetv %condition.2;
+        symbol [ condition %tmp.155 80 25 34 ];
+        %tmp.156 = null;
+        %tmp.157 = ne %tmp.155 %tmp.156;
+        %tmp.158 = dup %tmp.157;
+        bf %tmp.158 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_80_46_80_99_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_80_46_80_99_true:
+        %tmp.159 = lgetv %coveredWeather.4;
+        symbol [ coveredWeather %tmp.159 80 46 60 ];
+        symbol [ indexOf %tmp.160 80 61 68 ];
+        %tmp.160 = getv function %tmp.159 :indexOf;
+        %tmp.161 = lgetv %condition.2;
+        symbol [ condition %tmp.161 80 69 78 ];
+        %tmp.162 = as %tmp.161 { (!Null) };
+        %tmp.163 = as %tmp.162 Lang.Number;
+        symbol [ Lang %tmp.163 80 82 86 ];
+        symbol [ Number %tmp.163 80 87 93 ];
+        %tmp.164 = invoke %tmp.159 %tmp.160(%tmp.163);
+        %tmp.165 = -1;
+        %tmp.166 = ne %tmp.164 %tmp.165;
+        %tmp.167 = and %tmp.157 %tmp.166;
+        push %tmp.167;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_80_46_80_99_end:
+        %tmp.168 = phi [%tmp.158 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_80_25_80_99_begin] [%tmp.167 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_80_46_80_99_true] [%tmp.168 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_80_46_80_99_end];
+        lputv %isCovered.8 %tmp.168;
+        symbol [ isCovered %isCovered.8 80 12 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 82 8 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_82_8_84_8_if_stmt:
+        %tmp.169 = lgetv %isTwiLight.7;
+        symbol [ isTwiLight %tmp.169 82 11 21 ];
+        bf %tmp.169 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_82_8_84_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_82_8_84_8_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_82_22_84_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 83 12 ]
+        symbol [ SKY_COLOR_SUNSET %tmp.171 83 20 36 ];
+        %tmp.171 = getv ? :SKY_COLOR_SUNSET;
+        lputv %color.3 %tmp.171;
+        symbol [ color %color.3 83 12 17 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_82_22_84_8_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_82_8_84_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_82_8_84_8_if_end:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 85 8 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_85_8_87_8_if_stmt:
+        %tmp.172 = lgetv %isNight.6;
+        symbol [ isNight %tmp.172 85 11 18 ];
+        bf %tmp.172 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_85_8_87_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_85_8_87_8_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_85_19_87_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 86 12 ]
+        symbol [ SKY_COLOR_NIGHT %tmp.174 86 20 35 ];
+        %tmp.174 = getv ? :SKY_COLOR_NIGHT;
+        lputv %color.3 %tmp.174;
+        symbol [ color %color.3 86 12 17 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_85_19_87_8_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_85_8_87_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_85_8_87_8_if_end:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 89 8 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_89_8_91_8_if_stmt:
+        %tmp.175 = lgetv %isCovered.8;
+        symbol [ isCovered %tmp.175 89 11 20 ];
+        bf %tmp.175 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_89_8_91_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_89_8_91_8_if_true:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_89_21_91_8_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 90 12 ]
+        symbol [ SKY_COLOR_GREY %tmp.177 90 20 34 ];
+        %tmp.177 = getv ? :SKY_COLOR_GREY;
+        lputv %color.3 %tmp.177;
+        symbol [ color %color.3 90 12 17 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_89_21_91_8_stop:
+        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_89_8_91_8_if_end;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_89_8_91_8_if_end:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc" 93 8 ]
+        %tmp.178 = lgetv %color.3;
+        symbol [ color %tmp.178 93 15 20 ];
+        %tmp.179 = as %tmp.178 Gfx.ColorType;
+        symbol [ Gfx %tmp.179 93 24 27 ];
+        symbol [ ColorType %tmp.179 93 28 37 ];
+        ret %tmp.179;
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Sky_mc_68_51_94_4_stop:
+    }
+}
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Sky.mc"; @line = 1; ]
+<init> {
+}

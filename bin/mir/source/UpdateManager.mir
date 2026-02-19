@@ -1,0 +1,55 @@
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UpdateManager.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [System,1,14,20]; ]
+import Toybox.System;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UpdateManager.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Lang,2,14,18]; ]
+import Toybox.Lang;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UpdateManager.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Graphics,3,14,22]; ]
+import Toybox.Graphics;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UpdateManager.mc"; @line = 5; @position = 4; @symbol_vardef = [DEVICESETTINGS,5,4,18]; @symbol_type<0> = [DeviceSettings,5,22,36]; ]
+var DEVICESETTINGS as DeviceSettings;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UpdateManager.mc"; @line = 6; @position = 4; @symbol_vardef = [ISHIGHPOWERON,6,4,17]; @symbol_type<0> = [Lang,6,21,25]; @symbol_type<1> = [Boolean,6,26,33]; ]
+var ISHIGHPOWERON as Lang.Boolean = true;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UpdateManager.mc"; @line = 8; @symbol_classdef = [UpdateManager,8,6,19]; ]
+class UpdateManager {
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UpdateManager.mc"; @line = 8; ]
+    <init> {
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UpdateManager.mc" 12 18 ]
+        symbol [ DEVICESETTINGS %tmp.2 12 61 75 ];
+        %tmp.2 = getv ? :DEVICESETTINGS;
+        symbol [ requiresBurnInProtection %tmp.3 12 76 100 ];
+        %tmp.3 = getv %tmp.2 :requiresBurnInProtection;
+        putv self :requiresBurnInProtection %tmp.3;
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UpdateManager.mc"; @line = 8; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UpdateManager.mc"; @line = 11; @position = 18; @symbol_vardef = [isNightMode,11,18,29]; @symbol_type<0> = [Lang,11,33,37]; @symbol_type<1> = [Boolean,11,38,45]; ]
+    private
+    var isNightMode as Lang.Boolean = false;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UpdateManager.mc"; @line = 12; @position = 18; @symbol_vardef = [requiresBurnInProtection,12,18,42]; @symbol_type<0> = [Lang,12,46,50]; @symbol_type<1> = [Boolean,12,51,58]; ]
+    private
+    var requiresBurnInProtection as Lang.Boolean;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UpdateManager.mc"; @line = 13; @position = 18; @symbol_vardef = [secondSinceTotalUpdate,13,18,40]; @symbol_type<0> = [Lang,13,44,48]; @symbol_type<1> = [Number,13,49,55]; ]
+    private
+    var secondSinceTotalUpdate as Lang.Number = 0;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UpdateManager.mc"; @line = 14; @position = 18; @symbol_vardef = [secondSinceDataFieldUpdate,14,18,44]; @symbol_type<0> = [Lang,14,48,52]; @symbol_type<1> = [Number,14,53,59]; ]
+    private
+    var secondSinceDataFieldUpdate as Lang.Number = 0;
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UpdateManager.mc"; @line = 17; @symbol_functiondef = [initialize,17,13,23]; ]
+    function initialize() as Void {
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UpdateManager.mc"; @line = 21; @symbol_functiondef = [updateFace,21,20,30]; @symbol_param<0> = [dc,21,31,33]; @symbol_param<0>_type<0> = [Dc,21,37,39]; ]
+    public
+    function updateFace(dc as Dc) as Void {
+    }
+}
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UpdateManager.mc"; @line = 1; ]
+<init> {
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UpdateManager.mc" 5 4 ]
+    symbol [ System %tmp.1 5 39 45 ];
+    %tmp.1 = getm $.Toybox.System;
+    symbol [ getDeviceSettings %tmp.2 5 46 63 ];
+    %tmp.2 = getv function %tmp.1 :getDeviceSettings;
+    %tmp.3 = invoke %tmp.1 %tmp.2();
+    putv self :DEVICESETTINGS %tmp.3;
+}

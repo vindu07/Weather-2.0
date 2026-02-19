@@ -1,0 +1,70 @@
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Landscape.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; @symbol_usingAlias = [Ui,1,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Landscape.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Graphics,2,13,21]; @symbol_usingAlias = [Gfx,2,25,28]; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Landscape.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [Lang,3,13,17]; ]
+using Toybox.Lang;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Landscape.mc"; @line = 5; @symbol_classdef = [Landscape,5,6,15]; @symbol_extends<0> = [Ui,5,24,26]; @symbol_extends<1> = [Drawable,5,27,35]; ]
+class Landscape extends Ui.Drawable {
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Landscape.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Landscape.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Landscape.mc"; @line = 8; @symbol_typedef = [LandscapeParams,8,12,27]; @symbol_type<0> = [Lang,10,23,27]; @symbol_type<1> = [String,10,28,34]; @symbol_type_const<0> = [identifier,10,9,19]; ]
+    type LandscapeParams as {:identifier as Lang.String};
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Landscape.mc"; @line = 16; @symbol_functiondef = [initialize,16,13,23]; @symbol_param<0> = [params,16,24,30]; @symbol_param<0>_type<0> = [LandscapeParams,16,34,49]; ]
+    function initialize(params as LandscapeParams) as Void {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Landscape_mc_16_50_18_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Landscape.mc" 17 8 ]
+        symbol [ Drawable %tmp.2 17 8 16 ];
+        %tmp.2 = getv ? :Drawable;
+        symbol [ initialize %tmp.3 17 17 27 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        %tmp.4 = lgetv %params;
+        symbol [ params %tmp.4 17 28 34 ];
+        invoke %tmp.2 %tmp.3(%tmp.4);
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Landscape_mc_16_50_18_4_stop:
+    }
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Landscape.mc"; @line = 20; @symbol_functiondef = [draw,20,20,24]; @symbol_param<0> = [dc,20,25,27]; @symbol_param<0>_type<0> = [Gfx,20,31,34]; @symbol_param<0>_type<1> = [Dc,20,35,37]; ]
+    public
+    function draw(dc as Gfx.Dc) {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Landscape_mc_20_38_23_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Landscape.mc" 21 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Landscape_mc_20_38_23_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Landscape_mc_20_38_23_4_stop" ]
+        %landscape.1 = local;
+        symbol [ landscape %landscape.1 21 12 21 ];
+        symbol [ Ui %tmp.1 21 24 26 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.2 21 27 39 ];
+        %tmp.2 = getv function %tmp.1 :loadResource;
+        symbol [ Rez %tmp.4 21 40 43 ];
+        %tmp.4 = getv ? :Rez;
+        symbol [ Drawables %tmp.5 21 44 53 ];
+        %tmp.5 = getv %tmp.4 :Drawables;
+        symbol [ MountainBackground %tmp.6 21 54 72 ];
+        %tmp.6 = getv %tmp.5 :MountainBackground;
+        %tmp.7 = invoke %tmp.1 %tmp.2(%tmp.6);
+        %tmp.8 = as %tmp.7 Ui.BitmapResource;
+        symbol [ Ui %tmp.8 21 77 79 ];
+        symbol [ BitmapResource %tmp.8 21 80 94 ];
+        lputv %landscape.1 %tmp.8;
+        symbol [ landscape %landscape.1 21 12 21 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Landscape.mc" 22 8 ]
+        %tmp.9 = lgetv %dc;
+        symbol [ dc %tmp.9 22 8 10 ];
+        symbol [ drawBitmap %tmp.10 22 11 21 ];
+        %tmp.10 = getv function %tmp.9 :drawBitmap;
+        %tmp.11 = -10;
+        %tmp.12 = -20;
+        %tmp.13 = lgetv %landscape.1;
+        symbol [ landscape %tmp.13 22 32 41 ];
+        invoke %tmp.9 %tmp.10(%tmp.11, %tmp.12, %tmp.13);
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_custom_drawables_Landscape_mc_20_38_23_4_stop:
+    }
+}
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\custom_drawables\Landscape.mc"; @line = 1; ]
+<init> {
+}
