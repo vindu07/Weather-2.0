@@ -50,12 +50,13 @@ module Astronomy{
         //
         //Il calcolo si basa sul giorno dell'anno per calcolare la declinazione solare
         //e sulla latitudine per calcolare la durata del giorno solare, aggiungendo un offset dovuto
-        //alla eventuale distanza in longitudine dal meridiano centrale del fuso orario
+        //alla eventuale distanza in longitudine dal meridiano centrale del fuso orario e una correzione dovuta all'
+        //orbita ellittica e la consegente variazione di velocità della terra durante l'anno
         //
         //Non affidabile ma abbastanza preciso per l'utilizzo nella watchface
         //
-        //Ore di bestemmie: teoriche(metodo quasi interamente pensato e realizzato dal sottoscritto) = 1.5; scrittura codice = 1; debugging = 6;
-        //Finalmente funzionante dopo un pomeriggio intero, Primiero 10/01/2026
+        //Ore di bestemmie: scrittura codice = 2; debugging = 10;
+        
         
         var returnValue = {:sunrise => 6.0, :sunset => 18.0, :solar_midday => 12.0};
         
