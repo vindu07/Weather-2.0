@@ -37,10 +37,11 @@ UPPER PART:
 
 LOWER PART:
 
--Time is also a drawable object and contains some calculations for military/12 hour format and daylight saving time.
--The date is taken from Toybox.Time.Gregorian and is therefore automatically translated into all the garmin suported languages.
--Data fields and Info fields are two different classes and take information from the SensorMod module.
--Weather and moon icons are based on custom bitmap fonts and take information from Astronomy and WeatherMod modules.
+- Time is also a drawable object and contains some calculations for military/12 hour format and daylight saving time.
+- The date is taken from Toybox.Time.Gregorian and is therefore automatically translated into all the garmin suported languages.
+- Data fields and Info fields are two different classes and take information from the SensorMod module.
+- Weather and moon icons are based on custom bitmap fonts and take information from Astronomy and WeatherMod modules.
+- Battery indicator is a white rounded rectangle filled with another colored rectangle which is proportional to the battery percentage. The colors are customizable on app settings.
 
 -The lower part is refreshed at every update, so the weather/moon icons could slightly differ from what is shown on the upper part for this reason.
 
