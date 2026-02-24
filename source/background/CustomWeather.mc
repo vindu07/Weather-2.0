@@ -1,12 +1,16 @@
-using Toybox.WatchUi;
+using Toybox.Application;
 using Toybox.Graphics as Gfx;
 using Toybox.Lang;
-using Toybox.Application;
+using Toybox.System;
+using Toybox.Time;
+using Toybox.WatchUi;
 
 
 
 class CustomWeather extends WatchUi.Drawable {
 
+
+    // Resources
     private var cloudy = WatchUi.loadResource(Rez.Drawables.Cloudy) as WatchUi.BitmapResource;
     private var fog = WatchUi.loadResource(Rez.Drawables.Fog) as WatchUi.BitmapResource;
     private var wind = WatchUi.loadResource(Rez.Drawables.Wind) as WatchUi.BitmapResource;
@@ -34,9 +38,11 @@ class CustomWeather extends WatchUi.Drawable {
         }
         
         var isDay = Astronomy.isDay(Time.now());
+        var conditionType = WeatherMod.getConditionType();
         
-        if(isDay && drawWeather && !energySavingMode){
-            var drawables = getBitmapArray() as Lang.Array<Lang.Dictionary>;
+        if(isDay && drawWeather && !energySavingMode && conditionType != null){
+            
+            var drawables = getBitmapArray() as Lang.Array<Lang.Dictionary>; //Gets all the bitmaps to draw
 
             for(var i=0; i < drawables.size(); i++){
                 dc.drawBitmap(drawables[i][:x], drawables[i][:y], drawables[i][:drawable]);
@@ -45,13 +51,22 @@ class CustomWeather extends WatchUi.Drawable {
     
     }
 
+    // Returns an array containing bitmaps and positions related to the weather condition
     function getBitmapArray() as Lang.Array<Lang.Dictionary> {
+
+        // This function will be modified in future with layout parameters for the compatibility
+        // with 280x280 and 240x240 displays
         
         var array = [];
         var weather;
 
-        if(minSinceAppStart%15 == 0){weather = WeatherMod.getConditionType(); self.condition = weather; }
-        else{weather = self.condition; }
+        if(minSinceAppStart%10 == 0){
+            weather = WeatherMod.getConditionType(); 
+            self.condition = weather; 
+        }
+        else{
+            weather = self.condition; 
+        }
 
         try{
         switch(weather as WeatherMod.CustomCondition){
@@ -91,9 +106,22 @@ class CustomWeather extends WatchUi.Drawable {
     }
 
     function getAppSettings() as Void {
-        
-        drawWeather = Application.Properties.getValue("ShowWeather");
-        energySavingMode = Application.Properties.getValue("EnergySavingMode");
+        try{
+            drawWeather = Application.Properties.getValue("ShowWeather");
+            if(drawWeather == null){
+                drawWeather = false;
+            }
+            
+            energySavingMode = Application.Properties.getValue("EnergySavingMode");
+            if(energySavingMode == null){
+                energySavingMode = false;
+            }
+        }
+        catch(ex){
+            System.println("ERROR -- CustomWeather.getAppSettings -- " + ex.getErrorMessage());
+            drawWeather = false;
+            energySavingMode = false;
+        }
     }
 
     

@@ -1,16 +1,16 @@
-using Toybox.WatchUi as Ui;
+using Toybox.Application;
+using Toybox.Application.Properties;
 using Toybox.Graphics as Gfx;
 using Toybox.Lang;
-using Toybox.Application.Properties;
+using Toybox.System;
+using Toybox.WatchUi as Ui;
 
 class Landscape extends Ui.Drawable {
 
 
-    private var mx;
-    private var my;
-
+    private var _x;
+    private var _y;
     private var energySavingMode;
-
     private var landscapeBitmap;
 
     private enum Landscapes {
@@ -27,8 +27,8 @@ class Landscape extends Ui.Drawable {
     function initialize(params as Lang.Dictionary){
         Drawable.initialize(params);
 
-        mx = params[:x];
-        my = params[:y];
+        _x = params[:x];
+        _y = params[:y];
         getAppSettings();
     }
 
@@ -39,53 +39,68 @@ class Landscape extends Ui.Drawable {
         }
             
     
-        dc.drawBitmap(mx, my, landscapeBitmap);
+        dc.drawBitmap(_x, _y, landscapeBitmap);
     }
 
     private function getLandscape(){
-        
-        
-        if(energySavingMode){
-            self.landscapeBitmap = WatchUi.loadResource(Rez.Drawables.EnergysavingBackground);
-        }
-        else{
-
-            var bitmap;
-            var landscape = Properties.getValue("LandscapeType") as Landscapes;
-
-            switch(landscape){
-                case LANDSCAPE_MOUNTAINS:
-                    bitmap = WatchUi.loadResource(Rez.Drawables.MountainBackground);
-                    break;
-                case LANDSCAPE_HILLS:
-                    bitmap = WatchUi.loadResource(Rez.Drawables.CountryBackground);
-                    break;
-                case LANDSCAPE_BEACH:
-                    bitmap = WatchUi.loadResource(Rez.Drawables.BeachBackground);
-                    break;
-                case LANDSCAPE_LONDON:
-                    bitmap = WatchUi.loadResource(Rez.Drawables.LondonBackground);
-                    break;
-                case LANDSCAPE_PARIS:
-                    bitmap = WatchUi.loadResource(Rez.Drawables.ParisBackground);
-                    break;
-                case LANDSCAPE_ROME:
-                    bitmap = WatchUi.loadResource(Rez.Drawables.RomeBackground);
-                    break;
-                case LANDSCAPE_VENICE:
-                    bitmap = WatchUi.loadResource(Rez.Drawables.VeniceBackground);
-                    break;   
-                default:
-                    bitmap = WatchUi.loadResource(Rez.Drawables.MountainBackground);
+        try{
+            if(energySavingMode){
+                self.landscapeBitmap = WatchUi.loadResource(Rez.Drawables.EnergysavingBackground);
             }
+            else{
 
-            landscapeBitmap = bitmap;
+                var bitmap;
+                var landscape = Properties.getValue("LandscapeType");
+
+                if(landscape == null){
+                    System.println("WARNING -- Landscape.getLandscape -- LandscapeType is null, defaulting to MOUNTAINS");
+                    landscape = LANDSCAPE_MOUNTAINS;
+                }
+
+                switch(landscape as Landscapes){
+                    case LANDSCAPE_MOUNTAINS:
+                        bitmap = WatchUi.loadResource(Rez.Drawables.MountainBackground);
+                        break;
+                    case LANDSCAPE_HILLS:
+                        bitmap = WatchUi.loadResource(Rez.Drawables.CountryBackground);
+                        break;
+                    case LANDSCAPE_BEACH:
+                        bitmap = WatchUi.loadResource(Rez.Drawables.BeachBackground);
+                        break;
+                    case LANDSCAPE_LONDON:
+                        bitmap = WatchUi.loadResource(Rez.Drawables.LondonBackground);
+                        break;
+                    case LANDSCAPE_PARIS:
+                        bitmap = WatchUi.loadResource(Rez.Drawables.ParisBackground);
+                        break;
+                    case LANDSCAPE_ROME:
+                        bitmap = WatchUi.loadResource(Rez.Drawables.RomeBackground);
+                        break;
+                    case LANDSCAPE_VENICE:
+                        bitmap = WatchUi.loadResource(Rez.Drawables.VeniceBackground);
+                        break;   
+                    default:
+                        bitmap = WatchUi.loadResource(Rez.Drawables.MountainBackground);
+                }
+
+                landscapeBitmap = bitmap;
+            }
+        }
+        catch(ex){
+            System.println("ERROR -- Landscape.getLandscape -- " + ex.getErrorMessage());
+            landscapeBitmap = WatchUi.loadResource(Rez.Drawables.MountainBackground);
         }
     }
 
     private function getAppSettings(){
-        energySavingMode = Properties.getValue("EnergySavingMode");
-
-        getLandscape();
+        try{
+            var enSave = Properties.getValue("EnergySavingMode");
+            energySavingMode = (enSave != null) ? enSave : false;
+            getLandscape();
+        }
+        catch(ex){
+            System.println("ERROR -- Landscape.getAppSettings -- " + ex.getErrorMessage());
+            energySavingMode = false;
+        }
     }
 }

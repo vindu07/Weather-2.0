@@ -1,23 +1,16 @@
-using Toybox.Weather;
-using Toybox.WatchUi as Ui;
-using Toybox.Graphics as Gfx;
-using Toybox.Weather as Wtr;
+using Toybox.Application;
 using Toybox.Lang;
-using Astronomy;
-using Toybox.Time;
 using Toybox.System;
-import Toybox.Application.Storage;
+using Toybox.Time;
+using Toybox.Weather;
+
+// Functions to get weather information for the other modules and classes
 
 module WeatherMod {
 
     typedef Conditions as {
         :condition as Lang.Number, :cloudCover as Lang.Number, :pressure as Lang.Float, 
         :temperature as Lang.Numeric, :relativeHumidity as Lang.Number, :windSpeed as Lang.Float
-    };
-
-    var WeatherConditions as Conditions = {
-        :condition => 53, :cloudCover => 0, :pressure => 0.0, 
-        :temperature => 0.0, :relativeHumidity => 0, :windSpeed => 0.0
     };
 
     enum CustomCondition {
@@ -33,35 +26,45 @@ module WeatherMod {
         CONDITION_Dust
     }
     
-    function getCondition() as Wtr.Condition{
+
+    // Fallback data to avoid unexpected app crashes due to null values
+    var WeatherConditions as Conditions = {
+        :condition => 53, :cloudCover => 0, :pressure => 1013.5, 
+        :temperature => 20.0, :relativeHumidity => 50, :windSpeed => 0.0
+    };
+
+    // Returns the current condition from garmin or memory
+    function getCondition() as Weather.Condition{
         
         self.getCurrentConditions();
 
         var condition = self.WeatherConditions;
 
-        //meteo real time
+        // Real-time weather
         if(!hasNullValues(condition)){
-            return condition[:condition] as Wtr.Condition;
+            return condition[:condition] as Weather.Condition;
         }
         
-        //fallback su memoria
+        // Fallback to storage
         condition = self.getData() as Conditions;
         
         if(!hasNullValues(condition)){
-            return condition[:condition] as Wtr.Condition;
+            return condition[:condition] as Weather.Condition;
         }
         
-        //lascia invariato
+        // Leave unchanged if no data available
         return WeatherConditions[:condition] as Weather.Condition;
     }
     
+    //true if the cloud cover is more than 70%
     function isCovered() as Lang.Boolean{
 
-        var isCovered = (WeatherConditions[:cloudCover] >= 50);
+        var isCovered = (WeatherConditions[:cloudCover] >= 70);
 
         return isCovered as Lang.Boolean;
     }
 
+    // Custom condition for the dynamic weather background
     function getConditionType() as CustomCondition{
 
         var condition = self.getCondition() as Lang.Number;
@@ -100,6 +103,7 @@ module WeatherMod {
         return condition;
     }
 
+    // Updates the condition dictionary
     function getCurrentConditions() as Conditions{
 
         var conditions = {};
@@ -151,6 +155,8 @@ module WeatherMod {
         return {};
 
     }
+
+    // Checks the conditions dictionary to make sure there are no null values
     function hasNullValues(conditions as Conditions?) as Lang.Boolean{
 
         if(conditions == null){    
@@ -170,28 +176,29 @@ module WeatherMod {
         return false;
     }
 
-
-
+    // Called in the View.mc file
     function refreshData(){
         self.getCurrentConditions();
         self.storeData();
     }
+
     function storeData(){
-        Storage.setValue("condition", self.WeatherConditions[:condition]);
-        Storage.setValue("temperature", self.WeatherConditions[:temperature]);
-        Storage.setValue("pressure", self.WeatherConditions[:pressure]);
-        Storage.setValue("windSpeed", self.WeatherConditions[:windSpeed]);
-        Storage.setValue("cloudCover", self.WeatherConditions[:cloudCover]);
-        Storage.setValue("relativeHumidity", self.WeatherConditions[:relativeHumidity]);
+        Application.Storage.setValue("condition", self.WeatherConditions[:condition]);
+        Application.Storage.setValue("temperature", self.WeatherConditions[:temperature]);
+        Application.Storage.setValue("pressure", self.WeatherConditions[:pressure]);
+        Application.Storage.setValue("windSpeed", self.WeatherConditions[:windSpeed]);
+        Application.Storage.setValue("cloudCover", self.WeatherConditions[:cloudCover]);
+        Application.Storage.setValue("relativeHumidity", self.WeatherConditions[:relativeHumidity]);
     }
+
     function getData(){
         
-        self.WeatherConditions[:condition] = Storage.getValue("condition");
-        self.WeatherConditions[:temperature] = Storage.getValue("temperature");
-        self.WeatherConditions[:pressure] = Storage.getValue("pressure");
-        self.WeatherConditions[:windSpeed] = Storage.getValue("windSpeed");
-        self.WeatherConditions[:cloudCover] = Storage.getValue("cloudCover");
-        self.WeatherConditions[:relativeHumidity] = Storage.getValue("relativeHumidity");
+        self.WeatherConditions[:condition] = Application.Storage.getValue("condition");
+        self.WeatherConditions[:temperature] = Application.Storage.getValue("temperature");
+        self.WeatherConditions[:pressure] = Application.Storage.getValue("pressure");
+        self.WeatherConditions[:windSpeed] = Application.Storage.getValue("windSpeed");
+        self.WeatherConditions[:cloudCover] = Application.Storage.getValue("cloudCover");
+        self.WeatherConditions[:relativeHumidity] = Application.Storage.getValue("relativeHumidity");
     }
 
 }

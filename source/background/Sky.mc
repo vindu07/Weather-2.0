@@ -1,18 +1,16 @@
-using Toybox.WatchUi as Ui;
+using Toybox.Application;
 using Toybox.Graphics as Gfx;
-using Toybox.Weather;
-using Toybox.Position;
+using Toybox.Lang;
+using Toybox.System;
 using Toybox.Time;
 using Toybox.Time.Gregorian as Greg;
-using Toybox.Lang;
-
-using Astronomy;
+using Toybox.Weather;
+using Toybox.WatchUi as Ui;
 
 
 class Sky extends Ui.Drawable {
 
-    private var minSinceSunriseUpdate as Lang.Number = 0;
-    private var mheight;
+    private var _height;
 
     private var changeSkyColor;
     private var energySavingMode;
@@ -31,8 +29,7 @@ class Sky extends Ui.Drawable {
         Drawable.initialize(params);
         getAppSettings();
 
-        mheight = params[:height];
-        
+        _height = params[:height];       
     }
 
     public function draw(dc as Gfx.Dc){
@@ -43,29 +40,21 @@ class Sky extends Ui.Drawable {
 
         if(!energySavingMode){    
             dc.setColor(getSkyColor(), Graphics.COLOR_TRANSPARENT);
-            dc.fillRectangle(0, 0, dc.getWidth(), mheight);  
+            dc.fillRectangle(0, 0, dc.getWidth(), _height);  
         }      
         
-        minSinceSunriseUpdate += 1;
     }
 
     private function getSkyColor() as Gfx.ColorType{
-        var color = SKY_COLOR_BLUE;//default
+        var color = SKY_COLOR_BLUE; // default
         
         try{
-
-            var condition = (Weather.getCurrentConditions() != null) ? Weather.getCurrentConditions().condition : Weather.CONDITION_CLEAR;
-            if(condition == null){
-                System.println("WARNING -- Sky.getSkyColor -- cond. meteo non disponibili");
-            }
-        
             
             if(changeSkyColor){
+                
                 var isNight = !(Astronomy.isDay(Time.now()));       
                 var isTwiLight = Astronomy.isTwilight(Time.now());
                 var isCovered = WeatherMod.isCovered();
-                
-                
                 
                 if(isCovered){
                     color = SKY_COLOR_GREY;
@@ -75,7 +64,7 @@ class Sky extends Ui.Drawable {
                 }
                 if(isTwiLight){
                     color = SKY_COLOR_SUNSET;
-                }
+                } // twilight wins even if the sky is covered
             }
 
         }
@@ -87,9 +76,18 @@ class Sky extends Ui.Drawable {
     }
 
     private function getAppSettings() as Void{
-        changeSkyColor = Application.Properties.getValue("DynamicSkyColor");
+        try{
+            var changeSky = Application.Properties.getValue("DynamicSkyColor");
+            changeSkyColor = (changeSky != null) ? changeSky : true;
 
-        energySavingMode = Application.Properties.getValue("EnergySavingMode");
+            var enSave = Application.Properties.getValue("EnergySavingMode");
+            energySavingMode = (enSave != null) ? enSave : false;
+        }
+        catch(ex){
+            System.println("ERROR -- Sky.getAppSettings -- " + ex.getErrorMessage());
+            changeSkyColor = true;
+            energySavingMode = false;
+        }
     }
 
 }

@@ -1,24 +1,24 @@
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Application,1,14,25]; ]
-import Toybox.Application;
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Lang,2,14,18]; ]
-import Toybox.Lang;
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [WatchUi,3,14,21]; ]
-import Toybox.WatchUi;
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 5; @position = 4; @symbol_vardef = [SETTINGSCHANGED,5,4,19]; @symbol_type<0> = [Boolean,5,23,30]; ]
-var SETTINGSCHANGED as Boolean = false;
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 7; @symbol_classdef = [DynamicWatchfaceApp,7,6,25]; @symbol_extends<0> = [Application,7,34,45]; @symbol_extends<1> = [AppBase,7,46,53]; ]
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [Application,1,13,24]; ]
+using Toybox.Application;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Lang,2,13,17]; ]
+using Toybox.Lang;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [WatchUi,3,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 5; @position = 4; @symbol_vardef = [SETTINGSCHANGED,5,4,19]; @symbol_type<0> = [Lang,5,23,27]; @symbol_type<1> = [Boolean,5,28,35]; ]
+var SETTINGSCHANGED as Lang.Boolean = false;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 7; @symbol_classdef = [DynamicWatchfaceApp,7,6,25]; @symbol_extends<0> = [Application,7,34,45]; @symbol_extends<1> = [AppBase,7,46,53]; ]
 class DynamicWatchfaceApp extends Application.AppBase {
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 7; ]
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 7; ]
     <init> {
     }
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 7; ]
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 7; ]
     static
     <init> {
     }
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 9; @symbol_functiondef = [initialize,9,13,23]; ]
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 9; @symbol_functiondef = [initialize,9,13,23]; ]
     function initialize() as Void {
 C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceApp_mc_9_26_11_4_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\DynamicWatchfaceApp.mc" 10 8 ]
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceApp.mc" 10 8 ]
         symbol [ AppBase %tmp.2 10 8 15 ];
         %tmp.2 = getv ? :AppBase;
         symbol [ initialize %tmp.3 10 16 26 ];
@@ -26,58 +26,49 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceAp
         invoke %tmp.2 %tmp.3();
 C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceApp_mc_9_26_11_4_stop:
     }
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 14; @symbol_functiondef = [onStart,14,13,20]; @symbol_param<0> = [state,14,21,26]; @symbol_param<0>_type<0> = [Dictionary,14,30,40]; ]
-    function onStart(state as Dictionary or Null) as Void {
-    }
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 18; @symbol_functiondef = [onStop,18,13,19]; @symbol_param<0> = [state,18,20,25]; @symbol_param<0>_type<0> = [Dictionary,18,29,39]; ]
-    function onStop(state as Dictionary or Null) as Void {
-    }
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 22; @symbol_functiondef = [getInitialView,22,13,27]; @symbol_return<0> = [Views,22,34,39]; @symbol_return<1> = [Views,22,45,50]; @symbol_return<2> = [InputDelegates,22,52,66]; ]
-    function getInitialView() as [Views] or [Views, InputDelegates] {
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceApp_mc_22_68_24_4_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\DynamicWatchfaceApp.mc" 23 8 ]
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 14; @symbol_functiondef = [getInitialView,14,13,27]; @symbol_return<0> = [WatchUi,14,34,41]; @symbol_return<1> = [Views,14,42,47]; @symbol_return<2> = [WatchUi,14,53,60]; @symbol_return<3> = [Views,14,61,66]; @symbol_return<4> = [WatchUi,14,68,75]; @symbol_return<5> = [InputDelegates,14,76,90]; ]
+    function getInitialView() as [WatchUi.Views] or [WatchUi.Views, WatchUi.InputDelegates] {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceApp_mc_14_92_16_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceApp.mc" 15 8 ]
         %tmp.1 = newa 1;
-        symbol [ DynamicWatchfaceView %tmp.5 23 21 41 ];
+        symbol [ DynamicWatchfaceView %tmp.5 15 21 41 ];
         %tmp.5 = getv ? :DynamicWatchfaceView;
         %tmp.2 = newc %tmp.5 ();
         %tmp.6 = dup %tmp.1;
         %tmp.7 = aputv %tmp.6 0 %tmp.2;
         ret %tmp.7;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceApp_mc_22_68_24_4_stop:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceApp_mc_14_92_16_4_stop:
     }
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 27; @symbol_functiondef = [onSettingsChanged,27,13,30]; ]
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 19; @symbol_functiondef = [onSettingsChanged,19,13,30]; ]
     function onSettingsChanged() as Void {
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceApp_mc_27_41_30_4_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\DynamicWatchfaceApp.mc" 28 8 ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceApp_mc_19_41_22_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceApp.mc" 20 8 ]
         %tmp.1 = true;
-        symbol [ SETTINGSCHANGED ? 28 8 23 ];
+        symbol [ SETTINGSCHANGED ? 20 8 23 ];
         putv self :SETTINGSCHANGED %tmp.1;
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\DynamicWatchfaceApp.mc" 29 8 ]
-        symbol [ WatchUi %tmp.2 29 8 15 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceApp.mc" 21 8 ]
+        symbol [ WatchUi %tmp.2 21 8 15 ];
         %tmp.2 = getm $.Toybox.WatchUi;
-        symbol [ requestUpdate %tmp.3 29 16 29 ];
+        symbol [ requestUpdate %tmp.3 21 16 29 ];
         %tmp.3 = getv function %tmp.2 :requestUpdate;
         invoke %tmp.2 %tmp.3();
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceApp_mc_27_41_30_4_stop:
-    }
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 32; @symbol_functiondef = [onInactive,32,13,23]; @symbol_param<0> = [state,32,24,29]; @symbol_param<0>_type<0> = [Dictionary,32,33,43]; ]
-    function onInactive(state as Dictionary or Null) as Void {
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceApp_mc_19_41_22_4_stop:
     }
 }
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 38; @symbol_functiondef = [getApp,38,9,15]; @symbol_return<0> = [DynamicWatchfaceApp,38,21,40]; ]
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 26; @symbol_functiondef = [getApp,26,9,15]; @symbol_return<0> = [DynamicWatchfaceApp,26,21,40]; ]
 function getApp() as DynamicWatchfaceApp {
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceApp_mc_38_41_40_0_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\DynamicWatchfaceApp.mc" 39 4 ]
-    symbol [ Application %tmp.1 39 11 22 ];
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceApp_mc_26_41_28_0_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceApp.mc" 27 4 ]
+    symbol [ Application %tmp.1 27 11 22 ];
     %tmp.1 = getm $.Toybox.Application;
-    symbol [ getApp %tmp.2 39 23 29 ];
+    symbol [ getApp %tmp.2 27 23 29 ];
     %tmp.2 = getv function %tmp.1 :getApp;
     %tmp.3 = invoke %tmp.1 %tmp.2();
     %tmp.4 = as %tmp.3 DynamicWatchfaceApp;
-    symbol [ DynamicWatchfaceApp %tmp.4 39 35 54 ];
+    symbol [ DynamicWatchfaceApp %tmp.4 27 35 54 ];
     ret %tmp.4;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceApp_mc_38_41_40_0_stop:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceApp_mc_26_41_28_0_stop:
 }
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 1; ]
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceApp.mc"; @line = 1; ]
 <init> {
 }

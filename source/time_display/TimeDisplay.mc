@@ -1,10 +1,11 @@
-using Toybox.WatchUi as Ui;
+using Toybox.Application;
+using Toybox.Application.Properties;
 using Toybox.Graphics as Gfx;
-using Toybox.Time as Time;
+using Toybox.Lang;
+using Toybox.System;
+using Toybox.Time;
 using Toybox.Time.Gregorian as Greg;
-import Toybox.Application;
-import Toybox.System;
-import Toybox.Lang;
+using Toybox.WatchUi as Ui;
 
 
 
@@ -14,8 +15,8 @@ class TimeDisplay extends Ui.Drawable {
     private var removeZerosFromHour;
     private var is24Hour;
 
-    private var xPOS as Number = System.getDeviceSettings().screenWidth/2; //centro
-    private var yPOS as Numeric = System.getDeviceSettings().screenHeight*.45; //45% altezza
+    private var xPOS as Lang.Number = System.getDeviceSettings().screenWidth/2; // center
+    private var yPOS as Lang.Numeric = System.getDeviceSettings().screenHeight*.45; // 45% height
     private var FONT as Gfx.FontType = WatchUi.loadResource(Rez.Fonts.FONT_40) as Gfx.FontType;
     private var TEXTCOLOR;
 
@@ -33,7 +34,7 @@ class TimeDisplay extends Ui.Drawable {
         
         var time = getCurrentTime();
 
-        //copro prima con rettangolo nero per evitare sovrapposizioni
+        // Cover first with black rectangle to avoid overlaps
         
             dc.setClip(xPOS - 80, yPOS, 160, 41);
             dc.setColor(Gfx.COLOR_BLACK, Gfx.COLOR_TRANSPARENT);
@@ -46,42 +47,70 @@ class TimeDisplay extends Ui.Drawable {
     }
     
 
-    private function getCurrentTime() as String{
-        var timeString;
+    private function getCurrentTime() as Lang.String{
+        var timeString = "--:--";
         var timeFormat = "$1$:$2$";
         var hourFormat = "%02u";
 
-        var currentTime = Greg.info(Time.now(), Time.FORMAT_SHORT);
-        var hour = currentTime.hour;
-        var min = currentTime.min.format("%02u");
+        try{
+            var currentTime = Greg.info(Time.now(), Time.FORMAT_SHORT);
+            
+            var hour = currentTime.hour;
+            var minInfo = currentTime.min;
 
-        if(useMilitaryFormat){//formato militare N.B. sovrascrive le altre formattazioni
-            timeFormat = "$1$$2$";
-        }
-        else{
-            if(removeZerosFromHour){//toglie zero prima dell ora
-                hourFormat = "%u";
+            if(hour == null || minInfo == null){
+                System.println("ERROR -- TimeDisplay.getCurrentTime -- Hour or min is null");
+                return "--:--";
             }
+            
+            var min = minInfo.format("%02u");
 
-            if(!is24Hour && hour>12){
-                hour %= 12; //ora tra 0-12
+            if(useMilitaryFormat){ // Military format - NOTE: overrides other formats
+                timeFormat = "$1$$2$";
             }
+            else{
+                if(removeZerosFromHour){ // Remove leading zero from hour
+                    hourFormat = "%u";
+                }
+
+                if(!is24Hour && hour>12){
+                    hour %= 12; //ora tra 0-12
+                }
+            }
+      
+            //formatta la stringa
+            hour = hour.format(hourFormat).toString();
+           
+            timeString = format(timeFormat, [hour, min]) as Lang.String;
         }
-  
-        //formatta la stringa
-        hour = hour.format(hourFormat).toString();
-       
-        timeString = format(timeFormat, [hour, min]) as String;
-        
+        catch(ex){
+            System.println("ERROR -- TimeDisplay.getCurrentTime -- " + ex.getErrorMessage());
+            timeString = "--:--";
+        }
 
         return timeString;
     }
 
     private function getAppSettings() as Void{
-        useMilitaryFormat = Properties.getValue("UseMilitaryFormat" as PropertyKeyType) as Boolean;
-        removeZerosFromHour = Properties.getValue("RemoveZerosFromHour" as PropertyKeyType) as Boolean;
-        is24Hour = System.getDeviceSettings().is24Hour as Boolean;
+        try{
+            var useMilitary = Properties.getValue("UseMilitaryFormat" as Application.PropertyKeyType);
+            useMilitaryFormat = (useMilitary != null) ? useMilitary : false;
+            
+            var removeZeros = Properties.getValue("RemoveZerosFromHour" as Application.PropertyKeyType);
+            removeZerosFromHour = (removeZeros != null) ? removeZeros : false;
+            
+            var settings = System.getDeviceSettings();
+            is24Hour = (settings != null && settings.is24Hour != null) ? settings.is24Hour : true;
 
-        TEXTCOLOR = Properties.getValue("TimeColor") as Gfx.ColorType;
+            var timeCol = Properties.getValue("TimeColor");
+            TEXTCOLOR = (timeCol != null) ? timeCol : Gfx.COLOR_WHITE;
+        }
+        catch(ex){
+            System.println("ERROR -- TimeDisplay.getAppSettings -- " + ex.getErrorMessage());
+            useMilitaryFormat = false;
+            removeZerosFromHour = false;
+            is24Hour = true;
+            TEXTCOLOR = Gfx.COLOR_WHITE;
+        }
     }
 }

@@ -1,7 +1,8 @@
-using Toybox.WatchUi as Ui;
-using Toybox.Lang;
+using Toybox.Application;
+using Toybox.Application.Properties;
 using Toybox.Graphics as Gfx;
-import Toybox.Application;
+using Toybox.Lang;
+using Toybox.WatchUi as Ui;
 
 
 class FieldLayout extends Ui.Drawable { 
@@ -44,10 +45,18 @@ class FieldLayout extends Ui.Drawable {
 
 
     function getAppSettings() as Void{
+        try{
+            var fieldColor = Properties.getValue("FieldColor");
+            mcolor = (fieldColor != null) ? fieldColor : Gfx.COLOR_WHITE;
 
-        mcolor = Properties.getValue("FieldColor");
-
-        showFields = Properties.getValue("ShowDataFields") as Lang.Boolean;
+            var sFields = Properties.getValue("ShowDataFields");
+            self.showFields = (sFields != null) ? sFields : false;
+        }
+        catch(ex){
+            System.println("ERROR -- FieldLayout.getAppSettings -- " + ex.getErrorMessage());
+            mcolor = Gfx.COLOR_WHITE;
+            self.showFields = false;
+        }
     }
 
 }

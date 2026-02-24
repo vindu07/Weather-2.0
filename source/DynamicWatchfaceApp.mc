@@ -1,8 +1,8 @@
-import Toybox.Application;
-import Toybox.Lang;
-import Toybox.WatchUi;
+using Toybox.Application;
+using Toybox.Lang;
+using Toybox.WatchUi;
 
-var SETTINGSCHANGED as Boolean = false;
+var SETTINGSCHANGED as Lang.Boolean = false;
 
 class DynamicWatchfaceApp extends Application.AppBase {
 
@@ -10,16 +10,8 @@ class DynamicWatchfaceApp extends Application.AppBase {
         AppBase.initialize();
     }
 
-    // onStart() is called on application start up
-    function onStart(state as Dictionary?) as Void {
-    }
-
-    // onStop() is called when your application is exiting
-    function onStop(state as Dictionary?) as Void {
-    }
-
     // Return the initial view of your application here
-    function getInitialView() as [Views] or [Views, InputDelegates] {
+    function getInitialView() as [WatchUi.Views] or [WatchUi.Views, WatchUi.InputDelegates] {
         return [ new DynamicWatchfaceView() ];
     }
 
@@ -27,10 +19,6 @@ class DynamicWatchfaceApp extends Application.AppBase {
     function onSettingsChanged() as Void {
         SETTINGSCHANGED = true;
         WatchUi.requestUpdate();
-    }
-
-    function onInactive(state as Dictionary or Null) as Void {
-        
     }
 
 }

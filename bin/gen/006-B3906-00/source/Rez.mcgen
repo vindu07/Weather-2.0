@@ -10,6 +10,7 @@ module Rez {
         (:initialized) var CountryBackground as ResourceId;
         (:initialized) var BeachBackground as ResourceId;
         (:initialized) var LondonBackground as ResourceId;
+        (:initialized) var ParisBackground as ResourceId;
         (:initialized) var RomeBackground as ResourceId;
         (:initialized) var VeniceBackground as ResourceId;
         (:initialized) var EnergysavingBackground as ResourceId;

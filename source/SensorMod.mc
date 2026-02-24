@@ -1,10 +1,10 @@
-using Toybox.System;
-using Toybox.Lang;
-using Toybox.ActivityMonitor;
 using Toybox.Activity;
-using Toybox.SensorHistory;
-using Toybox.Weather;
+using Toybox.ActivityMonitor;
+using Toybox.Lang;
 using Toybox.Math;
+using Toybox.SensorHistory;
+using Toybox.System;
+using Toybox.Weather;
 
 module SensorMod{
 
@@ -69,65 +69,89 @@ module SensorMod{
         var weather = Weather.getCurrentConditions();
         var sunEvents = Astronomy.SunEvents;
 
-        switch(sensor){
-            case SENSOR_ALTITUDE: 
-                data = getAlt(); 
-                title = "ALT";
-                break;
-            case SENSOR_HEARTRATE: 
-                data = SensorHistory.getHeartRateHistory({:period => 1}).getMax().format("%d");
-                title = "HR";
-                break;
-            case SENSOR_BAROMETER: 
-                data = getPress(UNIT_HPASCAL); 
-                title = "PRES";
-                break;
-            case SENSOR_OXYGEN_SATURATION: 
-                data = SensorHistory.getOxygenSaturationHistory({:period => 1}).getMax().format("%d"); 
-                title = "SAT";
-                break;
-            case SENSOR_TEMPERATURE: 
-                data = getTemp(); 
-                title = "TEMP";
-                break;
-            case SENSOR_ACTIVE_CALORIES: 
-                title = "CAL";  
-                data = activityMonitor.calories.format("%d"); 
-                break;
-            case SENSOR_ACTIVE_MINUTES: 
-                data = activityMonitor.activeMinutesDay.total.format("%d"); 
-                title = "MIN"; 
-                break;
-            case SENSOR_BATTERY: 
-                data = systemStats.battery.format("%d"); 
-                title = "BATT";
-                break;
-            case SENSOR_DISTANCE: 
-                data = getDist();
-                title = "DIST"; 
-                break;
-            case SENSOR_FLOORS: 
-                data = activityMonitor.floorsClimbed.format("%d"); 
-                title = "FLOOR";
-                break;
-            case SENSOR_HUMIDITY: 
-                data = weather.relativeHumidity.format("%.1f");
-                title = "HUM"; 
-                break;
-            case SENSOR_STEPS: 
-                data = getStep(); 
-                title = "STEP"; 
-                break;
-            case SENSOR_SUNRISE: 
-                data = (Math.floor(sunEvents[:sunrise])*100 as Lang.Number + ((sunEvents[:sunrise]-Math.floor(sunEvents[:sunrise])) as Lang.Number)*60).format("%04d"); 
-                title = "RISE"; 
-                break;
-            case SENSOR_SUNSET: 
-                data = (Math.floor(sunEvents[:sunset])*100 as Lang.Number + ((sunEvents[:sunset]-Math.floor(sunEvents[:sunset])) as Lang.Number)*60).format("%04d"); 
-                title = "SET"; 
-                break;
-            case SENSOR_EMPTY:
-                data = ""; 
+        try{
+            switch(sensor){
+                case SENSOR_ALTITUDE: 
+                    data = getAlt(); 
+                    title = "ALT";
+                    break;
+                case SENSOR_HEARTRATE: 
+                    var hrHistory = SensorHistory.getHeartRateHistory({:period => 1});
+                    if(hrHistory != null){
+                        var hrMax = hrHistory.getMax();
+                        data = (hrMax != null) ? hrMax.format("%d") : "--";
+                    }
+                    title = "HR";
+                    break;
+                case SENSOR_BAROMETER: 
+                    data = getPress(UNIT_HPASCAL); 
+                    title = "PRES";
+                    break;
+                case SENSOR_OXYGEN_SATURATION: 
+                    var o2History = SensorHistory.getOxygenSaturationHistory({:period => 1});
+                    if(o2History != null){
+                        var o2Max = o2History.getMax();
+                        data = (o2Max != null) ? o2Max.format("%d") : "--";
+                    }
+                    title = "SAT";
+                    break;
+                case SENSOR_TEMPERATURE: 
+                    data = getTemp(); 
+                    title = "TEMP";
+                    break;
+                case SENSOR_ACTIVE_CALORIES: 
+                    title = "CAL";  
+                    if(activityMonitor.calories != null){
+                        data = activityMonitor.calories.format("%d");
+                    }
+                    break;
+                case SENSOR_ACTIVE_MINUTES: 
+                    if(activityMonitor.activeMinutesDay != null){
+                        data = activityMonitor.activeMinutesDay.total.format("%d");
+                    }
+                    title = "MIN"; 
+                    break;
+                case SENSOR_BATTERY: 
+                    if(systemStats != null && systemStats.battery != null){
+                        data = systemStats.battery.format("%d");
+                    }
+                    title = "BATT";
+                    break;
+                case SENSOR_DISTANCE: 
+                    data = getDist();
+                    title = "DIST"; 
+                    break;
+                case SENSOR_FLOORS: 
+                    if(activityMonitor != null){
+                        data = activityMonitor.floorsClimbed.format("%d");
+                    }
+                    title = "FLOOR";
+                    break;
+                case SENSOR_HUMIDITY: 
+                    if(weather != null && WeatherMod.WeatherConditions[:relativeHumidity] != null){
+                        data = WeatherMod.WeatherConditions[:relativeHumidity].format("%d");
+                    }
+                    title = "HUM"; 
+                    break;
+                case SENSOR_STEPS: 
+                    data = getStep(); 
+                    title = "STEP"; 
+                    break;
+                case SENSOR_SUNRISE: 
+                    data = (Math.floor(sunEvents[:sunrise])*100 as Lang.Number + ((sunEvents[:sunrise]-Math.floor(sunEvents[:sunrise])) as Lang.Number)*60).format("%04d"); 
+                    title = "RISE"; 
+                    break;
+                case SENSOR_SUNSET: 
+                    data = (Math.floor(sunEvents[:sunset])*100 as Lang.Number + ((sunEvents[:sunset]-Math.floor(sunEvents[:sunset])) as Lang.Number)*60).format("%04d"); 
+                    title = "SET"; 
+                    break;
+                case SENSOR_EMPTY:
+                    data = ""; 
+            }
+        }
+        catch(ex){
+            System.println("ERROR -- SensorMod.getSensorDataAndTitle -- " + ex.getErrorMessage());
+            data = "--";
         }
 
         return [data, title];
@@ -139,27 +163,52 @@ module SensorMod{
         var settings = System.getDeviceSettings();
         var weather = Weather.getCurrentConditions();
         var sunEvents = Astronomy.SunEvents;
-        var returnValue = "^_^";
+        var returnValue = "--";
 
-        switch(sensor){
-            
-            case SENSOR_TEMPERATURE: returnValue = ICON_TEMPERATURE + getTemp(); 
-            break;
-            case SENSOR_ALARMS: returnValue = ICON_ALARMS + settings.alarmCount.format("%d"); 
-            break;
-            case SENSOR_BATTERY: returnValue = ICON_BATTERY + systemStats.battery.format("%d"); 
-            break;
-            case SENSOR_HUMIDITY: returnValue = ICON_HUMIDITY + weather.relativeHumidity.format("%.1f"); 
-            break;
-            case SENSOR_NOTIFICATIONS: returnValue =  ICON_NOTIFICATIONS + settings.notificationCount.format("%d"); 
-            break;
-            case SENSOR_SUNRISE: returnValue = (Math.floor(sunEvents[:sunrise])*100 as Lang.Number + ((sunEvents[:sunrise]-Math.floor(sunEvents[:sunrise])) as Lang.Number)*60).format("%04d"); 
-            break;
-            case SENSOR_SUNSET: returnValue = (Math.floor(sunEvents[:sunset])*100 as Lang.Number + ((sunEvents[:sunset]-Math.floor(sunEvents[:sunset])) as Lang.Number)*60).format("%04d"); 
-            break;
-            case SENSOR_NOTIFICATIONS_PHONE: returnValue = getNotifIcon() + getPhoneIcon();
-            break;
-            case SENSOR_EMPTY: returnValue = "";  
+        try{
+            switch(sensor){
+                
+                case SENSOR_TEMPERATURE: 
+                    var temp = getTemp();
+                    returnValue = ICON_TEMPERATURE + (temp != null ? temp : "--"); 
+                    break;
+                case SENSOR_ALARMS: 
+                    if(settings != null){
+                        returnValue = ICON_ALARMS + settings.alarmCount.format("%d");
+                    }
+                    break;
+                case SENSOR_BATTERY: 
+                    if(systemStats != null && systemStats.battery != null){
+                        returnValue = ICON_BATTERY + systemStats.battery.format("%d");
+                    }
+                    break;
+                case SENSOR_HUMIDITY: 
+                    if(weather != null && WeatherMod.WeatherConditions[:relativeHumidity] != null){
+                        returnValue = ICON_HUMIDITY + WeatherMod.WeatherConditions[:relativeHumidity].format("%d");
+                    }
+                    System.println(returnValue);
+                    break;
+                case SENSOR_NOTIFICATIONS: 
+                    if(settings != null){
+                        returnValue = ICON_NOTIFICATIONS + settings.notificationCount.format("%d");
+                    }
+                    break;
+                case SENSOR_SUNRISE: 
+                    returnValue = (Math.floor(sunEvents[:sunrise])*100 as Lang.Number + ((sunEvents[:sunrise]-Math.floor(sunEvents[:sunrise])) as Lang.Number)*60).format("%04d"); 
+                    break;
+                case SENSOR_SUNSET: 
+                    returnValue = (Math.floor(sunEvents[:sunset])*100 as Lang.Number + ((sunEvents[:sunset]-Math.floor(sunEvents[:sunset])) as Lang.Number)*60).format("%04d"); 
+                    break;
+                case SENSOR_NOTIFICATIONS_PHONE: 
+                    returnValue = getNotifIcon() + getPhoneIcon();
+                    break;
+                case SENSOR_EMPTY: 
+                    returnValue = "";  
+            }
+        }
+        catch(ex){
+            System.println("ERROR -- SensorMod.getSensorInfo -- " + ex.getErrorMessage());
+            returnValue = "--";
         }
 
         return returnValue;
@@ -218,21 +267,38 @@ module SensorMod{
         return value;
     }
     function getTemp() as Lang.String?{
-            var value = SensorHistory.getTemperatureHistory({:period => 1}).getMax();
+            try{
+                var tempHistory = SensorHistory.getTemperatureHistory({:period => 1});
+                
+                var value = tempHistory.getMax();
+                if(value == null){
+                    System.println("WARNING -- SensorMod.getTemp -- Temperature value is null");
+                    return "--";
+                }
 
-            var TempUnit = System.getDeviceSettings().temperatureUnits;
-            
-            if(TempUnit == System.UNIT_STATUTE){
-                value = value*1.8 + 32;
-              
+                var TempUnit = System.getDeviceSettings().temperatureUnits;
+                
+                if(TempUnit == System.UNIT_STATUTE){
+                    value = value*1.8 + 32;
+                }
+                
+                value = value.format("%.1f");
+                return value;
             }
-            
-            value = value.format("%.1f");
-            return value;
+            catch(ex){
+                System.println("ERROR -- SensorMod.getTemp -- " + ex.getErrorMessage());
+                return "--";
+            }
     }
     function getPress(unit as PressUnits) as Lang.String?{
-        
-            var value = SensorHistory.getPressureHistory({:period => 1}).getMax();
+        try{
+            var pressHistory = SensorHistory.getPressureHistory({:period => 1});
+            
+            var value = pressHistory.getMax();
+            if(value == null){
+                System.println("WARNING -- SensorMod.getPress -- Pressure value is null");
+                return "--";
+            }
             
             switch(unit){
                 case UNIT_HPASCAL: value /= 100; break;
@@ -242,38 +308,66 @@ module SensorMod{
             value = value.format("%.1f");
 
             return value;
+        }
+        catch(ex){
+            System.println("ERROR -- SensorMod.getPress -- " + ex.getErrorMessage());
+            return "--";
+        }
     }
     function getDist() as Lang.String?{
+        try{
+            var actInfo = ActivityMonitor.getInfo();
+            if(actInfo == null || actInfo.distance == null){
+                System.println("ERROR -- SensorMod.getDist -- ActivityMonitor info is null");
+                return "--";
+            }
 
-        var value = ActivityMonitor.getInfo().distance as Lang.Float;
-        var DistUnit = System.getDeviceSettings().distanceUnits;
+            var value = actInfo.distance as Lang.Float;
+            var DistUnit = System.getDeviceSettings().distanceUnits;
 
-        if(DistUnit == System.UNIT_STATUTE){
-            value /= 160934.0 as Lang.Float;//miglia
-        }
-        else{
-            value /= 100000.0 as Lang.Float;//kmetri
-        }
-        value = value.format("%.1f");
-
-        return value;
-    }
-    function getStep() as Lang.String?{
-        var value = ActivityMonitor.getInfo().steps;
-
-        if(value > 9999){
-            if(value > 99000){
-                value = (value/1000).format("%d") + "K";
+            if(DistUnit == System.UNIT_STATUTE){
+                value /= 160934.0 as Lang.Float;//miglia
             }
             else{
-                value = (value/1000.0).format("%.1f") + "K";
+                value /= 100000.0 as Lang.Float;//kmetri
             }
-        }
-        else{
-            value = value.format("%d");
-        }
+            value = value.format("%.1f");
 
-        return value;
+            return value;
+        }
+        catch(ex){
+            System.println("ERROR -- SensorMod.getDist -- " + ex.getErrorMessage());
+            return "--";
+        }
+    }
+    function getStep() as Lang.String?{
+        try{
+            var actInfo = ActivityMonitor.getInfo();
+            if(actInfo == null || actInfo.steps == null){
+                System.println("ERROR -- SensorMod.getStep -- ActivityMonitor info is null");
+                return "--";
+            }
+            
+            var value = actInfo.steps;
+
+            if(value > 9999){
+                if(value > 99000){
+                    value = (value/1000).format("%d") + "K";
+                }
+                else{
+                    value = (value/1000.0).format("%.1f") + "K";
+                }
+            }
+            else{
+                value = value.format("%d");
+            }
+
+            return value;
+        }
+        catch(ex){
+            System.println("ERROR -- SensorMod.getStep -- " + ex.getErrorMessage());
+            return "--";
+        }
     }
    
 }

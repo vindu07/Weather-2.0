@@ -1,10 +1,11 @@
-using Toybox.WatchUi as Ui;
+using Toybox.Application;
+using Toybox.Application.Properties;
 using Toybox.Graphics as Gfx;
-using Toybox.Time as Time;
+using Toybox.Lang;
+using Toybox.System;
+using Toybox.Time;
 using Toybox.Time.Gregorian as Greg;
-import Toybox.Application;
-import Toybox.System;
-import Toybox.Lang;
+using Toybox.WatchUi as Ui;
 
 
 
@@ -34,7 +35,7 @@ class DateDisplay extends Ui.Drawable {
 
         var date = getCurrentDate();
 
-        //copro prima con rettangolo nero per evitare sovrapposizioni
+        // Cover first with black rectangle to avoid overlaps
 
             dc.setClip(xPOS - 80, yPOS, 160, 25);
             dc.setColor(Gfx.COLOR_BLACK, Gfx.COLOR_TRANSPARENT);
@@ -46,32 +47,46 @@ class DateDisplay extends Ui.Drawable {
         dc.clearClip();
     }
 
-    private function getCurrentDate() as String{
-        var date = "404";///togliere
+    private function getCurrentDate() as Lang.String{
+        var date = "ERROR"; // fallback
         var dateFormat = "$1$ $2$ $3$";
         
         try{
         
-        var today = Greg.info(Time.now(), Time.FORMAT_MEDIUM);
-        var dayOfWeek = today.day_of_week.toString().toUpper();
-        var month = today.month.toString().toUpper();
-        var day = today.day;
+            var dateInfo = Greg.info(Time.now(), Time.FORMAT_MEDIUM);
+            
+            var dayOfWeek = dateInfo.day_of_week;
+            var month = dateInfo.month;
+            var day = dateInfo.day;
 
-        //aggiungere eventuale codice per formattare in diverse lingue
+            if(dayOfWeek == null || month == null || day == null){
+                System.println("ERROR -- DateDisplay.getCurrentDate -- Some date components are null");
+                return "--";
+            }
 
-        //formatta la stringa
-        date = format(dateFormat, [dayOfWeek, day, month]) as String;
+            // Add code if needed to format in different languages
+
+            // Format the string
+            date = format(dateFormat, [dayOfWeek.toString().toUpper(), day, month.toString().toUpper()]) as Lang.String;
 
         }
         catch(ex){
             System.println("ERROR -- DateDisplay.getCurrentDate -- " + ex.toString());
+            date = "--";
         }
 
         return date;
     }
 
     private function getAppSettings() as Void{
-        TEXTCOLOR = Properties.getValue("TimeColor") as Gfx.ColorType;
+        try{
+            var timeCol = Properties.getValue("TimeColor");
+            TEXTCOLOR = (timeCol != null) ? timeCol : Gfx.COLOR_WHITE;
+        }
+        catch(ex){
+            System.println("ERROR -- DateDisplay.getAppSettings -- " + ex.getErrorMessage());
+            TEXTCOLOR = Gfx.COLOR_WHITE;
+        }
     }
 }
 

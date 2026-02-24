@@ -1,7 +1,8 @@
-using Toybox.WatchUi as Ui;
-using Toybox.Lang;
+using Toybox.Application;
+using Toybox.Application.Properties;
 using Toybox.Graphics as Gfx;
-import Toybox.Application;
+using Toybox.Lang;
+using Toybox.WatchUi as Ui;
 
 
 class DataFields extends Ui.Drawable {
@@ -53,11 +54,11 @@ class DataFields extends Ui.Drawable {
         if(showFields){
             
             var temp = SensorMod.getSensorDataAndTitle(msensor);
-            //descrizione campo
+            // Field description
             var title = temp[1];
     
 
-            //fallback se dati null
+            // Fallback if data is null
             var data = temp[0];
             if(data == null){
                 data = "--";
@@ -71,10 +72,22 @@ class DataFields extends Ui.Drawable {
     }
 
     function getAppSettings() as Void{
-        textColor = Properties.getValue("FieldColor") as Gfx.ColorType;
-        msensor = Properties.getValue("DataField" + mnumber) as SensorMod.Sensortype;
+        try{
+            var fieldColor = Properties.getValue("FieldColor");
+            textColor = (fieldColor != null) ? fieldColor : Gfx.COLOR_WHITE;
+            
+            var sensor = Properties.getValue("DataField" + mnumber);
+            msensor = (sensor != null) ? sensor : SensorMod.SENSOR_EMPTY;
 
-        showFields = Properties.getValue("ShowDataFields") as Lang.Boolean;
+            var showFields = Properties.getValue("ShowDataFields");
+            self.showFields = (showFields != null) ? showFields : false;
+        }
+        catch(ex){
+            System.println("ERROR -- DataFields.getAppSettings -- " + ex.getErrorMessage());
+            textColor = Gfx.COLOR_WHITE;
+            msensor = SensorMod.SENSOR_EMPTY;
+            self.showFields = false;
+        }
     }
 
 }

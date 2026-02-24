@@ -1,7 +1,9 @@
-using Toybox.WatchUi as Ui;
-using Toybox.Lang;
+using Toybox.Application;
+using Toybox.Application.Properties;
 using Toybox.Graphics as Gfx;
-import Toybox.Application;
+using Toybox.Lang;
+using Toybox.System;
+using Toybox.WatchUi as Ui;
 
 
 class BatteryIndicator extends Ui.Drawable { 
@@ -80,31 +82,53 @@ class BatteryIndicator extends Ui.Drawable {
         else{
             dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT);
         }
-        //disegno l'icona
+        // Draw the icon
         dc.drawRoundedRectangle(mx, my, mwidth, mheight, 2);
         dc.drawLine(mx+mwidth+1, my+(mheight-4)/2, mx+mwidth+1, my+(mheight-4)/2+4);
 
 
-        //riempio con la percentuale
+        // Fill with the percentage
         dc.setColor(indicatorColor, Gfx.COLOR_TRANSPARENT);
         dc.fillRectangle(mx+2, my+2, fillLength, mheight-4);
 
     }
 
     function getAppSettings() as Void{
+        try{
+            var drawBatt = Properties.getValue("ShowBatteryIcon");
+            drawBattery = (drawBatt != null) ? drawBatt : false;
 
-        drawBattery = Properties.getValue("ShowBatteryIcon") as Lang.Boolean;
+            var fullCol = Properties.getValue("BatteryIndicatorFullColor");
+            fullColor = (fullCol != null) ? fullCol : 0x00FF00;
+            
+            var goodCol = Properties.getValue("BatteryIndicatorGoodColor");
+            goodColor = (goodCol != null) ? goodCol : 0xFFFFFF;
+            
+            var medCol = Properties.getValue("BatteryIndicatorMedColor");
+            medColor = (medCol != null) ? medCol : 0xFFFFFF;
+            
+            var lowCol = Properties.getValue("BatteryIndicatorLowColor");
+            lowColor = (lowCol != null) ? lowCol : 0xFF0000;
+            
+            var extremeCol = Properties.getValue("BatteryIndicatorExtremelyLowColor");
+            extremelyLowColor = (extremeCol != null) ? extremeCol : 0xFF0000;
 
-        fullColor = Properties.getValue("BatteryIndicatorFullColor") as Lang.Number;
-        goodColor = Properties.getValue("BatteryIndicatorGoodColor") as Lang.Number;
-        medColor = Properties.getValue("BatteryIndicatorMedColor") as Lang.Number;
-        lowColor = Properties.getValue("BatteryIndicatorLowColor") as Lang.Number;
-        extremelyLowColor = Properties.getValue("BatteryIndicatorExtremelyLowColor") as Lang.Number;
-
-        fullPercent = Properties.getValue("BatteryIndicatorFull") as Lang.Number;
-        goodPercent = Properties.getValue("BatteryIndicatorGood") as Lang.Number;
-        medPercent = Properties.getValue("BatteryIndicatorMed") as Lang.Number;
-        lowPercent = Properties.getValue("BatteryIndicatorLow") as Lang.Number; 
+            var fullPerc = Properties.getValue("BatteryIndicatorFull");
+            fullPercent = (fullPerc != null) ? fullPerc : 80;
+            
+            var goodPerc = Properties.getValue("BatteryIndicatorGood");
+            goodPercent = (goodPerc != null) ? goodPerc : 50;
+            
+            var medPerc = Properties.getValue("BatteryIndicatorMed");
+            medPercent = (medPerc != null) ? medPerc : 20;
+            
+            var lowPerc = Properties.getValue("BatteryIndicatorLow");
+            lowPercent = (lowPerc != null) ? lowPerc : 10;
+        }
+        catch(ex){
+            System.println("ERROR -- BatteryIndicator.getAppSettings -- " + ex.getErrorMessage());
+            drawBattery = false;
+        }
     }
 
 }

@@ -1,9 +1,11 @@
-import Toybox.System;
-import Toybox.Lang;
+using Toybox.Lang;
+
+// Useful functions which are not provided by the default garmin modules
 
 module UtilsMod{
 
-     function toAsciiCode(char as Lang.String) as Lang.Number{
+    // returns the (decimal) ascii code of the given character
+    function toAsciiCode(char as Lang.String) as Lang.Number{
         var AsciiTable = [
         "0", "0", "0", "0", "0", "0", "0", "0", 
         "0", "0", "0", "0", "0", "0", "0", "0", 
@@ -28,6 +30,7 @@ module UtilsMod{
         return AsciiTable.indexOf(char) as Lang.Number;
     }
 
+    // returns the character with the given ascii code (decimal)
     function toAsciiString(code as Lang.Number) as Lang.String{
         var AsciiTable = [
         "0", "0", "0", "0", "0", "0", "0", "0", 

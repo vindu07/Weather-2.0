@@ -1,29 +1,37 @@
-using Toybox.WatchUi as Ui;
+using Toybox.Application;
+using Toybox.Application.Properties;
 using Toybox.Graphics as Gfx;
-import Toybox.Lang;
-import Toybox.Application;
+using Toybox.Lang;
+using Toybox.System;
+using Toybox.Time;
+using Toybox.WatchUi as Ui;
 
 var updateSunPosition as Lang.Boolean = true;
 
 class SunOrMoon extends Ui.Drawable {
 
-    var sunPosition;
+    typedef sunPosition as {
+        :x as Lang.Numeric, 
+        :y as Lang.Numeric
+    };
+
+    var SunPosition;
 
     private var fallback_position;
 
     private var changeSunPosition;
     private var energySavingMode;
 
-    private var mxCenter as Lang.Number;
-    private var myCenter as Lang.Number;
-    private var mradius as Lang.Number;
+    private var _xCenter as Lang.Number;
+    private var _yCenter as Lang.Number;
+    private var _radius as Lang.Number;
     
     function initialize(params as Lang.Dictionary){
         Drawable.initialize(params);
 
-        mxCenter = params[:xCenter] as Lang.Number;
-        myCenter = params[:yCenter] as Lang.Number;
-        mradius = params[:radius] as Lang.Number;
+        _xCenter = params[:xCenter] as Lang.Number;
+        _yCenter = params[:yCenter] as Lang.Number;
+        _radius = params[:radius] as Lang.Number;
 
         getAppSettings();
     }
@@ -58,16 +66,14 @@ class SunOrMoon extends Ui.Drawable {
         var icon = WatchUi.loadResource(Rez.Drawables.MoonPhases);
         var phase = Astronomy.MoonPhase as Lang.Number;
 
-        //ritaglia la parte giusta di bitmap
+        // Crop the correct part of bitmap - each phase has a width of 20px
         var Xcut = 20*phase;
         
-        //posizione sullo schermo = 45°
-        var R = mradius;
-        
-        var x = mxCenter - R*0.7071;
-        var y = myCenter - R*0.7071;
+        // Screen position = 45° (fixed)
+        var x = _xCenter - _radius*0.7071;
+        var y = _yCenter - _radius*0.7071;
 
-        //disegna la parte della bitmap con la fase corrente
+        // Draw the part of bitmap with current phase
         dc.drawBitmap2(x-Xcut, y, icon, {:bitmapX => Xcut, :bitmapY => 0, :bitmapWidth => 20});
 
         
@@ -77,50 +83,61 @@ class SunOrMoon extends Ui.Drawable {
         
         var stars = WatchUi.loadResource(Rez.Drawables.Stars);
 
-        dc.drawBitmap(-10, -10, stars);
+        dc.drawBitmap(-10, -10, stars); // To edit for future compatibility with 280x280 screens
     }
 
     function drawSun(dc as Gfx.Dc){
-        var position = sunPosition;
+        
+        var position = SunPosition;
 
         if(updateSunPosition){
-            position = getSunPosition(dc);
-            sunPosition = position;
+            
+            position = getSunPosition(dc) as sunPosition;
+            self.SunPosition = position;
             updateSunPosition = false;
         }
         
         dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
         dc.fillCircle(position[:x], position[:y], 10);
     }
-
-    typedef sunPosition as {
-        :x as Lang.Numeric, 
-        :y as Lang.Numeric
-    };
     
+    // Calls Astronomy module and calculates the position in pixels from the given angle
     function getSunPosition(dc as Gfx.Dc) as sunPosition{
-        var R = mradius;
+        
+        var R = _radius;
         var x, y;
 
         if(changeSunPosition){
             var sunAngle = Astronomy.getSunAngle(Time.now(), fallback_position);
 
-            x = mxCenter - R*Math.cos(sunAngle);
-            y = myCenter - R*Math.sin(sunAngle);
+            x = _xCenter - R*Math.cos(sunAngle);
+            y = _yCenter - R*Math.sin(sunAngle);
         }
         else{
-            x = mxCenter - 0.7071*R;
-            y = myCenter - 0.7071*R;
+            x = _xCenter - 0.7071*R;
+            y = _yCenter - 0.7071*R;
         }
 
         return {:x => x, :y => y} as sunPosition;
     }
 
     function getAppSettings(){
-        fallback_position = [Properties.getValue("DefaultPositionLat") as Lang.Float, Properties.getValue("DefaultPositionLon") as Lang.Float];
-        changeSunPosition = Properties.getValue("DynamicSunPosition");
+        try{
+            var lat = Properties.getValue("DefaultPositionLat");
+            var lon = Properties.getValue("DefaultPositionLon");
+            fallback_position = [(lat != null) ? lat : 51.5, (lon != null) ? lon : 0.001];
+            
+            var changeSun = Properties.getValue("DynamicSunPosition");
+            changeSunPosition = (changeSun != null) ? changeSun : true;
 
-        energySavingMode = Application.Properties.getValue("EnergySavingMode");
-
+            var enSave = Properties.getValue("EnergySavingMode");
+            energySavingMode = (enSave != null) ? enSave : false;
+        }
+        catch(ex){
+            System.println("ERROR -- SunOrMoon.getAppSettings -- " + ex.getErrorMessage());
+            fallback_position = [51.5, 0.001];
+            changeSunPosition = true;
+            energySavingMode = false;
+        }
     }
 }

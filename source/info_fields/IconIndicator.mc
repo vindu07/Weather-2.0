@@ -1,8 +1,8 @@
-using Toybox.WatchUi as Ui;
-using Toybox.Lang;
+using Toybox.Application;
+using Toybox.Application.Properties;
 using Toybox.Graphics as Gfx;
-import Toybox.Application;
-import Toybox.Math;
+using Toybox.Lang;
+using Toybox.WatchUi as Ui;
 
 
 class IconIndicator extends Ui.Drawable {
@@ -56,24 +56,42 @@ class IconIndicator extends Ui.Drawable {
         
     }
     function drawWeatherIcon(dc as Gfx.Dc){
-        
-        var Condition = WeatherMod.getCondition();
+        try{
+            var Condition = WeatherMod.getCondition();
 
-        var iconChar = UtilsMod.toAsciiString(UtilsMod.toAsciiCode("A") + Condition);
+            var iconChar = UtilsMod.toAsciiString(UtilsMod.toAsciiCode("A") + Condition);
 
-        
-        dc.drawText(mx, my, weatherFont, iconChar, Graphics.TEXT_JUSTIFY_CENTER);
+            
+            dc.drawText(mx, my, weatherFont, iconChar, Graphics.TEXT_JUSTIFY_CENTER);
+        }
+        catch(ex){
+            System.println("ERROR -- IconIndicator.drawWeatherIcon -- " + ex.getErrorMessage());
+        }
     }
     function drawMoonIcon(dc as Gfx.Dc){
-
-        var phase = Astronomy.MoonPhase as Lang.Number;
-        dc.drawText(mx, my, moonFont, UtilsMod.toAsciiString( 65 + phase), Gfx.TEXT_JUSTIFY_CENTER);
+        try{
+            var phase = Astronomy.MoonPhase;
+            
+            dc.drawText(mx, my, moonFont, UtilsMod.toAsciiString( 65 + phase), Gfx.TEXT_JUSTIFY_CENTER);
+        }
+        catch(ex){
+            System.println("ERROR -- IconIndicator.drawMoonIcon -- " + ex.getErrorMessage());
+        }
     }
 
 
     function getAppSettings() as Void{
-
-        mcolor = Properties.getValue("IconColor");
-        showIcons = Properties.getValue("ShowIcons") as Lang.Boolean;
+        try{
+            var iconCol = Properties.getValue("IconColor");
+            mcolor = (iconCol != null) ? iconCol : Gfx.COLOR_WHITE;
+            
+            var showIcons = Properties.getValue("ShowIcons");
+            self.showIcons = (showIcons != null) ? showIcons : false;
+        }
+        catch(ex){
+            System.println("ERROR -- IconIndicator.getAppSettings -- " + ex.getErrorMessage());
+            mcolor = Gfx.COLOR_WHITE;
+            self.showIcons = false;
+        }
     }
 }

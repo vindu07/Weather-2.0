@@ -1,9 +1,10 @@
-import Toybox.Application;
-import Toybox.Graphics;
-import Toybox.Lang;
-import Toybox.System;
-import Toybox.WatchUi;
+using Toybox.Application;
+using Toybox.Application.Properties;
+using Toybox.Lang;
+using Toybox.System;
 using Toybox.Time.Gregorian as Greg;
+using Toybox.WatchUi;
+using Toybox.Graphics as Gfx;
 
 
 var ISHIGHPOWERON as Lang.Boolean = true;
@@ -25,7 +26,7 @@ class DynamicWatchfaceView extends WatchUi.WatchFace {
     }
 
     // Load your resources here
-    function onLayout(dc as Dc) as Void {
+    function onLayout(dc as Gfx.Dc) as Void {
         setLayout(Rez.Layouts.WatchFace(dc));
     }
 
@@ -36,25 +37,27 @@ class DynamicWatchfaceView extends WatchUi.WatchFace {
         
     }
 
-    // Update the view
-    function onUpdate(dc as Dc) as Void {
+  
+    function onUpdate(dc as Gfx.Dc) as Void {
 
         if(SETTINGSCHANGED){
             getAppSettings();
-        }
-
-        if(minSinceAppStart%60 == 0 || SETTINGSCHANGED){//Inizio e ogni 60 min
             Astronomy.refreshData(fallback_position);
         }
-        if(minSinceAppStart%15 == 0 || haveToReload){//Inizio e ogni 15 min OPPURE refresh forzato
+
+        if(minSinceAppStart%60 == 0){ // Start and every 60 min OR settings changed
+            Astronomy.refreshData(fallback_position);
+        }
+        if(minSinceAppStart%10 == 0 || haveToReload){ // Start and every 10 min OR forced refresh
             WeatherMod.refreshData();
             updateSunPosition = true;
         }
       
-        minSinceAppStart += 1;
+        minSinceAppStart += 1; // update the minute counter
 
-        View.onUpdate(dc);
+        View.onUpdate(dc); // redraw the screen
         
+        // Reset the booleans
         SETTINGSCHANGED = false;
         isPartialUpdate = false;
         haveToReload = false;
@@ -71,7 +74,7 @@ class DynamicWatchfaceView extends WatchUi.WatchFace {
     function onExitSleep() as Void {
         ISHIGHPOWERON = true;
         haveToReload = true;
-        WatchUi.requestUpdate();//ricarica tutti i dati
+        WatchUi.requestUpdate(); // refresh the screen
     }
 
     // Terminate any active timers and prepare for slow updates.
@@ -79,9 +82,17 @@ class DynamicWatchfaceView extends WatchUi.WatchFace {
         ISHIGHPOWERON = false;
     }
 
+    
     function getAppSettings(){
-        fallback_position = [Properties.getValue("DefaultPositionLat") as Lang.Float, Properties.getValue("DefaultPositionLon") as Lang.Float];
-
+        try{
+            var lat = Properties.getValue("DefaultPositionLat");
+            var lon = Properties.getValue("DefaultPositionLon");
+            fallback_position = [(lat != null) ? lat : 51.5, (lon != null) ? lon : 0.001];
+        }
+        catch(ex){
+            System.println("ERROR -- DynamicWatchfaceView.getAppSettings -- " + ex.getErrorMessage());
+            fallback_position = [51.5, 0.001];
+        }
     }
 
    

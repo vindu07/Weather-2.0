@@ -1,19 +1,17 @@
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UtilsMod.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [System,1,14,20]; ]
-import Toybox.System;
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UtilsMod.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Lang,2,14,18]; ]
-import Toybox.Lang;
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UtilsMod.mc"; @line = 4; @symbol_moduledef = [UtilsMod,4,7,15]; ]
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\UtilsMod.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [Lang,1,13,17]; ]
+using Toybox.Lang;
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\UtilsMod.mc"; @line = 5; @symbol_moduledef = [UtilsMod,5,7,15]; ]
 module UtilsMod {
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UtilsMod.mc"; @line = 4; ]
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\UtilsMod.mc"; @line = 5; ]
     <init> {
     }
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UtilsMod.mc"; @line = 6; @symbol_functiondef = [toAsciiCode,6,14,25]; @symbol_param<0> = [char,6,26,30]; @symbol_param<0>_type<0> = [Lang,6,34,38]; @symbol_param<0>_type<1> = [String,6,39,45]; @symbol_return<0> = [Lang,6,50,54]; @symbol_return<1> = [Number,6,55,61]; ]
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\UtilsMod.mc"; @line = 8; @symbol_functiondef = [toAsciiCode,8,13,24]; @symbol_param<0> = [char,8,25,29]; @symbol_param<0>_type<0> = [Lang,8,33,37]; @symbol_param<0>_type<1> = [String,8,38,44]; @symbol_return<0> = [Lang,8,49,53]; @symbol_return<1> = [Number,8,54,60]; ]
     function toAsciiCode(char as Lang.String) as Lang.Number {
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_UtilsMod_mc_6_61_29_4_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UtilsMod.mc" 7 8 ]
-        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_UtilsMod_mc_6_61_29_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_UtilsMod_mc_6_61_29_4_stop" ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_UtilsMod_mc_8_60_31_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\UtilsMod.mc" 9 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_UtilsMod_mc_8_60_31_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_UtilsMod_mc_8_60_31_4_stop" ]
         %AsciiTable.1 = local;
-        symbol [ AsciiTable %AsciiTable.1 7 12 22 ];
+        symbol [ AsciiTable %AsciiTable.1 9 12 22 ];
         %tmp.1 = newa 128;
         %tmp.2 = "0";
         %tmp.3 = dup %tmp.1;
@@ -400,36 +398,36 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_UtilsMod_mc_6_61_2
         %tmp.384 = dup %tmp.382;
         %tmp.385 = aputv %tmp.384 127 %tmp.383;
         lputv %AsciiTable.1 %tmp.385;
-        symbol [ AsciiTable %AsciiTable.1 7 12 22 ];
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UtilsMod.mc" 26 8 ]
+        symbol [ AsciiTable %AsciiTable.1 9 12 22 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\UtilsMod.mc" 28 8 ]
         %tmp.386 = lgetv %char;
-        symbol [ char %tmp.386 26 8 12 ];
-        symbol [ substring %tmp.387 26 13 22 ];
+        symbol [ char %tmp.386 28 8 12 ];
+        symbol [ substring %tmp.387 28 13 22 ];
         %tmp.387 = getv function %tmp.386 :substring;
         %tmp.388 = 0;
         %tmp.389 = 0;
         invoke %tmp.386 %tmp.387(%tmp.388, %tmp.389);
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UtilsMod.mc" 28 8 ]
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\UtilsMod.mc" 30 8 ]
         %tmp.390 = lgetv %AsciiTable.1;
-        symbol [ AsciiTable %tmp.390 28 15 25 ];
-        symbol [ indexOf %tmp.391 28 26 33 ];
+        symbol [ AsciiTable %tmp.390 30 15 25 ];
+        symbol [ indexOf %tmp.391 30 26 33 ];
         %tmp.391 = getv function %tmp.390 :indexOf;
         %tmp.392 = lgetv %char;
-        symbol [ char %tmp.392 28 34 38 ];
+        symbol [ char %tmp.392 30 34 38 ];
         %tmp.393 = invoke %tmp.390 %tmp.391(%tmp.392);
         %tmp.394 = as %tmp.393 Lang.Number;
-        symbol [ Lang %tmp.394 28 43 47 ];
-        symbol [ Number %tmp.394 28 48 54 ];
+        symbol [ Lang %tmp.394 30 43 47 ];
+        symbol [ Number %tmp.394 30 48 54 ];
         ret %tmp.394;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_UtilsMod_mc_6_61_29_4_stop:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_UtilsMod_mc_8_60_31_4_stop:
     }
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UtilsMod.mc"; @line = 31; @symbol_functiondef = [toAsciiString,31,13,26]; @symbol_param<0> = [code,31,27,31]; @symbol_param<0>_type<0> = [Lang,31,35,39]; @symbol_param<0>_type<1> = [Number,31,40,46]; @symbol_return<0> = [Lang,31,51,55]; @symbol_return<1> = [String,31,56,62]; ]
+    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\UtilsMod.mc"; @line = 34; @symbol_functiondef = [toAsciiString,34,13,26]; @symbol_param<0> = [code,34,27,31]; @symbol_param<0>_type<0> = [Lang,34,35,39]; @symbol_param<0>_type<1> = [Number,34,40,46]; @symbol_return<0> = [Lang,34,51,55]; @symbol_return<1> = [String,34,56,62]; ]
     function toAsciiString(code as Lang.Number) as Lang.String {
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_UtilsMod_mc_31_62_51_4_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UtilsMod.mc" 32 8 ]
-        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_UtilsMod_mc_31_62_51_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_UtilsMod_mc_31_62_51_4_stop" ]
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_UtilsMod_mc_34_62_54_4_start:
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\UtilsMod.mc" 35 8 ]
+        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_UtilsMod_mc_34_62_54_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_UtilsMod_mc_34_62_54_4_stop" ]
         %AsciiTable.1 = local;
-        symbol [ AsciiTable %AsciiTable.1 32 12 22 ];
+        symbol [ AsciiTable %AsciiTable.1 35 12 22 ];
         %tmp.1 = newa 128;
         %tmp.2 = "0";
         %tmp.3 = dup %tmp.1;
@@ -816,20 +814,20 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_UtilsMod_mc_31_62_
         %tmp.384 = dup %tmp.382;
         %tmp.385 = aputv %tmp.384 127 %tmp.383;
         lputv %AsciiTable.1 %tmp.385;
-        symbol [ AsciiTable %AsciiTable.1 32 12 22 ];
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UtilsMod.mc" 50 8 ]
+        symbol [ AsciiTable %AsciiTable.1 35 12 22 ];
+[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\UtilsMod.mc" 53 8 ]
         %tmp.386 = lgetv %AsciiTable.1;
-        symbol [ AsciiTable %tmp.386 50 15 25 ];
+        symbol [ AsciiTable %tmp.386 53 15 25 ];
         %tmp.387 = lgetv %code;
-        symbol [ code %tmp.387 50 26 30 ];
+        symbol [ code %tmp.387 53 26 30 ];
         %tmp.388 = agetv %tmp.386 %tmp.387;
         %tmp.389 = as %tmp.388 Lang.String;
-        symbol [ Lang %tmp.389 50 35 39 ];
-        symbol [ String %tmp.389 50 40 46 ];
+        symbol [ Lang %tmp.389 53 35 39 ];
+        symbol [ String %tmp.389 53 40 46 ];
         ret %tmp.389;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_UtilsMod_mc_31_62_51_4_stop:
+C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_UtilsMod_mc_34_62_54_4_stop:
     }
 }
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch face\DynamicWatchface\source\UtilsMod.mc"; @line = 1; ]
+[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\UtilsMod.mc"; @line = 1; ]
 <init> {
 }
