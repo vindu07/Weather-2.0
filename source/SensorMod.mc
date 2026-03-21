@@ -5,13 +5,13 @@ using Toybox.Math;
 using Toybox.SensorHistory;
 using Toybox.System;
 using Toybox.Weather;
+using Toybox.Application;
 
 module SensorMod{
 
-    enum Sensortype{
-        
+    enum Sensortype {
         SENSOR_HEARTRATE,          
-        SENSOR_TEMPERATURE,        
+        SENSOR_DEVICE_TEMPERATURE,        
         SENSOR_ALTITUDE,           
         SENSOR_BAROMETER,          
         SENSOR_COMPASS,            
@@ -36,14 +36,22 @@ module SensorMod{
         SENSOR_HUMIDITY,
         SENSOR_MOONPHASE,
         SENSOR_EMPTY,
-        SENSOR_NOTIFICATIONS_PHONE
-        
+        SENSOR_NOTIFICATIONS_PHONE,
+        SENSOR_FORECAST_TEMPERATURE,
+        SENSOR_WINDSPEED   
     }
-   
     enum PressUnits{
         UNIT_HPASCAL,
+        UNIT_MBAR,
         UNIT_ATM,
-        UNIT_MMHG
+        UNIT_MMHG,
+        UNIT_INHG
+    }
+    enum WindUnits{
+        WIND_MS,
+        WIND_KPH,
+        WIND_MPH,
+        WIND_KN
     }
 
     enum InfoIcons{
@@ -76,16 +84,16 @@ module SensorMod{
                     title = "ALT";
                     break;
                 case SENSOR_HEARTRATE: 
-                    var hrHistory = SensorHistory.getHeartRateHistory({:period => 1});
-                    if(hrHistory != null){
-                        var hrMax = hrHistory.getMax();
-                        data = (hrMax != null) ? hrMax.format("%d") : "--";
-                    }
+                    data = getHr();
                     title = "HR";
                     break;
                 case SENSOR_BAROMETER: 
-                    data = getPress(UNIT_HPASCAL); 
+                    data = getPress(); 
                     title = "PRES";
+                    break;
+                case SENSOR_WINDSPEED: 
+                    data = getWindSpeed(); 
+                    title = "WIND";
                     break;
                 case SENSOR_OXYGEN_SATURATION: 
                     var o2History = SensorHistory.getOxygenSaturationHistory({:period => 1});
@@ -95,8 +103,12 @@ module SensorMod{
                     }
                     title = "SAT";
                     break;
-                case SENSOR_TEMPERATURE: 
-                    data = getTemp(); 
+                case SENSOR_DEVICE_TEMPERATURE: 
+                    data = getTemp(true); 
+                    title = "TEMP";
+                    break;
+                case SENSOR_FORECAST_TEMPERATURE: 
+                    data = getTemp(false); 
                     title = "TEMP";
                     break;
                 case SENSOR_ACTIVE_CALORIES: 
@@ -168,8 +180,12 @@ module SensorMod{
         try{
             switch(sensor){
                 
-                case SENSOR_TEMPERATURE: 
-                    var temp = getTemp();
+                case SENSOR_DEVICE_TEMPERATURE: 
+                    var temp = getTemp(true);
+                    returnValue = ICON_TEMPERATURE + (temp != null ? temp : "--"); 
+                    break;
+                case SENSOR_FORECAST_TEMPERATURE: 
+                    temp = getTemp(false);
                     returnValue = ICON_TEMPERATURE + (temp != null ? temp : "--"); 
                     break;
                 case SENSOR_ALARMS: 
@@ -266,11 +282,17 @@ module SensorMod{
             
         return value;
     }
-    function getTemp() as Lang.String?{
+    function getTemp(fromDevice as Lang.Boolean) as Lang.String{
             try{
-                var tempHistory = SensorHistory.getTemperatureHistory({:period => 1});
-                
-                var value = tempHistory.getMax();
+                var value;
+
+                if(fromDevice){
+                    var tempHistory = SensorHistory.getTemperatureHistory({:period => 1});
+                    value = tempHistory.getMax();
+                }
+                else{
+                    value = WeatherMod.WeatherConditions[:temperature];
+                } 
                 if(value == null){
                     System.println("WARNING -- SensorMod.getTemp -- Temperature value is null");
                     return "--";
@@ -290,7 +312,7 @@ module SensorMod{
                 return "--";
             }
     }
-    function getPress(unit as PressUnits) as Lang.String?{
+    function getPress() as Lang.String{
         try{
             var pressHistory = SensorHistory.getPressureHistory({:period => 1});
             
@@ -299,11 +321,15 @@ module SensorMod{
                 System.println("WARNING -- SensorMod.getPress -- Pressure value is null");
                 return "--";
             }
+
+            var unit = Application.Properties.getValue("PressUnit") as PressUnits;
             
             switch(unit){
                 case UNIT_HPASCAL: value /= 100; break;
+                case UNIT_MBAR: value /= 100; break;
                 case UNIT_ATM: value /= 101325; break;
-                case UNIT_MMHG: value *= 0.0075;
+                case UNIT_MMHG: value *= 0.0075; break;
+                case UNIT_INHG: value *= 0.0002953;
             }
             value = value.format("%.1f");
 
@@ -314,7 +340,7 @@ module SensorMod{
             return "--";
         }
     }
-    function getDist() as Lang.String?{
+    function getDist() as Lang.String{
         try{
             var actInfo = ActivityMonitor.getInfo();
             if(actInfo == null || actInfo.distance == null){
@@ -340,7 +366,7 @@ module SensorMod{
             return "--";
         }
     }
-    function getStep() as Lang.String?{
+    function getStep() as Lang.String{
         try{
             var actInfo = ActivityMonitor.getInfo();
             if(actInfo == null || actInfo.steps == null){
@@ -369,5 +395,41 @@ module SensorMod{
             return "--";
         }
     }
-   
+    function getWindSpeed() as Lang.String{
+        try{
+            var value = WeatherMod.WeatherConditions[:windSpeed] as Lang.Float;
+
+            var windUnits = Application.Properties.getValue("WindUnit") as WindUnits;
+
+            //conversion
+            switch(windUnits as WindUnits){
+                case WIND_KPH: value *= 3.6; break;
+                case WIND_MPH: value *= 2.2369; break;
+                case WIND_KN: value *= 1.9438;
+            }
+
+            return value.format("%.1f");
+        }
+        catch(ex){
+            System.println("ERROR -- SensorMod.getWindSpeed -- " + ex.getErrorMessage());
+            return "--";
+        }
+    }
+    function getHr() as Lang.String{
+        try{
+            var value = ActivityMonitor.getHeartRateHistory(1, true).getMax() as Lang.Number;    
+
+            if(value > 230){
+                System.println("Warning -- SensorMod.getHr -- valori fuori range");
+                return "--";
+            } 
+
+            return value.toString();
+        }
+        catch(ex){
+            System.println("ERROR -- SensorMod.getHr -- " + ex.getErrorMessage());
+            return "--";
+        }
+    }
+    
 }

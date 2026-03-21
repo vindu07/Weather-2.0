@@ -1,24 +1,24 @@
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [Application,1,13,24]; ]
+[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [Application,1,13,24]; ]
 using Toybox.Application;
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Application,2,13,24]; @symbol_usingdef<2> = [Properties,2,25,35]; ]
+[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Application,2,13,24]; @symbol_usingdef<2> = [Properties,2,25,35]; ]
 using Toybox.Application.Properties;
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [Graphics,3,13,21]; @symbol_usingAlias = [Gfx,3,25,28]; ]
+[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [Graphics,3,13,21]; @symbol_usingAlias = [Gfx,3,25,28]; ]
 using Toybox.Graphics as :Gfx;
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [Lang,4,13,17]; ]
+[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [Lang,4,13,17]; ]
 using Toybox.Lang;
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 5; @symbol_usingdef<0> = [Toybox,5,6,12]; @symbol_usingdef<1> = [WatchUi,5,13,20]; @symbol_usingAlias = [Ui,5,24,26]; ]
+[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 5; @symbol_usingdef<0> = [Toybox,5,6,12]; @symbol_usingdef<1> = [WatchUi,5,13,20]; @symbol_usingAlias = [Ui,5,24,26]; ]
 using Toybox.WatchUi as :Ui;
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 8; @symbol_classdef = [DataFields,8,6,16]; @symbol_extends<0> = [Ui,8,25,27]; @symbol_extends<1> = [Drawable,8,28,36]; ]
+[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 8; @symbol_classdef = [DataFields,8,6,16]; @symbol_extends<0> = [Ui,8,25,27]; @symbol_extends<1> = [Drawable,8,28,36]; ]
 class DataFields extends Ui.Drawable {
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 8; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 8; ]
     <init> {
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 10 16 ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 10 16 ]
         symbol [ Gfx %tmp.1 10 45 48 ];
         %tmp.1 = getm $.Toybox.Graphics;
         symbol [ COLOR_WHITE %tmp.2 10 49 60 ];
         %tmp.2 = getv %tmp.1 :COLOR_WHITE;
         putv self :textColor %tmp.2;
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 11 16 ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 11 16 ]
         symbol [ Ui %tmp.3 11 25 27 ];
         %tmp.3 = getm $.Toybox.WatchUi;
         symbol [ loadResource %tmp.4 11 28 40 ];
@@ -31,7 +31,7 @@ class DataFields extends Ui.Drawable {
         %tmp.8 = getv %tmp.7 :FONT_12;
         %tmp.9 = invoke %tmp.3 %tmp.4(%tmp.8);
         putv self :FONT12 %tmp.9;
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 12 16 ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 12 16 ]
         symbol [ Ui %tmp.10 12 30 32 ];
         %tmp.10 = getm $.Toybox.WatchUi;
         symbol [ loadResource %tmp.11 12 33 45 ];
@@ -45,46 +45,46 @@ class DataFields extends Ui.Drawable {
         %tmp.16 = invoke %tmp.10 %tmp.11(%tmp.15);
         putv self :INFO_FONT12 %tmp.16;
     }
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 8; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 8; ]
     static
     <init> {
     }
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 10; @position = 16; @symbol_vardef = [textColor,10,16,25]; @symbol_type<0> = [Gfx,10,29,32]; @symbol_type<1> = [ColorType,10,33,42]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 10; @position = 16; @symbol_vardef = [textColor,10,16,25]; @symbol_type<0> = [Gfx,10,29,32]; @symbol_type<1> = [ColorType,10,33,42]; ]
     private
     var textColor as Gfx.ColorType;
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 11; @position = 16; @symbol_vardef = [FONT12,11,16,22]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 11; @position = 16; @symbol_vardef = [FONT12,11,16,22]; ]
     private
     var FONT12;
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 12; @position = 16; @symbol_vardef = [INFO_FONT12,12,16,27]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 12; @position = 16; @symbol_vardef = [INFO_FONT12,12,16,27]; ]
     private
     var INFO_FONT12;
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 14; @position = 16; @symbol_vardef = [showFields,14,16,26]; @symbol_type<0> = [Lang,14,30,34]; @symbol_type<1> = [Boolean,14,35,42]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 14; @position = 16; @symbol_vardef = [showFields,14,16,26]; @symbol_type<0> = [Lang,14,30,34]; @symbol_type<1> = [Boolean,14,35,42]; ]
     private
     var showFields as Lang.Boolean = false;
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 16; @position = 16; @symbol_vardef = [mx,16,16,18]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 16; @position = 16; @symbol_vardef = [mx,16,16,18]; ]
     private
     var mx;
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 17; @position = 16; @symbol_vardef = [my,17,16,18]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 17; @position = 16; @symbol_vardef = [my,17,16,18]; ]
     private
     var my;
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 18; @position = 16; @symbol_vardef = [mwidth,18,16,22]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 18; @position = 16; @symbol_vardef = [mwidth,18,16,22]; ]
     private
     var mwidth;
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 19; @position = 16; @symbol_vardef = [mheight,19,16,23]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 19; @position = 16; @symbol_vardef = [mheight,19,16,23]; ]
     private
     var mheight;
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 21; @position = 16; @symbol_vardef = [msensor,21,16,23]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 21; @position = 16; @symbol_vardef = [msensor,21,16,23]; ]
     private
     var msensor;
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 22; @position = 16; @symbol_vardef = [mnumber,22,16,23]; @symbol_type<0> = [Lang,22,27,31]; @symbol_type<1> = [String,22,32,38]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 22; @position = 16; @symbol_vardef = [mnumber,22,16,23]; @symbol_type<0> = [Lang,22,27,31]; @symbol_type<1> = [String,22,32,38]; ]
     private
     var mnumber as Lang.String = "1";
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 25; @symbol_typedef = [DataFieldsParams,25,12,28]; @symbol_type<0> = [Lang,27,23,27]; @symbol_type<1> = [String,27,28,34]; @symbol_type<2> = [Lang,28,14,18]; @symbol_type<3> = [Number,28,19,25]; @symbol_type<4> = [Lang,29,14,18]; @symbol_type<5> = [Number,29,19,25]; @symbol_type<6> = [Lang,30,18,22]; @symbol_type<7> = [Number,30,23,29]; @symbol_type<8> = [Lang,31,19,23]; @symbol_type<9> = [Number,31,24,30]; @symbol_type<10> = [Lang,32,24,28]; @symbol_type<11> = [Number,32,29,35]; @symbol_type<12> = [Lang,33,19,23]; @symbol_type<13> = [Number,33,24,30]; @symbol_type_const<0> = [identifier,27,9,19]; @symbol_type_const<1> = [x,28,9,10]; @symbol_type_const<2> = [y,29,9,10]; @symbol_type_const<3> = [width,30,9,14]; @symbol_type_const<4> = [height,31,9,15]; @symbol_type_const<5> = [roundRadius,32,9,20]; @symbol_type_const<6> = [number,33,9,15]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 25; @symbol_typedef = [DataFieldsParams,25,12,28]; @symbol_type<0> = [Lang,27,23,27]; @symbol_type<1> = [String,27,28,34]; @symbol_type<2> = [Lang,28,14,18]; @symbol_type<3> = [Number,28,19,25]; @symbol_type<4> = [Lang,29,14,18]; @symbol_type<5> = [Number,29,19,25]; @symbol_type<6> = [Lang,30,18,22]; @symbol_type<7> = [Number,30,23,29]; @symbol_type<8> = [Lang,31,19,23]; @symbol_type<9> = [Number,31,24,30]; @symbol_type<10> = [Lang,32,24,28]; @symbol_type<11> = [Number,32,29,35]; @symbol_type<12> = [Lang,33,19,23]; @symbol_type<13> = [Number,33,24,30]; @symbol_type_const<0> = [identifier,27,9,19]; @symbol_type_const<1> = [x,28,9,10]; @symbol_type_const<2> = [y,29,9,10]; @symbol_type_const<3> = [width,30,9,14]; @symbol_type_const<4> = [height,31,9,15]; @symbol_type_const<5> = [roundRadius,32,9,20]; @symbol_type_const<6> = [number,33,9,15]; ]
     type DataFieldsParams as {:identifier as Lang.String, :x as Lang.Number, :y as Lang.Number, :width as Lang.Number, :height as Lang.Number, :roundRadius as Lang.Number, :number as Lang.Number};
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 36; @symbol_functiondef = [initialize,36,13,23]; @symbol_param<0> = [params,36,24,30]; @symbol_param<0>_type<0> = [DataFieldsParams,36,34,50]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 36; @symbol_functiondef = [initialize,36,13,23]; @symbol_param<0> = [params,36,24,30]; @symbol_param<0>_type<0> = [DataFieldsParams,36,34,50]; ]
     function initialize(params as DataFieldsParams) as Void {
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_36_51_46_4_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 37 8 ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_36_51_46_4_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 37 8 ]
         symbol [ Drawable %tmp.2 37 8 16 ];
         %tmp.2 = getv ? :Drawable;
         symbol [ initialize %tmp.3 37 17 27 ];
@@ -92,12 +92,12 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFi
         %tmp.4 = lgetv %params;
         symbol [ params %tmp.4 37 28 34 ];
         invoke %tmp.2 %tmp.3(%tmp.4);
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 38 8 ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 38 8 ]
         %tmp.5 = self;
         symbol [ getAppSettings %tmp.6 38 8 22 ];
         %tmp.6 = getv function %tmp.5 :getAppSettings;
         invoke %tmp.5 %tmp.6();
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 40 8 ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 40 8 ]
         %tmp.7 = lgetv %params;
         symbol [ params %tmp.7 40 13 19 ];
         %tmp.9 = const :x;
@@ -108,7 +108,7 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFi
         symbol [ Number %tmp.11 40 32 38 ];
         symbol [ mx ? 40 8 10 ];
         putv self :mx %tmp.11;
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 41 8 ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 41 8 ]
         %tmp.12 = lgetv %params;
         symbol [ params %tmp.12 41 13 19 ];
         %tmp.14 = const :y;
@@ -119,7 +119,7 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFi
         symbol [ Number %tmp.16 41 32 38 ];
         symbol [ my ? 41 8 10 ];
         putv self :my %tmp.16;
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 42 8 ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 42 8 ]
         %tmp.17 = lgetv %params;
         symbol [ params %tmp.17 42 17 23 ];
         %tmp.19 = const :width;
@@ -130,7 +130,7 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFi
         symbol [ Number %tmp.21 42 40 46 ];
         symbol [ mwidth ? 42 8 14 ];
         putv self :mwidth %tmp.21;
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 43 8 ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 43 8 ]
         %tmp.22 = lgetv %params;
         symbol [ params %tmp.22 43 18 24 ];
         %tmp.24 = const :height;
@@ -141,7 +141,7 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFi
         symbol [ Number %tmp.26 43 42 48 ];
         symbol [ mheight ? 43 8 15 ];
         putv self :mheight %tmp.26;
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 44 8 ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 44 8 ]
         %tmp.27 = lgetv %params;
         symbol [ params %tmp.27 44 18 24 ];
         %tmp.29 = const :number;
@@ -155,7 +155,7 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFi
         symbol [ String %tmp.33 44 53 59 ];
         symbol [ mnumber ? 44 8 15 ];
         putv self :mnumber %tmp.33;
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 45 8 ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 45 8 ]
         symbol [ Properties %tmp.34 45 18 28 ];
         %tmp.34 = getm $.Toybox.Application.Properties;
         symbol [ getValue %tmp.35 45 29 37 ];
@@ -173,35 +173,35 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFi
         symbol [ Sensortype %tmp.42 45 89 99 ];
         symbol [ msensor ? 45 8 15 ];
         putv self :msensor %tmp.42;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_36_51_46_4_stop:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_36_51_46_4_stop:
     }
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 48; @symbol_functiondef = [draw,48,13,17]; @symbol_param<0> = [dc,48,18,20]; @symbol_param<0>_type<0> = [Gfx,48,24,27]; @symbol_param<0>_type<1> = [Dc,48,28,30]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 48; @symbol_functiondef = [draw,48,13,17]; @symbol_param<0> = [dc,48,18,20]; @symbol_param<0>_type<0> = [Gfx,48,24,27]; @symbol_param<0>_type<1> = [Dc,48,28,30]; ]
     function draw(dc as Gfx.Dc) as Void {
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_48_39_72_4_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 50 8 ]
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_50_8_52_8_if_stmt:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_48_39_72_4_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 50 8 ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_50_8_52_8_if_stmt:
         symbol [ SETTINGSCHANGED %tmp.2 50 11 26 ];
         %tmp.2 = getv ? :SETTINGSCHANGED;
-        bf %tmp.2 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_50_8_52_8_if_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_50_8_52_8_if_true:
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_50_27_52_8_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 51 12 ]
+        bf %tmp.2 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_50_8_52_8_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_50_8_52_8_if_true:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_50_27_52_8_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 51 12 ]
         %tmp.3 = self;
         symbol [ getAppSettings %tmp.4 51 12 26 ];
         %tmp.4 = getv function %tmp.3 :getAppSettings;
         invoke %tmp.3 %tmp.4();
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_50_27_52_8_stop:
-        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_50_8_52_8_if_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_50_8_52_8_if_end:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 54 8 ]
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_8_70_8_if_stmt:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_50_27_52_8_stop:
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_50_8_52_8_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_50_8_52_8_if_end:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 54 8 ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_8_70_8_if_stmt:
         symbol [ showFields %tmp.6 54 11 21 ];
         %tmp.6 = getv ? :showFields;
-        bf %tmp.6 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_8_70_8_if_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_8_70_8_if_true:
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_22_70_8_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 56 12 ]
-        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_22_70_8_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_22_70_8_stop" ]
+        bf %tmp.6 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_8_70_8_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_8_70_8_if_true:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_22_70_8_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 56 12 ]
+        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_22_70_8_start" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_22_70_8_stop" ]
         %temp.1 = local;
         symbol [ temp %temp.1 56 16 20 ];
         symbol [ SensorMod %tmp.8 56 23 32 ];
@@ -213,8 +213,8 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFi
         %tmp.12 = invoke %tmp.8 %tmp.9(%tmp.11);
         lputv %temp.1 %tmp.12;
         symbol [ temp %temp.1 56 16 20 ];
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 58 12 ]
-        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_22_70_8_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_22_70_8_stop" ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 58 12 ]
+        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_22_70_8_start" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_22_70_8_stop" ]
         %title.2 = local;
         symbol [ title %title.2 58 16 21 ];
         %tmp.13 = lgetv %temp.1;
@@ -223,8 +223,8 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFi
         %tmp.15 = agetv %tmp.13 %tmp.14;
         lputv %title.2 %tmp.15;
         symbol [ title %title.2 58 16 21 ];
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 62 12 ]
-        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_22_70_8_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_22_70_8_stop" ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 62 12 ]
+        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_22_70_8_start" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_22_70_8_stop" ]
         %data.3 = local;
         symbol [ data %data.3 62 16 20 ];
         %tmp.16 = lgetv %temp.1;
@@ -233,23 +233,23 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFi
         %tmp.18 = agetv %tmp.16 %tmp.17;
         lputv %data.3 %tmp.18;
         symbol [ data %data.3 62 16 20 ];
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 63 12 ]
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_63_12_65_12_if_stmt:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 63 12 ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_63_12_65_12_if_stmt:
         %tmp.19 = lgetv %data.3;
         symbol [ data %tmp.19 63 15 19 ];
         %tmp.20 = null;
         %tmp.21 = eq %tmp.19 %tmp.20;
-        bf %tmp.21 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_63_12_65_12_if_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_63_12_65_12_if_true:
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_63_28_65_12_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 64 16 ]
+        bf %tmp.21 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_63_12_65_12_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_63_12_65_12_if_true:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_63_28_65_12_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 64 16 ]
         %tmp.22 = "--";
         lputv %data.3 %tmp.22;
         symbol [ data %data.3 64 16 20 ];
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_63_28_65_12_stop:
-        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_63_12_65_12_if_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_63_12_65_12_if_end:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 67 12 ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_63_28_65_12_stop:
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_63_12_65_12_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_63_12_65_12_if_end:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 67 12 ]
         %tmp.23 = lgetv %dc;
         symbol [ dc %tmp.23 67 12 14 ];
         symbol [ setColor %tmp.24 67 15 23 ];
@@ -263,7 +263,7 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFi
         symbol [ COLOR_BLACK %tmp.28 67 44 55 ];
         %tmp.28 = getv %tmp.27 :COLOR_BLACK;
         invoke %tmp.23 %tmp.24(%tmp.26, %tmp.28);
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 68 12 ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 68 12 ]
         %tmp.29 = lgetv %dc;
         symbol [ dc %tmp.29 68 12 14 ];
         symbol [ drawText %tmp.30 68 15 23 ];
@@ -286,7 +286,7 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFi
         symbol [ TEXT_JUSTIFY_CENTER %tmp.44 68 60 79 ];
         %tmp.44 = getv %tmp.43 :TEXT_JUSTIFY_CENTER;
         invoke %tmp.29 %tmp.30(%tmp.37, %tmp.39, %tmp.41, %tmp.42, %tmp.44);
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 69 12 ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 69 12 ]
         %tmp.45 = lgetv %dc;
         symbol [ dc %tmp.45 69 12 14 ];
         symbol [ drawText %tmp.46 69 15 23 ];
@@ -314,20 +314,20 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFi
         symbol [ TEXT_JUSTIFY_CENTER %tmp.65 69 74 93 ];
         %tmp.65 = getv %tmp.64 :TEXT_JUSTIFY_CENTER;
         invoke %tmp.45 %tmp.46(%tmp.53, %tmp.60, %tmp.62, %tmp.63, %tmp.65);
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_22_70_8_stop:
-        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_8_70_8_if_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_8_70_8_if_end:
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_48_39_72_4_stop:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_22_70_8_stop:
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_8_70_8_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_54_8_70_8_if_end:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_48_39_72_4_stop:
     }
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 74; @symbol_functiondef = [getAppSettings,74,13,27]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 74; @symbol_functiondef = [getAppSettings,74,13,27]; ]
     function getAppSettings() as Void {
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_74_37_91_4_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 75 8 ]
-        try @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_beginTry @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_endTry @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_catch @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_finally;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_beginTry:
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_11_84_8_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 76 12 ]
-        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_11_84_8_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_11_84_8_stop" ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_74_37_91_4_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 75 8 ]
+        try @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_beginTry @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_endTry @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_catch @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_finally;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_beginTry:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_11_84_8_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 76 12 ]
+        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_11_84_8_start" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_11_84_8_stop" ]
         %fieldColor.1 = local;
         symbol [ fieldColor %fieldColor.1 76 16 26 ];
         symbol [ Properties %tmp.1 76 29 39 ];
@@ -338,31 +338,31 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFi
         %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
         lputv %fieldColor.1 %tmp.4;
         symbol [ fieldColor %fieldColor.1 76 16 26 ];
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 77 12 ]
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_77_24_77_64_begin:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 77 12 ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_77_24_77_64_begin:
         %tmp.5 = lgetv %fieldColor.1;
         symbol [ fieldColor %tmp.5 77 25 35 ];
         %tmp.6 = null;
         %tmp.7 = ne %tmp.5 %tmp.6;
-        bf %tmp.7 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_77_24_77_64_else_false;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_77_24_77_64_true:
+        bf %tmp.7 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_77_24_77_64_else_false;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_77_24_77_64_true:
         %tmp.8 = lgetv %fieldColor.1;
         symbol [ fieldColor %tmp.8 77 47 57 ];
         %tmp.9 = as %tmp.8 { (!Null) };
         push %tmp.9;
-        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_77_24_77_64_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_77_24_77_64_else_false:
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_77_24_77_64_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_77_24_77_64_else_false:
         symbol [ Gfx %tmp.10 77 60 63 ];
         %tmp.10 = getm $.Toybox.Graphics;
         symbol [ COLOR_WHITE %tmp.11 77 64 75 ];
         %tmp.11 = getv %tmp.10 :COLOR_WHITE;
         push %tmp.11;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_77_24_77_64_end:
-        %tmp.12 = phi [%tmp.7 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_77_24_77_64_begin] [%tmp.9 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_77_24_77_64_true] [%tmp.11 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_77_24_77_64_else_false] [%tmp.12 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_77_24_77_64_end];
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_77_24_77_64_end:
+        %tmp.12 = phi [%tmp.7 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_77_24_77_64_begin] [%tmp.9 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_77_24_77_64_true] [%tmp.11 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_77_24_77_64_else_false] [%tmp.12 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_77_24_77_64_end];
         symbol [ textColor ? 77 12 21 ];
         putv self :textColor %tmp.12;
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 79 12 ]
-        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_11_84_8_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_11_84_8_stop" ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 79 12 ]
+        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_11_84_8_start" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_11_84_8_stop" ]
         %sensor.2 = local;
         symbol [ sensor %sensor.2 79 16 22 ];
         symbol [ Properties %tmp.13 79 25 35 ];
@@ -376,31 +376,31 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFi
         %tmp.19 = invoke %tmp.13 %tmp.14(%tmp.18);
         lputv %sensor.2 %tmp.19;
         symbol [ sensor %sensor.2 79 16 22 ];
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 80 12 ]
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_80_22_80_60_begin:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 80 12 ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_80_22_80_60_begin:
         %tmp.20 = lgetv %sensor.2;
         symbol [ sensor %tmp.20 80 23 29 ];
         %tmp.21 = null;
         %tmp.22 = ne %tmp.20 %tmp.21;
-        bf %tmp.22 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_80_22_80_60_else_false;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_80_22_80_60_true:
+        bf %tmp.22 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_80_22_80_60_else_false;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_80_22_80_60_true:
         %tmp.23 = lgetv %sensor.2;
         symbol [ sensor %tmp.23 80 41 47 ];
         %tmp.24 = as %tmp.23 { (!Null) };
         push %tmp.24;
-        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_80_22_80_60_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_80_22_80_60_else_false:
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_80_22_80_60_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_80_22_80_60_else_false:
         symbol [ SensorMod %tmp.26 80 50 59 ];
         %tmp.26 = getv ? :SensorMod;
         symbol [ SENSOR_EMPTY %tmp.27 80 60 72 ];
         %tmp.27 = getv %tmp.26 :SENSOR_EMPTY;
         push %tmp.27;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_80_22_80_60_end:
-        %tmp.28 = phi [%tmp.22 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_80_22_80_60_begin] [%tmp.24 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_80_22_80_60_true] [%tmp.27 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_80_22_80_60_else_false] [%tmp.28 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_80_22_80_60_end];
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_80_22_80_60_end:
+        %tmp.28 = phi [%tmp.22 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_80_22_80_60_begin] [%tmp.24 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_80_22_80_60_true] [%tmp.27 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_80_22_80_60_else_false] [%tmp.28 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_80_22_80_60_end];
         symbol [ msensor ? 80 12 19 ];
         putv self :msensor %tmp.28;
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 82 12 ]
-        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_11_84_8_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_11_84_8_stop" ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 82 12 ]
+        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_11_84_8_start" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_11_84_8_stop" ]
         %showFields.3 = local;
         symbol [ showFields %showFields.3 82 16 26 ];
         symbol [ Properties %tmp.29 82 29 39 ];
@@ -411,43 +411,43 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFi
         %tmp.32 = invoke %tmp.29 %tmp.30(%tmp.31);
         lputv %showFields.3 %tmp.32;
         symbol [ showFields %showFields.3 82 16 26 ];
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 83 12 ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 83 12 ]
         symbol [ self %self 83 12 16 ];
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_83_30_83_66_begin:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_83_30_83_66_begin:
         %tmp.33 = lgetv %showFields.3;
         symbol [ showFields %tmp.33 83 31 41 ];
         %tmp.34 = null;
         %tmp.35 = ne %tmp.33 %tmp.34;
-        bf %tmp.35 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_83_30_83_66_else_false;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_83_30_83_66_true:
+        bf %tmp.35 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_83_30_83_66_else_false;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_83_30_83_66_true:
         %tmp.36 = lgetv %showFields.3;
         symbol [ showFields %tmp.36 83 53 63 ];
         %tmp.37 = as %tmp.36 { (!Null) };
         push %tmp.37;
-        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_83_30_83_66_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_83_30_83_66_else_false:
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_83_30_83_66_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_83_30_83_66_else_false:
         %tmp.38 = false;
         push %tmp.38;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_83_30_83_66_end:
-        %tmp.39 = phi [%tmp.35 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_83_30_83_66_begin] [%tmp.37 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_83_30_83_66_true] [%tmp.38 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_83_30_83_66_else_false] [%tmp.39 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_83_30_83_66_end];
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_83_30_83_66_end:
+        %tmp.39 = phi [%tmp.35 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_83_30_83_66_begin] [%tmp.37 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_83_30_83_66_true] [%tmp.38 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_83_30_83_66_else_false] [%tmp.39 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_83_30_83_66_end];
         symbol [ showFields ? 83 17 27 ];
         putv self :showFields %tmp.39;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_11_84_8_stop:
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_endTry:
-        jsr @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_finally;
-        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_catch:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_11_84_8_stop:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_endTry:
+        jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_finally;
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_catch:
         %tmp.40 = exception;
         push %tmp.40;
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 85 8 ]
-        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_catch" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_85_8_90_8_end" ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 85 8 ]
+        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_catch" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_85_8_90_8_end" ]
         %ex.4 = local;
         symbol [ ex %ex.4 85 14 16 ];
         %tmp.41 = dup %tmp.40;
         lputv %ex.4 %tmp.41;
         symbol [ ex %ex.4 85 14 16 ];
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_85_17_90_8_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 86 12 ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_85_17_90_8_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 86 12 ]
         symbol [ System %tmp.43 86 12 18 ];
         %tmp.43 = getv ? :System;
         symbol [ println %tmp.44 86 19 26 ];
@@ -460,39 +460,39 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFi
         %tmp.48 = invoke %tmp.46 %tmp.47();
         %tmp.49 = add %tmp.45 %tmp.48;
         invoke %tmp.43 %tmp.44(%tmp.49);
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 87 12 ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 87 12 ]
         symbol [ Gfx %tmp.50 87 24 27 ];
         %tmp.50 = getm $.Toybox.Graphics;
         symbol [ COLOR_WHITE %tmp.51 87 28 39 ];
         %tmp.51 = getv %tmp.50 :COLOR_WHITE;
         symbol [ textColor ? 87 12 21 ];
         putv self :textColor %tmp.51;
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 88 12 ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 88 12 ]
         symbol [ SensorMod %tmp.53 88 22 31 ];
         %tmp.53 = getv ? :SensorMod;
         symbol [ SENSOR_EMPTY %tmp.54 88 32 44 ];
         %tmp.54 = getv %tmp.53 :SENSOR_EMPTY;
         symbol [ msensor ? 88 12 19 ];
         putv self :msensor %tmp.54;
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 89 12 ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc" 89 12 ]
         symbol [ self %self 89 12 16 ];
         %tmp.55 = false;
         symbol [ showFields ? 89 17 27 ];
         putv self :showFields %tmp.55;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_85_17_90_8_stop:
-        jsr @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_finally;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_85_17_90_8_stop:
+        jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_finally;
         pop;
-        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_85_8_90_8_end:
-        try @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_catch @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_85_8_90_8_end @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_85_8_90_8_end @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_finally;
-        jsr @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_finally;
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_85_8_90_8_end:
+        try @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_catch @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_85_8_90_8_end @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_85_8_90_8_end @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_finally;
+        jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_finally;
         throw %tmp.40;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_finally:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_finally:
         jsrret;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_end:
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_74_37_91_4_stop:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_75_8_90_8_end:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_data_fields_DataFields_mc_74_37_91_4_stop:
     }
 }
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 1; ]
+[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\data_fields\DataFields.mc"; @line = 1; ]
 <init> {
 }

@@ -142,7 +142,7 @@ module WeatherMod {
 
             if(!hasNullValues(conditions)){
 
-                 WeatherConditions = conditions;
+                WeatherConditions = conditions;
                 return conditions;
             }
         }

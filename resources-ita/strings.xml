@@ -15,6 +15,7 @@
 
     <string id="DynamicSky">Colore del Cielo dinamico</string>
     <string id="DynamicSun">Posizione del Sole dinamica</string>
+    <string id="DynamicMoon">Fase Lunare Dinamica</string>
 
     <string id="TimeColorTitle">Colore Ora</string>
     <string id="FieldColorTitle">Colore Campi</string>
@@ -55,6 +56,12 @@
     <string id="BatteryIndicatorGoodTitle">Valore Batteria Buona</string>
     <string id="BatteryIndicatorMedTitle">Valore Batteria Media</string>
     <string id="BatteryIndicatorLowTitle">Valore Batteria Bassa</string>
+
+    <string id="PressUnitTitle">Unità Pressione</string>
+    <string id="WindUnitTitle">Unità Velocità del Vento</string>
+
+    <string id="WeatherUpdateTitle">Intervallo Aggiornamento Meteo</string>
+    <string id="AstronomyUpdateTitle">Intervallo Aggiornamento Astronomico</string>
     
     <!--COLORI-->
 
@@ -77,7 +84,8 @@
     <!--NOMI CAMPI-->
 
     <string id="Heartrate">Frequenza Cardiaca</string>
-    <string id="Temperature">Temperatura</string>
+    <string id="DeviceTemperature">Temperatura Dispositivo</string>
+    <string id="ForecastTemperature">Temperatura Esterna</string>
     <string id="Altitude">Altitudine</string>
     <string id="Barometer">Pressione</string>
     <string id="Compass">Direzione</string>
@@ -102,6 +110,7 @@
     <string id="Humidity">Umidità Relativa</string>
     <string id="Moonphase">Fase Lunare Attuale</string>
     <string id="NotifPhone">Icone Notifiche e Telefono</string>
+    <string id="WindSpeed">Velocità del Vento</string>
     <string id="Empty">Vuoto</string>
 
     <!--PAESAGGI-->
@@ -130,5 +139,11 @@
     <string id="FieldFont2">Carattere Campi 2</string>
     <string id="FieldFont3">Carattere Campi 3</string>
     <string id="FieldFont4">Carattere Campi 4</string>
+
+    
+    
+    
+    
+
 
 </strings>

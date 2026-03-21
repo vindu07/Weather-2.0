@@ -1,53 +1,53 @@
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [Application,1,13,24]; ]
+[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [Application,1,13,24]; ]
 using Toybox.Application;
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Graphics,2,13,21]; @symbol_usingAlias = [Gfx,2,25,28]; ]
+[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Graphics,2,13,21]; @symbol_usingAlias = [Gfx,2,25,28]; ]
 using Toybox.Graphics as :Gfx;
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [Lang,3,13,17]; ]
+[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [Lang,3,13,17]; ]
 using Toybox.Lang;
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [System,4,13,19]; ]
+[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [System,4,13,19]; ]
 using Toybox.System;
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 5; @symbol_usingdef<0> = [Toybox,5,6,12]; @symbol_usingdef<1> = [Time,5,13,17]; ]
+[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 5; @symbol_usingdef<0> = [Toybox,5,6,12]; @symbol_usingdef<1> = [Time,5,13,17]; ]
 using Toybox.Time;
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 6; @symbol_usingdef<0> = [Toybox,6,6,12]; @symbol_usingdef<1> = [Time,6,13,17]; @symbol_usingdef<2> = [Gregorian,6,18,27]; @symbol_usingAlias = [Greg,6,31,35]; ]
+[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 6; @symbol_usingdef<0> = [Toybox,6,6,12]; @symbol_usingdef<1> = [Time,6,13,17]; @symbol_usingdef<2> = [Gregorian,6,18,27]; @symbol_usingAlias = [Greg,6,31,35]; ]
 using Toybox.Time.Gregorian as :Greg;
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 7; @symbol_usingdef<0> = [Toybox,7,6,12]; @symbol_usingdef<1> = [Weather,7,13,20]; ]
+[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 7; @symbol_usingdef<0> = [Toybox,7,6,12]; @symbol_usingdef<1> = [Weather,7,13,20]; ]
 using Toybox.Weather;
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 8; @symbol_usingdef<0> = [Toybox,8,6,12]; @symbol_usingdef<1> = [WatchUi,8,13,20]; @symbol_usingAlias = [Ui,8,24,26]; ]
+[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 8; @symbol_usingdef<0> = [Toybox,8,6,12]; @symbol_usingdef<1> = [WatchUi,8,13,20]; @symbol_usingAlias = [Ui,8,24,26]; ]
 using Toybox.WatchUi as :Ui;
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 11; @symbol_classdef = [Sky,11,6,9]; @symbol_extends<0> = [Ui,11,18,20]; @symbol_extends<1> = [Drawable,11,21,29]; ]
+[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 11; @symbol_classdef = [Sky,11,6,9]; @symbol_extends<0> = [Ui,11,18,20]; @symbol_extends<1> = [Drawable,11,21,29]; ]
 class Sky extends Ui.Drawable {
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 11; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 11; ]
     <init> {
     }
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 11; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 11; ]
     static
     <init> {
     }
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 13; @position = 16; @symbol_vardef = [_height,13,16,23]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 13; @position = 16; @symbol_vardef = [_height,13,16,23]; ]
     private
     var _height;
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 15; @position = 16; @symbol_vardef = [changeSkyColor,15,16,30]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 15; @position = 16; @symbol_vardef = [changeSkyColor,15,16,30]; ]
     private
     var changeSkyColor;
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 16; @position = 16; @symbol_vardef = [energySavingMode,16,16,32]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 16; @position = 16; @symbol_vardef = [energySavingMode,16,16,32]; ]
     private
     var energySavingMode;
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 19; @symbol_enumdef = [SKYCOLORS,19,17,26]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 19; @symbol_enumdef = [SKYCOLORS,19,17,26]; ]
     private static
     enum SKYCOLORS {
-        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 21; @position = 8; @symbol_enumdec = [SKY_COLOR_BLUE,21,8,22]; ]
+        [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 21; @position = 8; @symbol_enumdec = [SKY_COLOR_BLUE,21,8,22]; ]
         SKY_COLOR_BLUE = 0x00aaff,
-        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 22; @position = 8; @symbol_enumdec = [SKY_COLOR_GREY,22,8,22]; ]
+        [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 22; @position = 8; @symbol_enumdec = [SKY_COLOR_GREY,22,8,22]; ]
         SKY_COLOR_GREY = 0xaaaaaa,
-        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 23; @position = 8; @symbol_enumdec = [SKY_COLOR_SUNSET,23,8,24]; ]
+        [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 23; @position = 8; @symbol_enumdec = [SKY_COLOR_SUNSET,23,8,24]; ]
         SKY_COLOR_SUNSET = 0xffaa55,
-        [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 24; @position = 8; @symbol_enumdec = [SKY_COLOR_NIGHT,24,8,23]; ]
+        [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 24; @position = 8; @symbol_enumdec = [SKY_COLOR_NIGHT,24,8,23]; ]
         SKY_COLOR_NIGHT = 0x000055
     }
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 28; @symbol_functiondef = [initialize,28,13,23]; @symbol_param<0> = [params,28,24,30]; @symbol_param<0>_type<0> = [Lang,28,34,38]; @symbol_param<0>_type<1> = [Dictionary,28,39,49]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 28; @symbol_functiondef = [initialize,28,13,23]; @symbol_param<0> = [params,28,24,30]; @symbol_param<0>_type<0> = [Lang,28,34,38]; @symbol_param<0>_type<1> = [Dictionary,28,39,49]; ]
     function initialize(params as Lang.Dictionary) as Void {
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_28_50_33_4_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 29 8 ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_28_50_33_4_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 29 8 ]
         symbol [ Drawable %tmp.2 29 8 16 ];
         %tmp.2 = getv ? :Drawable;
         symbol [ initialize %tmp.3 29 17 27 ];
@@ -55,12 +55,12 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_
         %tmp.4 = lgetv %params;
         symbol [ params %tmp.4 29 28 34 ];
         invoke %tmp.2 %tmp.3(%tmp.4);
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 30 8 ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 30 8 ]
         %tmp.5 = self;
         symbol [ getAppSettings %tmp.6 30 8 22 ];
         %tmp.6 = getv function %tmp.5 :getAppSettings;
         invoke %tmp.5 %tmp.6();
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 32 8 ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 32 8 ]
         %tmp.7 = lgetv %params;
         symbol [ params %tmp.7 32 18 24 ];
         %tmp.9 = const :height;
@@ -68,36 +68,36 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_
         %tmp.10 = agetv %tmp.7 %tmp.9;
         symbol [ _height ? 32 8 15 ];
         putv self :_height %tmp.10;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_28_50_33_4_stop:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_28_50_33_4_stop:
     }
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 35; @symbol_functiondef = [draw,35,20,24]; @symbol_param<0> = [dc,35,25,27]; @symbol_param<0>_type<0> = [Gfx,35,31,34]; @symbol_param<0>_type<1> = [Dc,35,35,37]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 35; @symbol_functiondef = [draw,35,20,24]; @symbol_param<0> = [dc,35,25,27]; @symbol_param<0>_type<0> = [Gfx,35,31,34]; @symbol_param<0>_type<1> = [Dc,35,35,37]; ]
     public
     function draw(dc as Gfx.Dc) {
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_35_38_46_4_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 37 8 ]
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_37_8_39_8_if_stmt:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_35_38_46_4_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 37 8 ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_37_8_39_8_if_stmt:
         symbol [ SETTINGSCHANGED %tmp.2 37 11 26 ];
         %tmp.2 = getv ? :SETTINGSCHANGED;
-        bf %tmp.2 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_37_8_39_8_if_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_37_8_39_8_if_true:
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_37_27_39_8_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 38 12 ]
+        bf %tmp.2 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_37_8_39_8_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_37_8_39_8_if_true:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_37_27_39_8_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 38 12 ]
         %tmp.3 = self;
         symbol [ getAppSettings %tmp.4 38 12 26 ];
         %tmp.4 = getv function %tmp.3 :getAppSettings;
         invoke %tmp.3 %tmp.4();
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_37_27_39_8_stop:
-        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_37_8_39_8_if_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_37_8_39_8_if_end:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 41 8 ]
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_41_8_44_8_if_stmt:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_37_27_39_8_stop:
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_37_8_39_8_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_37_8_39_8_if_end:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 41 8 ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_41_8_44_8_if_stmt:
         symbol [ energySavingMode %tmp.6 41 12 28 ];
         %tmp.6 = getv ? :energySavingMode;
         %tmp.7 = not %tmp.6;
-        bf %tmp.7 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_41_8_44_8_if_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_41_8_44_8_if_true:
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_41_29_44_8_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 42 12 ]
+        bf %tmp.7 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_41_8_44_8_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_41_8_44_8_if_true:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_41_29_44_8_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 42 12 ]
         %tmp.8 = lgetv %dc;
         symbol [ dc %tmp.8 42 12 14 ];
         symbol [ setColor %tmp.9 42 15 23 ];
@@ -111,7 +111,7 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_
         symbol [ COLOR_TRANSPARENT %tmp.15 42 48 65 ];
         %tmp.15 = getv %tmp.14 :COLOR_TRANSPARENT;
         invoke %tmp.8 %tmp.9(%tmp.12, %tmp.15);
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 43 12 ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 43 12 ]
         %tmp.16 = lgetv %dc;
         symbol [ dc %tmp.16 43 12 14 ];
         symbol [ fillRectangle %tmp.17 43 15 28 ];
@@ -126,36 +126,36 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_
         symbol [ _height %tmp.24 43 50 57 ];
         %tmp.24 = getv ? :_height;
         invoke %tmp.16 %tmp.17(%tmp.18, %tmp.19, %tmp.22, %tmp.24);
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_41_29_44_8_stop:
-        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_41_8_44_8_if_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_41_8_44_8_if_end:
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_35_38_46_4_stop:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_41_29_44_8_stop:
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_41_8_44_8_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_41_8_44_8_if_end:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_35_38_46_4_stop:
     }
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 48; @symbol_functiondef = [getSkyColor,48,21,32]; @symbol_return<0> = [Gfx,48,38,41]; @symbol_return<1> = [ColorType,48,42,51]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 48; @symbol_functiondef = [getSkyColor,48,21,32]; @symbol_return<0> = [Gfx,48,38,41]; @symbol_return<1> = [ColorType,48,42,51]; ]
     private
     function getSkyColor() as Gfx.ColorType {
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_48_51_76_4_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 49 8 ]
-        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_48_51_76_4_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_48_51_76_4_stop" ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_48_51_76_4_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 49 8 ]
+        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_48_51_76_4_start" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_48_51_76_4_stop" ]
         %color.1 = local;
         symbol [ color %color.1 49 12 17 ];
         symbol [ SKY_COLOR_BLUE %tmp.2 49 20 34 ];
         %tmp.2 = getv ? :SKY_COLOR_BLUE;
         lputv %color.1 %tmp.2;
         symbol [ color %color.1 49 12 17 ];
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 51 8 ]
-        try @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_beginTry @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_endTry @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_catch @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_finally;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_beginTry:
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_11_70_8_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 53 12 ]
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_12_68_12_if_stmt:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 51 8 ]
+        try @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_beginTry @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_endTry @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_catch @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_finally;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_beginTry:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_11_70_8_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 53 12 ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_12_68_12_if_stmt:
         symbol [ changeSkyColor %tmp.4 53 15 29 ];
         %tmp.4 = getv ? :changeSkyColor;
-        bf %tmp.4 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_12_68_12_if_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_12_68_12_if_true:
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_30_68_12_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 55 16 ]
-        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_30_68_12_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_30_68_12_stop" ]
+        bf %tmp.4 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_12_68_12_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_12_68_12_if_true:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_30_68_12_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 55 16 ]
+        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_30_68_12_start" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_30_68_12_stop" ]
         %isNight.2 = local;
         symbol [ isNight %isNight.2 55 20 27 ];
         symbol [ Astronomy %tmp.6 55 32 41 ];
@@ -171,8 +171,8 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_
         %tmp.12 = not %tmp.11;
         lputv %isNight.2 %tmp.12;
         symbol [ isNight %isNight.2 55 20 27 ];
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 56 16 ]
-        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_30_68_12_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_30_68_12_stop" ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 56 16 ]
+        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_30_68_12_start" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_30_68_12_stop" ]
         %isTwiLight.3 = local;
         symbol [ isTwiLight %isTwiLight.3 56 20 30 ];
         symbol [ Astronomy %tmp.14 56 33 42 ];
@@ -187,8 +187,8 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_
         %tmp.19 = invoke %tmp.14 %tmp.15(%tmp.18);
         lputv %isTwiLight.3 %tmp.19;
         symbol [ isTwiLight %isTwiLight.3 56 20 30 ];
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 57 16 ]
-        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_30_68_12_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_30_68_12_stop" ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 57 16 ]
+        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_30_68_12_start" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_30_68_12_stop" ]
         %isCovered.4 = local;
         symbol [ isCovered %isCovered.4 57 20 29 ];
         symbol [ WeatherMod %tmp.21 57 32 42 ];
@@ -198,70 +198,70 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_
         %tmp.23 = invoke %tmp.21 %tmp.22();
         lputv %isCovered.4 %tmp.23;
         symbol [ isCovered %isCovered.4 57 20 29 ];
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 59 16 ]
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_59_16_61_16_if_stmt:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 59 16 ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_59_16_61_16_if_stmt:
         %tmp.24 = lgetv %isCovered.4;
         symbol [ isCovered %tmp.24 59 19 28 ];
-        bf %tmp.24 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_59_16_61_16_if_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_59_16_61_16_if_true:
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_59_29_61_16_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 60 20 ]
+        bf %tmp.24 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_59_16_61_16_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_59_16_61_16_if_true:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_59_29_61_16_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 60 20 ]
         symbol [ SKY_COLOR_GREY %tmp.26 60 28 42 ];
         %tmp.26 = getv ? :SKY_COLOR_GREY;
         lputv %color.1 %tmp.26;
         symbol [ color %color.1 60 20 25 ];
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_59_29_61_16_stop:
-        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_59_16_61_16_if_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_59_16_61_16_if_end:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 62 16 ]
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_62_16_64_16_if_stmt:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_59_29_61_16_stop:
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_59_16_61_16_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_59_16_61_16_if_end:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 62 16 ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_62_16_64_16_if_stmt:
         %tmp.27 = lgetv %isNight.2;
         symbol [ isNight %tmp.27 62 19 26 ];
-        bf %tmp.27 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_62_16_64_16_if_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_62_16_64_16_if_true:
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_62_27_64_16_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 63 20 ]
+        bf %tmp.27 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_62_16_64_16_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_62_16_64_16_if_true:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_62_27_64_16_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 63 20 ]
         symbol [ SKY_COLOR_NIGHT %tmp.29 63 28 43 ];
         %tmp.29 = getv ? :SKY_COLOR_NIGHT;
         lputv %color.1 %tmp.29;
         symbol [ color %color.1 63 20 25 ];
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_62_27_64_16_stop:
-        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_62_16_64_16_if_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_62_16_64_16_if_end:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 65 16 ]
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_65_16_67_16_if_stmt:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_62_27_64_16_stop:
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_62_16_64_16_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_62_16_64_16_if_end:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 65 16 ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_65_16_67_16_if_stmt:
         %tmp.30 = lgetv %isTwiLight.3;
         symbol [ isTwiLight %tmp.30 65 19 29 ];
-        bf %tmp.30 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_65_16_67_16_if_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_65_16_67_16_if_true:
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_65_30_67_16_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 66 20 ]
+        bf %tmp.30 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_65_16_67_16_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_65_16_67_16_if_true:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_65_30_67_16_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 66 20 ]
         symbol [ SKY_COLOR_SUNSET %tmp.32 66 28 44 ];
         %tmp.32 = getv ? :SKY_COLOR_SUNSET;
         lputv %color.1 %tmp.32;
         symbol [ color %color.1 66 20 25 ];
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_65_30_67_16_stop:
-        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_65_16_67_16_if_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_65_16_67_16_if_end:
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_30_68_12_stop:
-        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_12_68_12_if_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_12_68_12_if_end:
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_11_70_8_stop:
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_endTry:
-        jsr @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_finally;
-        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_catch:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_65_30_67_16_stop:
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_65_16_67_16_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_65_16_67_16_if_end:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_30_68_12_stop:
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_12_68_12_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_53_12_68_12_if_end:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_11_70_8_stop:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_endTry:
+        jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_finally;
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_catch:
         %tmp.33 = exception;
         push %tmp.33;
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 71 8 ]
-        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_catch" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_71_8_73_8_end" ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 71 8 ]
+        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_catch" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_71_8_73_8_end" ]
         %ex.5 = local;
         symbol [ ex %ex.5 71 14 16 ];
         %tmp.34 = dup %tmp.33;
         lputv %ex.5 %tmp.34;
         symbol [ ex %ex.5 71 14 16 ];
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_71_17_73_8_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 72 12 ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_71_17_73_8_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 72 12 ]
         symbol [ System %tmp.35 72 12 18 ];
         %tmp.35 = getm $.Toybox.System;
         symbol [ println %tmp.36 72 19 26 ];
@@ -274,36 +274,36 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_
         %tmp.40 = invoke %tmp.38 %tmp.39();
         %tmp.41 = add %tmp.37 %tmp.40;
         invoke %tmp.35 %tmp.36(%tmp.41);
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_71_17_73_8_stop:
-        jsr @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_finally;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_71_17_73_8_stop:
+        jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_finally;
         pop;
-        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_71_8_73_8_end:
-        try @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_catch @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_71_8_73_8_end @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_71_8_73_8_end @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_finally;
-        jsr @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_finally;
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_71_8_73_8_end:
+        try @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_catch @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_71_8_73_8_end @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_71_8_73_8_end @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_finally;
+        jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_finally;
         throw %tmp.33;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_finally:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_finally:
         jsrret;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_end:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 75 8 ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_51_8_73_8_end:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 75 8 ]
         %tmp.42 = lgetv %color.1;
         symbol [ color %tmp.42 75 15 20 ];
         %tmp.43 = as %tmp.42 Gfx.ColorType;
         symbol [ Gfx %tmp.43 75 24 27 ];
         symbol [ ColorType %tmp.43 75 28 37 ];
         ret %tmp.43;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_48_51_76_4_stop:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_48_51_76_4_stop:
     }
-    [ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 78; @symbol_functiondef = [getAppSettings,78,21,35]; ]
+    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 78; @symbol_functiondef = [getAppSettings,78,21,35]; ]
     private
     function getAppSettings() as Void {
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_78_45_91_4_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 79 8 ]
-        try @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_beginTry @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_endTry @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_catch @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_finally;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_beginTry:
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_11_85_8_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 80 12 ]
-        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_11_85_8_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_11_85_8_stop" ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_78_45_91_4_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 79 8 ]
+        try @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_beginTry @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_endTry @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_catch @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_finally;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_beginTry:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_11_85_8_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 80 12 ]
+        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_11_85_8_start" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_11_85_8_stop" ]
         %changeSky.1 = local;
         symbol [ changeSky %changeSky.1 80 16 25 ];
         symbol [ Application %tmp.1 80 28 39 ];
@@ -316,28 +316,28 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_
         %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
         lputv %changeSky.1 %tmp.5;
         symbol [ changeSky %changeSky.1 80 16 25 ];
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 81 12 ]
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_81_29_81_63_begin:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 81 12 ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_81_29_81_63_begin:
         %tmp.6 = lgetv %changeSky.1;
         symbol [ changeSky %tmp.6 81 30 39 ];
         %tmp.7 = null;
         %tmp.8 = ne %tmp.6 %tmp.7;
-        bf %tmp.8 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_81_29_81_63_else_false;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_81_29_81_63_true:
+        bf %tmp.8 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_81_29_81_63_else_false;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_81_29_81_63_true:
         %tmp.9 = lgetv %changeSky.1;
         symbol [ changeSky %tmp.9 81 51 60 ];
         %tmp.10 = as %tmp.9 { (!Null) };
         push %tmp.10;
-        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_81_29_81_63_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_81_29_81_63_else_false:
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_81_29_81_63_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_81_29_81_63_else_false:
         %tmp.11 = true;
         push %tmp.11;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_81_29_81_63_end:
-        %tmp.12 = phi [%tmp.8 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_81_29_81_63_begin] [%tmp.10 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_81_29_81_63_true] [%tmp.11 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_81_29_81_63_else_false] [%tmp.12 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_81_29_81_63_end];
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_81_29_81_63_end:
+        %tmp.12 = phi [%tmp.8 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_81_29_81_63_begin] [%tmp.10 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_81_29_81_63_true] [%tmp.11 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_81_29_81_63_else_false] [%tmp.12 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_81_29_81_63_end];
         symbol [ changeSkyColor ? 81 12 26 ];
         putv self :changeSkyColor %tmp.12;
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 83 12 ]
-        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_11_85_8_start" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_11_85_8_stop" ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 83 12 ]
+        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_11_85_8_start" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_11_85_8_stop" ]
         %enSave.2 = local;
         symbol [ enSave %enSave.2 83 16 22 ];
         symbol [ Application %tmp.13 83 25 36 ];
@@ -350,42 +350,42 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_
         %tmp.17 = invoke %tmp.14 %tmp.15(%tmp.16);
         lputv %enSave.2 %tmp.17;
         symbol [ enSave %enSave.2 83 16 22 ];
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 84 12 ]
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_84_31_84_59_begin:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 84 12 ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_84_31_84_59_begin:
         %tmp.18 = lgetv %enSave.2;
         symbol [ enSave %tmp.18 84 32 38 ];
         %tmp.19 = null;
         %tmp.20 = ne %tmp.18 %tmp.19;
-        bf %tmp.20 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_84_31_84_59_else_false;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_84_31_84_59_true:
+        bf %tmp.20 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_84_31_84_59_else_false;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_84_31_84_59_true:
         %tmp.21 = lgetv %enSave.2;
         symbol [ enSave %tmp.21 84 50 56 ];
         %tmp.22 = as %tmp.21 { (!Null) };
         push %tmp.22;
-        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_84_31_84_59_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_84_31_84_59_else_false:
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_84_31_84_59_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_84_31_84_59_else_false:
         %tmp.23 = false;
         push %tmp.23;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_84_31_84_59_end:
-        %tmp.24 = phi [%tmp.20 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_84_31_84_59_begin] [%tmp.22 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_84_31_84_59_true] [%tmp.23 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_84_31_84_59_else_false] [%tmp.24 @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_84_31_84_59_end];
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_84_31_84_59_end:
+        %tmp.24 = phi [%tmp.20 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_84_31_84_59_begin] [%tmp.22 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_84_31_84_59_true] [%tmp.23 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_84_31_84_59_else_false] [%tmp.24 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_84_31_84_59_end];
         symbol [ energySavingMode ? 84 12 28 ];
         putv self :energySavingMode %tmp.24;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_11_85_8_stop:
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_endTry:
-        jsr @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_finally;
-        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_catch:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_11_85_8_stop:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_endTry:
+        jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_finally;
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_catch:
         %tmp.25 = exception;
         push %tmp.25;
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 86 8 ]
-        [ "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_catch" "C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_86_8_90_8_end" ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 86 8 ]
+        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_catch" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_86_8_90_8_end" ]
         %ex.3 = local;
         symbol [ ex %ex.3 86 14 16 ];
         %tmp.26 = dup %tmp.25;
         lputv %ex.3 %tmp.26;
         symbol [ ex %ex.3 86 14 16 ];
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_86_17_90_8_start:
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 87 12 ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_86_17_90_8_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 87 12 ]
         symbol [ System %tmp.27 87 12 18 ];
         %tmp.27 = getm $.Toybox.System;
         symbol [ println %tmp.28 87 19 26 ];
@@ -398,28 +398,28 @@ C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_
         %tmp.32 = invoke %tmp.30 %tmp.31();
         %tmp.33 = add %tmp.29 %tmp.32;
         invoke %tmp.27 %tmp.28(%tmp.33);
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 88 12 ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 88 12 ]
         %tmp.34 = true;
         symbol [ changeSkyColor ? 88 12 26 ];
         putv self :changeSkyColor %tmp.34;
-[ "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 89 12 ]
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc" 89 12 ]
         %tmp.35 = false;
         symbol [ energySavingMode ? 89 12 28 ];
         putv self :energySavingMode %tmp.35;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_86_17_90_8_stop:
-        jsr @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_finally;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_86_17_90_8_stop:
+        jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_finally;
         pop;
-        goto @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_end;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_86_8_90_8_end:
-        try @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_catch @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_86_8_90_8_end @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_86_8_90_8_end @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_finally;
-        jsr @C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_finally;
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_86_8_90_8_end:
+        try @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_catch @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_86_8_90_8_end @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_86_8_90_8_end @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_finally;
+        jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_finally;
         throw %tmp.25;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_finally:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_finally:
         jsrret;
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_end:
-C__ANDREA__PROGETTI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_78_45_91_4_stop:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_79_8_90_8_end:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_Sky_mc_78_45_91_4_stop:
     }
 }
-[ @file = "C:\ANDREA\_PROGETTI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 1; ]
+[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\Sky.mc"; @line = 1; ]
 <init> {
 }

@@ -20,6 +20,7 @@ class SunOrMoon extends Ui.Drawable {
     private var fallback_position;
 
     private var changeSunPosition;
+    private var changeMoonPhase;
     private var energySavingMode;
 
     private var _xCenter as Lang.Number;
@@ -65,6 +66,10 @@ class SunOrMoon extends Ui.Drawable {
 
         var icon = WatchUi.loadResource(Rez.Drawables.MoonPhases);
         var phase = Astronomy.MoonPhase as Lang.Number;
+
+        if(!changeMoonPhase){
+            phase = 4; // full moon
+        }
 
         // Crop the correct part of bitmap - each phase has a width of 20px
         var Xcut = 20*phase;
@@ -129,6 +134,9 @@ class SunOrMoon extends Ui.Drawable {
             
             var changeSun = Properties.getValue("DynamicSunPosition");
             changeSunPosition = (changeSun != null) ? changeSun : true;
+
+            var changeMoon = Properties.getValue("DynamicMoonPhase");
+            changeMoonPhase = (changeMoon != null) ? changeMoon : true;
 
             var enSave = Properties.getValue("EnergySavingMode");
             energySavingMode = (enSave != null) ? enSave : false;

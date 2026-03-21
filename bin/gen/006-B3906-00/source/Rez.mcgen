@@ -77,6 +77,8 @@ module Rez {
 
     module Strings {
         (:initialized) var ShowInfoFieldsTitle as ResourceId;
+        (:initialized) var DeviceTemperature as ResourceId;
+        (:initialized) var WindSpeed as ResourceId;
         (:initialized) var RecoveryTime as ResourceId;
         (:initialized) var ColorRed as ResourceId;
         (:initialized) var ActiveMinutes as ResourceId;
@@ -97,6 +99,7 @@ module Rez {
         (:initialized) var InfoField3Title as ResourceId;
         (:initialized) var ColorGray as ResourceId;
         (:initialized) var GeneralGroupTitle as ResourceId;
+        (:initialized) var DynamicMoon as ResourceId;
         (:initialized) var DefaultPositionLonTitle as ResourceId;
         (:initialized) var ColorPurple as ResourceId;
         (:initialized) var Barometer as ResourceId;
@@ -107,6 +110,7 @@ module Rez {
         (:initialized) var DynamicSky as ResourceId;
         (:initialized) var ColorDarkGreen as ResourceId;
         (:initialized) var BatteryIndicatorGoodTitle as ResourceId;
+        (:initialized) var WeatherUpdateTitle as ResourceId;
         (:initialized) var Humidity as ResourceId;
         (:initialized) var BatteryIndicatorGoodColorTitle as ResourceId;
         (:initialized) var DataField3Title as ResourceId;
@@ -120,8 +124,10 @@ module Rez {
         (:initialized) var EnergySavingTitle as ResourceId;
         (:initialized) var InfoField1Title as ResourceId;
         (:initialized) var Heartrate as ResourceId;
+        (:initialized) var PressUnitTitle as ResourceId;
         (:initialized) var Sunrise as ResourceId;
         (:initialized) var ColorCyan as ResourceId;
+        (:initialized) var ForecastTemperature as ResourceId;
         (:initialized) var DefaultPositionLatTitle as ResourceId;
         (:initialized) var Battery as ResourceId;
         (:initialized) var LandscapeTypeTitle as ResourceId;
@@ -140,11 +146,11 @@ module Rez {
         (:initialized) var InfoField2Title as ResourceId;
         (:initialized) var Steps as ResourceId;
         (:initialized) var ColorSkyBlue as ResourceId;
-        (:initialized) var Temperature as ResourceId;
         (:initialized) var BatteryIndicatorFullTitle as ResourceId;
         (:initialized) var BatteryIndicatorMedColorTitle as ResourceId;
         (:initialized) var LandscapeVenice as ResourceId;
         (:initialized) var ColorYellow as ResourceId;
+        (:initialized) var AstronomyUpdateTitle as ResourceId;
         (:initialized) var AppName as ResourceId;
         (:initialized) var ColorMagenta as ResourceId;
         (:initialized) var Empty as ResourceId;
@@ -168,6 +174,7 @@ module Rez {
         (:initialized) var Saturation as ResourceId;
         (:initialized) var TimeFont4 as ResourceId;
         (:initialized) var RemoveZeroTitle as ResourceId;
+        (:initialized) var WindUnitTitle as ResourceId;
         (:initialized) var TimeFont3 as ResourceId;
         (:initialized) var TimeFont2 as ResourceId;
         (:initialized) var TimeFont1 as ResourceId;

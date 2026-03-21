@@ -141,6 +141,21 @@
         "configMax" : null,
         "configMaxLength" : null
       }, {
+        "key" : "DynamicMoonPhase",
+        "valueType" : "boolean",
+        "defaultValue" : true,
+        "configTitle" : "DynamicMoon",
+        "configPrompt" : null,
+        "configType" : "boolean",
+        "configError" : null,
+        "configHelpUrl" : null,
+        "configReadonly" : false,
+        "configRequired" : false,
+        "configOptions" : null,
+        "configMin" : null,
+        "configMax" : null,
+        "configMaxLength" : null
+      }, {
         "key" : "EnergySavingMode",
         "valueType" : "boolean",
         "defaultValue" : false,
@@ -183,13 +198,70 @@
         "configMax" : null,
         "configMaxLength" : null
       }, {
+        "key" : "PressUnit",
+        "valueType" : "number",
+        "defaultValue" : 0,
+        "configTitle" : "PressUnitTitle",
+        "configPrompt" : null,
+        "configType" : "list",
+        "configError" : null,
+        "configHelpUrl" : null,
+        "configReadonly" : false,
+        "configRequired" : false,
+        "configOptions" : [ {
+          "display" : "$literal0$",
+          "value" : 0
+        }, {
+          "display" : "$literal1$",
+          "value" : 1
+        }, {
+          "display" : "$literal2$",
+          "value" : 2
+        }, {
+          "display" : "$literal3$",
+          "value" : 3
+        }, {
+          "display" : "$literal4$",
+          "value" : 4
+        } ],
+        "configMin" : null,
+        "configMax" : null,
+        "configMaxLength" : null
+      }, {
+        "key" : "WindUnit",
+        "valueType" : "number",
+        "defaultValue" : 0,
+        "configTitle" : "WindUnitTitle",
+        "configPrompt" : null,
+        "configType" : "list",
+        "configError" : null,
+        "configHelpUrl" : null,
+        "configReadonly" : false,
+        "configRequired" : false,
+        "configOptions" : [ {
+          "display" : "$literal5$",
+          "value" : 0
+        }, {
+          "display" : "$literal6$",
+          "value" : 1
+        }, {
+          "display" : "$literal7$",
+          "value" : 2
+        }, {
+          "display" : "$literal8$",
+          "value" : 3
+        } ],
+        "configMin" : null,
+        "configMax" : null,
+        "configMaxLength" : null
+      }, {
         "key" : "DefaultPositionLat",
         "valueType" : "float",
         "defaultValue" : 46.0,
         "configTitle" : "DefaultPositionLatTitle",
         "configPrompt" : null,
         "configType" : "numeric",
-        "configError" : "$literal0$",
+        "configError" : "$literal9$",
         "configHelpUrl" : null,
         "configReadonly" : false,
         "configRequired" : false,
@@ -204,13 +276,67 @@
         "configTitle" : "DefaultPositionLonTitle",
         "configPrompt" : null,
         "configType" : "numeric",
-        "configError" : "$literal0$",
+        "configError" : "$literal9$",
         "configHelpUrl" : null,
         "configReadonly" : false,
         "configRequired" : false,
         "configOptions" : null,
         "configMin" : -180.0,
         "configMax" : 180.0,
+        "configMaxLength" : null
+      }, {
+        "key" : "WeatherUpdate",
+        "valueType" : "number",
+        "defaultValue" : 10,
+        "configTitle" : "WeatherUpdateTitle",
+        "configPrompt" : null,
+        "configType" : "list",
+        "configError" : null,
+        "configHelpUrl" : null,
+        "configReadonly" : false,
+        "configRequired" : false,
+        "configOptions" : [ {
+          "display" : "$literal10$",
+          "value" : 3
+        }, {
+          "display" : "$literal11$",
+          "value" : 5
+        }, {
+          "display" : "$literal12$",
+          "value" : 10
+        }, {
+          "display" : "$literal13$",
+          "value" : 15
+        }, {
+          "display" : "$literal14$",
+          "value" : 30
+        } ],
+        "configMin" : null,
+        "configMax" : null,
+        "configMaxLength" : null
+      }, {
+        "key" : "AstronomyUpdate",
+        "valueType" : "number",
+        "defaultValue" : 120,
+        "configTitle" : "AstronomyUpdateTitle",
+        "configPrompt" : null,
+        "configType" : "list",
+        "configError" : null,
+        "configHelpUrl" : null,
+        "configReadonly" : false,
+        "configRequired" : false,
+        "configOptions" : [ {
+          "display" : "$literal15$",
+          "value" : 60
+        }, {
+          "display" : "$literal16$",
+          "value" : 120
+        }, {
+          "display" : "$literal17$",
+          "value" : 240
+        } ],
+        "configMin" : null,
+        "configMax" : null,
         "configMaxLength" : null
       } ]
     }
@@ -411,8 +537,14 @@
         "configReadonly" : false,
         "configRequired" : false,
         "configOptions" : [ {
-          "display" : "Temperature",
+          "display" : "Heartrate",
+          "value" : 0
+        }, {
+          "display" : "DeviceTemperature",
           "value" : 1
+        }, {
+          "display" : "ForecastTemperature",
+          "value" : 27
         }, {
           "display" : "Altitude",
           "value" : 2
@@ -446,6 +578,9 @@
         }, {
           "display" : "Humidity",
           "value" : 23
+        }, {
+          "display" : "WindSpeed",
+          "value" : 28
         }, {
           "display" : "Empty",
           "value" : 25
@@ -456,7 +591,7 @@
       }, {
         "key" : "DataField2",
         "valueType" : "number",
-        "defaultValue" : 7,
+        "defaultValue" : 0,
         "configTitle" : "DataField2Title",
         "configPrompt" : null,
         "configType" : "list",
@@ -465,8 +600,14 @@
         "configReadonly" : false,
         "configRequired" : false,
         "configOptions" : [ {
-          "display" : "Temperature",
+          "display" : "Heartrate",
+          "value" : 0
+        }, {
+          "display" : "DeviceTemperature",
           "value" : 1
+        }, {
+          "display" : "ForecastTemperature",
+          "value" : 27
         }, {
           "display" : "Altitude",
           "value" : 2
@@ -500,6 +641,9 @@
         }, {
           "display" : "Humidity",
           "value" : 23
+        }, {
+          "display" : "WindSpeed",
+          "value" : 28
         }, {
           "display" : "Empty",
           "value" : 25
@@ -510,7 +654,7 @@
       }, {
         "key" : "DataField3",
         "valueType" : "number",
-        "defaultValue" : 11,
+        "defaultValue" : 7,
         "configTitle" : "DataField3Title",
         "configPrompt" : null,
         "configType" : "list",
@@ -519,8 +663,14 @@
         "configReadonly" : false,
         "configRequired" : false,
         "configOptions" : [ {
-          "display" : "Temperature",
+          "display" : "Heartrate",
+          "value" : 0
+        }, {
+          "display" : "DeviceTemperature",
           "value" : 1
+        }, {
+          "display" : "ForecastTemperature",
+          "value" : 27
         }, {
           "display" : "Altitude",
           "value" : 2
@@ -554,6 +704,9 @@
         }, {
           "display" : "Humidity",
           "value" : 23
+        }, {
+          "display" : "WindSpeed",
+          "value" : 28
         }, {
           "display" : "Empty",
           "value" : 25
@@ -581,8 +734,11 @@
         "configReadonly" : false,
         "configRequired" : false,
         "configOptions" : [ {
-          "display" : "Temperature",
+          "display" : "DeviceTemperature",
           "value" : 1
+        }, {
+          "display" : "ForecastTemperature",
+          "value" : 27
         }, {
           "display" : "Battery",
           "value" : 14
@@ -623,8 +779,11 @@
         "configReadonly" : false,
         "configRequired" : false,
         "configOptions" : [ {
-          "display" : "Temperature",
+          "display" : "DeviceTemperature",
           "value" : 1
+        }, {
+          "display" : "ForecastTemperature",
+          "value" : 27
         }, {
           "display" : "Battery",
           "value" : 14
@@ -665,8 +824,11 @@
         "configReadonly" : false,
         "configRequired" : false,
         "configOptions" : [ {
-          "display" : "Temperature",
+          "display" : "DeviceTemperature",
           "value" : 1
+        }, {
+          "display" : "ForecastTemperature",
+          "value" : 27
         }, {
           "display" : "Battery",
           "value" : 14
@@ -707,8 +869,11 @@
         "configReadonly" : false,
         "configRequired" : false,
         "configOptions" : [ {
-          "display" : "Temperature",
+          "display" : "DeviceTemperature",
           "value" : 1
+        }, {
+          "display" : "ForecastTemperature",
+          "value" : 27
         }, {
           "display" : "Battery",
           "value" : 14
@@ -1040,6 +1205,7 @@
   "languages" : {
     "fra" : {
       "ShowInfoFieldsTitle" : "Afficher les Champs d'Informations",
+      "DeviceTemperature" : "Température de l'Appareil",
       "RecoveryTime" : "Temps de Récupération",
       "ColorRed" : "Rouge",
       "ActiveMinutes" : "Minutes Actives",
@@ -1085,6 +1251,7 @@
       "Heartrate" : "Fréquence Cardiaque",
       "Sunrise" : "Heure du Lever du Soleil",
       "ColorCyan" : "Cyan",
+      "ForecastTemperature" : "Température Extérieure",
       "DefaultPositionLatTitle" : "Latitude par Défaut",
       "Battery" : "Batterie de l'Appareil",
       "LandscapeTypeTitle" : "Paysage",
@@ -1103,7 +1270,6 @@
       "InfoField2Title" : "Champ d'Information 2",
       "Steps" : "Pas",
       "ColorSkyBlue" : "Bleu Ciel",
-      "Temperature" : "Température",
       "BatteryIndicatorFullTitle" : "Valeur Batterie Pleine",
       "BatteryIndicatorMedColorTitle" : "Couleur Batterie Moyenne",
       "LandscapeVenice" : "Venise",
@@ -1144,6 +1310,7 @@
     },
     "deu" : {
       "ShowInfoFieldsTitle" : "Infofelder anzeigen",
+      "DeviceTemperature" : "Gerätetemperatur",
       "RecoveryTime" : "Erholungszeit",
       "ColorRed" : "Rot",
       "ActiveMinutes" : "Aktive Minuten",
@@ -1189,6 +1356,7 @@
       "Heartrate" : "Herzfrequenz",
       "Sunrise" : "Sonnenaufgang",
       "ColorCyan" : "Cyan",
+      "ForecastTemperature" : "Außentemperatur",
       "DefaultPositionLatTitle" : "Standardbreitengrad",
       "Battery" : "Gerätebatterie",
       "LandscapeTypeTitle" : "Landschaft",
@@ -1207,7 +1375,6 @@
       "InfoField2Title" : "Infofeld 2",
       "Steps" : "Schritte",
       "ColorSkyBlue" : "Himmelblau",
-      "Temperature" : "Temperatur",
       "BatteryIndicatorFullTitle" : "Wert volle Batterie",
       "BatteryIndicatorMedColorTitle" : "Farbe mittlere Batterie",
       "LandscapeVenice" : "Venedig",
@@ -1248,6 +1415,7 @@
     },
     "spa" : {
       "ShowInfoFieldsTitle" : "Mostrar Campos de Información",
+      "DeviceTemperature" : "Temperatura del Dispositivo",
       "RecoveryTime" : "Tiempo de Recuperación",
       "ColorRed" : "Rojo",
       "ActiveMinutes" : "Minutos Activos",
@@ -1293,6 +1461,7 @@
       "Heartrate" : "Frecuencia Cardíaca",
       "Sunrise" : "Hora del Amanecer",
       "ColorCyan" : "Cian",
+      "ForecastTemperature" : "Temperatura exterior",
       "DefaultPositionLatTitle" : "Latitud Predeterminada",
       "Battery" : "Batería del Dispositivo",
       "LandscapeTypeTitle" : "Paisaje",
@@ -1311,7 +1480,6 @@
       "InfoField2Title" : "Campo de Información 2",
       "Steps" : "Pasos",
       "ColorSkyBlue" : "Azul Cielo",
-      "Temperature" : "Temperatura",
       "BatteryIndicatorFullTitle" : "Valor de Batería Llena",
       "BatteryIndicatorMedColorTitle" : "Color de Batería Media",
       "LandscapeVenice" : "Venecia",
@@ -1352,6 +1520,7 @@
     },
     "ita" : {
       "ShowInfoFieldsTitle" : "Mostra Campi Info",
+      "DeviceTemperature" : "Temperatura del Dispositivo",
       "RecoveryTime" : "Tempo di Recupero",
       "ColorRed" : "Rosso",
       "ActiveMinutes" : "Minuti Attivi",
@@ -1397,6 +1566,7 @@
       "Heartrate" : "Frequenza Cardiaca",
       "Sunrise" : "Ora Alba",
       "ColorCyan" : "Ciano",
+      "ForecastTemperature" : "Temperatura Esterna",
       "DefaultPositionLatTitle" : "Latitudine Predefinita",
       "Battery" : "Batteria Dispositivo",
       "LandscapeTypeTitle" : "Paesaggio",
@@ -1415,7 +1585,6 @@
       "InfoField2Title" : "Campo Info 2",
       "Steps" : "Passi",
       "ColorSkyBlue" : "Celeste",
-      "Temperature" : "Temperatura",
       "BatteryIndicatorFullTitle" : "Valore Batteria Piena",
       "BatteryIndicatorMedColorTitle" : "Colore Batteria Media",
       "LandscapeVenice" : "Venezia",
@@ -1456,6 +1625,7 @@
     },
     "fre" : {
       "ShowInfoFieldsTitle" : "Afficher les Champs d'Informations",
+      "DeviceTemperature" : "Température de l'Appareil",
       "RecoveryTime" : "Temps de Récupération",
       "ColorRed" : "Rouge",
       "ActiveMinutes" : "Minutes Actives",
@@ -1501,6 +1671,7 @@
       "Heartrate" : "Fréquence Cardiaque",
       "Sunrise" : "Heure du Lever du Soleil",
       "ColorCyan" : "Cyan",
+      "ForecastTemperature" : "Température Extérieure",
       "DefaultPositionLatTitle" : "Latitude par Défaut",
       "Battery" : "Batterie de l'Appareil",
       "LandscapeTypeTitle" : "Paysage",
@@ -1519,7 +1690,6 @@
       "InfoField2Title" : "Champ d'Information 2",
       "Steps" : "Pas",
       "ColorSkyBlue" : "Bleu Ciel",
-      "Temperature" : "Température",
       "BatteryIndicatorFullTitle" : "Valeur Batterie Pleine",
       "BatteryIndicatorMedColorTitle" : "Couleur Batterie Moyenne",
       "LandscapeVenice" : "Venise",
@@ -1560,12 +1730,16 @@
     },
     "valyrian" : {
       "ShowInfoFieldsTitle" : "Show Info Fields",
+      "DeviceTemperature" : "Device Temperature",
+      "WindSpeed" : "Wind Speed",
       "RecoveryTime" : "Recovery Time",
       "ColorRed" : "Red",
       "ActiveMinutes" : "Active Minutes",
       "ShowBatteryIconTitle" : "Show Battery Icon",
+      "$literal4$" : "inHg",
       "NotifPhone" : "Notifications and Phone Icons",
       "ShowWeatherTitle" : "Show Weather",
+      "$literal12$" : "10min",
       "Distance" : "Distance",
       "FieldFontTitle" : "Fields Font",
       "ShowIconsTitle" : "Show Icons",
@@ -1577,20 +1751,26 @@
       "FieldColorTitle" : "Field Color",
       "DataField2Title" : "Data Field 2",
       "InfoFieldsGroupTitle" : "Info fields",
+      "$literal3$" : "mmHg",
       "InfoField3Title" : "Info Field 3",
       "ColorGray" : "Gray",
       "GeneralGroupTitle" : "General Settings",
       "DefaultPositionLonTitle" : "Default Longitude",
       "ColorPurple" : "Purple",
       "Barometer" : "Pressure",
+      "DynamicMoon" : "Dynamic Moon Phase",
+      "$literal11$" : "5min",
       "ColorBlue" : "Blue",
       "LandscapeMountains" : "Mountains",
       "BatteryIndicatorGroupTitle" : "Battery Indicator",
       "FontsGroupTitle" : "Fonts",
       "DynamicSky" : "Dynamic Sky Color",
       "ColorDarkGreen" : "Dark Green",
+      "$literal14$" : "30min",
       "BatteryIndicatorGoodTitle" : "Good Battery Value",
       "Humidity" : "Relative Humidity",
+      "WeatherUpdateTitle" : "Weather Refresh Interval",
+      "$literal6$" : "km/h",
       "BatteryIndicatorGoodColorTitle" : "Good Battery Color",
       "DataField3Title" : "Data Field 3",
       "LandscapeBeach" : "Seaside",
@@ -1602,13 +1782,19 @@
       "InfoField4Title" : "Info Field 4",
       "EnergySavingTitle" : "Energy Saving Mode",
       "InfoField1Title" : "Info Field 1",
+      "$literal13$" : "15min",
       "Heartrate" : "Heart Rate",
+      "$literal5$" : "m/s",
+      "PressUnitTitle" : "Pressure Unit",
       "Sunrise" : "Sunrise Time",
       "ColorCyan" : "Cyan",
+      "ForecastTemperature" : "Outdoor Temperature",
       "DefaultPositionLatTitle" : "Default Latitude",
-      "$literal0$" : "Value out of range",
+      "$literal0$" : "hPa",
+      "$literal16$" : "2h",
       "Battery" : "Device Battery",
       "LandscapeTypeTitle" : "Landscape",
+      "$literal8$" : "kn",
       "BodyBattery" : "Body Battery",
       "BatteryIndicatorLowColorTitle" : "Low Battery Color",
       "ColorWhite" : "White",
@@ -1620,18 +1806,21 @@
       "DateFont4" : "Date Font 4",
       "DateFont1" : "Date Font 1",
       "DateFont2" : "Date Font 2",
+      "$literal15$" : "1h",
+      "$literal7$" : "mph",
       "Notifications" : "Notifications",
       "InfoField2Title" : "Info Field 2",
       "Steps" : "Steps",
       "ColorSkyBlue" : "Sky Blue",
-      "Temperature" : "Temperature",
       "BatteryIndicatorFullTitle" : "Full Battery Value",
       "BatteryIndicatorMedColorTitle" : "Med Battery Color",
       "LandscapeVenice" : "Venice",
       "ColorYellow" : "Yellow",
+      "AstronomyUpdateTitle" : "Astronomy Refresh Interval",
       "AppName" : "Weather 2.0",
       "ColorMagenta" : "Magenta",
       "Empty" : "Empty",
+      "$literal2$" : "atm",
       "StressLevel" : "Stress Level",
       "FieldFont2" : "Fields Font 2",
       "FieldFont1" : "Fields Font 1",
@@ -1644,6 +1833,7 @@
       "HrVariability" : "HR Variability",
       "LandscapeRome" : "Rome",
       "Vo2Max" : "VO2 Max",
+      "$literal10$" : "3min",
       "Moonphase" : "Current Moon Phase",
       "TimeFontTitle" : "Time Font",
       "FloorsClimbed" : "Floors Climbed",
@@ -1653,14 +1843,18 @@
       "TimeFont4" : "Time Font 4",
       "RemoveZeroTitle" : "Remove 0 Before Hours",
       "TimeFont3" : "Time Font 3",
+      "WindUnitTitle" : "Wind Speed Unit",
       "TimeFont2" : "Time Font 2",
       "TimeFont1" : "Time Font 1",
       "DataFieldsGroupTitle" : "Data Fields",
       "TimeColorTitle" : "Time Color",
       "Sunset" : "Sunset Time",
       "Weather" : "Weather Conditions",
+      "$literal1$" : "mBar",
       "DataField1Title" : "Data Field 1",
+      "$literal17$" : "4h",
       "BatteryIndicatorFullColorTitle" : "Full Battery Color",
+      "$literal9$" : "Value out of range",
       "Altitude" : "Altitude"
     }
   }

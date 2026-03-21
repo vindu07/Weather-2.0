@@ -16,6 +16,7 @@
 
     <string id="DynamicSky">Dynamic Sky Color</string>
     <string id="DynamicSun">Dynamic Sun Position</string>
+    <string id="DynamicMoon">Dynamic Moon Phase</string>
 
     <string id="TimeColorTitle">Time Color</string>
     <string id="FieldColorTitle">Field Color</string>
@@ -57,6 +58,13 @@
     <string id="BatteryIndicatorGoodTitle">Good Battery Value</string>
     <string id="BatteryIndicatorMedTitle">Med Battery Value</string>
     <string id="BatteryIndicatorLowTitle">Low Battery Value</string>
+
+    <string id="PressUnitTitle">Pressure Unit</string>
+    <string id="WindUnitTitle">Wind Speed Unit</string>
+    
+    <string id="WeatherUpdateTitle">Weather Refresh Interval</string>
+    <string id="AstronomyUpdateTitle">Astronomy Refresh Interval</string>
+
     
     <!--COLORI-->
 
@@ -80,7 +88,8 @@
     <!--NOMI CAMPI-->
 
     <string id="Heartrate">Heart Rate</string>
-    <string id="Temperature">Temperature</string>
+    <string id="DeviceTemperature">Device Temperature</string>
+    <string id="ForecastTemperature">Outdoor Temperature</string>
     <string id="Altitude">Altitude</string>
     <string id="Barometer">Pressure</string>
     <string id="Compass">Heading</string>
@@ -105,6 +114,7 @@
     <string id="Humidity">Relative Humidity</string>
     <string id="Moonphase">Current Moon Phase</string>
     <string id="NotifPhone">Notifications and Phone Icons</string>
+    <string id="WindSpeed">Wind Speed</string>
     <string id="Empty">Empty</string>
 
 
@@ -134,5 +144,10 @@
     <string id="FieldFont2">Fields Font 2</string>
     <string id="FieldFont3">Fields Font 3</string>
     <string id="FieldFont4">Fields Font 4</string>
+
+    <!--NEW - TO TRANSLATE-->
+
+    
+    
 
 </strings>

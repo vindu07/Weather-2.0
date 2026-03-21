@@ -15,6 +15,7 @@
 
     <string id="DynamicSky">Couleur du ciel dynamique</string>
     <string id="DynamicSun">Position dynamique du soleil</string>
+    <string id="DynamicMoon">Phase de Lune Dynamique</string>
 
     <string id="TimeColorTitle">Couleur de l'Heure</string>
     <string id="FieldColorTitle">Couleur du Champ</string>
@@ -55,6 +56,13 @@
     <string id="BatteryIndicatorGoodTitle">Valeur Batterie Bonne</string>
     <string id="BatteryIndicatorMedTitle">Valeur Batterie Moyenne</string>
     <string id="BatteryIndicatorLowTitle">Valeur Batterie Faible</string>
+
+    <string id="PressUnitTitle">Unité de Pression</string>
+    <string id="WindUnitTitle">Unité de Vitesse du Vent</string>
+    
+    <string id="WeatherUpdateTitle">Intervalle de Mise à Jour Météo</string>
+    <string id="AstronomyUpdateTitle">Intervalle de Mise à Jour Astronomique</string>
+
     
     <!--COLORI-->
 
@@ -77,7 +85,8 @@
     <!--NOMI CAMPI-->
 
     <string id="Heartrate">Fréquence Cardiaque</string>
-    <string id="Temperature">Température</string>
+    <string id="DeviceTemperature">Température de l'Appareil</string>
+    <string id="ForecastTemperature">Température Extérieure</string>
     <string id="Altitude">Altitude</string>
     <string id="Barometer">Pression</string>
     <string id="Compass">Cap</string>
@@ -102,6 +111,7 @@
     <string id="Humidity">Humidité Relative</string>
     <string id="Moonphase">Phase Lunaire Actuelle</string>
     <string id="NotifPhone">Notifications et Icônes Téléphone</string>
+    <string id="WindSpeed">Vitesse du Vent</string>
     <string id="Empty">Vide</string>
 
     <!--PAESAGGI-->

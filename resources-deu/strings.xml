@@ -15,6 +15,7 @@
 
     <string id="DynamicSky">Dynamische Himmelsfarbe</string>
     <string id="DynamicSun">Dynamische Sonnenposition</string>
+    <string id="DynamicMoon">Dynamische Mondphase</string>
 
     <string id="TimeColorTitle">Uhrzeitfarbe</string>
     <string id="FieldColorTitle">Feldfarbe</string>
@@ -56,6 +57,13 @@
     <string id="BatteryIndicatorMedTitle">Wert mittlere Batterie</string>
     <string id="BatteryIndicatorLowTitle">Wert niedrige Batterie</string>
     
+    <string id="PressUnitTitle">Druckeinheit</string>
+    <string id="WindUnitTitle">Windgeschwindigkeitseinheit</string>
+    
+    <string id="WeatherUpdateTitle">Aktualisierungsintervall Wetter</string>
+    <string id="AstronomyUpdateTitle">Aktualisierungsintervall Astronomie</string>
+
+    
     <!--COLORI-->
 
     <string id="ColorBlack">Schwarz</string>
@@ -77,7 +85,8 @@
     <!--NOMI CAMPI-->
 
     <string id="Heartrate">Herzfrequenz</string>
-    <string id="Temperature">Temperatur</string>
+    <string id="DeviceTemperature">Gerätetemperatur</string>
+    <string id="ForecastTemperature">Außentemperatur</string>
     <string id="Altitude">Höhe</string>
     <string id="Barometer">Druck</string>
     <string id="Compass">Richtung</string>
@@ -102,6 +111,7 @@
     <string id="Humidity">Relative Luftfeuchtigkeit</string>
     <string id="Moonphase">Aktuelle Mondphase</string>
     <string id="NotifPhone">Benachrichtigungen und Telefon-Symbole</string>
+    <string id="WindSpeed">Windgeschwindigkeit</string>
     <string id="Empty">Leer</string>
 
     <!--PAESAGGI-->

@@ -42,6 +42,10 @@
             <settingConfig type="boolean" />
         </setting>
 
+        <setting propertyKey="@Properties.DynamicMoonPhase" title="@Strings.DynamicMoon">
+            <settingConfig type="boolean" />
+        </setting>
+
         <setting propertyKey="@Properties.EnergySavingMode" title="@Strings.EnergySavingTitle">
             <settingConfig type="boolean" />
         </setting>
@@ -58,12 +62,53 @@
             </settingConfig> 
         </setting>
 
+        <setting propertyKey="@Properties.PressUnit" title="@Strings.PressUnitTitle">
+            <settingConfig type="list">
+                <listEntry value="0">hPa</listEntry> 
+                <listEntry value="1">mBar</listEntry>
+                <listEntry value="2">atm</listEntry>
+                <listEntry value="3">mmHg</listEntry>
+                <listEntry value="4">inHg</listEntry>
+            </settingConfig>
+        </setting>
+
+        <setting propertyKey="@Properties.WindUnit" title="@Strings.WindUnitTitle">
+            <settingConfig type="list">
+                <listEntry value="0">m/s</listEntry> 
+                <listEntry value="1">km/h</listEntry>
+                <listEntry value="2">mph</listEntry>
+                <listEntry value="3">kn</listEntry>
+            </settingConfig>
+        </setting>
+
         <setting propertyKey="@Properties.DefaultPositionLat" title="@Strings.DefaultPositionLatTitle">
             <settingConfig type="numeric" min="-72" max="72" errorMessage="Value out of range"/>
         </setting>
         <setting propertyKey="@Properties.DefaultPositionLon" title="@Strings.DefaultPositionLonTitle">
             <settingConfig type="numeric" min="-180" max="180" errorMessage="Value out of range"/>
         </setting>
+
+
+        <setting propertyKey="@Properties.WeatherUpdate" title="@Strings.WeatherUpdateTitle">
+            <settingConfig type="list">
+                <listEntry value="3">3min</listEntry> 
+                <listEntry value="5">5min</listEntry>
+                <listEntry value="10">10min</listEntry>
+                <listEntry value="15">15min</listEntry>
+                <listEntry value="30">30min</listEntry>
+            </settingConfig>
+        </setting>
+
+        <setting propertyKey="@Properties.AstronomyUpdate" title="@Strings.AstronomyUpdateTitle">
+            <settingConfig type="list">
+                <listEntry value="60">1h</listEntry> 
+                <listEntry value="120">2h</listEntry>
+                <listEntry value="240">4h</listEntry>
+            </settingConfig>
+        </setting>
+
+
+        
 
 
 
@@ -139,8 +184,9 @@
     
         <setting propertyKey="@Properties.DataField1" title="@Strings.DataField1Title">
             <settingConfig type="list">
-                <!--listEntry value="0">@Strings.Heartrate</listEntry-->
-                <listEntry value="1">@Strings.Temperature</listEntry>
+                <listEntry value="0">@Strings.Heartrate</listEntry>
+                <listEntry value="1">@Strings.DeviceTemperature</listEntry>
+                <listEntry value="27">@Strings.ForecastTemperature</listEntry>
                 <listEntry value="2">@Strings.Altitude</listEntry>
                 <listEntry value="3">@Strings.Barometer</listEntry>
                 <!--listEntry value="5">@Strings.Saturation</listEntry-->
@@ -153,13 +199,15 @@
                 <listEntry value="20">@Strings.Sunrise</listEntry>
                 <listEntry value="21">@Strings.Sunset</listEntry>
                 <listEntry value="23">@Strings.Humidity</listEntry>
+                <listEntry value="28">@Strings.WindSpeed</listEntry>
                 <listEntry value="25">@Strings.Empty</listEntry>
             </settingConfig>
         </setting>
         <setting propertyKey="@Properties.DataField2" title="@Strings.DataField2Title">
             <settingConfig type="list">
-                <!--listEntry value="0">@Strings.Heartrate</listEntry-->
-                <listEntry value="1">@Strings.Temperature</listEntry>
+                <listEntry value="0">@Strings.Heartrate</listEntry>
+                <listEntry value="1">@Strings.DeviceTemperature</listEntry>
+                <listEntry value="27">@Strings.ForecastTemperature</listEntry>
                 <listEntry value="2">@Strings.Altitude</listEntry>
                 <listEntry value="3">@Strings.Barometer</listEntry>
                 <!--listEntry value="5">@Strings.Saturation</listEntry-->
@@ -172,13 +220,15 @@
                 <listEntry value="20">@Strings.Sunrise</listEntry>
                 <listEntry value="21">@Strings.Sunset</listEntry>
                 <listEntry value="23">@Strings.Humidity</listEntry>
+                <listEntry value="28">@Strings.WindSpeed</listEntry>
                 <listEntry value="25">@Strings.Empty</listEntry>
             </settingConfig>
         </setting>
         <setting propertyKey="@Properties.DataField3" title="@Strings.DataField3Title">
             <settingConfig type="list">
-                <!--listEntry value="0">@Strings.Heartrate</listEntry-->
-                <listEntry value="1">@Strings.Temperature</listEntry>
+                <listEntry value="0">@Strings.Heartrate</listEntry>
+                <listEntry value="1">@Strings.DeviceTemperature</listEntry>
+                <listEntry value="27">@Strings.ForecastTemperature</listEntry>
                 <listEntry value="2">@Strings.Altitude</listEntry>
                 <listEntry value="3">@Strings.Barometer</listEntry>
                 <!--listEntry value="5">@Strings.Saturation</listEntry-->
@@ -191,6 +241,7 @@
                 <listEntry value="20">@Strings.Sunrise</listEntry>
                 <listEntry value="21">@Strings.Sunset</listEntry>
                 <listEntry value="23">@Strings.Humidity</listEntry>
+                <listEntry value="28">@Strings.WindSpeed</listEntry>
                 <listEntry value="25">@Strings.Empty</listEntry>
             </settingConfig>
         </setting>
@@ -203,7 +254,8 @@
     
         <setting propertyKey="@Properties.InfoField1" title="@Strings.InfoField1Title">
             <settingConfig type="list">
-                <listEntry value="1">@Strings.Temperature</listEntry>
+                <listEntry value="1">@Strings.DeviceTemperature</listEntry>
+                <listEntry value="27">@Strings.ForecastTemperature</listEntry>
                 <listEntry value="14">@Strings.Battery</listEntry>
                 <listEntry value="18">@Strings.Notifications</listEntry>
                 <listEntry value="19">@Strings.Alarms</listEntry>
@@ -216,7 +268,8 @@
         </setting>
         <setting propertyKey="@Properties.InfoField2" title="@Strings.InfoField2Title">
             <settingConfig type="list">
-                <listEntry value="1">@Strings.Temperature</listEntry>
+                <listEntry value="1">@Strings.DeviceTemperature</listEntry>
+                <listEntry value="27">@Strings.ForecastTemperature</listEntry>
                 <listEntry value="14">@Strings.Battery</listEntry>
                 <listEntry value="18">@Strings.Notifications</listEntry>
                 <listEntry value="19">@Strings.Alarms</listEntry>
@@ -229,7 +282,8 @@
         </setting>
         <setting propertyKey="@Properties.InfoField3" title="@Strings.InfoField3Title">
             <settingConfig type="list">
-                <listEntry value="1">@Strings.Temperature</listEntry>
+                <listEntry value="1">@Strings.DeviceTemperature</listEntry>
+                <listEntry value="27">@Strings.ForecastTemperature</listEntry>
                 <listEntry value="14">@Strings.Battery</listEntry>
                 <listEntry value="18">@Strings.Notifications</listEntry>
                 <listEntry value="19">@Strings.Alarms</listEntry>
@@ -242,7 +296,8 @@
         </setting>
         <setting propertyKey="@Properties.InfoField4" title="@Strings.InfoField4Title">
             <settingConfig type="list">
-                <listEntry value="1">@Strings.Temperature</listEntry>
+                <listEntry value="1">@Strings.DeviceTemperature</listEntry>
+                <listEntry value="27">@Strings.ForecastTemperature</listEntry>
                 <listEntry value="14">@Strings.Battery</listEntry>
                 <listEntry value="18">@Strings.Notifications</listEntry>
                 <listEntry value="19">@Strings.Alarms</listEntry>

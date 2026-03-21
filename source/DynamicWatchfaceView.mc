@@ -7,12 +7,15 @@ using Toybox.WatchUi;
 using Toybox.Graphics as Gfx;
 
 
+var WeatherUpdateInterval = 10;
+var AstronomyUpdateInterval = 120;
+
+//booleans for the updates
 var ISHIGHPOWERON as Lang.Boolean = true;
-
 var isPartialUpdate as Lang.Boolean = false;
-var haveToReload as Lang.Boolean = false;
+var ReloadWeather as Lang.Boolean = false;
 
-//incrementato a ogni update
+//Counter
 var minSinceAppStart = 0;
 
 class DynamicWatchfaceView extends WatchUi.WatchFace {
@@ -45,10 +48,10 @@ class DynamicWatchfaceView extends WatchUi.WatchFace {
             Astronomy.refreshData(fallback_position);
         }
 
-        if(minSinceAppStart%60 == 0){ // Start and every 60 min OR settings changed
+        if(minSinceAppStart % AstronomyUpdateInterval == 0){ // Start and every n min OR settings changed
             Astronomy.refreshData(fallback_position);
         }
-        if(minSinceAppStart%10 == 0 || haveToReload){ // Start and every 10 min OR forced refresh
+        if(minSinceAppStart % WeatherUpdateInterval == 0 || ReloadWeather){ // Start and every n min OR forced refresh
             WeatherMod.refreshData();
             updateSunPosition = true;
         }
@@ -60,7 +63,7 @@ class DynamicWatchfaceView extends WatchUi.WatchFace {
         // Reset the booleans
         SETTINGSCHANGED = false;
         isPartialUpdate = false;
-        haveToReload = false;
+        ReloadWeather = false;
     }
 
   
@@ -73,7 +76,7 @@ class DynamicWatchfaceView extends WatchUi.WatchFace {
     // The user has just looked at their watch. Timers and animations may be started here.
     function onExitSleep() as Void {
         ISHIGHPOWERON = true;
-        haveToReload = true;
+        ReloadWeather = true;
         WatchUi.requestUpdate(); // refresh the screen
     }
 
@@ -88,6 +91,9 @@ class DynamicWatchfaceView extends WatchUi.WatchFace {
             var lat = Properties.getValue("DefaultPositionLat");
             var lon = Properties.getValue("DefaultPositionLon");
             fallback_position = [(lat != null) ? lat : 51.5, (lon != null) ? lon : 0.001];
+
+            WeatherUpdateInterval = Properties.getValue("WeatherUpdate") as Lang.Number;
+            AstronomyUpdateInterval = Properties.getValue("AstronomyUpdate") as Lang.Number;
         }
         catch(ex){
             System.println("ERROR -- DynamicWatchfaceView.getAppSettings -- " + ex.getErrorMessage());
