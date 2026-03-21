@@ -652,115 +652,92 @@ C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrM
         symbol [ changeSunPosition ? 136 12 29 ];
         putv self :changeSunPosition %tmp.38;
 [ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\SunOrMoon.mc" 138 12 ]
-        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_130_11_143_8_start" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_130_11_143_8_stop" ]
-        %changeMoon.4 = local;
-        symbol [ changeMoon %changeMoon.4 138 16 26 ];
-        symbol [ Properties %tmp.39 138 29 39 ];
+        symbol [ Properties %tmp.39 138 30 40 ];
         %tmp.39 = getm $.Toybox.Application.Properties;
-        symbol [ getValue %tmp.40 138 40 48 ];
+        symbol [ getValue %tmp.40 138 41 49 ];
         %tmp.40 = getv function %tmp.39 :getValue;
         %tmp.41 = "DynamicMoonPhase";
         %tmp.42 = invoke %tmp.39 %tmp.40(%tmp.41);
-        lputv %changeMoon.4 %tmp.42;
-        symbol [ changeMoon %changeMoon.4 138 16 26 ];
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\SunOrMoon.mc" 139 12 ]
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_139_30_139_66_begin:
-        %tmp.43 = lgetv %changeMoon.4;
-        symbol [ changeMoon %tmp.43 139 31 41 ];
-        %tmp.44 = null;
-        %tmp.45 = ne %tmp.43 %tmp.44;
-        bf %tmp.45 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_139_30_139_66_else_false;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_139_30_139_66_true:
-        %tmp.46 = lgetv %changeMoon.4;
-        symbol [ changeMoon %tmp.46 139 53 63 ];
-        %tmp.47 = as %tmp.46 { (!Null) };
-        push %tmp.47;
-        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_139_30_139_66_end;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_139_30_139_66_else_false:
-        %tmp.48 = true;
-        push %tmp.48;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_139_30_139_66_end:
-        %tmp.49 = phi [%tmp.45 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_139_30_139_66_begin] [%tmp.47 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_139_30_139_66_true] [%tmp.48 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_139_30_139_66_else_false] [%tmp.49 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_139_30_139_66_end];
-        symbol [ changeMoonPhase ? 139 12 27 ];
-        putv self :changeMoonPhase %tmp.49;
+        symbol [ changeMoonPhase ? 138 12 27 ];
+        putv self :changeMoonPhase %tmp.42;
 [ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\SunOrMoon.mc" 141 12 ]
         [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_130_11_143_8_start" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_130_11_143_8_stop" ]
-        %enSave.5 = local;
-        symbol [ enSave %enSave.5 141 16 22 ];
-        symbol [ Properties %tmp.50 141 25 35 ];
-        %tmp.50 = getm $.Toybox.Application.Properties;
-        symbol [ getValue %tmp.51 141 36 44 ];
-        %tmp.51 = getv function %tmp.50 :getValue;
-        %tmp.52 = "EnergySavingMode";
-        %tmp.53 = invoke %tmp.50 %tmp.51(%tmp.52);
-        lputv %enSave.5 %tmp.53;
-        symbol [ enSave %enSave.5 141 16 22 ];
+        %enSave.4 = local;
+        symbol [ enSave %enSave.4 141 16 22 ];
+        symbol [ Properties %tmp.43 141 25 35 ];
+        %tmp.43 = getm $.Toybox.Application.Properties;
+        symbol [ getValue %tmp.44 141 36 44 ];
+        %tmp.44 = getv function %tmp.43 :getValue;
+        %tmp.45 = "EnergySavingMode";
+        %tmp.46 = invoke %tmp.43 %tmp.44(%tmp.45);
+        lputv %enSave.4 %tmp.46;
+        symbol [ enSave %enSave.4 141 16 22 ];
 [ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\SunOrMoon.mc" 142 12 ]
 C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_142_31_142_59_begin:
-        %tmp.54 = lgetv %enSave.5;
-        symbol [ enSave %tmp.54 142 32 38 ];
-        %tmp.55 = null;
-        %tmp.56 = ne %tmp.54 %tmp.55;
-        bf %tmp.56 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_142_31_142_59_else_false;
+        %tmp.47 = lgetv %enSave.4;
+        symbol [ enSave %tmp.47 142 32 38 ];
+        %tmp.48 = null;
+        %tmp.49 = ne %tmp.47 %tmp.48;
+        bf %tmp.49 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_142_31_142_59_else_false;
 C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_142_31_142_59_true:
-        %tmp.57 = lgetv %enSave.5;
-        symbol [ enSave %tmp.57 142 50 56 ];
-        %tmp.58 = as %tmp.57 { (!Null) };
-        push %tmp.58;
+        %tmp.50 = lgetv %enSave.4;
+        symbol [ enSave %tmp.50 142 50 56 ];
+        %tmp.51 = as %tmp.50 { (!Null) };
+        push %tmp.51;
         goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_142_31_142_59_end;
 C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_142_31_142_59_else_false:
-        %tmp.59 = false;
-        push %tmp.59;
+        %tmp.52 = false;
+        push %tmp.52;
 C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_142_31_142_59_end:
-        %tmp.60 = phi [%tmp.56 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_142_31_142_59_begin] [%tmp.58 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_142_31_142_59_true] [%tmp.59 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_142_31_142_59_else_false] [%tmp.60 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_142_31_142_59_end];
+        %tmp.53 = phi [%tmp.49 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_142_31_142_59_begin] [%tmp.51 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_142_31_142_59_true] [%tmp.52 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_142_31_142_59_else_false] [%tmp.53 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_142_31_142_59_end];
         symbol [ energySavingMode ? 142 12 28 ];
-        putv self :energySavingMode %tmp.60;
+        putv self :energySavingMode %tmp.53;
 C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_130_11_143_8_stop:
 C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_130_8_149_8_endTry:
         jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_130_8_149_8_finally;
         goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_130_8_149_8_end;
 C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_130_8_149_8_catch:
-        %tmp.61 = exception;
-        push %tmp.61;
+        %tmp.54 = exception;
+        push %tmp.54;
 [ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\SunOrMoon.mc" 144 8 ]
         [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_130_8_149_8_catch" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_144_8_149_8_end" ]
-        %ex.6 = local;
-        symbol [ ex %ex.6 144 14 16 ];
-        %tmp.62 = dup %tmp.61;
-        lputv %ex.6 %tmp.62;
-        symbol [ ex %ex.6 144 14 16 ];
+        %ex.5 = local;
+        symbol [ ex %ex.5 144 14 16 ];
+        %tmp.55 = dup %tmp.54;
+        lputv %ex.5 %tmp.55;
+        symbol [ ex %ex.5 144 14 16 ];
 C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_144_17_149_8_start:
 [ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\SunOrMoon.mc" 145 12 ]
-        symbol [ System %tmp.63 145 12 18 ];
-        %tmp.63 = getm $.Toybox.System;
-        symbol [ println %tmp.64 145 19 26 ];
-        %tmp.64 = getv function %tmp.63 :println;
-        %tmp.65 = "ERROR -- SunOrMoon.getAppSettings -- ";
-        %tmp.66 = lgetv %ex.6;
-        symbol [ ex %tmp.66 145 69 71 ];
-        symbol [ getErrorMessage %tmp.67 145 72 87 ];
-        %tmp.67 = getv function %tmp.66 :getErrorMessage;
-        %tmp.68 = invoke %tmp.66 %tmp.67();
-        %tmp.69 = add %tmp.65 %tmp.68;
-        invoke %tmp.63 %tmp.64(%tmp.69);
+        symbol [ System %tmp.56 145 12 18 ];
+        %tmp.56 = getm $.Toybox.System;
+        symbol [ println %tmp.57 145 19 26 ];
+        %tmp.57 = getv function %tmp.56 :println;
+        %tmp.58 = "ERROR -- SunOrMoon.getAppSettings -- ";
+        %tmp.59 = lgetv %ex.5;
+        symbol [ ex %tmp.59 145 69 71 ];
+        symbol [ getErrorMessage %tmp.60 145 72 87 ];
+        %tmp.60 = getv function %tmp.59 :getErrorMessage;
+        %tmp.61 = invoke %tmp.59 %tmp.60();
+        %tmp.62 = add %tmp.58 %tmp.61;
+        invoke %tmp.56 %tmp.57(%tmp.62);
 [ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\SunOrMoon.mc" 146 12 ]
-        %tmp.70 = newa 2;
-        %tmp.71 = 51.5;
-        %tmp.72 = dup %tmp.70;
-        %tmp.73 = aputv %tmp.72 0 %tmp.71;
-        %tmp.74 = 0.001;
-        %tmp.75 = dup %tmp.73;
-        %tmp.76 = aputv %tmp.75 1 %tmp.74;
+        %tmp.63 = newa 2;
+        %tmp.64 = 51.5;
+        %tmp.65 = dup %tmp.63;
+        %tmp.66 = aputv %tmp.65 0 %tmp.64;
+        %tmp.67 = 0.001;
+        %tmp.68 = dup %tmp.66;
+        %tmp.69 = aputv %tmp.68 1 %tmp.67;
         symbol [ fallback_position ? 146 12 29 ];
-        putv self :fallback_position %tmp.76;
+        putv self :fallback_position %tmp.69;
 [ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\SunOrMoon.mc" 147 12 ]
-        %tmp.77 = true;
+        %tmp.70 = true;
         symbol [ changeSunPosition ? 147 12 29 ];
-        putv self :changeSunPosition %tmp.77;
+        putv self :changeSunPosition %tmp.70;
 [ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\background\SunOrMoon.mc" 148 12 ]
-        %tmp.78 = false;
+        %tmp.71 = false;
         symbol [ energySavingMode ? 148 12 28 ];
-        putv self :energySavingMode %tmp.78;
+        putv self :energySavingMode %tmp.71;
 C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_144_17_149_8_stop:
         jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_130_8_149_8_finally;
         pop;
@@ -768,7 +745,7 @@ C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrM
 C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_144_8_149_8_end:
         try @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_130_8_149_8_catch @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_144_8_149_8_end @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_144_8_149_8_end @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_130_8_149_8_finally;
         jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_130_8_149_8_finally;
-        throw %tmp.61;
+        throw %tmp.54;
 C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_130_8_149_8_finally:
         jsrret;
 C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_background_SunOrMoon_mc_130_8_149_8_end:

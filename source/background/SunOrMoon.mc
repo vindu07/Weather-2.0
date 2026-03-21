@@ -135,8 +135,8 @@ class SunOrMoon extends Ui.Drawable {
             var changeSun = Properties.getValue("DynamicSunPosition");
             changeSunPosition = (changeSun != null) ? changeSun : true;
 
-            var changeMoon = Properties.getValue("DynamicMoonPhase");
-            changeMoonPhase = (changeMoon != null) ? changeMoon : true;
+            changeMoonPhase = Properties.getValue("DynamicMoonPhase");
+            
 
             var enSave = Properties.getValue("EnergySavingMode");
             energySavingMode = (enSave != null) ? enSave : false;

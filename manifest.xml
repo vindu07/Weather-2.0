@@ -5,7 +5,7 @@
         Use "Monkey C: Edit Application" from the Visual Studio Code command palette
         to update the application attributes.
     -->
-    <iq:application id="646a88fd-ed42-44c6-bd44-d413d3b536d5" type="watchface" name="@Strings.AppName" entry="DynamicWatchfaceApp" launcherIcon="@Drawables.LauncherIcon" minApiLevel="4.2.0">
+    <iq:application id="e49413ac-dd55-42cb-ae3b-8a7b0fcd5be1" type="watchface" name="@Strings.AppName" entry="DynamicWatchfaceApp" launcherIcon="@Drawables.LauncherIcon" minApiLevel="4.2.0">
         <!--
             Use the following from the Visual Studio Code comand palette to edit
             the build targets:
