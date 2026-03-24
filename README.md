@@ -1,4 +1,4 @@
-Here is the source code of my watch face called "Weather 2.0", which I have loaded on garmin's Connect IQ Store at the following link: https://apps.garmin.com/apps/ece0d4ff-ea0a-427a-b345-55456f084523.
+Here is the source code of my watch face called "Weather 2.0", which I have loaded on garmin's Connect IQ Store at the following link: https://apps.garmin.com/apps/e755e7ff-1b08-46cc-bd74-e9a1cb46053f.
 
 THIS IS NOT meant to be an example of how to write good Monkey C code, and I am NOT a professional programmer. 
 I loaded it on github mainly to keep trace of the different versions for recovery, which is not permitted on Connect IQ.
