@@ -62,7 +62,8 @@
     <string id="PressUnitTitle">Pressure Unit</string>
     <string id="WindUnitTitle">Wind Speed Unit</string>
     
-    <string id="WeatherUpdateTitle">Weather Refresh Interval</string>
+    <string id="BackgroundUpdateTitle">Background Refresh Interval</string>
+    <string id="WeatherUpdateTitle">Background Refresh Interval</string>
     <string id="AstronomyUpdateTitle">Astronomy Refresh Interval</string>
 
     

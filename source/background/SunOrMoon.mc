@@ -6,8 +6,6 @@ using Toybox.System;
 using Toybox.Time;
 using Toybox.WatchUi as Ui;
 
-var updateSunPosition as Lang.Boolean = true;
-
 class SunOrMoon extends Ui.Drawable {
 
     typedef sunPosition as {
@@ -93,13 +91,12 @@ class SunOrMoon extends Ui.Drawable {
 
     function drawSun(dc as Gfx.Dc){
         
-        var position = SunPosition;
+        var position = self.SunPosition;
 
-        if(updateSunPosition){
+        if(updateBackground){
             
             position = getSunPosition(dc) as sunPosition;
             self.SunPosition = position;
-            updateSunPosition = false;
         }
         
         dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);

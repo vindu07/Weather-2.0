@@ -2,6 +2,7 @@ using Toybox.Activity;
 using Toybox.ActivityMonitor;
 using Toybox.Lang;
 using Toybox.Math;
+using Toybox.Sensor;
 using Toybox.SensorHistory;
 using Toybox.System;
 using Toybox.Weather;
@@ -72,9 +73,10 @@ module SensorMod{
 
         var data = "--", title = "";
 
+        WeatherMod.getCurrentConditions();
+
         var systemStats = System.getSystemStats();
         var activityMonitor = ActivityMonitor.getInfo();
-        var weather = Weather.getCurrentConditions();
         var sunEvents = Astronomy.SunEvents;
 
         try{
@@ -140,9 +142,7 @@ module SensorMod{
                     title = "FLOOR";
                     break;
                 case SENSOR_HUMIDITY: 
-                    if(weather != null && WeatherMod.WeatherConditions[:relativeHumidity] != null){
-                        data = WeatherMod.WeatherConditions[:relativeHumidity].format("%d");
-                    }
+                    data = getHum();
                     title = "HUM"; 
                     break;
                 case SENSOR_STEPS: 
@@ -199,10 +199,7 @@ module SensorMod{
                     }
                     break;
                 case SENSOR_HUMIDITY: 
-                    if(weather != null && WeatherMod.WeatherConditions[:relativeHumidity] != null){
-                        returnValue = ICON_HUMIDITY + WeatherMod.WeatherConditions[:relativeHumidity].format("%d");
-                    }
-                    System.println(returnValue);
+                    returnValue = ICON_HUMIDITY + getHum();
                     break;
                 case SENSOR_NOTIFICATIONS: 
                     if(settings != null){
@@ -297,6 +294,7 @@ module SensorMod{
                     System.println("WARNING -- SensorMod.getTemp -- Temperature value is null");
                     return "--";
                 }
+                else if(value < 0.0){return "--"; }
 
                 var TempUnit = System.getDeviceSettings().temperatureUnits;
                 
@@ -314,13 +312,21 @@ module SensorMod{
     }
     function getPress() as Lang.String{
         try{
+            var value;
             var pressHistory = SensorHistory.getPressureHistory({:period => 1});
             
-            var value = pressHistory.getMax();
+            if(pressHistory != null){
+                value = pressHistory.getMax(); 
+            }
+            else{
+                value = WeatherMod.WeatherConditions[:pressure];
+            }
+            
             if(value == null){
                 System.println("WARNING -- SensorMod.getPress -- Pressure value is null");
                 return "--";
             }
+            else if(value < 0.0){return "--"; }
 
             var unit = Application.Properties.getValue("PressUnit") as PressUnits;
             
@@ -337,6 +343,20 @@ module SensorMod{
         }
         catch(ex){
             System.println("ERROR -- SensorMod.getPress -- " + ex.getErrorMessage());
+            return "--";
+        }
+    }
+    function getHum() as Lang.String{
+        try{
+
+            var humidity = WeatherMod.WeatherConditions[:relativeHumidity] as Lang.Number;
+
+            if(humidity == null || humidity < 0){return "--"; }
+
+            return humidity.format("%d");
+        }
+        catch(ex){
+            System.error("ERROR -- SensorMod.getHum -- " + ex.getErrorMessage());
             return "--";
         }
     }
@@ -398,6 +418,8 @@ module SensorMod{
     function getWindSpeed() as Lang.String{
         try{
             var value = WeatherMod.WeatherConditions[:windSpeed] as Lang.Float;
+
+            if(value < 0.0){return "--"; }
 
             var windUnits = Application.Properties.getValue("WindUnit") as WindUnits;
 

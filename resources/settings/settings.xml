@@ -89,7 +89,7 @@
         </setting>
 
 
-        <setting propertyKey="@Properties.WeatherUpdate" title="@Strings.WeatherUpdateTitle">
+        <setting propertyKey="@Properties.BackgroundUpdate" title="@Strings.BackgroundUpdateTitle">
             <settingConfig type="list">
                 <listEntry value="3">3min</listEntry> 
                 <listEntry value="5">5min</listEntry>

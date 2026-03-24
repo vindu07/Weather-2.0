@@ -1,3 +1,11 @@
+###### v1.11 (2026/03/22)
+
+
+
+\-Better handling of missing weather data when not connected
+
+###### 
+
 ###### v1.9 - v1.10 (2026/03/21)
 
 

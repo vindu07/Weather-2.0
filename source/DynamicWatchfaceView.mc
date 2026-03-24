@@ -7,13 +7,12 @@ using Toybox.WatchUi;
 using Toybox.Graphics as Gfx;
 
 
-var WeatherUpdateInterval = 10;
+var BackgroundUpdateInterval = 10;
 var AstronomyUpdateInterval = 120;
 
 //booleans for the updates
 var ISHIGHPOWERON as Lang.Boolean = true;
-var isPartialUpdate as Lang.Boolean = false;
-var ReloadWeather as Lang.Boolean = false;
+var updateBackground as Lang.Boolean = false;
 
 //Counter
 var minSinceAppStart = 0;
@@ -46,14 +45,14 @@ class DynamicWatchfaceView extends WatchUi.WatchFace {
         if(SETTINGSCHANGED){
             getAppSettings();
             Astronomy.refreshData(fallback_position);
+            updateBackground = true;
         }
 
-        if(minSinceAppStart % AstronomyUpdateInterval == 0){ // Start and every n min OR settings changed
+        if(minSinceAppStart % AstronomyUpdateInterval == 0){ // Start and every n min
             Astronomy.refreshData(fallback_position);
         }
-        if(minSinceAppStart % WeatherUpdateInterval == 0 || ReloadWeather){ // Start and every n min OR forced refresh
-            WeatherMod.refreshData();
-            updateSunPosition = true;
+        if(minSinceAppStart % BackgroundUpdateInterval == 0){ // Start and every n min
+            updateBackground = true;
         }
       
         minSinceAppStart += 1; // update the minute counter
@@ -62,8 +61,7 @@ class DynamicWatchfaceView extends WatchUi.WatchFace {
         
         // Reset the booleans
         SETTINGSCHANGED = false;
-        isPartialUpdate = false;
-        ReloadWeather = false;
+        updateBackground = false;
     }
 
   
@@ -76,7 +74,7 @@ class DynamicWatchfaceView extends WatchUi.WatchFace {
     // The user has just looked at their watch. Timers and animations may be started here.
     function onExitSleep() as Void {
         ISHIGHPOWERON = true;
-        ReloadWeather = true;
+        updateBackground = true;
         WatchUi.requestUpdate(); // refresh the screen
     }
 
@@ -92,7 +90,7 @@ class DynamicWatchfaceView extends WatchUi.WatchFace {
             var lon = Properties.getValue("DefaultPositionLon");
             fallback_position = [(lat != null) ? lat : 51.5, (lon != null) ? lon : 0.001];
 
-            WeatherUpdateInterval = Properties.getValue("WeatherUpdate") as Lang.Number;
+            BackgroundUpdateInterval = Properties.getValue("BackgroundUpdate") as Lang.Number;
             AstronomyUpdateInterval = Properties.getValue("AstronomyUpdate") as Lang.Number;
         }
         catch(ex){

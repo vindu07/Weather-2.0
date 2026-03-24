@@ -50,7 +50,7 @@ class Sky extends Ui.Drawable {
         
         try{
             
-            if(changeSkyColor){
+            if(changeSkyColor && updateBackground){
                 
                 var isNight = !(Astronomy.isDay(Time.now()));       
                 var isTwiLight = Astronomy.isTwilight(Time.now());

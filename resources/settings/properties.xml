@@ -34,7 +34,7 @@
 
     <property id="LandscapeType" type="number">0</property>
 
-    <property id="WeatherUpdate" type="number">10</property>
+    <property id="BackgroundUpdate" type="number">10</property>
     <property id="AstronomyUpdate" type="number">120</property>
 
     <property id="DefaultPositionLat" type="float">46.0</property>

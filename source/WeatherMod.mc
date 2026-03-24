@@ -28,12 +28,13 @@ module WeatherMod {
     
 
     // Fallback data to avoid unexpected app crashes due to null values
-    var WeatherConditions as Conditions = {
-        :condition => 53, :cloudCover => 0, :pressure => 1013.5, 
-        :temperature => 20.0, :relativeHumidity => 50, :windSpeed => 0.0
+    const defaultWeatherConditions as Conditions = {
+        :condition => 53, :cloudCover => -1, :pressure => -1.0, 
+        :temperature => -1.0, :relativeHumidity => -1, :windSpeed => -1.0
     };
+    var WeatherConditions as Conditions = defaultWeatherConditions;
 
-    // Returns the current condition from garmin or memory
+    // Returns the current condition from garmin, or the default value
     function getCondition() as Weather.Condition{
         
         self.getCurrentConditions();
@@ -45,19 +46,18 @@ module WeatherMod {
             return condition[:condition] as Weather.Condition;
         }
         
-        // Fallback to storage
-        condition = self.getData() as Conditions;
-        
-        if(!hasNullValues(condition)){
-            return condition[:condition] as Weather.Condition;
-        }
-        
-        // Leave unchanged if no data available
-        return WeatherConditions[:condition] as Weather.Condition;
+        // Return default values if no data available
+        return defaultWeatherConditions[:condition] as Weather.Condition;
     }
     
     //true if the cloud cover is more than 70%
     function isCovered() as Lang.Boolean{
+
+        self.getCurrentConditions();
+
+        if(WeatherConditions[:cloudCover] == null){
+            return false;
+        }
 
         var isCovered = (WeatherConditions[:cloudCover] >= 70);
 
@@ -111,41 +111,22 @@ module WeatherMod {
         try{
         
         
-        var temp = Weather.getCurrentConditions();
+            var temp = Weather.getCurrentConditions();
 
-        if(temp != null){
-            conditions[:condition] = temp.condition;
-            conditions[:cloudCover] = temp.cloudCover;
-            conditions[:pressure] = temp.pressure;
-            conditions[:temperature] = temp.temperature;
-            conditions[:relativeHumidity] = temp.relativeHumidity;
-            conditions[:windSpeed] = temp.windSpeed;
+            if(temp != null){
+                conditions[:condition] = temp.condition;
+                conditions[:cloudCover] = temp.cloudCover;
+                conditions[:pressure] = temp.pressure;
+                conditions[:temperature] = temp.temperature;
+                conditions[:relativeHumidity] = temp.relativeHumidity;
+                conditions[:windSpeed] = temp.windSpeed;
 
-            if(!hasNullValues(conditions)){
+                if(!hasNullValues(conditions)){
 
-                WeatherConditions = conditions;
-                return conditions;
+                    WeatherConditions = conditions;
+                    return conditions;
+                }
             }
-        }
-
-        temp = Weather.getHourlyForecast();
-
-        if(temp != null){
-            temp = temp[0];
-            
-            conditions[:condition] = temp.condition;
-            conditions[:cloudCover] = temp.cloudCover;
-            conditions[:pressure] = 101350;
-            conditions[:temperature] = temp.temperature;
-            conditions[:relativeHumidity] = temp.relativeHumidity;
-            conditions[:windSpeed] = temp.windSpeed;
-
-            if(!hasNullValues(conditions)){
-
-                WeatherConditions = conditions;
-                return conditions;
-            }
-        }
 
         }
         catch(ex){
@@ -174,31 +155,6 @@ module WeatherMod {
             return true;
         }
         return false;
-    }
-
-    // Called in the View.mc file
-    function refreshData(){
-        self.getCurrentConditions();
-        self.storeData();
-    }
-
-    function storeData(){
-        Application.Storage.setValue("condition", self.WeatherConditions[:condition]);
-        Application.Storage.setValue("temperature", self.WeatherConditions[:temperature]);
-        Application.Storage.setValue("pressure", self.WeatherConditions[:pressure]);
-        Application.Storage.setValue("windSpeed", self.WeatherConditions[:windSpeed]);
-        Application.Storage.setValue("cloudCover", self.WeatherConditions[:cloudCover]);
-        Application.Storage.setValue("relativeHumidity", self.WeatherConditions[:relativeHumidity]);
-    }
-
-    function getData(){
-        
-        self.WeatherConditions[:condition] = Application.Storage.getValue("condition");
-        self.WeatherConditions[:temperature] = Application.Storage.getValue("temperature");
-        self.WeatherConditions[:pressure] = Application.Storage.getValue("pressure");
-        self.WeatherConditions[:windSpeed] = Application.Storage.getValue("windSpeed");
-        self.WeatherConditions[:cloudCover] = Application.Storage.getValue("cloudCover");
-        self.WeatherConditions[:relativeHumidity] = Application.Storage.getValue("relativeHumidity");
     }
 
 }

@@ -3,29 +3,29 @@
     <bitmap id="LauncherIcon" filename="launcher_icon.png" dithering="none" />
 
     
-    <bitmap id="MountainBackground" filename="MONTAGNE_280x280.png" dithering="none" />
-    <bitmap id="CountryBackground" filename="LONDON_280x280.png" dithering="none" />
-    <bitmap id="BeachBackground" filename="SPIAGGIA_280x280.png" dithering="none" />
+    <bitmap id="MountainBackground" filename="background_mountains_280x140.png" dithering="none" />
+    <bitmap id="CountryBackground" filename="background_mountains_280x140.png" dithering="none" />
+    <bitmap id="BeachBackground" filename="background_beach_280x140.png" dithering="none" />
     
-    <bitmap id="LondonBackground" filename="LONDON_280x280.png" dithering="none" />
-    <bitmap id="ParisBackground" filename="PARIS_280x280.png" dithering="none" />
-    <bitmap id="RomeBackground" filename="SPIAGGIA_280x280.png" dithering="none" />
-    <bitmap id="VeniceBackground" filename="SPIAGGIA_280x280.png" dithering="none" />
+    <bitmap id="LondonBackground" filename="background_london_280x140.png" dithering="none" />
+    <bitmap id="ParisBackground" filename="background_paris_280x140.png" dithering="none" />
+    <bitmap id="RomeBackground" filename="background_mountains_280x140.png" dithering="none" />
+    <bitmap id="VeniceBackground" filename="background_mountains_mono_280x140.png" dithering="none" />
     
-    <bitmap id="EnergysavingBackground" filename="MONTAGNE_280x280_MONO.png" dithering="none" />
+    <bitmap id="EnergysavingBackground" filename="background_mountains_280x140.png" dithering="none" />
 
     
     <bitmap id="MoonPhases" filename="MoonPhases_20.png" dithering="none" />
     <bitmap id="Stars" filename="Stars.png" dithering="none" />
 
-    <bitmap id="LightRain" filename="LightRain.png" dithering="none" />
-    <bitmap id="HeavyRain" filename="HeavyRain.png" dithering="none" />
-    <bitmap id="Thunderstorm" filename="Thunderstorm.png" dithering="none" />
-    <bitmap id="Snow" filename="Snow.png" dithering="none" />
-    <bitmap id="Wind" filename="Wind.png" dithering="none" />
-    <bitmap id="Fog" filename="Fog.png" dithering="none" />
-    <bitmap id="Cloudy" filename="Cloudy.png" dithering="none" />
-     <bitmap id="Extreme" filename="Extreme.png" dithering="none" />
+    <bitmap id="LightRain" filename="cond_lightRain.png" dithering="none" />
+    <bitmap id="HeavyRain" filename="cond_heavyRain.png" dithering="none" />
+    <bitmap id="Thunderstorm" filename="cond_thunderstorm.png" dithering="none" />
+    <bitmap id="Snow" filename="cond_snow.png" dithering="none" />
+    <bitmap id="Wind" filename="cond_wind.png" dithering="none" />
+    <bitmap id="Fog" filename="cond_fog.png" dithering="none" />
+    <bitmap id="Cloudy" filename="cond_cloudy.png" dithering="none" />
+     <bitmap id="Extreme" filename="cond_extreme.png" dithering="none" />
 
 
     

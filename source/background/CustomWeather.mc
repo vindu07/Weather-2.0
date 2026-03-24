@@ -60,7 +60,7 @@ class CustomWeather extends WatchUi.Drawable {
         var array = [];
         var weather;
 
-        if(minSinceAppStart%10 == 0){
+        if(updateBackground){
             weather = WeatherMod.getConditionType(); 
             self.condition = weather; 
         }

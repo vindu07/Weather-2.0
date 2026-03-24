@@ -60,7 +60,7 @@
     <string id="PressUnitTitle">Unità Pressione</string>
     <string id="WindUnitTitle">Unità Velocità del Vento</string>
 
-    <string id="WeatherUpdateTitle">Intervallo Aggiornamento Meteo</string>
+    <string id="BackgroundUpdateTitle">Intervallo Aggiornamento Sfondo</string>
     <string id="AstronomyUpdateTitle">Intervallo Aggiornamento Astronomico</string>
     
     <!--COLORI-->

@@ -60,7 +60,7 @@
     <string id="PressUnitTitle">Unité de Pression</string>
     <string id="WindUnitTitle">Unité de Vitesse du Vent</string>
     
-    <string id="WeatherUpdateTitle">Intervalle de Mise à Jour Météo</string>
+    <string id="BackgroundUpdateTitle">Intervalle De Mise à Jour En Arrière-Plan</string>
     <string id="AstronomyUpdateTitle">Intervalle de Mise à Jour Astronomique</string>
 
     

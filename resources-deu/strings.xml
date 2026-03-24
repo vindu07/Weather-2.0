@@ -60,7 +60,7 @@
     <string id="PressUnitTitle">Druckeinheit</string>
     <string id="WindUnitTitle">Windgeschwindigkeitseinheit</string>
     
-    <string id="WeatherUpdateTitle">Aktualisierungsintervall Wetter</string>
+    <string id="WeatherUpdateTitle">Aktualisierungsintervall Hintergrund</string>
     <string id="AstronomyUpdateTitle">Aktualisierungsintervall Astronomie</string>
 
     
