@@ -1,8 +1,12 @@
-###### v1.11 (2026/03/22)
+###### v1.11 (2026/03/25)
 
 
 
 \-Better handling of missing weather data when not connected
+
+\-Seconds during high power mode
+
+
 
 ###### 
 

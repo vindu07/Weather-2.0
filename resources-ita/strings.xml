@@ -142,7 +142,9 @@
 
     
     
-    
+    <string id="ShowSecondsTitle">Mostra Secondi (Gesto Polso)</string>
+    <string id="SecondsColorTitle">Colore Secondi</string>
+    <string id="DateColorTitle">Colore Data</string>
     
 
 

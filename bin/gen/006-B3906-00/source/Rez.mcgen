@@ -113,6 +113,7 @@ module Rez {
         (:initialized) var WeatherUpdateTitle as ResourceId;
         (:initialized) var Humidity as ResourceId;
         (:initialized) var BatteryIndicatorGoodColorTitle as ResourceId;
+        (:initialized) var BackgroundUpdateTitle as ResourceId;
         (:initialized) var DataField3Title as ResourceId;
         (:initialized) var LandscapeBeach as ResourceId;
         (:initialized) var LandscapeHills as ResourceId;

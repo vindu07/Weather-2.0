@@ -148,7 +148,9 @@
 
     <!--NEW - TO TRANSLATE-->
 
-    
+    <string id="ShowSecondsTitle">Show Seconds (Wrist Gesture)</string>
+    <string id="SecondsColorTitle">Seconds Color</string>
+    <string id="DateColorTitle">Date Color</string>
     
 
 </strings>

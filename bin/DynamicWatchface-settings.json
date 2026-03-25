@@ -96,6 +96,21 @@
         "configMax" : null,
         "configMaxLength" : null
       }, {
+        "key" : "ShowSeconds",
+        "valueType" : "boolean",
+        "defaultValue" : true,
+        "configTitle" : "ShowSecondsTitle",
+        "configPrompt" : null,
+        "configType" : "boolean",
+        "configError" : null,
+        "configHelpUrl" : null,
+        "configReadonly" : false,
+        "configRequired" : false,
+        "configOptions" : null,
+        "configMin" : null,
+        "configMax" : null,
+        "configMaxLength" : null
+      }, {
         "key" : "ShowWeather",
         "valueType" : "boolean",
         "defaultValue" : true,
@@ -351,6 +366,120 @@
         "valueType" : "number",
         "defaultValue" : 16777215,
         "configTitle" : "TimeColorTitle",
+        "configPrompt" : null,
+        "configType" : "list",
+        "configError" : null,
+        "configHelpUrl" : null,
+        "configReadonly" : false,
+        "configRequired" : false,
+        "configOptions" : [ {
+          "display" : "ColorRed",
+          "value" : 16711680
+        }, {
+          "display" : "ColorYellow",
+          "value" : 16776960
+        }, {
+          "display" : "ColorBlue",
+          "value" : 255
+        }, {
+          "display" : "ColorGreen",
+          "value" : 65280
+        }, {
+          "display" : "ColorSkyBlue",
+          "value" : 43775
+        }, {
+          "display" : "ColorPurple",
+          "value" : 11141290
+        }, {
+          "display" : "ColorPink",
+          "value" : 16755370
+        }, {
+          "display" : "ColorWhite",
+          "value" : 16777215
+        }, {
+          "display" : "ColorDarkBlue",
+          "value" : 85
+        }, {
+          "display" : "ColorOrange",
+          "value" : 16755200
+        }, {
+          "display" : "ColorDarkGreen",
+          "value" : 21760
+        }, {
+          "display" : "ColorGray",
+          "value" : 11184810
+        }, {
+          "display" : "ColorMagenta",
+          "value" : 16711935
+        }, {
+          "display" : "ColorCyan",
+          "value" : 65535
+        } ],
+        "configMin" : null,
+        "configMax" : null,
+        "configMaxLength" : null
+      }, {
+        "key" : "DateColor",
+        "valueType" : "number",
+        "defaultValue" : 16777215,
+        "configTitle" : "DateColorTitle",
+        "configPrompt" : null,
+        "configType" : "list",
+        "configError" : null,
+        "configHelpUrl" : null,
+        "configReadonly" : false,
+        "configRequired" : false,
+        "configOptions" : [ {
+          "display" : "ColorRed",
+          "value" : 16711680
+        }, {
+          "display" : "ColorYellow",
+          "value" : 16776960
+        }, {
+          "display" : "ColorBlue",
+          "value" : 255
+        }, {
+          "display" : "ColorGreen",
+          "value" : 65280
+        }, {
+          "display" : "ColorSkyBlue",
+          "value" : 43775
+        }, {
+          "display" : "ColorPurple",
+          "value" : 11141290
+        }, {
+          "display" : "ColorPink",
+          "value" : 16755370
+        }, {
+          "display" : "ColorWhite",
+          "value" : 16777215
+        }, {
+          "display" : "ColorDarkBlue",
+          "value" : 85
+        }, {
+          "display" : "ColorOrange",
+          "value" : 16755200
+        }, {
+          "display" : "ColorDarkGreen",
+          "value" : 21760
+        }, {
+          "display" : "ColorGray",
+          "value" : 11184810
+        }, {
+          "display" : "ColorMagenta",
+          "value" : 16711935
+        }, {
+          "display" : "ColorCyan",
+          "value" : 65535
+        } ],
+        "configMin" : null,
+        "configMax" : null,
+        "configMaxLength" : null
+      }, {
+        "key" : "SecondsColor",
+        "valueType" : "number",
+        "defaultValue" : 16777215,
+        "configTitle" : "SecondsColorTitle",
         "configPrompt" : null,
         "configType" : "list",
         "configError" : null,
@@ -1798,6 +1927,7 @@
       "ColorDarkGreen" : "Dark Green",
       "$literal14$" : "30min",
       "BatteryIndicatorGoodTitle" : "Good Battery Value",
+      "SecondsColorTitle" : "Seconds Color",
       "WeatherUpdateTitle" : "Background Refresh Interval",
       "Humidity" : "Relative Humidity",
       "$literal6$" : "km/h",
@@ -1818,6 +1948,7 @@
       "$literal5$" : "m/s",
       "PressUnitTitle" : "Pressure Unit",
       "Sunrise" : "Sunrise Time",
+      "DateColorTitle" : "Date Color",
       "ColorCyan" : "Cyan",
       "ForecastTemperature" : "Outdoor Temperature",
       "DefaultPositionLatTitle" : "Default Latitude",
@@ -1883,6 +2014,7 @@
       "Weather" : "Weather Conditions",
       "$literal1$" : "mBar",
       "DataField1Title" : "Data Field 1",
+      "ShowSecondsTitle" : "Show Seconds (High Power)",
       "$literal17$" : "4h",
       "BatteryIndicatorFullColorTitle" : "Full Battery Color",
       "$literal9$" : "Value out of range",

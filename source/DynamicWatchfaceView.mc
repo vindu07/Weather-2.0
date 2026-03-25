@@ -54,9 +54,12 @@ class DynamicWatchfaceView extends WatchUi.WatchFace {
         if(minSinceAppStart % BackgroundUpdateInterval == 0){ // Start and every n min
             updateBackground = true;
         }
-      
-        minSinceAppStart += 1; // update the minute counter
 
+        if(!ISHIGHPOWERON){
+            minSinceAppStart += 1; // update the minute counter
+            System.println(minSinceAppStart);
+        }
+        
         View.onUpdate(dc); // redraw the screen
         
         // Reset the booleans
@@ -64,11 +67,8 @@ class DynamicWatchfaceView extends WatchUi.WatchFace {
         updateBackground = false;
     }
 
-  
-    // Called when this View is removed from the screen. Save the
-    // state of this View here. This includes freeing resources from
-    // memory.
-    function onHide() as Void {
+    function onPartialUpdate(dc as Gfx.Dc) as Void {
+        //future updates for seconds/live hr
     }
 
     // The user has just looked at their watch. Timers and animations may be started here.
@@ -81,6 +81,7 @@ class DynamicWatchfaceView extends WatchUi.WatchFace {
     // Terminate any active timers and prepare for slow updates.
     function onEnterSleep() as Void {
         ISHIGHPOWERON = false;
+        WatchUi.requestUpdate();
     }
 
     

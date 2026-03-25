@@ -401,7 +401,7 @@ C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_time_display_Date
         %tmp.1 = getm $.Toybox.Application.Properties;
         symbol [ getValue %tmp.2 83 37 45 ];
         %tmp.2 = getv function %tmp.1 :getValue;
-        %tmp.3 = "TimeColor";
+        %tmp.3 = "DateColor";
         %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
         lputv %timeCol.1 %tmp.4;
         symbol [ timeCol %timeCol.1 83 16 23 ];

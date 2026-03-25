@@ -80,7 +80,7 @@ class DateDisplay extends Ui.Drawable {
 
     private function getAppSettings() as Void{
         try{
-            var timeCol = Properties.getValue("TimeColor");
+            var timeCol = Properties.getValue("DateColor");
             TEXTCOLOR = (timeCol != null) ? timeCol : Gfx.COLOR_WHITE;
         }
         catch(ex){

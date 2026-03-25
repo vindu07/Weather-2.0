@@ -141,4 +141,9 @@
     <string id="FieldFont3">Feldschriftart 3</string>
     <string id="FieldFont4">Feldschriftart 4</string>
 
+
+    <string id="ShowSecondsTitle">Sekunden Anzeigen (Handgelenk-Geste)</string>
+    <string id="SecondsColorTitle">Sekundenfarbe</string>
+    <string id="DateColorTitle">Datumsfarbe</string>
+
 </strings>

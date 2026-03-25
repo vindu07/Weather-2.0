@@ -4,6 +4,8 @@
     
     <property id="FieldColor" type="number">0xAAAAAA</property>
     <property id="TimeColor" type="number">0xFFFFFF</property>
+    <property id="DateColor" type="number">0xFFFFFF</property>
+    <property id="SecondsColor" type="number">0xFFFFFF</property>
     <property id="IconColor" type="number">0xFFAA00</property>
 
     
@@ -25,6 +27,8 @@
     <property id="ShowBatteryIcon" type="boolean">true</property>
     <property id="ShowDataFields" type="boolean">true</property>
     <property id="ShowInfoFields" type="boolean">true</property>
+
+    <property id="ShowSeconds" type="boolean">true</property>
 
    
     <!-- preferenze utente -->
@@ -56,22 +60,22 @@
     <property id="BatteryIndicatorLowColor" type="number">0xFF0000</property>
     <property id="BatteryIndicatorExtremelyLowColor" type="number">0xFF0000</property>
 
-    <property id="BatteryIndicatorFull" type="number">80</property>
-    <property id="BatteryIndicatorGood" type="number">50</property>
+    <property id="BatteryIndicatorFull" type="number">90</property>
+    <property id="BatteryIndicatorGood" type="number">40</property>
     <property id="BatteryIndicatorMed" type="number">20</property>
     <property id="BatteryIndicatorLow" type="number">10</property>
     
     
     <!-- info e campi dati -->
 
-    <property id="InfoField1" type="number">1</property>
+    <property id="InfoField1" type="number">27</property>
     <property id="InfoField2" type="number">23</property>
-    <property id="InfoField3" type="number">19</property>
+    <property id="InfoField3" type="number">18</property>
     <property id="InfoField4" type="number">26</property>
 
-    <property id="DataField1" type="number">2</property>
+    <property id="DataField1" type="number">7</property>
     <property id="DataField2" type="number">0</property>
-    <property id="DataField3" type="number">7</property>
+    <property id="DataField3" type="number">9</property>
     
 
 </properties>

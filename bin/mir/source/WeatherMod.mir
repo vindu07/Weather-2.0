@@ -613,165 +613,196 @@ C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_68_
 C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_107_49_138_4_start:
 [ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 109 8 ]
         [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_107_49_138_4_start" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_107_49_138_4_stop" ]
-        %conditions.1 = local;
-        symbol [ conditions %conditions.1 109 12 22 ];
-        %tmp.1 = newd 0;
-        lputv %conditions.1 %tmp.1;
-        symbol [ conditions %conditions.1 109 12 22 ];
+        %isConnected.1 = local;
+        symbol [ isConnected %isConnected.1 109 12 23 ];
+        symbol [ System %tmp.1 109 26 32 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ getDeviceSettings %tmp.2 109 33 50 ];
+        %tmp.2 = getv function %tmp.1 :getDeviceSettings;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        symbol [ connectionAvailable %tmp.4 109 53 72 ];
+        %tmp.4 = getv %tmp.3 :connectionAvailable;
+        lputv %isConnected.1 %tmp.4;
+        symbol [ isConnected %isConnected.1 109 12 23 ];
 [ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 111 8 ]
-        try @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_134_8_beginTry @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_134_8_endTry @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_134_8_catch @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_134_8_finally;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_134_8_beginTry:
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_11_131_8_start:
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 114 12 ]
-        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_11_131_8_start" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_11_131_8_stop" ]
-        %temp.2 = local;
-        symbol [ temp %temp.2 114 16 20 ];
-        symbol [ Weather %tmp.2 114 23 30 ];
-        %tmp.2 = getm $.Toybox.Weather;
-        symbol [ getCurrentConditions %tmp.3 114 31 51 ];
-        %tmp.3 = getv function %tmp.2 :getCurrentConditions;
-        %tmp.4 = invoke %tmp.2 %tmp.3();
-        lputv %temp.2 %tmp.4;
-        symbol [ temp %temp.2 114 16 20 ];
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 116 12 ]
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_116_12_129_12_if_stmt:
-        %tmp.5 = lgetv %temp.2;
-        symbol [ temp %tmp.5 116 15 19 ];
-        %tmp.6 = null;
-        %tmp.7 = ne %tmp.5 %tmp.6;
-        bf %tmp.7 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_116_12_129_12_if_end;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_116_12_129_12_if_true:
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_116_28_129_12_start:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_135_8_if_stmt:
+        %tmp.5 = lgetv %isConnected.1;
+        symbol [ isConnected %tmp.5 111 11 22 ];
+        bf %tmp.5 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_135_8_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_135_8_if_true:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_23_135_8_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 113 12 ]
+        try @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_12_134_12_beginTry @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_12_134_12_endTry @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_12_134_12_catch @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_12_134_12_finally;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_12_134_12_beginTry:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_15_131_12_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 114 16 ]
+        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_15_131_12_start" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_15_131_12_stop" ]
+        %conditions.2 = local;
+        symbol [ conditions %conditions.2 114 20 30 ];
+        %tmp.6 = newd 0;
+        lputv %conditions.2 %tmp.6;
+        symbol [ conditions %conditions.2 114 20 30 ];
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 115 16 ]
+        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_15_131_12_start" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_15_131_12_stop" ]
+        %temp.3 = local;
+        symbol [ temp %temp.3 115 20 24 ];
+        symbol [ Weather %tmp.7 115 27 34 ];
+        %tmp.7 = getm $.Toybox.Weather;
+        symbol [ getCurrentConditions %tmp.8 115 35 55 ];
+        %tmp.8 = getv function %tmp.7 :getCurrentConditions;
+        %tmp.9 = invoke %tmp.7 %tmp.8();
+        lputv %temp.3 %tmp.9;
+        symbol [ temp %temp.3 115 20 24 ];
 [ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 117 16 ]
-        %tmp.8 = lgetv %conditions.1;
-        symbol [ conditions %tmp.8 117 16 26 ];
-        %tmp.9 = lgetv %temp.2;
-        symbol [ temp %tmp.9 117 41 45 ];
-        %tmp.10 = as %tmp.9 { (!Null) };
-        symbol [ condition %tmp.11 117 46 55 ];
-        %tmp.11 = getv %tmp.10 :condition;
-        %tmp.13 = const :condition;
-        symbol [ condition %tmp.13 117 28 37 const ];
-        aputv %tmp.8 %tmp.13 %tmp.11;
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 118 16 ]
-        %tmp.14 = lgetv %conditions.1;
-        symbol [ conditions %tmp.14 118 16 26 ];
-        %tmp.15 = lgetv %temp.2;
-        symbol [ temp %tmp.15 118 42 46 ];
-        %tmp.16 = as %tmp.15 { (!Null) };
-        symbol [ cloudCover %tmp.17 118 47 57 ];
-        %tmp.17 = getv %tmp.16 :cloudCover;
-        %tmp.19 = const :cloudCover;
-        symbol [ cloudCover %tmp.19 118 28 38 const ];
-        aputv %tmp.14 %tmp.19 %tmp.17;
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 119 16 ]
-        %tmp.20 = lgetv %conditions.1;
-        symbol [ conditions %tmp.20 119 16 26 ];
-        %tmp.21 = lgetv %temp.2;
-        symbol [ temp %tmp.21 119 40 44 ];
-        %tmp.22 = as %tmp.21 { (!Null) };
-        symbol [ pressure %tmp.23 119 45 53 ];
-        %tmp.23 = getv %tmp.22 :pressure;
-        %tmp.25 = const :pressure;
-        symbol [ pressure %tmp.25 119 28 36 const ];
-        aputv %tmp.20 %tmp.25 %tmp.23;
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 120 16 ]
-        %tmp.26 = lgetv %conditions.1;
-        symbol [ conditions %tmp.26 120 16 26 ];
-        %tmp.27 = lgetv %temp.2;
-        symbol [ temp %tmp.27 120 43 47 ];
-        %tmp.28 = as %tmp.27 { (!Null) };
-        symbol [ temperature %tmp.29 120 48 59 ];
-        %tmp.29 = getv %tmp.28 :temperature;
-        %tmp.31 = const :temperature;
-        symbol [ temperature %tmp.31 120 28 39 const ];
-        aputv %tmp.26 %tmp.31 %tmp.29;
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 121 16 ]
-        %tmp.32 = lgetv %conditions.1;
-        symbol [ conditions %tmp.32 121 16 26 ];
-        %tmp.33 = lgetv %temp.2;
-        symbol [ temp %tmp.33 121 48 52 ];
-        %tmp.34 = as %tmp.33 { (!Null) };
-        symbol [ relativeHumidity %tmp.35 121 53 69 ];
-        %tmp.35 = getv %tmp.34 :relativeHumidity;
-        %tmp.37 = const :relativeHumidity;
-        symbol [ relativeHumidity %tmp.37 121 28 44 const ];
-        aputv %tmp.32 %tmp.37 %tmp.35;
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 122 16 ]
-        %tmp.38 = lgetv %conditions.1;
-        symbol [ conditions %tmp.38 122 16 26 ];
-        %tmp.39 = lgetv %temp.2;
-        symbol [ temp %tmp.39 122 41 45 ];
-        %tmp.40 = as %tmp.39 { (!Null) };
-        symbol [ windSpeed %tmp.41 122 46 55 ];
-        %tmp.41 = getv %tmp.40 :windSpeed;
-        %tmp.43 = const :windSpeed;
-        symbol [ windSpeed %tmp.43 122 28 37 const ];
-        aputv %tmp.38 %tmp.43 %tmp.41;
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 124 16 ]
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_124_16_128_16_if_stmt:
-        %tmp.44 = self;
-        symbol [ hasNullValues %tmp.45 124 20 33 ];
-        %tmp.45 = getv function %tmp.44 :hasNullValues;
-        %tmp.46 = lgetv %conditions.1;
-        symbol [ conditions %tmp.46 124 34 44 ];
-        %tmp.47 = invoke %tmp.44 %tmp.45(%tmp.46);
-        %tmp.48 = not %tmp.47;
-        bf %tmp.48 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_124_16_128_16_if_end;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_124_16_128_16_if_true:
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_124_46_128_16_start:
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 126 20 ]
-        %tmp.49 = lgetv %conditions.1;
-        symbol [ conditions %tmp.49 126 40 50 ];
-        symbol [ WeatherConditions ? 126 20 37 ];
-        putv self :WeatherConditions %tmp.49;
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 127 20 ]
-        %tmp.50 = lgetv %conditions.1;
-        symbol [ conditions %tmp.50 127 27 37 ];
-        jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_134_8_finally;
-        ret %tmp.50;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_124_46_128_16_stop:
-        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_124_16_128_16_if_end;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_124_16_128_16_if_end:
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_116_28_129_12_stop:
-        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_116_12_129_12_if_end;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_116_12_129_12_if_end:
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_11_131_8_stop:
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_134_8_endTry:
-        jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_134_8_finally;
-        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_134_8_end;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_134_8_catch:
-        %tmp.51 = exception;
-        push %tmp.51;
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 132 8 ]
-        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_134_8_catch" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_132_8_134_8_end" ]
-        %ex.3 = local;
-        symbol [ ex %ex.3 132 14 16 ];
-        %tmp.52 = dup %tmp.51;
-        lputv %ex.3 %tmp.52;
-        symbol [ ex %ex.3 132 14 16 ];
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_132_17_134_8_start:
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 133 12 ]
-        symbol [ System %tmp.53 133 12 18 ];
-        %tmp.53 = getm $.Toybox.System;
-        symbol [ println %tmp.54 133 19 26 ];
-        %tmp.54 = getv function %tmp.53 :println;
-        %tmp.55 = "ERROR - WeatherMod.getCurrentConditions";
-        invoke %tmp.53 %tmp.54(%tmp.55);
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_132_17_134_8_stop:
-        jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_134_8_finally;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_117_16_130_16_if_stmt:
+        %tmp.10 = lgetv %temp.3;
+        symbol [ temp %tmp.10 117 19 23 ];
+        %tmp.11 = null;
+        %tmp.12 = ne %tmp.10 %tmp.11;
+        bf %tmp.12 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_117_16_130_16_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_117_16_130_16_if_true:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_117_32_130_16_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 118 20 ]
+        %tmp.13 = lgetv %conditions.2;
+        symbol [ conditions %tmp.13 118 20 30 ];
+        %tmp.14 = lgetv %temp.3;
+        symbol [ temp %tmp.14 118 45 49 ];
+        %tmp.15 = as %tmp.14 { (!Null) };
+        symbol [ condition %tmp.16 118 50 59 ];
+        %tmp.16 = getv %tmp.15 :condition;
+        %tmp.18 = const :condition;
+        symbol [ condition %tmp.18 118 32 41 const ];
+        aputv %tmp.13 %tmp.18 %tmp.16;
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 119 20 ]
+        %tmp.19 = lgetv %conditions.2;
+        symbol [ conditions %tmp.19 119 20 30 ];
+        %tmp.20 = lgetv %temp.3;
+        symbol [ temp %tmp.20 119 46 50 ];
+        %tmp.21 = as %tmp.20 { (!Null) };
+        symbol [ cloudCover %tmp.22 119 51 61 ];
+        %tmp.22 = getv %tmp.21 :cloudCover;
+        %tmp.24 = const :cloudCover;
+        symbol [ cloudCover %tmp.24 119 32 42 const ];
+        aputv %tmp.19 %tmp.24 %tmp.22;
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 120 20 ]
+        %tmp.25 = lgetv %conditions.2;
+        symbol [ conditions %tmp.25 120 20 30 ];
+        %tmp.26 = lgetv %temp.3;
+        symbol [ temp %tmp.26 120 44 48 ];
+        %tmp.27 = as %tmp.26 { (!Null) };
+        symbol [ pressure %tmp.28 120 49 57 ];
+        %tmp.28 = getv %tmp.27 :pressure;
+        %tmp.30 = const :pressure;
+        symbol [ pressure %tmp.30 120 32 40 const ];
+        aputv %tmp.25 %tmp.30 %tmp.28;
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 121 20 ]
+        %tmp.31 = lgetv %conditions.2;
+        symbol [ conditions %tmp.31 121 20 30 ];
+        %tmp.32 = lgetv %temp.3;
+        symbol [ temp %tmp.32 121 47 51 ];
+        %tmp.33 = as %tmp.32 { (!Null) };
+        symbol [ temperature %tmp.34 121 52 63 ];
+        %tmp.34 = getv %tmp.33 :temperature;
+        %tmp.36 = const :temperature;
+        symbol [ temperature %tmp.36 121 32 43 const ];
+        aputv %tmp.31 %tmp.36 %tmp.34;
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 122 20 ]
+        %tmp.37 = lgetv %conditions.2;
+        symbol [ conditions %tmp.37 122 20 30 ];
+        %tmp.38 = lgetv %temp.3;
+        symbol [ temp %tmp.38 122 52 56 ];
+        %tmp.39 = as %tmp.38 { (!Null) };
+        symbol [ relativeHumidity %tmp.40 122 57 73 ];
+        %tmp.40 = getv %tmp.39 :relativeHumidity;
+        %tmp.42 = const :relativeHumidity;
+        symbol [ relativeHumidity %tmp.42 122 32 48 const ];
+        aputv %tmp.37 %tmp.42 %tmp.40;
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 123 20 ]
+        %tmp.43 = lgetv %conditions.2;
+        symbol [ conditions %tmp.43 123 20 30 ];
+        %tmp.44 = lgetv %temp.3;
+        symbol [ temp %tmp.44 123 45 49 ];
+        %tmp.45 = as %tmp.44 { (!Null) };
+        symbol [ windSpeed %tmp.46 123 50 59 ];
+        %tmp.46 = getv %tmp.45 :windSpeed;
+        %tmp.48 = const :windSpeed;
+        symbol [ windSpeed %tmp.48 123 32 41 const ];
+        aputv %tmp.43 %tmp.48 %tmp.46;
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 125 20 ]
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_125_20_129_20_if_stmt:
+        %tmp.49 = self;
+        symbol [ hasNullValues %tmp.50 125 24 37 ];
+        %tmp.50 = getv function %tmp.49 :hasNullValues;
+        %tmp.51 = lgetv %conditions.2;
+        symbol [ conditions %tmp.51 125 38 48 ];
+        %tmp.52 = invoke %tmp.49 %tmp.50(%tmp.51);
+        %tmp.53 = not %tmp.52;
+        bf %tmp.53 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_125_20_129_20_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_125_20_129_20_if_true:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_125_50_129_20_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 127 24 ]
+        symbol [ self %self 127 24 28 ];
+        %tmp.54 = lgetv %conditions.2;
+        symbol [ conditions %tmp.54 127 49 59 ];
+        symbol [ WeatherConditions ? 127 29 46 ];
+        putv self :WeatherConditions %tmp.54;
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 128 24 ]
+        %tmp.55 = lgetv %conditions.2;
+        symbol [ conditions %tmp.55 128 31 41 ];
+        jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_12_134_12_finally;
+        ret %tmp.55;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_125_50_129_20_stop:
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_125_20_129_20_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_125_20_129_20_if_end:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_117_32_130_16_stop:
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_117_16_130_16_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_117_16_130_16_if_end:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_15_131_12_stop:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_12_134_12_endTry:
+        jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_12_134_12_finally;
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_12_134_12_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_12_134_12_catch:
+        %tmp.56 = exception;
+        push %tmp.56;
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 132 12 ]
+        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_12_134_12_catch" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_132_12_134_12_end" ]
+        %ex.4 = local;
+        symbol [ ex %ex.4 132 18 20 ];
+        %tmp.57 = dup %tmp.56;
+        lputv %ex.4 %tmp.57;
+        symbol [ ex %ex.4 132 18 20 ];
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_132_21_134_12_start:
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 133 16 ]
+        symbol [ System %tmp.58 133 16 22 ];
+        %tmp.58 = getm $.Toybox.System;
+        symbol [ println %tmp.59 133 23 30 ];
+        %tmp.59 = getv function %tmp.58 :println;
+        %tmp.60 = "ERROR - WeatherMod.getCurrentConditions";
+        invoke %tmp.58 %tmp.59(%tmp.60);
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_132_21_134_12_stop:
+        jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_12_134_12_finally;
         pop;
-        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_134_8_end;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_132_8_134_8_end:
-        try @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_134_8_catch @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_132_8_134_8_end @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_132_8_134_8_end @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_134_8_finally;
-        jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_134_8_finally;
-        throw %tmp.51;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_134_8_finally:
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_12_134_12_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_132_12_134_12_end:
+        try @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_12_134_12_catch @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_132_12_134_12_end @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_132_12_134_12_end @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_12_134_12_finally;
+        jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_12_134_12_finally;
+        throw %tmp.56;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_12_134_12_finally:
         jsrret;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_134_8_end:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_113_12_134_12_end:
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_23_135_8_stop:
+        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_135_8_if_end;
+C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_111_8_135_8_if_end:
 [ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 136 8 ]
-        %tmp.56 = newd 0;
-        ret %tmp.56;
+        symbol [ self %self 136 8 12 ];
+        symbol [ defaultWeatherConditions %tmp.62 136 33 57 ];
+        %tmp.62 = getv ? :defaultWeatherConditions;
+        symbol [ WeatherConditions ? 136 13 30 ];
+        putv self :WeatherConditions %tmp.62;
+[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc" 137 8 ]
+        symbol [ defaultWeatherConditions %tmp.64 137 15 39 ];
+        %tmp.64 = getv ? :defaultWeatherConditions;
+        ret %tmp.64;
 C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_WeatherMod_mc_107_49_138_4_stop:
     }
     [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\WeatherMod.mc"; @line = 141; @symbol_functiondef = [hasNullValues,141,13,26]; @symbol_param<0> = [conditions,141,27,37]; @symbol_param<0>_type<0> = [Conditions,141,41,51]; @symbol_return<0> = [Lang,141,57,61]; @symbol_return<1> = [Boolean,141,62,69]; ]

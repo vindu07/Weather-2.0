@@ -106,35 +106,35 @@ module WeatherMod {
     // Updates the condition dictionary
     function getCurrentConditions() as Conditions{
 
-        var conditions = {};
-        
-        try{
-        
-        
-            var temp = Weather.getCurrentConditions();
+        var isConnected = System.getDeviceSettings().connectionAvailable;
 
-            if(temp != null){
-                conditions[:condition] = temp.condition;
-                conditions[:cloudCover] = temp.cloudCover;
-                conditions[:pressure] = temp.pressure;
-                conditions[:temperature] = temp.temperature;
-                conditions[:relativeHumidity] = temp.relativeHumidity;
-                conditions[:windSpeed] = temp.windSpeed;
+        if(isConnected){
+        
+            try{
+                var conditions = {};
+                var temp = Weather.getCurrentConditions();
 
-                if(!hasNullValues(conditions)){
+                if(temp != null){
+                    conditions[:condition] = temp.condition;
+                    conditions[:cloudCover] = temp.cloudCover;
+                    conditions[:pressure] = temp.pressure;
+                    conditions[:temperature] = temp.temperature;
+                    conditions[:relativeHumidity] = temp.relativeHumidity;
+                    conditions[:windSpeed] = temp.windSpeed;
 
-                    WeatherConditions = conditions;
-                    return conditions;
+                    if(!hasNullValues(conditions)){
+
+                        self.WeatherConditions = conditions;
+                        return conditions;
+                    }
                 }
             }
-
+            catch(ex){
+                System.println("ERROR - WeatherMod.getCurrentConditions");
+            }
         }
-        catch(ex){
-            System.println("ERROR - WeatherMod.getCurrentConditions");
-        }
-        
-        return {};
-
+        self.WeatherConditions = defaultWeatherConditions;
+        return defaultWeatherConditions;    
     }
 
     // Checks the conditions dictionary to make sure there are no null values

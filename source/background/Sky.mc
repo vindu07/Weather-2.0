@@ -14,6 +14,8 @@ class Sky extends Ui.Drawable {
 
     private var changeSkyColor;
     private var energySavingMode;
+
+    private var SkyColor = SKY_COLOR_BLUE;
     
     
     private enum SKYCOLORS{
@@ -47,10 +49,14 @@ class Sky extends Ui.Drawable {
 
     private function getSkyColor() as Gfx.ColorType{
         var color = SKY_COLOR_BLUE; // default
+
+        if(!updateBackground){
+            return self.SkyColor;
+        }
         
         try{
             
-            if(changeSkyColor && updateBackground){
+            if(changeSkyColor){
                 
                 var isNight = !(Astronomy.isDay(Time.now()));       
                 var isTwiLight = Astronomy.isTwilight(Time.now());
@@ -71,6 +77,8 @@ class Sky extends Ui.Drawable {
         catch(ex){
             System.println("ERROR -- Sky.GetSkyColor -- " + ex.toString());
         }
+        
+        self.SkyColor = color as Gfx.ColorType;
         
         return color as Gfx.ColorType;
     }

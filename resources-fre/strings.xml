@@ -141,4 +141,9 @@
     <string id="FieldFont3">Police Champs 3</string>
     <string id="FieldFont4">Police Champs 4</string>
 
+
+    <string id="ShowSecondsTitle">Afficher les Secondes (Geste du Poignet)</string>
+    <string id="SecondsColorTitle">Couleur des Secondes</string>
+    <string id="DateColorTitle">Couleur de la Date</string>
+
 </strings>
