@@ -1,0 +1,254 @@
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [Lang,1,13,17]; ]
+using Toybox.Lang;
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Time,2,13,17]; ]
+using Toybox.Time;
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [Time,3,13,17]; @symbol_usingdef<2> = [Gregorian,3,18,27]; @symbol_usingAlias = [Greg,3,31,35]; ]
+using Toybox.Time.Gregorian as :Greg;
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc"; @line = 6; @symbol_classdef = [MoonCalc,6,6,14]; ]
+class MoonCalc {
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc"; @line = 6; ]
+    <init> {
+    }
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc"; @line = 8; @symbol_enumdef = [MOON_PHASE,8,9,19]; ]
+    static
+    enum MOON_PHASE {
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc"; @line = 10; @position = 8; @symbol_enumdec = [MOON_PHASE_NEW_MOON,10,8,27]; ]
+        MOON_PHASE_NEW_MOON,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc"; @line = 11; @position = 8; @symbol_enumdec = [MOON_PHASE_WAXING_CRESCENT,11,8,34]; ]
+        MOON_PHASE_WAXING_CRESCENT,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc"; @line = 12; @position = 8; @symbol_enumdec = [MOON_PHASE_FIRST_QUARTER,12,8,32]; ]
+        MOON_PHASE_FIRST_QUARTER,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc"; @line = 13; @position = 8; @symbol_enumdec = [MOON_PHASE_WAXING_GIBBOUS,13,8,33]; ]
+        MOON_PHASE_WAXING_GIBBOUS,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc"; @line = 14; @position = 8; @symbol_enumdec = [MOON_PHASE_FULL_MOON,14,8,28]; ]
+        MOON_PHASE_FULL_MOON,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc"; @line = 15; @position = 8; @symbol_enumdec = [MOON_PHASE_WANING_GIBBOUS,15,8,33]; ]
+        MOON_PHASE_WANING_GIBBOUS,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc"; @line = 16; @position = 8; @symbol_enumdec = [MOON_PHASE_LAST_QUARTER,16,8,31]; ]
+        MOON_PHASE_LAST_QUARTER,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc"; @line = 17; @position = 8; @symbol_enumdec = [MOON_PHASE_WANING_CRESCENT,17,8,34]; ]
+        MOON_PHASE_WANING_CRESCENT
+    }
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc"; @line = 20; @symbol_functiondef = [initialize,20,13,23]; ]
+    function initialize() as Void {
+    }
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc"; @line = 25; @symbol_functiondef = [getPhase,25,20,28]; @symbol_param<0> = [day,25,29,32]; @symbol_param<0>_type<0> = [Time,25,36,40]; @symbol_param<0>_type<1> = [Moment,25,41,47]; @symbol_return<0> = [MOON_PHASE,25,53,63]; ]
+    public
+    function getPhase(day as Time.Moment or Null) as MOON_PHASE {
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_25_63_61_4_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc" 30 8 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_25_63_61_4_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_25_63_61_4_stop" ]
+        %returnValue.1 = local;
+        symbol [ returnValue %returnValue.1 30 12 23 ];
+        %tmp.1 = 0;
+        lputv %returnValue.1 %tmp.1;
+        symbol [ returnValue %returnValue.1 30 12 23 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc" 32 8 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_32_8_35_8_if_stmt:
+        %tmp.2 = lgetv %day;
+        symbol [ day %tmp.2 32 11 14 ];
+        %tmp.3 = null;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_32_8_35_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_32_8_35_8_if_true:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_32_23_35_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc" 34 12 ]
+        symbol [ Time %tmp.5 34 18 22 ];
+        %tmp.5 = getm $.Toybox.Time;
+        symbol [ now %tmp.6 34 23 26 ];
+        %tmp.6 = getv function %tmp.5 :now;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        lputv %day %tmp.7;
+        symbol [ day %day 34 12 15 ];
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_32_23_35_8_stop:
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_32_8_35_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_32_8_35_8_if_end:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc" 38 8 ]
+        try @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_8_57_8_beginTry @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_8_57_8_endTry @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_8_57_8_catch @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_8_57_8_finally;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_8_57_8_beginTry:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_11_55_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc" 40 12 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_11_55_8_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_11_55_8_stop" ]
+        %medMoonLife.2 = local;
+        symbol [ medMoonLife %medMoonLife.2 40 16 27 ];
+        %tmp.8 = 29.53;
+        lputv %medMoonLife.2 %tmp.8;
+        symbol [ medMoonLife %medMoonLife.2 40 16 27 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc" 41 12 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_11_55_8_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_11_55_8_stop" ]
+        %knownMoon.3 = local;
+        symbol [ knownMoon %knownMoon.3 41 16 25 ];
+        symbol [ Greg %tmp.9 41 28 32 ];
+        %tmp.9 = getm $.Toybox.Time.Gregorian;
+        symbol [ moment %tmp.10 41 33 39 ];
+        %tmp.10 = getv function %tmp.9 :moment;
+        %tmp.11 = newd 5;
+        %tmp.13 = const :year;
+        symbol [ year %tmp.13 41 42 46 const ];
+        %tmp.14 = 2020;
+        %tmp.15 = dup %tmp.11;
+        %tmp.16 = aputv %tmp.15 %tmp.13 %tmp.14;
+        %tmp.18 = const :month;
+        symbol [ month %tmp.18 41 57 62 const ];
+        %tmp.19 = 1;
+        %tmp.20 = dup %tmp.16;
+        %tmp.21 = aputv %tmp.20 %tmp.18 %tmp.19;
+        %tmp.23 = const :day;
+        symbol [ day %tmp.23 41 70 73 const ];
+        %tmp.24 = 24;
+        %tmp.25 = dup %tmp.21;
+        %tmp.26 = aputv %tmp.25 %tmp.23 %tmp.24;
+        %tmp.28 = const :hour;
+        symbol [ hour %tmp.28 41 82 86 const ];
+        %tmp.29 = 22;
+        %tmp.30 = dup %tmp.26;
+        %tmp.31 = aputv %tmp.30 %tmp.28 %tmp.29;
+        %tmp.33 = const :minute;
+        symbol [ minute %tmp.33 41 95 101 const ];
+        %tmp.34 = 42;
+        %tmp.35 = dup %tmp.31;
+        %tmp.36 = aputv %tmp.35 %tmp.33 %tmp.34;
+        %tmp.37 = invoke %tmp.9 %tmp.10(%tmp.36);
+        lputv %knownMoon.3 %tmp.37;
+        symbol [ knownMoon %knownMoon.3 41 16 25 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc" 44 12 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_11_55_8_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_11_55_8_stop" ]
+        %daysSince.4 = local;
+        symbol [ daysSince %daysSince.4 44 16 25 ];
+        %tmp.38 = lgetv %knownMoon.3;
+        symbol [ knownMoon %tmp.38 44 28 37 ];
+        symbol [ compare %tmp.39 44 38 45 ];
+        %tmp.39 = getv function %tmp.38 :compare;
+        %tmp.40 = lgetv %day;
+        symbol [ day %tmp.40 44 46 49 ];
+        %tmp.41 = invoke %tmp.38 %tmp.39(%tmp.40);
+        symbol [ abs %tmp.42 44 51 54 ];
+        %tmp.42 = getv function %tmp.41 :abs;
+        %tmp.43 = invoke %tmp.41 %tmp.42();
+        symbol [ Greg %tmp.44 44 59 63 ];
+        %tmp.44 = getm $.Toybox.Time.Gregorian;
+        symbol [ SECONDS_PER_DAY %tmp.45 44 64 79 ];
+        %tmp.45 = getv %tmp.44 :SECONDS_PER_DAY;
+        %tmp.46 = as %tmp.45 Lang.Float;
+        symbol [ Lang %tmp.46 44 83 87 ];
+        symbol [ Float %tmp.46 44 88 93 ];
+        %tmp.47 = div %tmp.43 %tmp.46;
+        lputv %daysSince.4 %tmp.47;
+        symbol [ daysSince %daysSince.4 44 16 25 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc" 45 12 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_11_55_8_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_11_55_8_stop" ]
+        %mod.5 = local;
+        symbol [ mod %mod.5 45 16 19 ];
+        %tmp.48 = 0;
+        lputv %mod.5 %tmp.48;
+        symbol [ mod %mod.5 45 16 19 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc" 47 12 ]
+        while @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_47_12_49_12_while_test @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_47_12_49_12_while_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_47_12_49_12_while_test:
+        %tmp.49 = lgetv %daysSince.4;
+        symbol [ daysSince %tmp.49 47 18 27 ];
+        %tmp.50 = lgetv %medMoonLife.2;
+        symbol [ medMoonLife %tmp.50 47 30 41 ];
+        %tmp.51 = gt %tmp.49 %tmp.50;
+        bf %tmp.51 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_47_12_49_12_while_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_47_12_49_12_while_begin:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_47_42_49_12_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc" 48 16 ]
+        %tmp.52 = lgetv %daysSince.4;
+        symbol [ daysSince %tmp.52 48 16 25 ];
+        %tmp.53 = lgetv %medMoonLife.2;
+        symbol [ medMoonLife %tmp.53 48 29 40 ];
+        %tmp.54 = sub %tmp.52 %tmp.53;
+        lputv %daysSince.4 %tmp.54;
+        symbol [ daysSince %daysSince.4 48 16 25 ];
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_47_42_49_12_stop:
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_47_12_49_12_while_test;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_47_12_49_12_while_end:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc" 50 12 ]
+        %tmp.55 = lgetv %daysSince.4;
+        symbol [ daysSince %tmp.55 50 18 27 ];
+        lputv %mod.5 %tmp.55;
+        symbol [ mod %mod.5 50 12 15 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc" 52 12 ]
+        symbol [ Math %tmp.57 52 27 31 ];
+        %tmp.57 = getv ? :Math;
+        symbol [ round %tmp.58 52 32 37 ];
+        %tmp.58 = getv function %tmp.57 :round;
+        %tmp.59 = lgetv %mod.5;
+        symbol [ mod %tmp.59 52 38 41 ];
+        %tmp.60 = 8;
+        %tmp.61 = lgetv %medMoonLife.2;
+        symbol [ medMoonLife %tmp.61 52 45 56 ];
+        %tmp.62 = div %tmp.60 %tmp.61;
+        %tmp.63 = mul %tmp.59 %tmp.62;
+        %tmp.64 = invoke %tmp.57 %tmp.58(%tmp.63);
+        symbol [ toNumber %tmp.65 52 59 67 ];
+        %tmp.65 = getv function %tmp.64 :toNumber;
+        %tmp.66 = invoke %tmp.64 %tmp.65();
+        %tmp.67 = as %tmp.66 Lang.Number;
+        symbol [ Lang %tmp.67 52 73 77 ];
+        symbol [ Number %tmp.67 52 78 84 ];
+        lputv %returnValue.1 %tmp.67;
+        symbol [ returnValue %returnValue.1 52 12 23 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc" 53 12 ]
+        %tmp.68 = lgetv %returnValue.1;
+        symbol [ returnValue %tmp.68 53 12 23 ];
+        %tmp.69 = 8;
+        %tmp.70 = mod %tmp.68 %tmp.69;
+        lputv %returnValue.1 %tmp.70;
+        symbol [ returnValue %returnValue.1 53 12 23 ];
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_11_55_8_stop:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_8_57_8_endTry:
+        jsr @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_8_57_8_finally;
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_8_57_8_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_8_57_8_catch:
+        %tmp.71 = exception;
+        push %tmp.71;
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc" 55 9 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_8_57_8_catch" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_55_9_57_8_end" ]
+        %ex.6 = local;
+        symbol [ ex %ex.6 55 15 17 ];
+        %tmp.72 = dup %tmp.71;
+        lputv %ex.6 %tmp.72;
+        symbol [ ex %ex.6 55 15 17 ];
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_55_18_57_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc" 56 12 ]
+        symbol [ System %tmp.74 56 12 18 ];
+        %tmp.74 = getv ? :System;
+        symbol [ println %tmp.75 56 19 26 ];
+        %tmp.75 = getv function %tmp.74 :println;
+        %tmp.76 = "ERROR -- Astronomy.getMoonPhase -- ";
+        %tmp.77 = lgetv %ex.6;
+        symbol [ ex %tmp.77 56 68 70 ];
+        symbol [ toString %tmp.78 56 71 79 ];
+        %tmp.78 = getv function %tmp.77 :toString;
+        %tmp.79 = invoke %tmp.77 %tmp.78();
+        %tmp.80 = add %tmp.76 %tmp.79;
+        invoke %tmp.74 %tmp.75(%tmp.80);
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_55_18_57_8_stop:
+        jsr @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_8_57_8_finally;
+        pop;
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_8_57_8_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_55_9_57_8_end:
+        try @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_8_57_8_catch @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_55_9_57_8_end @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_55_9_57_8_end @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_8_57_8_finally;
+        jsr @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_8_57_8_finally;
+        throw %tmp.71;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_8_57_8_finally:
+        jsrret;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_38_8_57_8_end:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc" 60 8 ]
+        %tmp.81 = lgetv %returnValue.1;
+        symbol [ returnValue %tmp.81 60 15 26 ];
+        %tmp.82 = as %tmp.81 MOON_PHASE;
+        symbol [ MOON_PHASE %tmp.82 60 30 40 ];
+        ret %tmp.82;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_MoonCalc_mc_25_63_61_4_stop:
+    }
+}
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\MoonCalc.mc"; @line = 1; ]
+<init> {
+}

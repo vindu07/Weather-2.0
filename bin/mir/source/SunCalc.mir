@@ -1,0 +1,1580 @@
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [Math,1,13,17]; @symbol_usingAlias = [Math,1,21,25]; ]
+using Toybox.Math as :Math;
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Time,2,13,17]; @symbol_usingAlias = [Time,2,21,25]; ]
+using Toybox.Time as :Time;
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [Position,3,13,21]; @symbol_usingAlias = [Pos,3,25,28]; ]
+using Toybox.Position as :Pos;
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 5; @symbol_classdef = [SunCalc,5,6,13]; ]
+class SunCalc {
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 5; ]
+    <init> {
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 26 17 ]
+        symbol [ Math %tmp.1 26 24 28 ];
+        %tmp.1 = getm $.Toybox.Math;
+        symbol [ PI %tmp.2 26 29 31 ];
+        %tmp.2 = getv %tmp.1 :PI;
+        putv self :PI %tmp.2;
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 27 8 ]
+        symbol [ Math %tmp.3 27 15 19 ];
+        %tmp.3 = getm $.Toybox.Math;
+        symbol [ PI %tmp.4 27 20 22 ];
+        %tmp.4 = getv %tmp.3 :PI;
+        %tmp.5 = 180.0;
+        %tmp.6 = div %tmp.4 %tmp.5;
+        putv self :RAD %tmp.6;
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 28 8 ]
+        symbol [ Math %tmp.7 28 15 19 ];
+        %tmp.7 = getm $.Toybox.Math;
+        symbol [ PI %tmp.8 28 20 22 ];
+        %tmp.8 = getv %tmp.7 :PI;
+        %tmp.9 = 2.0;
+        %tmp.10 = mul %tmp.8 %tmp.9;
+        putv self :PI2 %tmp.10;
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 29 8 ]
+        symbol [ Time %tmp.11 29 15 19 ];
+        %tmp.11 = getm $.Toybox.Time;
+        symbol [ Gregorian %tmp.12 29 20 29 ];
+        %tmp.12 = getv %tmp.11 :Gregorian;
+        symbol [ SECONDS_PER_DAY %tmp.13 29 30 45 ];
+        %tmp.13 = getv %tmp.12 :SECONDS_PER_DAY;
+        putv self :DAYS %tmp.13;
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 34 17 ]
+        %tmp.14 = newa 15;
+        %tmp.15 = -18;
+        symbol [ RAD %tmp.17 35 14 17 ];
+        %tmp.17 = getv ? :RAD;
+        %tmp.18 = mul %tmp.15 %tmp.17;
+        %tmp.19 = dup %tmp.14;
+        %tmp.20 = aputv %tmp.19 0 %tmp.18;
+        %tmp.21 = -12;
+        symbol [ RAD %tmp.23 36 14 17 ];
+        %tmp.23 = getv ? :RAD;
+        %tmp.24 = mul %tmp.21 %tmp.23;
+        %tmp.25 = dup %tmp.20;
+        %tmp.26 = aputv %tmp.25 1 %tmp.24;
+        %tmp.27 = -6;
+        symbol [ RAD %tmp.29 37 13 16 ];
+        %tmp.29 = getv ? :RAD;
+        %tmp.30 = mul %tmp.27 %tmp.29;
+        %tmp.31 = dup %tmp.26;
+        %tmp.32 = aputv %tmp.31 2 %tmp.30;
+        %tmp.33 = -4;
+        symbol [ RAD %tmp.35 38 13 16 ];
+        %tmp.35 = getv ? :RAD;
+        %tmp.36 = mul %tmp.33 %tmp.35;
+        %tmp.37 = dup %tmp.32;
+        %tmp.38 = aputv %tmp.37 3 %tmp.36;
+        %tmp.39 = -0.833;
+        symbol [ RAD %tmp.41 39 17 20 ];
+        %tmp.41 = getv ? :RAD;
+        %tmp.42 = mul %tmp.39 %tmp.41;
+        %tmp.43 = dup %tmp.38;
+        %tmp.44 = aputv %tmp.43 4 %tmp.42;
+        %tmp.45 = -0.3;
+        symbol [ RAD %tmp.47 40 15 18 ];
+        %tmp.47 = getv ? :RAD;
+        %tmp.48 = mul %tmp.45 %tmp.47;
+        %tmp.49 = dup %tmp.44;
+        %tmp.50 = aputv %tmp.49 5 %tmp.48;
+        %tmp.51 = 6;
+        symbol [ RAD %tmp.53 41 12 15 ];
+        %tmp.53 = getv ? :RAD;
+        %tmp.54 = mul %tmp.51 %tmp.53;
+        %tmp.55 = dup %tmp.50;
+        %tmp.56 = aputv %tmp.55 6 %tmp.54;
+        %tmp.57 = null;
+        %tmp.58 = dup %tmp.56;
+        %tmp.59 = aputv %tmp.58 7 %tmp.57;
+        %tmp.60 = 6;
+        symbol [ RAD %tmp.62 43 12 15 ];
+        %tmp.62 = getv ? :RAD;
+        %tmp.63 = mul %tmp.60 %tmp.62;
+        %tmp.64 = dup %tmp.59;
+        %tmp.65 = aputv %tmp.64 8 %tmp.63;
+        %tmp.66 = -0.3;
+        symbol [ RAD %tmp.68 44 15 18 ];
+        %tmp.68 = getv ? :RAD;
+        %tmp.69 = mul %tmp.66 %tmp.68;
+        %tmp.70 = dup %tmp.65;
+        %tmp.71 = aputv %tmp.70 9 %tmp.69;
+        %tmp.72 = -0.833;
+        symbol [ RAD %tmp.74 45 17 20 ];
+        %tmp.74 = getv ? :RAD;
+        %tmp.75 = mul %tmp.72 %tmp.74;
+        %tmp.76 = dup %tmp.71;
+        %tmp.77 = aputv %tmp.76 10 %tmp.75;
+        %tmp.78 = -4;
+        symbol [ RAD %tmp.80 46 13 16 ];
+        %tmp.80 = getv ? :RAD;
+        %tmp.81 = mul %tmp.78 %tmp.80;
+        %tmp.82 = dup %tmp.77;
+        %tmp.83 = aputv %tmp.82 11 %tmp.81;
+        %tmp.84 = -6;
+        symbol [ RAD %tmp.86 47 13 16 ];
+        %tmp.86 = getv ? :RAD;
+        %tmp.87 = mul %tmp.84 %tmp.86;
+        %tmp.88 = dup %tmp.83;
+        %tmp.89 = aputv %tmp.88 12 %tmp.87;
+        %tmp.90 = -12;
+        symbol [ RAD %tmp.92 48 14 17 ];
+        %tmp.92 = getv ? :RAD;
+        %tmp.93 = mul %tmp.90 %tmp.92;
+        %tmp.94 = dup %tmp.89;
+        %tmp.95 = aputv %tmp.94 13 %tmp.93;
+        %tmp.96 = -18;
+        symbol [ RAD %tmp.98 49 14 17 ];
+        %tmp.98 = getv ? :RAD;
+        %tmp.99 = mul %tmp.96 %tmp.98;
+        %tmp.100 = dup %tmp.95;
+        %tmp.101 = aputv %tmp.100 14 %tmp.99;
+        putv self :TIMES %tmp.101;
+    }
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 7; ]
+    static
+    enum {
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 8; @position = 8; @symbol_enumdec = [ASTRO_DAWN,8,8,18]; ]
+        ASTRO_DAWN,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 9; @position = 8; @symbol_enumdec = [NAUTIC_DAWN,9,8,19]; ]
+        NAUTIC_DAWN,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 10; @position = 8; @symbol_enumdec = [DAWN,10,8,12]; ]
+        DAWN,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 11; @position = 8; @symbol_enumdec = [BLUE_HOUR_AM,11,8,20]; ]
+        BLUE_HOUR_AM,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 12; @position = 8; @symbol_enumdec = [SUNRISE,12,8,15]; ]
+        SUNRISE,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 13; @position = 8; @symbol_enumdec = [SUNRISE_END,13,8,19]; ]
+        SUNRISE_END,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 14; @position = 8; @symbol_enumdec = [GOLDEN_HOUR_AM,14,8,22]; ]
+        GOLDEN_HOUR_AM,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 15; @position = 8; @symbol_enumdec = [NOON,15,8,12]; ]
+        NOON,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 16; @position = 8; @symbol_enumdec = [GOLDEN_HOUR_PM,16,8,22]; ]
+        GOLDEN_HOUR_PM,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 17; @position = 8; @symbol_enumdec = [SUNSET_START,17,8,20]; ]
+        SUNSET_START,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 18; @position = 8; @symbol_enumdec = [SUNSET,18,8,14]; ]
+        SUNSET,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 19; @position = 8; @symbol_enumdec = [BLUE_HOUR_PM,19,8,20]; ]
+        BLUE_HOUR_PM,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 20; @position = 8; @symbol_enumdec = [DUSK,20,8,12]; ]
+        DUSK,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 21; @position = 8; @symbol_enumdec = [NAUTIC_DUSK,21,8,19]; ]
+        NAUTIC_DUSK,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 22; @position = 8; @symbol_enumdec = [ASTRO_DUSK,22,8,18]; ]
+        ASTRO_DUSK,
+        [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 23; @position = 8; @symbol_enumdec = [NUM_RESULTS,23,8,19]; ]
+        NUM_RESULTS
+    }
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 26; @position = 17; @symbol_constdef = [PI,26,17,19]; ]
+    protected
+    const PI;
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 27; @position = 8; @symbol_constdef = [RAD,27,8,11]; ]
+    protected
+    const RAD;
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 28; @position = 8; @symbol_constdef = [PI2,28,8,11]; ]
+    protected
+    const PI2;
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 29; @position = 8; @symbol_constdef = [DAYS,29,8,12]; ]
+    protected
+    const DAYS;
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 30; @position = 8; @symbol_constdef = [J1970,30,8,13]; ]
+    protected
+    const J1970 = 2440588;
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 31; @position = 8; @symbol_constdef = [J2000,31,8,13]; ]
+    protected
+    const J2000 = 2451545;
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 32; @position = 8; @symbol_constdef = [J0,32,8,10]; ]
+    protected
+    const J0 = 0.0009;
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 34; @position = 17; @symbol_constdef = [TIMES,34,17,22]; ]
+    protected
+    const TIMES;
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 52; @position = 8; @symbol_vardef = [lastD,52,8,13]; ]
+    var lastD;
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 52; @position = 15; @symbol_vardef = [lastLng,52,15,22]; ]
+    var lastLng;
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 53; @position = 8; @symbol_vardef = [n,53,8,9]; ]
+    var n;
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 53; @position = 11; @symbol_vardef = [ds,53,11,13]; ]
+    var ds;
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 53; @position = 15; @symbol_vardef = [M,53,15,16]; ]
+    var M;
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 53; @position = 18; @symbol_vardef = [sinM,53,18,22]; ]
+    var sinM;
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 53; @position = 24; @symbol_vardef = [C,53,24,25]; ]
+    var C;
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 53; @position = 27; @symbol_vardef = [L,53,27,28]; ]
+    var L;
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 53; @position = 30; @symbol_vardef = [sin2L,53,30,35]; ]
+    var sin2L;
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 53; @position = 37; @symbol_vardef = [dec,53,37,40]; ]
+    var dec;
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 53; @position = 42; @symbol_vardef = [Jnoon,53,42,47]; ]
+    var Jnoon;
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 55; @symbol_functiondef = [initialize,55,13,23]; ]
+    function initialize() as Void {
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_55_26_58_4_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 56 8 ]
+        %tmp.1 = null;
+        symbol [ lastD ? 56 8 13 ];
+        putv self :lastD %tmp.1;
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 57 8 ]
+        %tmp.2 = null;
+        symbol [ lastLng ? 57 8 15 ];
+        putv self :lastLng %tmp.2;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_55_26_58_4_stop:
+    }
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 60; @symbol_functiondef = [fromJulian,60,13,23]; @symbol_param<0> = [j,60,24,25]; ]
+    function fromJulian(j) {
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_60_27_62_4_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 61 8 ]
+        symbol [ Time %tmp.3 61 19 23 ];
+        %tmp.3 = getm $.Toybox.Time;
+        symbol [ Moment %tmp.4 61 24 30 ];
+        %tmp.4 = getv function ? %tmp.3 :Moment;
+        %tmp.5 = lgetv %j;
+        symbol [ j %tmp.5 61 32 33 ];
+        %tmp.6 = 0.5;
+        %tmp.7 = add %tmp.5 %tmp.6;
+        symbol [ J1970 %tmp.9 61 42 47 ];
+        %tmp.9 = getv ? :J1970;
+        %tmp.10 = sub %tmp.7 %tmp.9;
+        symbol [ DAYS %tmp.12 61 51 55 ];
+        %tmp.12 = getv ? :DAYS;
+        %tmp.13 = mul %tmp.10 %tmp.12;
+        %tmp.1 = newc %tmp.4 (%tmp.13);
+        ret %tmp.1;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_60_27_62_4_stop:
+    }
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 64; @symbol_functiondef = [round,64,13,18]; @symbol_param<0> = [a,64,19,20]; ]
+    function round(a) {
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_64_22_70_4_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 65 8 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_65_8_69_8_if_stmt:
+        %tmp.1 = lgetv %a;
+        symbol [ a %tmp.1 65 12 13 ];
+        %tmp.2 = 0;
+        %tmp.3 = gt %tmp.1 %tmp.2;
+        bf %tmp.3 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_65_8_69_8_if_else_false;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_65_8_69_8_if_true:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_65_19_67_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 66 12 ]
+        %tmp.4 = lgetv %a;
+        symbol [ a %tmp.4 66 20 21 ];
+        %tmp.5 = 0.5;
+        %tmp.6 = add %tmp.4 %tmp.5;
+        symbol [ toNumber %tmp.7 66 29 37 ];
+        %tmp.7 = getv function %tmp.6 :toNumber;
+        %tmp.8 = invoke %tmp.6 %tmp.7();
+        symbol [ toFloat %tmp.9 66 40 47 ];
+        %tmp.9 = getv function %tmp.8 :toFloat;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        ret %tmp.10;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_65_19_67_8_stop:
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_65_8_69_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_65_8_69_8_if_else_false:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_67_15_69_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 68 12 ]
+        %tmp.11 = lgetv %a;
+        symbol [ a %tmp.11 68 20 21 ];
+        %tmp.12 = 0.5;
+        %tmp.13 = sub %tmp.11 %tmp.12;
+        symbol [ toNumber %tmp.14 68 29 37 ];
+        %tmp.14 = getv function %tmp.13 :toNumber;
+        %tmp.15 = invoke %tmp.13 %tmp.14();
+        symbol [ toFloat %tmp.16 68 40 47 ];
+        %tmp.16 = getv function %tmp.15 :toFloat;
+        %tmp.17 = invoke %tmp.15 %tmp.16();
+        ret %tmp.17;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_67_15_69_8_stop:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_65_8_69_8_if_end:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_64_22_70_4_stop:
+    }
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 73; @symbol_functiondef = [calculate,73,13,22]; @symbol_param<0> = [moment,73,23,29]; @symbol_param<1> = [pos,73,31,34]; @symbol_param<2> = [what,73,36,40]; ]
+    function calculate(moment, pos, what) {
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_73_42_113_4_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 74 8 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_73_42_113_4_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_73_42_113_4_stop" ]
+        %lat.1 = local;
+        symbol [ lat %lat.1 74 12 15 ];
+        %tmp.1 = lgetv %pos;
+        symbol [ pos %tmp.1 74 18 21 ];
+        %tmp.2 = 0;
+        %tmp.3 = agetv %tmp.1 %tmp.2;
+        lputv %lat.1 %tmp.3;
+        symbol [ lat %lat.1 74 12 15 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 75 8 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_73_42_113_4_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_73_42_113_4_stop" ]
+        %lng.2 = local;
+        symbol [ lng %lng.2 75 12 15 ];
+        %tmp.4 = lgetv %pos;
+        symbol [ pos %tmp.4 75 18 21 ];
+        %tmp.5 = 1;
+        %tmp.6 = agetv %tmp.4 %tmp.5;
+        lputv %lng.2 %tmp.6;
+        symbol [ lng %lng.2 75 12 15 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 77 8 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_73_42_113_4_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_73_42_113_4_stop" ]
+        %d.3 = local;
+        symbol [ d %d.3 77 12 13 ];
+        %tmp.7 = lgetv %moment;
+        symbol [ moment %tmp.7 77 16 22 ];
+        symbol [ value %tmp.8 77 23 28 ];
+        %tmp.8 = getv function %tmp.7 :value;
+        %tmp.9 = invoke %tmp.7 %tmp.8();
+        symbol [ toDouble %tmp.10 77 31 39 ];
+        %tmp.10 = getv function %tmp.9 :toDouble;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        symbol [ DAYS %tmp.13 77 44 48 ];
+        %tmp.13 = getv ? :DAYS;
+        %tmp.14 = div %tmp.11 %tmp.13;
+        %tmp.15 = 0.5;
+        %tmp.16 = sub %tmp.14 %tmp.15;
+        symbol [ J1970 %tmp.18 77 57 62 ];
+        %tmp.18 = getv ? :J1970;
+        %tmp.19 = add %tmp.16 %tmp.18;
+        symbol [ J2000 %tmp.21 77 65 70 ];
+        %tmp.21 = getv ? :J2000;
+        %tmp.22 = sub %tmp.19 %tmp.21;
+        lputv %d.3 %tmp.22;
+        symbol [ d %d.3 77 12 13 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 78 8 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_78_8_91_8_if_stmt:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_78_12_78_37_begin:
+        symbol [ lastD %tmp.24 78 12 17 ];
+        %tmp.24 = getv ? :lastD;
+        %tmp.25 = lgetv %d.3;
+        symbol [ d %tmp.25 78 21 22 ];
+        %tmp.26 = ne %tmp.24 %tmp.25;
+        bt %tmp.26 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_78_8_91_8_if_true;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_78_26_78_37_false:
+        symbol [ lastLng %tmp.28 78 26 33 ];
+        %tmp.28 = getv ? :lastLng;
+        %tmp.29 = lgetv %lng.2;
+        symbol [ lng %tmp.29 78 37 40 ];
+        %tmp.30 = ne %tmp.28 %tmp.29;
+        push %tmp.30;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_78_26_78_37_end:
+        %tmp.31 = phi [%tmp.26 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_78_12_78_37_begin] [%tmp.30 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_78_26_78_37_false] [%tmp.31 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_78_26_78_37_end];
+        bf %tmp.31 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_78_8_91_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_78_8_91_8_if_true:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_78_42_91_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 79 12 ]
+        %tmp.32 = self;
+        symbol [ round %tmp.33 79 16 21 ];
+        %tmp.33 = getv function %tmp.32 :round;
+        %tmp.34 = lgetv %d.3;
+        symbol [ d %tmp.34 79 22 23 ];
+        symbol [ J0 %tmp.36 79 26 28 ];
+        %tmp.36 = getv ? :J0;
+        %tmp.37 = sub %tmp.34 %tmp.36;
+        %tmp.38 = lgetv %lng.2;
+        symbol [ lng %tmp.38 79 31 34 ];
+        symbol [ PI2 %tmp.40 79 37 40 ];
+        %tmp.40 = getv ? :PI2;
+        %tmp.41 = div %tmp.38 %tmp.40;
+        %tmp.42 = add %tmp.37 %tmp.41;
+        %tmp.43 = invoke %tmp.32 %tmp.33(%tmp.42);
+        symbol [ n ? 79 12 13 ];
+        putv self :n %tmp.43;
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 81 12 ]
+        symbol [ J0 %tmp.45 81 17 19 ];
+        %tmp.45 = getv ? :J0;
+        %tmp.46 = lgetv %lng.2;
+        symbol [ lng %tmp.46 81 22 25 ];
+        symbol [ PI2 %tmp.48 81 28 31 ];
+        %tmp.48 = getv ? :PI2;
+        %tmp.49 = div %tmp.46 %tmp.48;
+        %tmp.50 = sub %tmp.45 %tmp.49;
+        symbol [ n %tmp.52 81 34 35 ];
+        %tmp.52 = getv ? :n;
+        %tmp.53 = add %tmp.50 %tmp.52;
+        %tmp.54 = 1.1574e-5;
+        %tmp.55 = 68;
+        %tmp.56 = mul %tmp.54 %tmp.55;
+        %tmp.57 = sub %tmp.53 %tmp.56;
+        symbol [ ds ? 81 12 14 ];
+        putv self :ds %tmp.57;
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 82 12 ]
+        %tmp.58 = 6.240059967;
+        %tmp.59 = 0.0172019715;
+        symbol [ ds %tmp.61 82 45 47 ];
+        %tmp.61 = getv ? :ds;
+        %tmp.62 = mul %tmp.59 %tmp.61;
+        %tmp.63 = add %tmp.58 %tmp.62;
+        symbol [ M ? 82 12 13 ];
+        putv self :M %tmp.63;
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 83 12 ]
+        symbol [ Math %tmp.64 83 19 23 ];
+        %tmp.64 = getm $.Toybox.Math;
+        symbol [ sin %tmp.65 83 24 27 ];
+        %tmp.65 = getv function %tmp.64 :sin;
+        symbol [ M %tmp.67 83 28 29 ];
+        %tmp.67 = getv ? :M;
+        %tmp.68 = invoke %tmp.64 %tmp.65(%tmp.67);
+        symbol [ sinM ? 83 12 16 ];
+        putv self :sinM %tmp.68;
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 84 12 ]
+        %tmp.69 = 1.9148;
+        symbol [ sinM %tmp.71 84 26 30 ];
+        %tmp.71 = getv ? :sinM;
+        %tmp.72 = mul %tmp.69 %tmp.71;
+        %tmp.73 = 0.02;
+        symbol [ Math %tmp.74 84 40 44 ];
+        %tmp.74 = getm $.Toybox.Math;
+        symbol [ sin %tmp.75 84 45 48 ];
+        %tmp.75 = getv function %tmp.74 :sin;
+        %tmp.76 = 2;
+        symbol [ M %tmp.78 84 53 54 ];
+        %tmp.78 = getv ? :M;
+        %tmp.79 = mul %tmp.76 %tmp.78;
+        %tmp.80 = invoke %tmp.74 %tmp.75(%tmp.79);
+        %tmp.81 = mul %tmp.73 %tmp.80;
+        %tmp.82 = add %tmp.72 %tmp.81;
+        %tmp.83 = 0.0003;
+        symbol [ Math %tmp.84 84 67 71 ];
+        %tmp.84 = getm $.Toybox.Math;
+        symbol [ sin %tmp.85 84 72 75 ];
+        %tmp.85 = getv function %tmp.84 :sin;
+        %tmp.86 = 3;
+        symbol [ M %tmp.88 84 80 81 ];
+        %tmp.88 = getv ? :M;
+        %tmp.89 = mul %tmp.86 %tmp.88;
+        %tmp.90 = invoke %tmp.84 %tmp.85(%tmp.89);
+        %tmp.91 = mul %tmp.83 %tmp.90;
+        %tmp.92 = add %tmp.82 %tmp.91;
+        symbol [ RAD %tmp.94 84 86 89 ];
+        %tmp.94 = getv ? :RAD;
+        %tmp.95 = mul %tmp.92 %tmp.94;
+        symbol [ C ? 84 12 13 ];
+        putv self :C %tmp.95;
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 85 12 ]
+        symbol [ M %tmp.97 85 16 17 ];
+        %tmp.97 = getv ? :M;
+        symbol [ C %tmp.99 85 20 21 ];
+        %tmp.99 = getv ? :C;
+        %tmp.100 = add %tmp.97 %tmp.99;
+        %tmp.101 = 1.796593063;
+        %tmp.102 = add %tmp.100 %tmp.101;
+        symbol [ PI %tmp.104 85 38 40 ];
+        %tmp.104 = getv ? :PI;
+        %tmp.105 = add %tmp.102 %tmp.104;
+        symbol [ L ? 85 12 13 ];
+        putv self :L %tmp.105;
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 86 12 ]
+        symbol [ Math %tmp.106 86 20 24 ];
+        %tmp.106 = getm $.Toybox.Math;
+        symbol [ sin %tmp.107 86 25 28 ];
+        %tmp.107 = getv function %tmp.106 :sin;
+        %tmp.108 = 2;
+        symbol [ L %tmp.110 86 33 34 ];
+        %tmp.110 = getv ? :L;
+        %tmp.111 = mul %tmp.108 %tmp.110;
+        %tmp.112 = invoke %tmp.106 %tmp.107(%tmp.111);
+        symbol [ sin2L ? 86 12 17 ];
+        putv self :sin2L %tmp.112;
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 87 12 ]
+        symbol [ Math %tmp.113 87 18 22 ];
+        %tmp.113 = getm $.Toybox.Math;
+        symbol [ asin %tmp.114 87 23 27 ];
+        %tmp.114 = getv function %tmp.113 :asin;
+        %tmp.115 = 0.397783703;
+        symbol [ Math %tmp.116 87 43 47 ];
+        %tmp.116 = getm $.Toybox.Math;
+        symbol [ sin %tmp.117 87 48 51 ];
+        %tmp.117 = getv function %tmp.116 :sin;
+        symbol [ L %tmp.119 87 52 53 ];
+        %tmp.119 = getv ? :L;
+        %tmp.120 = invoke %tmp.116 %tmp.117(%tmp.119);
+        %tmp.121 = mul %tmp.115 %tmp.120;
+        %tmp.122 = invoke %tmp.113 %tmp.114(%tmp.121);
+        symbol [ dec ? 87 12 15 ];
+        putv self :dec %tmp.122;
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 88 12 ]
+        symbol [ J2000 %tmp.124 88 20 25 ];
+        %tmp.124 = getv ? :J2000;
+        symbol [ ds %tmp.126 88 28 30 ];
+        %tmp.126 = getv ? :ds;
+        %tmp.127 = add %tmp.124 %tmp.126;
+        %tmp.128 = 0.0053;
+        symbol [ sinM %tmp.130 88 42 46 ];
+        %tmp.130 = getv ? :sinM;
+        %tmp.131 = mul %tmp.128 %tmp.130;
+        %tmp.132 = add %tmp.127 %tmp.131;
+        %tmp.133 = 0.0069;
+        symbol [ sin2L %tmp.135 88 58 63 ];
+        %tmp.135 = getv ? :sin2L;
+        %tmp.136 = mul %tmp.133 %tmp.135;
+        %tmp.137 = sub %tmp.132 %tmp.136;
+        symbol [ Jnoon ? 88 12 17 ];
+        putv self :Jnoon %tmp.137;
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 89 12 ]
+        %tmp.138 = lgetv %d.3;
+        symbol [ d %tmp.138 89 20 21 ];
+        symbol [ lastD ? 89 12 17 ];
+        putv self :lastD %tmp.138;
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 90 12 ]
+        %tmp.139 = lgetv %lng.2;
+        symbol [ lng %tmp.139 90 22 25 ];
+        symbol [ lastLng ? 90 12 19 ];
+        putv self :lastLng %tmp.139;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_78_42_91_8_stop:
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_78_8_91_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_78_8_91_8_if_end:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 93 8 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_93_8_95_8_if_stmt:
+        %tmp.140 = lgetv %what;
+        symbol [ what %tmp.140 93 12 16 ];
+        symbol [ NOON %tmp.142 93 20 24 ];
+        %tmp.142 = getv ? :NOON;
+        %tmp.143 = eq %tmp.140 %tmp.142;
+        bf %tmp.143 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_93_8_95_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_93_8_95_8_if_true:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_93_26_95_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 94 12 ]
+        %tmp.144 = self;
+        symbol [ fromJulian %tmp.145 94 19 29 ];
+        %tmp.145 = getv function %tmp.144 :fromJulian;
+        symbol [ Jnoon %tmp.147 94 30 35 ];
+        %tmp.147 = getv ? :Jnoon;
+        %tmp.148 = invoke %tmp.144 %tmp.145(%tmp.147);
+        ret %tmp.148;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_93_26_95_8_stop:
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_93_8_95_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_93_8_95_8_if_end:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 97 8 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_73_42_113_4_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_73_42_113_4_stop" ]
+        %x.4 = local;
+        symbol [ x %x.4 97 12 13 ];
+        symbol [ Math %tmp.149 97 17 21 ];
+        %tmp.149 = getm $.Toybox.Math;
+        symbol [ sin %tmp.150 97 22 25 ];
+        %tmp.150 = getv function %tmp.149 :sin;
+        symbol [ TIMES %tmp.152 97 26 31 ];
+        %tmp.152 = getv ? :TIMES;
+        %tmp.153 = lgetv %what;
+        symbol [ what %tmp.153 97 32 36 ];
+        %tmp.154 = agetv %tmp.152 %tmp.153;
+        %tmp.155 = invoke %tmp.149 %tmp.150(%tmp.154);
+        symbol [ Math %tmp.156 97 41 45 ];
+        %tmp.156 = getm $.Toybox.Math;
+        symbol [ sin %tmp.157 97 46 49 ];
+        %tmp.157 = getv function %tmp.156 :sin;
+        %tmp.158 = lgetv %lat.1;
+        symbol [ lat %tmp.158 97 50 53 ];
+        %tmp.159 = invoke %tmp.156 %tmp.157(%tmp.158);
+        symbol [ Math %tmp.160 97 57 61 ];
+        %tmp.160 = getm $.Toybox.Math;
+        symbol [ sin %tmp.161 97 62 65 ];
+        %tmp.161 = getv function %tmp.160 :sin;
+        symbol [ dec %tmp.163 97 66 69 ];
+        %tmp.163 = getv ? :dec;
+        %tmp.164 = invoke %tmp.160 %tmp.161(%tmp.163);
+        %tmp.165 = mul %tmp.159 %tmp.164;
+        %tmp.166 = sub %tmp.155 %tmp.165;
+        symbol [ Math %tmp.167 97 75 79 ];
+        %tmp.167 = getm $.Toybox.Math;
+        symbol [ cos %tmp.168 97 80 83 ];
+        %tmp.168 = getv function %tmp.167 :cos;
+        %tmp.169 = lgetv %lat.1;
+        symbol [ lat %tmp.169 97 84 87 ];
+        %tmp.170 = invoke %tmp.167 %tmp.168(%tmp.169);
+        symbol [ Math %tmp.171 97 91 95 ];
+        %tmp.171 = getm $.Toybox.Math;
+        symbol [ cos %tmp.172 97 96 99 ];
+        %tmp.172 = getv function %tmp.171 :cos;
+        symbol [ dec %tmp.174 97 100 103 ];
+        %tmp.174 = getv ? :dec;
+        %tmp.175 = invoke %tmp.171 %tmp.172(%tmp.174);
+        %tmp.176 = mul %tmp.170 %tmp.175;
+        %tmp.177 = div %tmp.166 %tmp.176;
+        lputv %x.4 %tmp.177;
+        symbol [ x %x.4 97 12 13 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 99 8 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_99_8_101_8_if_stmt:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_99_12_99_28_begin:
+        %tmp.178 = lgetv %x.4;
+        symbol [ x %tmp.178 99 12 13 ];
+        %tmp.179 = 1.0;
+        %tmp.180 = gt %tmp.178 %tmp.179;
+        bt %tmp.180 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_99_8_101_8_if_true;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_99_23_99_28_false:
+        %tmp.181 = lgetv %x.4;
+        symbol [ x %tmp.181 99 23 24 ];
+        %tmp.182 = -1.0;
+        %tmp.183 = lt %tmp.181 %tmp.182;
+        push %tmp.183;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_99_23_99_28_end:
+        %tmp.184 = phi [%tmp.180 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_99_12_99_28_begin] [%tmp.183 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_99_23_99_28_false] [%tmp.184 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_99_23_99_28_end];
+        bf %tmp.184 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_99_8_101_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_99_8_101_8_if_true:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_99_33_101_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 100 12 ]
+        %tmp.185 = null;
+        ret %tmp.185;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_99_33_101_8_stop:
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_99_8_101_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_99_8_101_8_if_end:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 103 8 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_73_42_113_4_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_73_42_113_4_stop" ]
+        %ds.5 = local;
+        symbol [ ds %ds.5 103 12 14 ];
+        symbol [ J0 %tmp.187 103 17 19 ];
+        %tmp.187 = getv ? :J0;
+        symbol [ Math %tmp.188 103 23 27 ];
+        %tmp.188 = getm $.Toybox.Math;
+        symbol [ acos %tmp.189 103 28 32 ];
+        %tmp.189 = getv function %tmp.188 :acos;
+        %tmp.190 = lgetv %x.4;
+        symbol [ x %tmp.190 103 33 34 ];
+        %tmp.191 = invoke %tmp.188 %tmp.189(%tmp.190);
+        %tmp.192 = lgetv %lng.2;
+        symbol [ lng %tmp.192 103 38 41 ];
+        %tmp.193 = sub %tmp.191 %tmp.192;
+        symbol [ PI2 %tmp.195 103 45 48 ];
+        %tmp.195 = getv ? :PI2;
+        %tmp.196 = div %tmp.193 %tmp.195;
+        %tmp.197 = add %tmp.187 %tmp.196;
+        symbol [ n %tmp.199 103 51 52 ];
+        %tmp.199 = getv ? :n;
+        %tmp.200 = add %tmp.197 %tmp.199;
+        %tmp.201 = 1.1574e-5;
+        %tmp.202 = 68;
+        %tmp.203 = mul %tmp.201 %tmp.202;
+        %tmp.204 = sub %tmp.200 %tmp.203;
+        lputv %ds.5 %tmp.204;
+        symbol [ ds %ds.5 103 12 14 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 105 8 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_73_42_113_4_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_73_42_113_4_stop" ]
+        %Jset.6 = local;
+        symbol [ Jset %Jset.6 105 12 16 ];
+        symbol [ J2000 %tmp.206 105 19 24 ];
+        %tmp.206 = getv ? :J2000;
+        %tmp.207 = lgetv %ds.5;
+        symbol [ ds %tmp.207 105 27 29 ];
+        %tmp.208 = add %tmp.206 %tmp.207;
+        %tmp.209 = 0.0053;
+        symbol [ sinM %tmp.211 105 41 45 ];
+        %tmp.211 = getv ? :sinM;
+        %tmp.212 = mul %tmp.209 %tmp.211;
+        %tmp.213 = add %tmp.208 %tmp.212;
+        %tmp.214 = 0.0069;
+        symbol [ sin2L %tmp.216 105 57 62 ];
+        %tmp.216 = getv ? :sin2L;
+        %tmp.217 = mul %tmp.214 %tmp.216;
+        %tmp.218 = sub %tmp.213 %tmp.217;
+        lputv %Jset.6 %tmp.218;
+        symbol [ Jset %Jset.6 105 12 16 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 106 8 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_106_8_108_8_if_stmt:
+        %tmp.219 = lgetv %what;
+        symbol [ what %tmp.219 106 12 16 ];
+        symbol [ NOON %tmp.221 106 19 23 ];
+        %tmp.221 = getv ? :NOON;
+        %tmp.222 = gt %tmp.219 %tmp.221;
+        bf %tmp.222 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_106_8_108_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_106_8_108_8_if_true:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_106_25_108_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 107 12 ]
+        %tmp.223 = self;
+        symbol [ fromJulian %tmp.224 107 19 29 ];
+        %tmp.224 = getv function %tmp.223 :fromJulian;
+        %tmp.225 = lgetv %Jset.6;
+        symbol [ Jset %tmp.225 107 30 34 ];
+        %tmp.226 = invoke %tmp.223 %tmp.224(%tmp.225);
+        ret %tmp.226;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_106_25_108_8_stop:
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_106_8_108_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_106_8_108_8_if_end:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 110 8 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_73_42_113_4_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_73_42_113_4_stop" ]
+        %Jrise.7 = local;
+        symbol [ Jrise %Jrise.7 110 12 17 ];
+        symbol [ Jnoon %tmp.228 110 20 25 ];
+        %tmp.228 = getv ? :Jnoon;
+        %tmp.229 = lgetv %Jset.6;
+        symbol [ Jset %tmp.229 110 29 33 ];
+        symbol [ Jnoon %tmp.231 110 36 41 ];
+        %tmp.231 = getv ? :Jnoon;
+        %tmp.232 = sub %tmp.229 %tmp.231;
+        %tmp.233 = sub %tmp.228 %tmp.232;
+        lputv %Jrise.7 %tmp.233;
+        symbol [ Jrise %Jrise.7 110 12 17 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 112 8 ]
+        %tmp.234 = self;
+        symbol [ fromJulian %tmp.235 112 15 25 ];
+        %tmp.235 = getv function %tmp.234 :fromJulian;
+        %tmp.236 = lgetv %Jrise.7;
+        symbol [ Jrise %tmp.236 112 26 31 ];
+        %tmp.237 = invoke %tmp.234 %tmp.235(%tmp.236);
+        ret %tmp.237;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_73_42_113_4_stop:
+    }
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 115; @symbol_functiondef = [momentToString,115,13,27]; @symbol_param<0> = [moment,115,28,34]; @symbol_param<0>_type<0> = [Time,115,38,42]; @symbol_param<0>_type<1> = [Moment,115,43,49]; @symbol_param<1> = [is24Hour,115,51,59]; ]
+    function momentToString(moment as Time.Moment, is24Hour) {
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_115_61_150_4_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 117 8 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_117_8_119_8_if_stmt:
+        %tmp.1 = lgetv %moment;
+        symbol [ moment %tmp.1 117 12 18 ];
+        %tmp.2 = null;
+        %tmp.3 = eq %tmp.1 %tmp.2;
+        bf %tmp.3 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_117_8_119_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_117_8_119_8_if_true:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_117_28_119_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 118 12 ]
+        %tmp.4 = "--:--";
+        ret %tmp.4;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_117_28_119_8_stop:
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_117_8_119_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_117_8_119_8_if_end:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 121 8 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_115_61_150_4_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_115_61_150_4_stop" ]
+        %tinfo.1 = local;
+        symbol [ tinfo %tinfo.1 121 12 17 ];
+        symbol [ Time %tmp.5 121 20 24 ];
+        %tmp.5 = getm $.Toybox.Time;
+        symbol [ Gregorian %tmp.6 121 25 34 ];
+        %tmp.6 = getv %tmp.5 :Gregorian;
+        symbol [ info %tmp.7 121 35 39 ];
+        %tmp.7 = getv function %tmp.6 :info;
+        symbol [ Time %tmp.10 121 44 48 ];
+        %tmp.10 = getm $.Toybox.Time;
+        symbol [ Moment %tmp.11 121 49 55 ];
+        %tmp.11 = getv function ? %tmp.10 :Moment;
+        %tmp.12 = lgetv %moment;
+        symbol [ moment %tmp.12 121 56 62 ];
+        symbol [ value %tmp.13 121 63 68 ];
+        %tmp.13 = getv function %tmp.12 :value;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        %tmp.15 = 30;
+        %tmp.16 = add %tmp.14 %tmp.15;
+        %tmp.8 = newc %tmp.11 (%tmp.16);
+        symbol [ Time %tmp.17 121 78 82 ];
+        %tmp.17 = getm $.Toybox.Time;
+        symbol [ FORMAT_SHORT %tmp.18 121 83 95 ];
+        %tmp.18 = getv %tmp.17 :FORMAT_SHORT;
+        %tmp.19 = invoke %tmp.6 %tmp.7(%tmp.8, %tmp.18);
+        lputv %tinfo.1 %tmp.19;
+        symbol [ tinfo %tinfo.1 121 12 17 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 122 8 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_115_61_150_4_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_115_61_150_4_stop" ]
+        %text.2 = local;
+        symbol [ text %text.2 122 12 16 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 123 8 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_123_8_137_8_if_stmt:
+        %tmp.20 = lgetv %is24Hour;
+        symbol [ is24Hour %tmp.20 123 12 20 ];
+        bf %tmp.20 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_123_8_137_8_if_else_false;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_123_8_137_8_if_true:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_123_22_125_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 124 12 ]
+        %tmp.21 = lgetv %tinfo.1;
+        symbol [ tinfo %tmp.21 124 19 24 ];
+        symbol [ hour %tmp.22 124 25 29 ];
+        %tmp.22 = getv %tmp.21 :hour;
+        symbol [ format %tmp.23 124 30 36 ];
+        %tmp.23 = getv function %tmp.22 :format;
+        %tmp.24 = "%02d";
+        %tmp.25 = invoke %tmp.22 %tmp.23(%tmp.24);
+        %tmp.26 = ":";
+        %tmp.27 = add %tmp.25 %tmp.26;
+        %tmp.28 = lgetv %tinfo.1;
+        symbol [ tinfo %tmp.28 124 53 58 ];
+        symbol [ min %tmp.29 124 59 62 ];
+        %tmp.29 = getv %tmp.28 :min;
+        symbol [ format %tmp.30 124 63 69 ];
+        %tmp.30 = getv function %tmp.29 :format;
+        %tmp.31 = "%02d";
+        %tmp.32 = invoke %tmp.29 %tmp.30(%tmp.31);
+        %tmp.33 = add %tmp.27 %tmp.32;
+        lputv %text.2 %tmp.33;
+        symbol [ text %text.2 124 12 16 ];
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_123_22_125_8_stop:
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_123_8_137_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_123_8_137_8_if_else_false:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_125_15_137_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 126 12 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_125_15_137_8_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_125_15_137_8_stop" ]
+        %hour.3 = local;
+        symbol [ hour %hour.3 126 16 20 ];
+        %tmp.34 = lgetv %tinfo.1;
+        symbol [ tinfo %tmp.34 126 23 28 ];
+        symbol [ hour %tmp.35 126 29 33 ];
+        %tmp.35 = getv %tmp.34 :hour;
+        %tmp.36 = 12;
+        %tmp.37 = mod %tmp.35 %tmp.36;
+        lputv %hour.3 %tmp.37;
+        symbol [ hour %hour.3 126 16 20 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 127 12 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_127_12_129_12_if_stmt:
+        %tmp.38 = lgetv %hour.3;
+        symbol [ hour %tmp.38 127 16 20 ];
+        %tmp.39 = 0;
+        %tmp.40 = eq %tmp.38 %tmp.39;
+        bf %tmp.40 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_127_12_129_12_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_127_12_129_12_if_true:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_127_27_129_12_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 128 16 ]
+        %tmp.41 = 12;
+        lputv %hour.3 %tmp.41;
+        symbol [ hour %hour.3 128 16 20 ];
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_127_27_129_12_stop:
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_127_12_129_12_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_127_12_129_12_if_end:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 130 12 ]
+        %tmp.42 = lgetv %hour.3;
+        symbol [ hour %tmp.42 130 19 23 ];
+        symbol [ format %tmp.43 130 24 30 ];
+        %tmp.43 = getv function %tmp.42 :format;
+        %tmp.44 = "%02d";
+        %tmp.45 = invoke %tmp.42 %tmp.43(%tmp.44);
+        %tmp.46 = ":";
+        %tmp.47 = add %tmp.45 %tmp.46;
+        %tmp.48 = lgetv %tinfo.1;
+        symbol [ tinfo %tmp.48 130 47 52 ];
+        symbol [ min %tmp.49 130 53 56 ];
+        %tmp.49 = getv %tmp.48 :min;
+        symbol [ format %tmp.50 130 57 63 ];
+        %tmp.50 = getv function %tmp.49 :format;
+        %tmp.51 = "%02d";
+        %tmp.52 = invoke %tmp.49 %tmp.50(%tmp.51);
+        %tmp.53 = add %tmp.47 %tmp.52;
+        lputv %text.2 %tmp.53;
+        symbol [ text %text.2 130 12 16 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 132 12 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_132_12_136_12_if_stmt:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_132_16_132_49_begin:
+        %tmp.54 = lgetv %tinfo.1;
+        symbol [ tinfo %tmp.54 132 16 21 ];
+        symbol [ hour %tmp.55 132 22 26 ];
+        %tmp.55 = getv %tmp.54 :hour;
+        %tmp.56 = 12;
+        %tmp.57 = lt %tmp.55 %tmp.56;
+        bt %tmp.57 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_132_12_136_12_if_true;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_132_35_132_49_false:
+        %tmp.58 = lgetv %tinfo.1;
+        symbol [ tinfo %tmp.58 132 35 40 ];
+        symbol [ hour %tmp.59 132 41 45 ];
+        %tmp.59 = getv %tmp.58 :hour;
+        %tmp.60 = 24;
+        %tmp.61 = eq %tmp.59 %tmp.60;
+        push %tmp.61;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_132_35_132_49_end:
+        %tmp.62 = phi [%tmp.57 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_132_16_132_49_begin] [%tmp.61 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_132_35_132_49_false] [%tmp.62 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_132_35_132_49_end];
+        bf %tmp.62 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_132_12_136_12_if_else_false;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_132_12_136_12_if_true:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_132_53_134_12_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 133 16 ]
+        %tmp.63 = lgetv %text.2;
+        symbol [ text %tmp.63 133 23 27 ];
+        %tmp.64 = " AM";
+        %tmp.65 = add %tmp.63 %tmp.64;
+        lputv %text.2 %tmp.65;
+        symbol [ text %text.2 133 16 20 ];
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_132_53_134_12_stop:
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_132_12_136_12_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_132_12_136_12_if_else_false:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_134_19_136_12_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 135 16 ]
+        %tmp.66 = lgetv %text.2;
+        symbol [ text %tmp.66 135 23 27 ];
+        %tmp.67 = " PM";
+        %tmp.68 = add %tmp.66 %tmp.67;
+        lputv %text.2 %tmp.68;
+        symbol [ text %text.2 135 16 20 ];
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_134_19_136_12_stop:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_132_12_136_12_if_end:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_125_15_137_8_stop:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_123_8_137_8_if_end:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 138 8 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_115_61_150_4_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_115_61_150_4_stop" ]
+        %today.4 = local;
+        symbol [ today %today.4 138 12 17 ];
+        symbol [ Time %tmp.69 138 20 24 ];
+        %tmp.69 = getm $.Toybox.Time;
+        symbol [ today %tmp.70 138 25 30 ];
+        %tmp.70 = getv function %tmp.69 :today;
+        %tmp.71 = invoke %tmp.69 %tmp.70();
+        lputv %today.4 %tmp.71;
+        symbol [ today %today.4 138 12 17 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 139 8 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_115_61_150_4_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_115_61_150_4_stop" ]
+        %days.5 = local;
+        symbol [ days %days.5 139 12 16 ];
+        %tmp.72 = lgetv %moment;
+        symbol [ moment %tmp.72 139 21 27 ];
+        symbol [ value %tmp.73 139 28 33 ];
+        %tmp.73 = getv function %tmp.72 :value;
+        %tmp.74 = invoke %tmp.72 %tmp.73();
+        %tmp.75 = lgetv %today.4;
+        symbol [ today %tmp.75 139 38 43 ];
+        symbol [ value %tmp.76 139 44 49 ];
+        %tmp.76 = getv function %tmp.75 :value;
+        %tmp.77 = invoke %tmp.75 %tmp.76();
+        %tmp.78 = sub %tmp.74 %tmp.77;
+        symbol [ Time %tmp.79 139 55 59 ];
+        %tmp.79 = getm $.Toybox.Time;
+        symbol [ Gregorian %tmp.80 139 60 69 ];
+        %tmp.80 = getv %tmp.79 :Gregorian;
+        symbol [ SECONDS_PER_DAY %tmp.81 139 70 85 ];
+        %tmp.81 = getv %tmp.80 :SECONDS_PER_DAY;
+        %tmp.82 = div %tmp.78 %tmp.81;
+        symbol [ toNumber %tmp.83 139 87 95 ];
+        %tmp.83 = getv function %tmp.82 :toNumber;
+        %tmp.84 = invoke %tmp.82 %tmp.83();
+        lputv %days.5 %tmp.84;
+        symbol [ days %days.5 139 12 16 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 141 8 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_141_8_148_8_if_stmt:
+        %tmp.85 = lgetv %moment;
+        symbol [ moment %tmp.85 141 12 18 ];
+        symbol [ value %tmp.86 141 19 24 ];
+        %tmp.86 = getv function %tmp.85 :value;
+        %tmp.87 = invoke %tmp.85 %tmp.86();
+        %tmp.88 = lgetv %today.4;
+        symbol [ today %tmp.88 141 29 34 ];
+        symbol [ value %tmp.89 141 35 40 ];
+        %tmp.89 = getv function %tmp.88 :value;
+        %tmp.90 = invoke %tmp.88 %tmp.89();
+        %tmp.91 = gt %tmp.87 %tmp.90;
+        bf %tmp.91 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_141_8_148_8_if_else_false;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_141_8_148_8_if_true:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_141_45_145_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 142 12 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_142_12_144_12_if_stmt:
+        %tmp.92 = lgetv %days.5;
+        symbol [ days %tmp.92 142 16 20 ];
+        %tmp.93 = 0;
+        %tmp.94 = gt %tmp.92 %tmp.93;
+        bf %tmp.94 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_142_12_144_12_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_142_12_144_12_if_true:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_142_26_144_12_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 143 16 ]
+        %tmp.95 = lgetv %text.2;
+        symbol [ text %tmp.95 143 23 27 ];
+        %tmp.96 = " +";
+        %tmp.97 = add %tmp.95 %tmp.96;
+        %tmp.98 = lgetv %days.5;
+        symbol [ days %tmp.98 143 37 41 ];
+        %tmp.99 = add %tmp.97 %tmp.98;
+        lputv %text.2 %tmp.99;
+        symbol [ text %text.2 143 16 20 ];
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_142_26_144_12_stop:
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_142_12_144_12_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_142_12_144_12_if_end:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_141_45_145_8_stop:
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_141_8_148_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_141_8_148_8_if_else_false:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_145_15_148_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 146 12 ]
+        %tmp.100 = lgetv %days.5;
+        symbol [ days %tmp.100 146 19 23 ];
+        %tmp.101 = 1;
+        %tmp.102 = sub %tmp.100 %tmp.101;
+        lputv %days.5 %tmp.102;
+        symbol [ days %days.5 146 12 16 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 147 12 ]
+        %tmp.103 = lgetv %text.2;
+        symbol [ text %tmp.103 147 19 23 ];
+        %tmp.104 = " ";
+        %tmp.105 = add %tmp.103 %tmp.104;
+        %tmp.106 = lgetv %days.5;
+        symbol [ days %tmp.106 147 32 36 ];
+        %tmp.107 = add %tmp.105 %tmp.106;
+        lputv %text.2 %tmp.107;
+        symbol [ text %text.2 147 12 16 ];
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_145_15_148_8_stop:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_141_8_148_8_if_end:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 149 8 ]
+        %tmp.108 = lgetv %text.2;
+        symbol [ text %tmp.108 149 15 19 ];
+        ret %tmp.108;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_115_61_150_4_stop:
+    }
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 152; @symbol_functiondef = [printMoment,152,20,31]; @symbol_param<0> = [moment,152,32,38]; ]
+    static
+    function printMoment(moment) {
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_152_40_156_4_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 153 8 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_152_40_156_4_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_152_40_156_4_stop" ]
+        %info.1 = local;
+        symbol [ info %info.1 153 12 16 ];
+        symbol [ Time %tmp.1 153 19 23 ];
+        %tmp.1 = getm $.Toybox.Time;
+        symbol [ Gregorian %tmp.2 153 24 33 ];
+        %tmp.2 = getv %tmp.1 :Gregorian;
+        symbol [ info %tmp.3 153 34 38 ];
+        %tmp.3 = getv function %tmp.2 :info;
+        %tmp.4 = lgetv %moment;
+        symbol [ moment %tmp.4 153 39 45 ];
+        symbol [ Time %tmp.5 153 47 51 ];
+        %tmp.5 = getm $.Toybox.Time;
+        symbol [ FORMAT_SHORT %tmp.6 153 52 64 ];
+        %tmp.6 = getv %tmp.5 :FORMAT_SHORT;
+        %tmp.7 = invoke %tmp.2 %tmp.3(%tmp.4, %tmp.6);
+        lputv %info.1 %tmp.7;
+        symbol [ info %info.1 153 12 16 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 154 8 ]
+        %tmp.8 = lgetv %info.1;
+        symbol [ info %tmp.8 154 15 19 ];
+        symbol [ day %tmp.9 154 20 23 ];
+        %tmp.9 = getv %tmp.8 :day;
+        symbol [ format %tmp.10 154 24 30 ];
+        %tmp.10 = getv function %tmp.9 :format;
+        %tmp.11 = "%02d";
+        %tmp.12 = invoke %tmp.9 %tmp.10(%tmp.11);
+        %tmp.13 = ".";
+        %tmp.14 = add %tmp.12 %tmp.13;
+        %tmp.15 = lgetv %info.1;
+        symbol [ info %tmp.15 154 47 51 ];
+        symbol [ month %tmp.16 154 52 57 ];
+        %tmp.16 = getv %tmp.15 :month;
+        symbol [ format %tmp.17 154 58 64 ];
+        %tmp.17 = getv function %tmp.16 :format;
+        %tmp.18 = "%02d";
+        %tmp.19 = invoke %tmp.16 %tmp.17(%tmp.18);
+        %tmp.20 = add %tmp.14 %tmp.19;
+        %tmp.21 = ".";
+        %tmp.22 = add %tmp.20 %tmp.21;
+        %tmp.23 = lgetv %info.1;
+        symbol [ info %tmp.23 154 81 85 ];
+        symbol [ year %tmp.24 154 86 90 ];
+        %tmp.24 = getv %tmp.23 :year;
+        symbol [ toString %tmp.25 154 91 99 ];
+        %tmp.25 = getv function %tmp.24 :toString;
+        %tmp.26 = invoke %tmp.24 %tmp.25();
+        %tmp.27 = add %tmp.22 %tmp.26;
+        %tmp.28 = " ";
+        %tmp.29 = add %tmp.27 %tmp.28;
+        %tmp.30 = lgetv %info.1;
+        symbol [ info %tmp.30 155 20 24 ];
+        symbol [ hour %tmp.31 155 25 29 ];
+        %tmp.31 = getv %tmp.30 :hour;
+        symbol [ format %tmp.32 155 30 36 ];
+        %tmp.32 = getv function %tmp.31 :format;
+        %tmp.33 = "%02d";
+        %tmp.34 = invoke %tmp.31 %tmp.32(%tmp.33);
+        %tmp.35 = add %tmp.29 %tmp.34;
+        %tmp.36 = ":";
+        %tmp.37 = add %tmp.35 %tmp.36;
+        %tmp.38 = lgetv %info.1;
+        symbol [ info %tmp.38 155 53 57 ];
+        symbol [ min %tmp.39 155 58 61 ];
+        %tmp.39 = getv %tmp.38 :min;
+        symbol [ format %tmp.40 155 62 68 ];
+        %tmp.40 = getv function %tmp.39 :format;
+        %tmp.41 = "%02d";
+        %tmp.42 = invoke %tmp.39 %tmp.40(%tmp.41);
+        %tmp.43 = add %tmp.37 %tmp.42;
+        %tmp.44 = ":";
+        %tmp.45 = add %tmp.43 %tmp.44;
+        %tmp.46 = lgetv %info.1;
+        symbol [ info %tmp.46 155 85 89 ];
+        symbol [ sec %tmp.47 155 90 93 ];
+        %tmp.47 = getv %tmp.46 :sec;
+        symbol [ format %tmp.48 155 94 100 ];
+        %tmp.48 = getv function %tmp.47 :format;
+        %tmp.49 = "%02d";
+        %tmp.50 = invoke %tmp.47 %tmp.48(%tmp.49);
+        %tmp.51 = add %tmp.45 %tmp.50;
+        ret %tmp.51;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_152_40_156_4_stop:
+    }
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 158; test = true; @symbol_functiondef = [testCalc,158,28,36]; @symbol_param<0> = [logger,158,37,43]; ]
+    static
+    function testCalc(logger) {
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_158_45_202_4_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 160 8 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_158_45_202_4_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_158_45_202_4_stop" ]
+        %testMatrix.1 = local;
+        symbol [ testMatrix %testMatrix.1 160 12 22 ];
+        %tmp.1 = newa 12;
+        %tmp.2 = newa 5;
+        %tmp.3 = 1496310905;
+        %tmp.4 = dup %tmp.2;
+        %tmp.5 = aputv %tmp.4 0 %tmp.3;
+        %tmp.6 = 48.1009616;
+        %tmp.7 = dup %tmp.5;
+        %tmp.8 = aputv %tmp.7 1 %tmp.6;
+        %tmp.9 = 11.759784;
+        %tmp.10 = dup %tmp.8;
+        %tmp.11 = aputv %tmp.10 2 %tmp.9;
+        symbol [ NOON %tmp.13 161 49 53 ];
+        %tmp.13 = getv ? :NOON;
+        %tmp.14 = dup %tmp.11;
+        %tmp.15 = aputv %tmp.14 3 %tmp.13;
+        %tmp.16 = 1496315468;
+        %tmp.17 = dup %tmp.15;
+        %tmp.18 = aputv %tmp.17 4 %tmp.16;
+        %tmp.19 = dup %tmp.1;
+        %tmp.20 = aputv %tmp.19 0 %tmp.18;
+        %tmp.21 = newa 5;
+        %tmp.22 = 1496310905;
+        %tmp.23 = dup %tmp.21;
+        %tmp.24 = aputv %tmp.23 0 %tmp.22;
+        %tmp.25 = 70.6632359;
+        %tmp.26 = dup %tmp.24;
+        %tmp.27 = aputv %tmp.26 1 %tmp.25;
+        %tmp.28 = 23.681726;
+        %tmp.29 = dup %tmp.27;
+        %tmp.30 = aputv %tmp.29 2 %tmp.28;
+        symbol [ NOON %tmp.32 162 49 53 ];
+        %tmp.32 = getv ? :NOON;
+        %tmp.33 = dup %tmp.30;
+        %tmp.34 = aputv %tmp.33 3 %tmp.32;
+        %tmp.35 = 1496312606;
+        %tmp.36 = dup %tmp.34;
+        %tmp.37 = aputv %tmp.36 4 %tmp.35;
+        %tmp.38 = dup %tmp.20;
+        %tmp.39 = aputv %tmp.38 1 %tmp.37;
+        %tmp.40 = newa 5;
+        %tmp.41 = 1496310905;
+        %tmp.42 = dup %tmp.40;
+        %tmp.43 = aputv %tmp.42 0 %tmp.41;
+        %tmp.44 = 70.6632359;
+        %tmp.45 = dup %tmp.43;
+        %tmp.46 = aputv %tmp.45 1 %tmp.44;
+        %tmp.47 = 23.681726;
+        %tmp.48 = dup %tmp.46;
+        %tmp.49 = aputv %tmp.48 2 %tmp.47;
+        symbol [ SUNSET %tmp.51 163 49 55 ];
+        %tmp.51 = getv ? :SUNSET;
+        %tmp.52 = dup %tmp.49;
+        %tmp.53 = aputv %tmp.52 3 %tmp.51;
+        %tmp.54 = null;
+        %tmp.55 = dup %tmp.53;
+        %tmp.56 = aputv %tmp.55 4 %tmp.54;
+        %tmp.57 = dup %tmp.39;
+        %tmp.58 = aputv %tmp.57 2 %tmp.56;
+        %tmp.59 = newa 5;
+        %tmp.60 = 1496310905;
+        %tmp.61 = dup %tmp.59;
+        %tmp.62 = aputv %tmp.61 0 %tmp.60;
+        %tmp.63 = 70.6632359;
+        %tmp.64 = dup %tmp.62;
+        %tmp.65 = aputv %tmp.64 1 %tmp.63;
+        %tmp.66 = 23.681726;
+        %tmp.67 = dup %tmp.65;
+        %tmp.68 = aputv %tmp.67 2 %tmp.66;
+        symbol [ SUNRISE %tmp.70 164 49 56 ];
+        %tmp.70 = getv ? :SUNRISE;
+        %tmp.71 = dup %tmp.68;
+        %tmp.72 = aputv %tmp.71 3 %tmp.70;
+        %tmp.73 = null;
+        %tmp.74 = dup %tmp.72;
+        %tmp.75 = aputv %tmp.74 4 %tmp.73;
+        %tmp.76 = dup %tmp.58;
+        %tmp.77 = aputv %tmp.76 3 %tmp.75;
+        %tmp.78 = newa 5;
+        %tmp.79 = 1496310905;
+        %tmp.80 = dup %tmp.78;
+        %tmp.81 = aputv %tmp.80 0 %tmp.79;
+        %tmp.82 = 70.6632359;
+        %tmp.83 = dup %tmp.81;
+        %tmp.84 = aputv %tmp.83 1 %tmp.82;
+        %tmp.85 = 23.681726;
+        %tmp.86 = dup %tmp.84;
+        %tmp.87 = aputv %tmp.86 2 %tmp.85;
+        symbol [ ASTRO_DAWN %tmp.89 165 49 59 ];
+        %tmp.89 = getv ? :ASTRO_DAWN;
+        %tmp.90 = dup %tmp.87;
+        %tmp.91 = aputv %tmp.90 3 %tmp.89;
+        %tmp.92 = null;
+        %tmp.93 = dup %tmp.91;
+        %tmp.94 = aputv %tmp.93 4 %tmp.92;
+        %tmp.95 = dup %tmp.77;
+        %tmp.96 = aputv %tmp.95 4 %tmp.94;
+        %tmp.97 = newa 5;
+        %tmp.98 = 1496310905;
+        %tmp.99 = dup %tmp.97;
+        %tmp.100 = aputv %tmp.99 0 %tmp.98;
+        %tmp.101 = 70.6632359;
+        %tmp.102 = dup %tmp.100;
+        %tmp.103 = aputv %tmp.102 1 %tmp.101;
+        %tmp.104 = 23.681726;
+        %tmp.105 = dup %tmp.103;
+        %tmp.106 = aputv %tmp.105 2 %tmp.104;
+        symbol [ NAUTIC_DAWN %tmp.108 166 49 60 ];
+        %tmp.108 = getv ? :NAUTIC_DAWN;
+        %tmp.109 = dup %tmp.106;
+        %tmp.110 = aputv %tmp.109 3 %tmp.108;
+        %tmp.111 = null;
+        %tmp.112 = dup %tmp.110;
+        %tmp.113 = aputv %tmp.112 4 %tmp.111;
+        %tmp.114 = dup %tmp.96;
+        %tmp.115 = aputv %tmp.114 5 %tmp.113;
+        %tmp.116 = newa 5;
+        %tmp.117 = 1496310905;
+        %tmp.118 = dup %tmp.116;
+        %tmp.119 = aputv %tmp.118 0 %tmp.117;
+        %tmp.120 = 70.6632359;
+        %tmp.121 = dup %tmp.119;
+        %tmp.122 = aputv %tmp.121 1 %tmp.120;
+        %tmp.123 = 23.681726;
+        %tmp.124 = dup %tmp.122;
+        %tmp.125 = aputv %tmp.124 2 %tmp.123;
+        symbol [ DAWN %tmp.127 167 49 53 ];
+        %tmp.127 = getv ? :DAWN;
+        %tmp.128 = dup %tmp.125;
+        %tmp.129 = aputv %tmp.128 3 %tmp.127;
+        %tmp.130 = null;
+        %tmp.131 = dup %tmp.129;
+        %tmp.132 = aputv %tmp.131 4 %tmp.130;
+        %tmp.133 = dup %tmp.115;
+        %tmp.134 = aputv %tmp.133 6 %tmp.132;
+        %tmp.135 = newa 5;
+        %tmp.136 = 1483225200;
+        %tmp.137 = dup %tmp.135;
+        %tmp.138 = aputv %tmp.137 0 %tmp.136;
+        %tmp.139 = 70.6632359;
+        %tmp.140 = dup %tmp.138;
+        %tmp.141 = aputv %tmp.140 1 %tmp.139;
+        %tmp.142 = 23.681726;
+        %tmp.143 = dup %tmp.141;
+        %tmp.144 = aputv %tmp.143 2 %tmp.142;
+        symbol [ SUNRISE %tmp.146 168 49 56 ];
+        %tmp.146 = getv ? :SUNRISE;
+        %tmp.147 = dup %tmp.144;
+        %tmp.148 = aputv %tmp.147 3 %tmp.146;
+        %tmp.149 = null;
+        %tmp.150 = dup %tmp.148;
+        %tmp.151 = aputv %tmp.150 4 %tmp.149;
+        %tmp.152 = dup %tmp.134;
+        %tmp.153 = aputv %tmp.152 7 %tmp.151;
+        %tmp.154 = newa 5;
+        %tmp.155 = 1483225200;
+        %tmp.156 = dup %tmp.154;
+        %tmp.157 = aputv %tmp.156 0 %tmp.155;
+        %tmp.158 = 70.6632359;
+        %tmp.159 = dup %tmp.157;
+        %tmp.160 = aputv %tmp.159 1 %tmp.158;
+        %tmp.161 = 23.681726;
+        %tmp.162 = dup %tmp.160;
+        %tmp.163 = aputv %tmp.162 2 %tmp.161;
+        symbol [ NOON %tmp.165 169 49 53 ];
+        %tmp.165 = getv ? :NOON;
+        %tmp.166 = dup %tmp.163;
+        %tmp.167 = aputv %tmp.166 3 %tmp.165;
+        %tmp.168 = 1483266532;
+        %tmp.169 = dup %tmp.167;
+        %tmp.170 = aputv %tmp.169 4 %tmp.168;
+        %tmp.171 = dup %tmp.153;
+        %tmp.172 = aputv %tmp.171 8 %tmp.170;
+        %tmp.173 = newa 5;
+        %tmp.174 = 1483225200;
+        %tmp.175 = dup %tmp.173;
+        %tmp.176 = aputv %tmp.175 0 %tmp.174;
+        %tmp.177 = 70.6632359;
+        %tmp.178 = dup %tmp.176;
+        %tmp.179 = aputv %tmp.178 1 %tmp.177;
+        %tmp.180 = 23.681726;
+        %tmp.181 = dup %tmp.179;
+        %tmp.182 = aputv %tmp.181 2 %tmp.180;
+        symbol [ ASTRO_DAWN %tmp.184 170 49 59 ];
+        %tmp.184 = getv ? :ASTRO_DAWN;
+        %tmp.185 = dup %tmp.182;
+        %tmp.186 = aputv %tmp.185 3 %tmp.184;
+        %tmp.187 = 1483247635;
+        %tmp.188 = dup %tmp.186;
+        %tmp.189 = aputv %tmp.188 4 %tmp.187;
+        %tmp.190 = dup %tmp.172;
+        %tmp.191 = aputv %tmp.190 9 %tmp.189;
+        %tmp.192 = newa 5;
+        %tmp.193 = 1483225200;
+        %tmp.194 = dup %tmp.192;
+        %tmp.195 = aputv %tmp.194 0 %tmp.193;
+        %tmp.196 = 70.6632359;
+        %tmp.197 = dup %tmp.195;
+        %tmp.198 = aputv %tmp.197 1 %tmp.196;
+        %tmp.199 = 23.681726;
+        %tmp.200 = dup %tmp.198;
+        %tmp.201 = aputv %tmp.200 2 %tmp.199;
+        symbol [ NAUTIC_DAWN %tmp.203 171 49 60 ];
+        %tmp.203 = getv ? :NAUTIC_DAWN;
+        %tmp.204 = dup %tmp.201;
+        %tmp.205 = aputv %tmp.204 3 %tmp.203;
+        %tmp.206 = 1483252565;
+        %tmp.207 = dup %tmp.205;
+        %tmp.208 = aputv %tmp.207 4 %tmp.206;
+        %tmp.209 = dup %tmp.191;
+        %tmp.210 = aputv %tmp.209 10 %tmp.208;
+        %tmp.211 = newa 5;
+        %tmp.212 = 1483225200;
+        %tmp.213 = dup %tmp.211;
+        %tmp.214 = aputv %tmp.213 0 %tmp.212;
+        %tmp.215 = 70.6632359;
+        %tmp.216 = dup %tmp.214;
+        %tmp.217 = aputv %tmp.216 1 %tmp.215;
+        %tmp.218 = 23.681726;
+        %tmp.219 = dup %tmp.217;
+        %tmp.220 = aputv %tmp.219 2 %tmp.218;
+        symbol [ DAWN %tmp.222 172 49 53 ];
+        %tmp.222 = getv ? :DAWN;
+        %tmp.223 = dup %tmp.220;
+        %tmp.224 = aputv %tmp.223 3 %tmp.222;
+        %tmp.225 = 1483259336;
+        %tmp.226 = dup %tmp.224;
+        %tmp.227 = aputv %tmp.226 4 %tmp.225;
+        %tmp.228 = dup %tmp.210;
+        %tmp.229 = aputv %tmp.228 11 %tmp.227;
+        lputv %testMatrix.1 %tmp.229;
+        symbol [ testMatrix %testMatrix.1 160 12 22 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 175 8 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_158_45_202_4_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_158_45_202_4_stop" ]
+        %sc.2 = local;
+        symbol [ sc %sc.2 175 12 14 ];
+        symbol [ SunCalc %tmp.233 175 21 28 ];
+        %tmp.233 = getv ? :SunCalc;
+        %tmp.230 = newc %tmp.233 ();
+        lputv %sc.2 %tmp.230;
+        symbol [ sc %sc.2 175 12 14 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 176 8 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_158_45_202_4_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_158_45_202_4_stop" ]
+        %moment.3 = local;
+        symbol [ moment %moment.3 176 12 18 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 178 8 ]
+        for @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_178_8_199_8_for_test @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_178_8_199_8_for_incr @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_178_8_199_8_for_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_178_8_199_8_for_init:
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_178_8_199_8_for_begin" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_178_8_199_8_for_end" ]
+        %i.4 = local;
+        symbol [ i %i.4 178 17 18 ];
+        %tmp.234 = 0;
+        lputv %i.4 %tmp.234;
+        symbol [ i %i.4 178 17 18 ];
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_178_8_199_8_for_test:
+        %tmp.235 = lgetv %i.4;
+        symbol [ i %tmp.235 178 24 25 ];
+        %tmp.236 = lgetv %testMatrix.1;
+        symbol [ testMatrix %tmp.236 178 28 38 ];
+        symbol [ size %tmp.237 178 39 43 ];
+        %tmp.237 = getv function %tmp.236 :size;
+        %tmp.238 = invoke %tmp.236 %tmp.237();
+        %tmp.239 = lt %tmp.235 %tmp.238;
+        bf %tmp.239 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_178_8_199_8_for_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_178_8_199_8_for_begin:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_178_52_199_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 179 12 ]
+        %tmp.240 = lgetv %sc.2;
+        symbol [ sc %tmp.240 179 21 23 ];
+        symbol [ calculate %tmp.241 179 24 33 ];
+        %tmp.241 = getv function %tmp.240 :calculate;
+        symbol [ Time %tmp.244 179 38 42 ];
+        %tmp.244 = getm $.Toybox.Time;
+        symbol [ Moment %tmp.245 179 43 49 ];
+        %tmp.245 = getv function ? %tmp.244 :Moment;
+        %tmp.246 = lgetv %testMatrix.1;
+        symbol [ testMatrix %tmp.246 179 50 60 ];
+        %tmp.247 = lgetv %i.4;
+        symbol [ i %tmp.247 179 61 62 ];
+        %tmp.248 = agetv %tmp.246 %tmp.247;
+        %tmp.249 = 0;
+        %tmp.250 = agetv %tmp.248 %tmp.249;
+        %tmp.242 = newc %tmp.245 (%tmp.250);
+        symbol [ Pos %tmp.253 180 38 41 ];
+        %tmp.253 = getm $.Toybox.Position;
+        symbol [ Location %tmp.254 180 42 50 ];
+        %tmp.254 = getv function ? %tmp.253 :Location;
+        %tmp.255 = newd 3;
+        %tmp.257 = const :latitude;
+        symbol [ latitude %tmp.257 181 41 49 const ];
+        %tmp.258 = lgetv %testMatrix.1;
+        symbol [ testMatrix %tmp.258 181 53 63 ];
+        %tmp.259 = lgetv %i.4;
+        symbol [ i %tmp.259 181 64 65 ];
+        %tmp.260 = agetv %tmp.258 %tmp.259;
+        %tmp.261 = 1;
+        %tmp.262 = agetv %tmp.260 %tmp.261;
+        %tmp.263 = dup %tmp.255;
+        %tmp.264 = aputv %tmp.263 %tmp.257 %tmp.262;
+        %tmp.266 = const :longitude;
+        symbol [ longitude %tmp.266 181 72 81 const ];
+        %tmp.267 = lgetv %testMatrix.1;
+        symbol [ testMatrix %tmp.267 181 85 95 ];
+        %tmp.268 = lgetv %i.4;
+        symbol [ i %tmp.268 181 96 97 ];
+        %tmp.269 = agetv %tmp.267 %tmp.268;
+        %tmp.270 = 2;
+        %tmp.271 = agetv %tmp.269 %tmp.270;
+        %tmp.272 = dup %tmp.264;
+        %tmp.273 = aputv %tmp.272 %tmp.266 %tmp.271;
+        %tmp.275 = const :format;
+        symbol [ format %tmp.275 181 104 110 const ];
+        %tmp.277 = const :degrees;
+        symbol [ degrees %tmp.277 181 115 122 const ];
+        %tmp.278 = dup %tmp.273;
+        %tmp.279 = aputv %tmp.278 %tmp.275 %tmp.277;
+        %tmp.280 = invoke %tmp.253 %tmp.254(%tmp.279);
+        symbol [ toRadians %tmp.281 182 40 49 ];
+        %tmp.281 = getv function ? %tmp.280 :toRadians;
+        %tmp.251 = newc %tmp.281 ();
+        %tmp.282 = lgetv %testMatrix.1;
+        symbol [ testMatrix %tmp.282 183 34 44 ];
+        %tmp.283 = lgetv %i.4;
+        symbol [ i %tmp.283 183 45 46 ];
+        %tmp.284 = agetv %tmp.282 %tmp.283;
+        %tmp.285 = 3;
+        %tmp.286 = agetv %tmp.284 %tmp.285;
+        %tmp.287 = invoke %tmp.240 %tmp.241(%tmp.242, %tmp.251, %tmp.286);
+        lputv %moment.3 %tmp.287;
+        symbol [ moment %moment.3 179 12 18 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 185 12 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_185_12_198_12_if_stmt:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_185_19_186_84_begin:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_185_20_185_59_begin:
+        %tmp.288 = lgetv %moment.3;
+        symbol [ moment %tmp.288 185 20 26 ];
+        %tmp.289 = null;
+        %tmp.290 = eq %tmp.288 %tmp.289;
+        bf %tmp.290 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_186_22_186_84_false;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_185_39_185_59_true:
+        %tmp.291 = lgetv %testMatrix.1;
+        symbol [ testMatrix %tmp.291 185 39 49 ];
+        %tmp.292 = lgetv %i.4;
+        symbol [ i %tmp.292 185 50 51 ];
+        %tmp.293 = agetv %tmp.291 %tmp.292;
+        %tmp.294 = 4;
+        %tmp.295 = agetv %tmp.293 %tmp.294;
+        %tmp.296 = lgetv %moment.3;
+        symbol [ moment %tmp.296 185 59 65 ];
+        %tmp.297 = as %tmp.296 { (Null) };
+        %tmp.298 = ne %tmp.295 %tmp.297;
+        push %tmp.298;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_185_39_185_59_end:
+        %tmp.299 = phi [%tmp.290 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_185_20_185_59_begin] [%tmp.298 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_185_39_185_59_true] [%tmp.299 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_185_39_185_59_end];
+        bt %tmp.299 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_185_12_198_12_if_true;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_186_22_186_84_false:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_186_23_186_83_begin:
+        %tmp.300 = lgetv %moment.3;
+        symbol [ moment %tmp.300 186 23 29 ];
+        %tmp.301 = null;
+        %tmp.302 = ne %tmp.300 %tmp.301;
+        bf %tmp.302 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_185_12_198_12_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_186_41_186_83_true:
+        %tmp.303 = lgetv %moment.3;
+        symbol [ moment %tmp.303 186 41 47 ];
+        %tmp.304 = as %tmp.303 { (!Null) };
+        symbol [ value %tmp.305 186 48 53 ];
+        %tmp.305 = getv function %tmp.304 :value;
+        %tmp.306 = invoke %tmp.304 %tmp.305();
+        symbol [ toLong %tmp.307 186 56 62 ];
+        %tmp.307 = getv function %tmp.306 :toLong;
+        %tmp.308 = invoke %tmp.306 %tmp.307();
+        %tmp.309 = lgetv %testMatrix.1;
+        symbol [ testMatrix %tmp.309 186 68 78 ];
+        %tmp.310 = lgetv %i.4;
+        symbol [ i %tmp.310 186 79 80 ];
+        %tmp.311 = agetv %tmp.309 %tmp.310;
+        %tmp.312 = 4;
+        %tmp.313 = agetv %tmp.311 %tmp.312;
+        %tmp.314 = ne %tmp.308 %tmp.313;
+        push %tmp.314;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_186_41_186_83_end:
+        %tmp.315 = phi [%tmp.302 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_186_23_186_83_begin] [%tmp.314 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_186_41_186_83_true] [%tmp.315 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_186_41_186_83_end];
+        push %tmp.315;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_186_22_186_84_end:
+        %tmp.316 = phi [%tmp.299 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_185_19_186_84_begin] [%tmp.315 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_186_22_186_84_false] [%tmp.316 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_186_22_186_84_end];
+        bf %tmp.316 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_185_12_198_12_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_185_12_198_12_if_true:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_186_87_198_12_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 187 16 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_186_87_198_12_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_186_87_198_12_stop" ]
+        %val.5 = local;
+        symbol [ val %val.5 187 20 23 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 189 16 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_189_16_193_16_if_stmt:
+        %tmp.317 = lgetv %moment.3;
+        symbol [ moment %tmp.317 189 20 26 ];
+        %tmp.318 = as %tmp.317 { (Null || !Null) };
+        %tmp.319 = null;
+        %tmp.320 = eq %tmp.318 %tmp.319;
+        bf %tmp.320 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_189_16_193_16_if_else_false;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_189_16_193_16_if_true:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_189_36_191_16_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 190 20 ]
+        %tmp.321 = "null";
+        lputv %val.5 %tmp.321;
+        symbol [ val %val.5 190 20 23 ];
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_189_36_191_16_stop:
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_189_16_193_16_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_189_16_193_16_if_else_false:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_191_23_193_16_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 192 20 ]
+        %tmp.322 = lgetv %moment.3;
+        symbol [ moment %tmp.322 192 27 33 ];
+        %tmp.323 = as %tmp.322 { (Null || !Null) && (!Null) };
+        %tmp.324 = as %tmp.323 Time.Moment;
+        symbol [ Time %tmp.324 192 37 41 ];
+        symbol [ Moment %tmp.324 192 42 48 ];
+        symbol [ value %tmp.325 192 50 55 ];
+        %tmp.325 = getv function %tmp.324 :value;
+        %tmp.326 = invoke %tmp.324 %tmp.325();
+        symbol [ toLong %tmp.327 192 58 64 ];
+        %tmp.327 = getv function %tmp.326 :toLong;
+        %tmp.328 = invoke %tmp.326 %tmp.327();
+        lputv %val.5 %tmp.328;
+        symbol [ val %val.5 192 20 23 ];
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_191_23_193_16_stop:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_189_16_193_16_if_end:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 195 16 ]
+        %tmp.329 = lgetv %logger;
+        symbol [ logger %tmp.329 195 16 22 ];
+        symbol [ debug %tmp.330 195 23 28 ];
+        %tmp.330 = getv function %tmp.329 :debug;
+        %tmp.331 = "Expected ";
+        %tmp.332 = lgetv %testMatrix.1;
+        symbol [ testMatrix %tmp.332 195 43 53 ];
+        %tmp.333 = lgetv %i.4;
+        symbol [ i %tmp.333 195 54 55 ];
+        %tmp.334 = agetv %tmp.332 %tmp.333;
+        %tmp.335 = 4;
+        %tmp.336 = agetv %tmp.334 %tmp.335;
+        %tmp.337 = add %tmp.331 %tmp.336;
+        %tmp.338 = " but got: ";
+        %tmp.339 = add %tmp.337 %tmp.338;
+        %tmp.340 = lgetv %val.5;
+        symbol [ val %tmp.340 195 77 80 ];
+        %tmp.341 = add %tmp.339 %tmp.340;
+        invoke %tmp.329 %tmp.330(%tmp.341);
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 196 16 ]
+        %tmp.342 = lgetv %logger;
+        symbol [ logger %tmp.342 196 16 22 ];
+        symbol [ debug %tmp.343 196 23 28 ];
+        %tmp.343 = getv function %tmp.342 :debug;
+        %tmp.344 = self;
+        symbol [ printMoment %tmp.345 196 29 40 ];
+        %tmp.345 = getv function %tmp.344 :printMoment;
+        %tmp.346 = lgetv %moment.3;
+        symbol [ moment %tmp.346 196 41 47 ];
+        %tmp.347 = as %tmp.346 { (Null || !Null) };
+        %tmp.348 = invoke %tmp.344 %tmp.345(%tmp.347);
+        invoke %tmp.342 %tmp.343(%tmp.348);
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 197 16 ]
+        %tmp.349 = false;
+        ret %tmp.349;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_186_87_198_12_stop:
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_185_12_198_12_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_185_12_198_12_if_end:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_178_52_199_8_stop:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_178_8_199_8_for_incr:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 178 ]
+        %tmp.352 = lgetv %i.4;
+        symbol [ i %tmp.352 178 47 48 ];
+        %tmp.353 = add %tmp.352 1;
+        lputv %i.4 %tmp.353;
+        symbol [ i %i.4 178 47 48 ];
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_178_8_199_8_for_test;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_178_8_199_8_for_end:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc" 201 8 ]
+        %tmp.354 = true;
+        ret %tmp.354;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_SunCalc_mc_158_45_202_4_stop:
+    }
+}
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\SunCalc.mc"; @line = 1; ]
+<init> {
+}

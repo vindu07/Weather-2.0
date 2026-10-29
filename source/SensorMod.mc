@@ -66,8 +66,6 @@ module SensorMod{
         ICON_TEMPERATURE = "B",  
         ICON_HUMIDITY = "C" 
     }
-
-   
     
     function getSensorDataAndTitle(sensor as Sensortype) as [Lang.String?, Lang.String]{
 
@@ -251,9 +249,6 @@ module SensorMod{
         return ICON_PHONE_DISCONNECTED;
     }
 
-      
- 
-
     function getAlt() as Lang.String{
             
         var altUnit = System.getDeviceSettings().elevationUnits;
@@ -357,7 +352,6 @@ module SensorMod{
         }
         catch(ex){
             System.error("ERROR -- SensorMod.getHum -- " + ex.getErrorMessage());
-            return "--";
         }
     }
     function getDist() as Lang.String{

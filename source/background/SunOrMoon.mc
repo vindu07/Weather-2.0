@@ -15,7 +15,6 @@ class SunOrMoon extends Ui.Drawable {
 
     var SunPosition;
 
-    private var fallback_position;
 
     private var changeSunPosition;
     private var changeMoonPhase;
@@ -96,7 +95,7 @@ class SunOrMoon extends Ui.Drawable {
         if(updateBackground){
             
             position = getSunPosition(dc) as sunPosition;
-            self.SunPosition = position;
+            self.SunPosition = position as Lang.Dictionary;
         }
         
         dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
@@ -110,7 +109,7 @@ class SunOrMoon extends Ui.Drawable {
         var x, y;
 
         if(changeSunPosition){
-            var sunAngle = Astronomy.getSunAngle(Time.now(), fallback_position);
+            var sunAngle = Astronomy.getSunAngle(Time.now());
 
             x = _xCenter - R*Math.cos(sunAngle);
             y = _yCenter - R*Math.sin(sunAngle);
@@ -127,7 +126,6 @@ class SunOrMoon extends Ui.Drawable {
         try{
             var lat = Properties.getValue("DefaultPositionLat");
             var lon = Properties.getValue("DefaultPositionLon");
-            fallback_position = [(lat != null) ? lat : 51.5, (lon != null) ? lon : 0.001];
             
             var changeSun = Properties.getValue("DynamicSunPosition");
             changeSunPosition = (changeSun != null) ? changeSun : true;
@@ -140,7 +138,6 @@ class SunOrMoon extends Ui.Drawable {
         }
         catch(ex){
             System.println("ERROR -- SunOrMoon.getAppSettings -- " + ex.getErrorMessage());
-            fallback_position = [51.5, 0.001];
             changeSunPosition = true;
             energySavingMode = false;
         }

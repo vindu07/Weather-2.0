@@ -7,6 +7,7 @@ using Toybox.WatchUi;
 using Toybox.Graphics as Gfx;
 
 
+
 var BackgroundUpdateInterval = 10;
 var AstronomyUpdateInterval = 120;
 
@@ -48,16 +49,15 @@ class DynamicWatchfaceView extends WatchUi.WatchFace {
             updateBackground = true;
         }
 
-        if(minSinceAppStart % AstronomyUpdateInterval == 0){ // Start and every n min
+        if(minSinceAppStart % AstronomyUpdateInterval == 0){ // Start and every x min
             Astronomy.refreshData(fallback_position);
         }
-        if(minSinceAppStart % BackgroundUpdateInterval == 0){ // Start and every n min
+        if(minSinceAppStart % BackgroundUpdateInterval == 0){ // Start and every x min
             updateBackground = true;
         }
 
         if(!ISHIGHPOWERON){
             minSinceAppStart += 1; // update the minute counter
-            System.println(minSinceAppStart);
         }
         
         View.onUpdate(dc); // redraw the screen

@@ -1,3 +1,17 @@
+###### v1.12 (2026/09/24)
+
+
+
+\-More accurate sun events calculation thanks to SunCalc
+
+\-Sunrise/sunset time should now be correct (hopefully)
+
+\-Long press to weather, calendar, training status
+
+###### 
+
+###### 
+
 ###### v1.11 (2026/03/25)
 
 

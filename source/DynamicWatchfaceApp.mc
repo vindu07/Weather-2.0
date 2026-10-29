@@ -12,7 +12,7 @@ class DynamicWatchfaceApp extends Application.AppBase {
 
     // Return the initial view of your application here
     function getInitialView() as [WatchUi.Views] or [WatchUi.Views, WatchUi.InputDelegates] {
-        return [ new DynamicWatchfaceView() ];
+        return [ new DynamicWatchfaceView(), new DynamicWatchfaceDelegate() ];
     }
 
     // New app settings have been received so trigger a UI update

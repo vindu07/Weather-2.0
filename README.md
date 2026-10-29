@@ -1,15 +1,16 @@
-Here is the source code of my watch face called "Weather 2.0", which I have loaded on garmin's Connect IQ Store at the following link: https://apps.garmin.com/apps/e755e7ff-1b08-46cc-bd74-e9a1cb46053f.
+Here is the source code of my watch face called "Weather 2.0", on the Connect IQ Store at the following link: https://apps.garmin.com/apps/e755e7ff-1b08-46cc-bd74-e9a1cb46053f.
 
-THIS IS NOT meant to be an example of how to write good Monkey C code, and I am NOT a professional programmer. 
-I loaded it on github mainly to keep trace of the different versions for recovery, which is not permitted on Connect IQ.
+DISCLAIMER:
+
+THIS IS NOT meant to be an example of how to write good Monkey C code, and I am not a professional programmer. 
 
 I TAKE NO RESPONSIBILITY FOR ANY MISUSE OF THIS CODE OR ANY DAMAGE TO DEVICES THAT MAY OCCUR.
 
 ----------------------------------------------------------------------------------------------------------------------------
 
-The main functionalities are:
+Main features:
 
--Dynamic background depending on the weather and time of the day
+-Dynamic background depending on weather and time of the day
 -Dynamic sun position throughout the day to give a visual reference of the time
 -4 background landscapes
 -Data fields on the bottom
@@ -19,17 +20,15 @@ The main functionalities are:
 
 ----------------------------------------------------------------------------------------------------------------------------
 
-Here is a brief description of how it works:
+How it works:
 
-- Due to the frequent null values returned by the Garmin APIs, I have created my own modules for the most important information, like the sunrise/sunset time and the moon phase.
-  These functions are simplified and return quite rough values, but at least they are never null.
 - Everything on the screen is an instance of a custom class that extends WatchUi.Drawable: they are declared in the layout.xml file and, after the initialization, at every update the draw() function is called.
 
 UPPER PART:
 
 - The sky is a rectangle filled with a different color depending on the time of day and the cloud cover. This information is provided by the Astronomy and WeatherMod modules.
 - The sun is a circle filled in yellow. The position in the sky is calculated from a proportion between the time elapsed since sunrise and the solar day duration.
-  The moon icon is drawn in a fixed position at night, with the correct phase (because the moonrise/set depend on the phase and could happen during the day, creating problems).
+- The moon icon is drawn in a fixed position at night.
 - The weather is based on a series of bitmaps in the resources/drawables/ folder. The condition is taken from WeatherMod module, and then the correct bitmaps are drawn on the screen.
 - The landscape is then drawn, and consists in a 280x280 pixel bitmap. Future updates should remove the black lower part to improve memory usage and reduce the app size.
 

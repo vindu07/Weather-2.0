@@ -43,7 +43,7 @@ class SecondsDisplay extends Ui.Drawable {
             var string = seconds.format("%02d");
 
 
-            // Cover first with black rectangle to avoid overlaps
+            // first cover with a black rectangle to avoid overlaps
             
             dc.setClip(_x, _y, _width, _height);
             dc.setColor(Gfx.COLOR_BLACK, Gfx.COLOR_TRANSPARENT);

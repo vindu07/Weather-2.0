@@ -10,71 +10,28 @@ module Astronomy{
 
     // Updated on every call to SunEvents or Moonphase
     var SunEvents as Lang.Dictionary = {:sunrise => 6.0, :sunset => 18.0, :solar_midday => 12.0};
-    var MoonPhase as MOON_PHASE = 0 as MOON_PHASE; 
+    var MoonPhase as MoonCalc.MOON_PHASE = 0 as MoonCalc.MOON_PHASE; 
 
 
     typedef SunPositionReturn as {
         :x as Lang.Number,
         :y as Lang.Number
     };
-    typedef SunEventsReturn as {
-        :sunrise as Lang.Numeric,
-        :sunset as Lang.Numeric,
-        :solar_midday as Lang.Numeric
-    };
 
-    enum MOON_PHASE {
+    // gets sun events from SunCalc
+    public function sunCalcEvents(Custom_Position as [Lang.Float, Lang.Float] or Null, Fallback_Position as [Lang.Float, Lang.Float] or Null){
 
-        MOON_PHASE_NEW_MOON,
-        MOON_PHASE_WAXING_CRESCENT,
-        MOON_PHASE_FIRST_QUARTER,
-        MOON_PHASE_WAXING_GIBBOUS,
-        MOON_PHASE_FULL_MOON,
-        MOON_PHASE_WANING_GIBBOUS,
-        MOON_PHASE_LAST_QUARTER,
-        MOON_PHASE_WANING_CRESCENT 
-    }
-
-    public function getApproxSunEvents(Custom_Position as [Lang.Float, Lang.Float] or Null, Fallback_Position as [Lang.Float, Lang.Float] or Null) as SunEventsReturn{
-        
-        // Calculation of sunrise, sunset, solar noon based on
-        // trigonometric calculations that approximate Earth's orbit as a circle
-        // and the Earth as a sphere.
-        //
-        // The calculation is based on the day of the year to compute solar declination
-        // and on latitude to calculate solar day duration, adding a correction
-        // to account for elliptical orbit
-        //
-        // Subsequently adds an offset due
-        // to the distance in longitude from the central meridian of the time zone
-        //
-        // Not very reliable but sufficiently accurate for watchface usage
-    
-        
         var returnValue = {:sunrise => 6.0, :sunset => 18.0, :solar_midday => 12.0};
-        
-        var Sunrise;
-        var Sunset;
-        var Midday;
 
         try{
-            var currentPosition;
-            var currentTime;
-            
+            var sc = new SunCalc();            
 
-            var halfDayDuration = 0 as Lang.Number;
-            var sunDeclination;
-            var latitude;
-            var timeZone;
-            var timeOffset;
-            var longitudeFromCentralMeridian;
-            var toRadians;
-            var dayOfYear;
-            var firstOfYear;
+            var currentPosition, currentTime;
+            var sunset_moment;
+            var sunrise_moment;
+            var noon_moment;
 
-            var isDaylightSaving;
-
-            // Position fallback: custom > GPS > settings > default (Greenwich)
+            // Position fallback: custom > GPS > fallback > default (Greenwich)
             if(Custom_Position != null){
                 currentPosition = new Position.Location({:latitude => Custom_Position[0], :longitude => Custom_Position[1], :format => :degrees});
             }
@@ -87,71 +44,37 @@ module Astronomy{
             else{
                 currentPosition = new Position.Location({:latitude => 51.5, :longitude => 0.001, :format => :degrees}); // Greenwich
             }
-            currentTime = Time.now();
 
-            firstOfYear = Greg.moment({:month => 1, :day => 1, :hour => 0, :minute => 0, :second => 0});
-            dayOfYear = (currentTime.compare(firstOfYear).abs() / Greg.SECONDS_PER_DAY) + 1 as Lang.Number;
+            //position to radians
+            var toRadians = currentPosition.toRadians() as [Lang.Double, Lang.Double];
 
-            timeZone = Math.round(currentPosition.toDegrees()[1] / 15) as Lang.Number; // approximately
-            
-            isDaylightSaving = Greg.localMoment(currentPosition, currentTime);
-            if(isDaylightSaving != null){
-                isDaylightSaving = isDaylightSaving.isDaylightSavingsTime();
-            }
-            else{
-                isDaylightSaving = false;
-            }
+            var lat = toRadians[0];
+            var lon = toRadians[1];
 
+            currentTime = Time.today();
 
-            toRadians = currentPosition.toRadians();
+            sunrise_moment = sc.calculate(currentTime, [lat, lon], sc.SUNRISE) as Time.Moment;
+            sunset_moment = sc.calculate(currentTime, [lat, lon], sc.SUNSET) as Time.Moment;
+            noon_moment = sc.calculate(currentTime, [lat, lon], sc.NOON) as Time.Moment;
 
-            latitude = toRadians[0] as Lang.Float;
-            longitudeFromCentralMeridian = (toRadians[1] - (timeZone*Math.PI/12)) as Lang.Float;
-            timeOffset = -1*(longitudeFromCentralMeridian*Greg.SECONDS_PER_DAY/(2*Math.PI))/3600; // Hours
-
-            sunDeclination = 0.4093*Math.sin((2*Math.PI/365)*(dayOfYear - 80)) as Lang.Float; // angle in radians
-            halfDayDuration = ((Math.acos(-1*Math.tan(latitude)*Math.tan(sunDeclination))/(2*Math.PI))*Greg.SECONDS_PER_DAY)/3600.toNumber() as Lang.Number; // half day duration in hours
-        
-            
-            // CORRECTION FOR ELLIPTICAL ORBIT (equation of time)
-            var B = 0, L = 0;
-            var timeCorrection = 0.0;
-
-            B = (2*Math.PI/365)*(dayOfYear - 81) as Lang.Float;
-            L = (2*Math.PI/365)*(dayOfYear - 3.5) as Lang.Float;
-
-            timeCorrection = -1*(7.65*Math.sin(B) - 9.86*Math.sin(2*L))/60 as Lang.Float; // in hours
+            //moment to decimal time format
+            sunrise_moment = formatTime(sunrise_moment);
+            sunset_moment = formatTime(sunset_moment);
+            noon_moment = formatTime(noon_moment);
 
 
-            // FORMAT VALUES => hours in decimal format for easier comparison
-            var hour12Today = 12.00;
+            returnValue = {:sunrise => sunrise_moment, :sunset => sunset_moment, :solar_midday => noon_moment};
 
-            Midday = hour12Today + timeOffset + timeCorrection as Lang.Float;
-            Sunrise = Midday - halfDayDuration as Lang.Float;
-            Sunset = Midday + halfDayDuration as Lang.Float;
-            
+            SunEvents[:sunrise] = sunrise_moment;
+            SunEvents[:sunset] = sunset_moment;
+            SunEvents[:solar_midday] = noon_moment;
 
-            if(isDaylightSaving){
-                // Daylight saving time
-                Sunrise += 1;
-                Sunset += 1;
-                Midday += 1;
-            }
-            
-
-            returnValue = {:sunrise => Sunrise, :sunset => Sunset, :solar_midday => Midday};
-
-            SunEvents[:sunrise] = Sunrise;
-            SunEvents[:sunset] = Sunset;
-            SunEvents[:solar_midday] = Midday;
-
+            return returnValue;
         }
         catch(ex){
-            System.println("ERROR -- Astronomy.getApproxSunEvents -- Line 215 -- " + ex);
+            System.println("ERROR - Astronomy.sunCalcEvents - " + ex);
+            return returnValue;
         }
-
-        return returnValue as SunEventsReturn;
-
     }
 
     // Function to validate position
@@ -170,14 +93,12 @@ module Astronomy{
     }
 
     // Angle (0 - 180°) based on the proportion of time since sunrise / day duration
-    public function getSunAngle(time as Time.Moment, fallback_position as [Lang.Float, Lang.Float] or Null) as Lang.Float{
+    public function getSunAngle(time as Time.Moment) as Lang.Float{
         // Angle in radians of the sun's position in the sky
         // 0 = sunrise, PI = sunset
 
-        self.refreshData(fallback_position);
-
         // time in hours with decimals
-        var normalizedTime = normalizeTime(time);
+        var normalizedTime = formatTime(time);
         
         var sunAngle = 0.0;
         var timeSinceSunrise = (normalizedTime - SunEvents[:sunrise]) as Lang.Float;
@@ -195,7 +116,7 @@ module Astronomy{
         var isDay = true;
 
         // time in hours with decimals
-        var normalizedTime = normalizeTime(time);
+        var normalizedTime = formatTime(time);
 
         var isAfterSunrise = (normalizedTime > SunEvents[:sunrise] - DELTA);
         var isBeforeSunset = (normalizedTime < SunEvents[:sunset] + DELTA);
@@ -213,7 +134,7 @@ module Astronomy{
         
 
         // time in hours with decimals
-        var normalizedTime = normalizeTime(time);
+        var normalizedTime = formatTime(time);
 
         var nearSunrise = (normalizedTime - SunEvents[:sunrise]).abs() < DELTA;
         var nearSunset = (normalizedTime - SunEvents[:sunset]).abs() < DELTA;
@@ -224,63 +145,44 @@ module Astronomy{
 
         return isTwilight;
     }
-    
-    // Current moon phase (0 - 7)
-    public function getMoonPhase(day as Time.Moment?) as MOON_PHASE{
-        // Approximation of moon phase by calculating moon age
-        // from a known new moon and the average duration
-        // of a lunar cycle -- not precise but sufficient for watchface
 
-        var returnValue = 0;
-                
-        if(day == null){
-            // day = Greg.moment({:year => 2026, :month => 1, :day => 18}); // debug
-            day = Time.now(); 
-        }
-   
-
-        try{
-
-            var medMoonLife = 29.53;
-            var knownMoon = Greg.moment({:year => 2020, :month => 1, :day => 24, :hour => 22, :minute => 42});
-
-        
-            var daysSince = knownMoon.compare(day).abs() / Greg.SECONDS_PER_DAY as Lang.Float;
-            var mod = 0;
-
-            while(daysSince > medMoonLife){
-                daysSince -= medMoonLife;
-            }
-            mod = daysSince;
-
-            returnValue  = Math.round(mod*(8/medMoonLife)).toNumber() as Lang.Number;
-            returnValue %= 8;
-
-        }catch(ex){
-            System.println("ERROR -- Astronomy.getMoonPhase -- " +  ex.toString());
-        }
-        
-        MoonPhase = returnValue as MOON_PHASE;
-        return returnValue as MOON_PHASE;
-    }
-
-    // Converts a time moment to a decimal number representing the hours (0.0 - 23.99..)
-    public function normalizeTime(time as Time.Moment?) as Lang.Float{
+    // Converts a time moment to a decimal number representing the local hours (0.0 - 23.99..)
+    public function formatTime(time_input as Time.Moment) as Lang.Float{
         // time in hours with decimals
 
         try{
-            var normalizedTime = Greg.info(time, Time.FORMAT_SHORT).hour as Lang.Float;
-            normalizedTime += Greg.info(time, Time.FORMAT_SHORT).min/60.0 as Lang.Float;
+
+            var timeInfo = Greg.info(time_input, Time.FORMAT_SHORT);
+            
+
+            var normalizedTime = timeInfo.hour;
+            normalizedTime += timeInfo.min/60.0 as Lang.Float;
+
+            if(normalizedTime < 0.0){
+                normalizedTime += 24.0;
+            }
+            else if(normalizedTime >= 24.0){
+                normalizedTime -= 24;
+            }
             return normalizedTime;
         }catch(ex){
-            System.println("ERROR -- normalizeTime -- " + ex.toString());
+            System.println("Astronomy.formatTime -- " + ex.getErrorMessage());
             return 0.0; // fallback value
+        }
     }
+
+    // gets current moon phase from MoonCalc
+    public function getMoonPhase(time as Time.Moment?){
+        var moonCalc = new MoonCalc();
+        var phase = moonCalc.getPhase(time);
+
+        MoonPhase = phase as MoonCalc.MOON_PHASE;
+        return phase as MoonCalc.MOON_PHASE;
     }
 
     // Called in View.mc
     public function refreshData(fallback_position as [Lang.Float, Lang.Float] or Null){
-        getApproxSunEvents(null, fallback_position);
+        sunCalcEvents(/*[60.0, -110.0]*/null, fallback_position);
         getMoonPhase(null);
     }
 

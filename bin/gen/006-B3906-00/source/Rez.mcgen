@@ -71,7 +71,9 @@ module Rez {
 
             var rez_cmp_local_custom_drawable_MoonIndicator = new IconIndicator({:identifier=>"MoonIndicator", :x=>220, :y=>166, :type=>1});
 
-            return [rez_cmp_local_custom_drawable_Sky, rez_cmp_local_custom_drawable_SunOrMoon, rez_cmp_local_custom_drawable_CustomWeather, rez_cmp_local_custom_drawable_Landscape, rez_cmp_local_custom_drawable_TimeDisplay, rez_cmp_local_custom_drawable_DateDisplay, rez_cmp_local_custom_drawable_FieldLayout, rez_cmp_local_custom_drawable_DataField1, rez_cmp_local_custom_drawable_DataField2, rez_cmp_local_custom_drawable_DataField3, rez_cmp_local_custom_drawable_InfoField1, rez_cmp_local_custom_drawable_InfoField2, rez_cmp_local_custom_drawable_InfoField3, rez_cmp_local_custom_drawable_InfoField4, rez_cmp_local_custom_drawable_BatteryIndicator, rez_cmp_local_custom_drawable_WeatherIndicator, rez_cmp_local_custom_drawable_MoonIndicator] as Array<WatchUi.Drawable>;
+            var rez_cmp_local_custom_drawable_SecondsDisplay = new SecondsDisplay({:identifier=>"SecondsDisplay", :width=>40, :x=>215, :y=>119, :height=>40});
+
+            return [rez_cmp_local_custom_drawable_Sky, rez_cmp_local_custom_drawable_SunOrMoon, rez_cmp_local_custom_drawable_CustomWeather, rez_cmp_local_custom_drawable_Landscape, rez_cmp_local_custom_drawable_TimeDisplay, rez_cmp_local_custom_drawable_DateDisplay, rez_cmp_local_custom_drawable_FieldLayout, rez_cmp_local_custom_drawable_DataField1, rez_cmp_local_custom_drawable_DataField2, rez_cmp_local_custom_drawable_DataField3, rez_cmp_local_custom_drawable_InfoField1, rez_cmp_local_custom_drawable_InfoField2, rez_cmp_local_custom_drawable_InfoField3, rez_cmp_local_custom_drawable_InfoField4, rez_cmp_local_custom_drawable_BatteryIndicator, rez_cmp_local_custom_drawable_WeatherIndicator, rez_cmp_local_custom_drawable_MoonIndicator, rez_cmp_local_custom_drawable_SecondsDisplay] as Array<WatchUi.Drawable>;
         }
     } // Layouts
 
@@ -110,6 +112,7 @@ module Rez {
         (:initialized) var DynamicSky as ResourceId;
         (:initialized) var ColorDarkGreen as ResourceId;
         (:initialized) var BatteryIndicatorGoodTitle as ResourceId;
+        (:initialized) var SecondsColorTitle as ResourceId;
         (:initialized) var WeatherUpdateTitle as ResourceId;
         (:initialized) var Humidity as ResourceId;
         (:initialized) var BatteryIndicatorGoodColorTitle as ResourceId;
@@ -127,6 +130,7 @@ module Rez {
         (:initialized) var Heartrate as ResourceId;
         (:initialized) var PressUnitTitle as ResourceId;
         (:initialized) var Sunrise as ResourceId;
+        (:initialized) var DateColorTitle as ResourceId;
         (:initialized) var ColorCyan as ResourceId;
         (:initialized) var ForecastTemperature as ResourceId;
         (:initialized) var DefaultPositionLatTitle as ResourceId;
@@ -184,6 +188,7 @@ module Rez {
         (:initialized) var Sunset as ResourceId;
         (:initialized) var Weather as ResourceId;
         (:initialized) var DataField1Title as ResourceId;
+        (:initialized) var ShowSecondsTitle as ResourceId;
         (:initialized) var BatteryIndicatorFullColorTitle as ResourceId;
         (:initialized) var Altitude as ResourceId;
     } // Strings

@@ -1,239 +1,231 @@
-[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [Application,1,13,24]; ]
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [Application,1,13,24]; ]
 using Toybox.Application;
-[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Application,2,13,24]; @symbol_usingdef<2> = [Properties,2,25,35]; ]
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Application,2,13,24]; @symbol_usingdef<2> = [Properties,2,25,35]; ]
 using Toybox.Application.Properties;
-[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [Lang,3,13,17]; ]
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [Lang,3,13,17]; ]
 using Toybox.Lang;
-[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [System,4,13,19]; ]
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [System,4,13,19]; ]
 using Toybox.System;
-[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 5; @symbol_usingdef<0> = [Toybox,5,6,12]; @symbol_usingdef<1> = [Time,5,13,17]; @symbol_usingdef<2> = [Gregorian,5,18,27]; @symbol_usingAlias = [Greg,5,31,35]; ]
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 5; @symbol_usingdef<0> = [Toybox,5,6,12]; @symbol_usingdef<1> = [Time,5,13,17]; @symbol_usingdef<2> = [Gregorian,5,18,27]; @symbol_usingAlias = [Greg,5,31,35]; ]
 using Toybox.Time.Gregorian as :Greg;
-[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 6; @symbol_usingdef<0> = [Toybox,6,6,12]; @symbol_usingdef<1> = [WatchUi,6,13,20]; ]
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 6; @symbol_usingdef<0> = [Toybox,6,6,12]; @symbol_usingdef<1> = [WatchUi,6,13,20]; ]
 using Toybox.WatchUi;
-[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 7; @symbol_usingdef<0> = [Toybox,7,6,12]; @symbol_usingdef<1> = [Graphics,7,13,21]; @symbol_usingAlias = [Gfx,7,25,28]; ]
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 7; @symbol_usingdef<0> = [Toybox,7,6,12]; @symbol_usingdef<1> = [Graphics,7,13,21]; @symbol_usingAlias = [Gfx,7,25,28]; ]
 using Toybox.Graphics as :Gfx;
-[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 10; @position = 4; @symbol_vardef = [BackgroundUpdateInterval,10,4,28]; ]
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 11; @position = 4; @symbol_vardef = [BackgroundUpdateInterval,11,4,28]; ]
 var BackgroundUpdateInterval = 10;
-[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 11; @position = 4; @symbol_vardef = [AstronomyUpdateInterval,11,4,27]; ]
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 12; @position = 4; @symbol_vardef = [AstronomyUpdateInterval,12,4,27]; ]
 var AstronomyUpdateInterval = 120;
-[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 14; @position = 4; @symbol_vardef = [ISHIGHPOWERON,14,4,17]; @symbol_type<0> = [Lang,14,21,25]; @symbol_type<1> = [Boolean,14,26,33]; ]
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 15; @position = 4; @symbol_vardef = [ISHIGHPOWERON,15,4,17]; @symbol_type<0> = [Lang,15,21,25]; @symbol_type<1> = [Boolean,15,26,33]; ]
 var ISHIGHPOWERON as Lang.Boolean = true;
-[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 15; @position = 4; @symbol_vardef = [updateBackground,15,4,20]; @symbol_type<0> = [Lang,15,24,28]; @symbol_type<1> = [Boolean,15,29,36]; ]
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 16; @position = 4; @symbol_vardef = [updateBackground,16,4,20]; @symbol_type<0> = [Lang,16,24,28]; @symbol_type<1> = [Boolean,16,29,36]; ]
 var updateBackground as Lang.Boolean = false;
-[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 18; @position = 4; @symbol_vardef = [minSinceAppStart,18,4,20]; ]
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 19; @position = 4; @symbol_vardef = [minSinceAppStart,19,4,20]; ]
 var minSinceAppStart = 0;
-[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 20; @symbol_classdef = [DynamicWatchfaceView,20,6,26]; @symbol_extends<0> = [WatchUi,20,35,42]; @symbol_extends<1> = [WatchFace,20,43,52]; ]
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 21; @symbol_classdef = [DynamicWatchfaceView,21,6,26]; @symbol_extends<0> = [WatchUi,21,35,42]; @symbol_extends<1> = [WatchFace,21,43,52]; ]
 class DynamicWatchfaceView extends WatchUi.WatchFace {
-    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 20; ]
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 21; ]
     <init> {
     }
-    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 20; ]
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 21; ]
     static
     <init> {
     }
-    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 23; @position = 16; @symbol_vardef = [fallback_position,23,16,33]; ]
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 24; @position = 16; @symbol_vardef = [fallback_position,24,16,33]; ]
     private
     var fallback_position;
-    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 25; @symbol_functiondef = [initialize,25,13,23]; ]
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 26; @symbol_functiondef = [initialize,26,13,23]; ]
     function initialize() as Void {
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_25_26_28_4_start:
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 26 8 ]
-        symbol [ WatchFace %tmp.2 26 8 17 ];
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_26_26_29_4_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 27 8 ]
+        symbol [ WatchFace %tmp.2 27 8 17 ];
         %tmp.2 = getv ? :WatchFace;
-        symbol [ initialize %tmp.3 26 18 28 ];
+        symbol [ initialize %tmp.3 27 18 28 ];
         %tmp.3 = getv function %tmp.2 :initialize;
         invoke %tmp.2 %tmp.3();
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 27 8 ]
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 28 8 ]
         %tmp.4 = self;
-        symbol [ getAppSettings %tmp.5 27 8 22 ];
+        symbol [ getAppSettings %tmp.5 28 8 22 ];
         %tmp.5 = getv function %tmp.4 :getAppSettings;
         invoke %tmp.4 %tmp.5();
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_25_26_28_4_stop:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_26_26_29_4_stop:
     }
-    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 31; @symbol_functiondef = [onLayout,31,13,21]; @symbol_param<0> = [dc,31,22,24]; @symbol_param<0>_type<0> = [Gfx,31,28,31]; @symbol_param<0>_type<1> = [Dc,31,32,34]; ]
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 32; @symbol_functiondef = [onLayout,32,13,21]; @symbol_param<0> = [dc,32,22,24]; @symbol_param<0>_type<0> = [Gfx,32,28,31]; @symbol_param<0>_type<1> = [Dc,32,32,34]; ]
     function onLayout(dc as Gfx.Dc) as Void {
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_31_44_33_4_start:
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 32 8 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_32_44_34_4_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 33 8 ]
         %tmp.1 = self;
-        symbol [ setLayout %tmp.2 32 8 17 ];
+        symbol [ setLayout %tmp.2 33 8 17 ];
         %tmp.2 = getv function %tmp.1 :setLayout;
-        symbol [ Rez %tmp.4 32 18 21 ];
+        symbol [ Rez %tmp.4 33 18 21 ];
         %tmp.4 = getv ? :Rez;
-        symbol [ Layouts %tmp.5 32 22 29 ];
+        symbol [ Layouts %tmp.5 33 22 29 ];
         %tmp.5 = getv %tmp.4 :Layouts;
-        symbol [ WatchFace %tmp.6 32 30 39 ];
+        symbol [ WatchFace %tmp.6 33 30 39 ];
         %tmp.6 = getv function %tmp.5 :WatchFace;
         %tmp.7 = lgetv %dc;
-        symbol [ dc %tmp.7 32 40 42 ];
+        symbol [ dc %tmp.7 33 40 42 ];
         %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
         invoke %tmp.1 %tmp.2(%tmp.8);
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_31_44_33_4_stop:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_32_44_34_4_stop:
     }
-    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 38; @symbol_functiondef = [onShow,38,13,19]; ]
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 39; @symbol_functiondef = [onShow,39,13,19]; ]
     function onShow() as Void {
     }
-    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 43; @symbol_functiondef = [onUpdate,43,13,21]; @symbol_param<0> = [dc,43,22,24]; @symbol_param<0>_type<0> = [Gfx,43,28,31]; @symbol_param<0>_type<1> = [Dc,43,32,34]; ]
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 44; @symbol_functiondef = [onUpdate,44,13,21]; @symbol_param<0> = [dc,44,22,24]; @symbol_param<0>_type<0> = [Gfx,44,28,31]; @symbol_param<0>_type<1> = [Dc,44,32,34]; ]
     function onUpdate(dc as Gfx.Dc) as Void {
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_43_44_68_4_start:
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 45 8 ]
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_45_8_49_8_if_stmt:
-        symbol [ SETTINGSCHANGED %tmp.2 45 11 26 ];
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_44_44_68_4_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 46 8 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_46_8_50_8_if_stmt:
+        symbol [ SETTINGSCHANGED %tmp.2 46 11 26 ];
         %tmp.2 = getv ? :SETTINGSCHANGED;
-        bf %tmp.2 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_45_8_49_8_if_end;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_45_8_49_8_if_true:
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_45_27_49_8_start:
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 46 12 ]
+        bf %tmp.2 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_46_8_50_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_46_8_50_8_if_true:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_46_27_50_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 47 12 ]
         %tmp.3 = self;
-        symbol [ getAppSettings %tmp.4 46 12 26 ];
+        symbol [ getAppSettings %tmp.4 47 12 26 ];
         %tmp.4 = getv function %tmp.3 :getAppSettings;
         invoke %tmp.3 %tmp.4();
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 47 12 ]
-        symbol [ Astronomy %tmp.6 47 12 21 ];
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 48 12 ]
+        symbol [ Astronomy %tmp.6 48 12 21 ];
         %tmp.6 = getv ? :Astronomy;
-        symbol [ refreshData %tmp.7 47 22 33 ];
+        symbol [ refreshData %tmp.7 48 22 33 ];
         %tmp.7 = getv function %tmp.6 :refreshData;
-        symbol [ fallback_position %tmp.9 47 34 51 ];
+        symbol [ fallback_position %tmp.9 48 34 51 ];
         %tmp.9 = getv ? :fallback_position;
         invoke %tmp.6 %tmp.7(%tmp.9);
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 48 12 ]
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 49 12 ]
         %tmp.10 = true;
-        symbol [ updateBackground ? 48 12 28 ];
+        symbol [ updateBackground ? 49 12 28 ];
         putv self :updateBackground %tmp.10;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_45_27_49_8_stop:
-        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_45_8_49_8_if_end;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_45_8_49_8_if_end:
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 51 8 ]
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_51_8_53_8_if_stmt:
-        symbol [ minSinceAppStart %tmp.12 51 11 27 ];
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_46_27_50_8_stop:
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_46_8_50_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_46_8_50_8_if_end:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 52 8 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_52_8_54_8_if_stmt:
+        symbol [ minSinceAppStart %tmp.12 52 11 27 ];
         %tmp.12 = getv ? :minSinceAppStart;
-        symbol [ AstronomyUpdateInterval %tmp.14 51 30 53 ];
+        symbol [ AstronomyUpdateInterval %tmp.14 52 30 53 ];
         %tmp.14 = getv ? :AstronomyUpdateInterval;
         %tmp.15 = mod %tmp.12 %tmp.14;
         %tmp.16 = 0;
         %tmp.17 = eq %tmp.15 %tmp.16;
-        bf %tmp.17 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_51_8_53_8_if_end;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_51_8_53_8_if_true:
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_51_59_53_8_start:
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 52 12 ]
-        symbol [ Astronomy %tmp.19 52 12 21 ];
+        bf %tmp.17 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_52_8_54_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_52_8_54_8_if_true:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_52_59_54_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 53 12 ]
+        symbol [ Astronomy %tmp.19 53 12 21 ];
         %tmp.19 = getv ? :Astronomy;
-        symbol [ refreshData %tmp.20 52 22 33 ];
+        symbol [ refreshData %tmp.20 53 22 33 ];
         %tmp.20 = getv function %tmp.19 :refreshData;
-        symbol [ fallback_position %tmp.22 52 34 51 ];
+        symbol [ fallback_position %tmp.22 53 34 51 ];
         %tmp.22 = getv ? :fallback_position;
         invoke %tmp.19 %tmp.20(%tmp.22);
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_51_59_53_8_stop:
-        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_51_8_53_8_if_end;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_51_8_53_8_if_end:
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 54 8 ]
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_54_8_56_8_if_stmt:
-        symbol [ minSinceAppStart %tmp.24 54 11 27 ];
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_52_59_54_8_stop:
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_52_8_54_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_52_8_54_8_if_end:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 55 8 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_55_8_57_8_if_stmt:
+        symbol [ minSinceAppStart %tmp.24 55 11 27 ];
         %tmp.24 = getv ? :minSinceAppStart;
-        symbol [ BackgroundUpdateInterval %tmp.26 54 30 54 ];
+        symbol [ BackgroundUpdateInterval %tmp.26 55 30 54 ];
         %tmp.26 = getv ? :BackgroundUpdateInterval;
         %tmp.27 = mod %tmp.24 %tmp.26;
         %tmp.28 = 0;
         %tmp.29 = eq %tmp.27 %tmp.28;
-        bf %tmp.29 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_54_8_56_8_if_end;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_54_8_56_8_if_true:
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_54_60_56_8_start:
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 55 12 ]
+        bf %tmp.29 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_55_8_57_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_55_8_57_8_if_true:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_55_60_57_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 56 12 ]
         %tmp.30 = true;
-        symbol [ updateBackground ? 55 12 28 ];
+        symbol [ updateBackground ? 56 12 28 ];
         putv self :updateBackground %tmp.30;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_54_60_56_8_stop:
-        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_54_8_56_8_if_end;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_54_8_56_8_if_end:
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 58 8 ]
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_58_8_61_8_if_stmt:
-        symbol [ ISHIGHPOWERON %tmp.32 58 12 25 ];
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_55_60_57_8_stop:
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_55_8_57_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_55_8_57_8_if_end:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 59 8 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_59_8_61_8_if_stmt:
+        symbol [ ISHIGHPOWERON %tmp.32 59 12 25 ];
         %tmp.32 = getv ? :ISHIGHPOWERON;
         %tmp.33 = not %tmp.32;
-        bf %tmp.33 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_58_8_61_8_if_end;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_58_8_61_8_if_true:
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_58_26_61_8_start:
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 59 12 ]
-        symbol [ minSinceAppStart %tmp.34 59 12 28 ];
+        bf %tmp.33 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_59_8_61_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_59_8_61_8_if_true:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_59_26_61_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 60 12 ]
+        symbol [ minSinceAppStart %tmp.34 60 12 28 ];
         %tmp.34 = getv self :minSinceAppStart;
         %tmp.35 = 1;
         %tmp.36 = add %tmp.34 %tmp.35;
-        symbol [ minSinceAppStart ? 59 12 28 ];
+        symbol [ minSinceAppStart ? 60 12 28 ];
         putv self :minSinceAppStart dup %tmp.36;
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 60 12 ]
-        symbol [ System %tmp.37 60 12 18 ];
-        %tmp.37 = getm $.Toybox.System;
-        symbol [ println %tmp.38 60 19 26 ];
-        %tmp.38 = getv function %tmp.37 :println;
-        symbol [ minSinceAppStart %tmp.40 60 27 43 ];
-        %tmp.40 = getv ? :minSinceAppStart;
-        invoke %tmp.37 %tmp.38(%tmp.40);
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_58_26_61_8_stop:
-        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_58_8_61_8_if_end;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_58_8_61_8_if_end:
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 63 8 ]
-        symbol [ View %tmp.42 63 8 12 ];
-        %tmp.42 = getv ? :View;
-        symbol [ onUpdate %tmp.43 63 13 21 ];
-        %tmp.43 = getv function %tmp.42 :onUpdate;
-        %tmp.44 = lgetv %dc;
-        symbol [ dc %tmp.44 63 22 24 ];
-        invoke %tmp.42 %tmp.43(%tmp.44);
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 66 8 ]
-        %tmp.45 = false;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_59_26_61_8_stop:
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_59_8_61_8_if_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_59_8_61_8_if_end:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 63 8 ]
+        symbol [ View %tmp.38 63 8 12 ];
+        %tmp.38 = getv ? :View;
+        symbol [ onUpdate %tmp.39 63 13 21 ];
+        %tmp.39 = getv function %tmp.38 :onUpdate;
+        %tmp.40 = lgetv %dc;
+        symbol [ dc %tmp.40 63 22 24 ];
+        invoke %tmp.38 %tmp.39(%tmp.40);
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 66 8 ]
+        %tmp.41 = false;
         symbol [ SETTINGSCHANGED ? 66 8 23 ];
-        putv self :SETTINGSCHANGED %tmp.45;
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 67 8 ]
-        %tmp.46 = false;
+        putv self :SETTINGSCHANGED %tmp.41;
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 67 8 ]
+        %tmp.42 = false;
         symbol [ updateBackground ? 67 8 24 ];
-        putv self :updateBackground %tmp.46;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_43_44_68_4_stop:
+        putv self :updateBackground %tmp.42;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_44_44_68_4_stop:
     }
-    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 70; @symbol_functiondef = [onPartialUpdate,70,13,28]; @symbol_param<0> = [dc,70,29,31]; @symbol_param<0>_type<0> = [Gfx,70,35,38]; @symbol_param<0>_type<1> = [Dc,70,39,41]; ]
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 70; @symbol_functiondef = [onPartialUpdate,70,13,28]; @symbol_param<0> = [dc,70,29,31]; @symbol_param<0>_type<0> = [Gfx,70,35,38]; @symbol_param<0>_type<1> = [Dc,70,39,41]; ]
     function onPartialUpdate(dc as Gfx.Dc) as Void {
     }
-    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 75; @symbol_functiondef = [onExitSleep,75,13,24]; ]
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 75; @symbol_functiondef = [onExitSleep,75,13,24]; ]
     function onExitSleep() as Void {
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_75_35_79_4_start:
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 76 8 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_75_35_79_4_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 76 8 ]
         %tmp.1 = true;
         symbol [ ISHIGHPOWERON ? 76 8 21 ];
         putv self :ISHIGHPOWERON %tmp.1;
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 77 8 ]
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 77 8 ]
         %tmp.2 = true;
         symbol [ updateBackground ? 77 8 24 ];
         putv self :updateBackground %tmp.2;
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 78 8 ]
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 78 8 ]
         symbol [ WatchUi %tmp.3 78 8 15 ];
         %tmp.3 = getm $.Toybox.WatchUi;
         symbol [ requestUpdate %tmp.4 78 16 29 ];
         %tmp.4 = getv function %tmp.3 :requestUpdate;
         invoke %tmp.3 %tmp.4();
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_75_35_79_4_stop:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_75_35_79_4_stop:
     }
-    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 82; @symbol_functiondef = [onEnterSleep,82,13,25]; ]
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 82; @symbol_functiondef = [onEnterSleep,82,13,25]; ]
     function onEnterSleep() as Void {
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_82_36_85_4_start:
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 83 8 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_82_36_85_4_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 83 8 ]
         %tmp.1 = false;
         symbol [ ISHIGHPOWERON ? 83 8 21 ];
         putv self :ISHIGHPOWERON %tmp.1;
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 84 8 ]
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 84 8 ]
         symbol [ WatchUi %tmp.2 84 8 15 ];
         %tmp.2 = getm $.Toybox.WatchUi;
         symbol [ requestUpdate %tmp.3 84 16 29 ];
         %tmp.3 = getv function %tmp.2 :requestUpdate;
         invoke %tmp.2 %tmp.3();
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_82_36_85_4_stop:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_82_36_85_4_stop:
     }
-    [ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 88; @symbol_functiondef = [getAppSettings,88,13,27]; ]
+    [ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 88; @symbol_functiondef = [getAppSettings,88,13,27]; ]
     function getAppSettings() {
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_88_29_101_4_start:
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 89 8 ]
-        try @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_beginTry @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_endTry @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_catch @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_finally;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_beginTry:
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_11_96_8_start:
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 90 12 ]
-        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_11_96_8_start" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_11_96_8_stop" ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_88_29_101_4_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 89 8 ]
+        try @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_beginTry @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_endTry @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_catch @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_finally;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_beginTry:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_11_96_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 90 12 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_11_96_8_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_11_96_8_stop" ]
         %lat.1 = local;
         symbol [ lat %lat.1 90 16 19 ];
         symbol [ Properties %tmp.1 90 22 32 ];
@@ -244,8 +236,8 @@ C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceV
         %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
         lputv %lat.1 %tmp.4;
         symbol [ lat %lat.1 90 16 19 ];
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 91 12 ]
-        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_11_96_8_start" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_11_96_8_stop" ]
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 91 12 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_11_96_8_start" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_11_96_8_stop" ]
         %lon.2 = local;
         symbol [ lon %lon.2 91 16 19 ];
         symbol [ Properties %tmp.5 91 22 32 ];
@@ -256,49 +248,49 @@ C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceV
         %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
         lputv %lon.2 %tmp.8;
         symbol [ lon %lon.2 91 16 19 ];
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 92 12 ]
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 92 12 ]
         %tmp.9 = newa 2;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_92_33_92_55_begin:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_92_33_92_55_begin:
         %tmp.10 = lgetv %lat.1;
         symbol [ lat %tmp.10 92 34 37 ];
         %tmp.11 = null;
         %tmp.12 = ne %tmp.10 %tmp.11;
-        bf %tmp.12 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_92_33_92_55_else_false;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_92_33_92_55_true:
+        bf %tmp.12 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_92_33_92_55_else_false;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_92_33_92_55_true:
         %tmp.13 = lgetv %lat.1;
         symbol [ lat %tmp.13 92 49 52 ];
         %tmp.14 = as %tmp.13 { (!Null) };
         push %tmp.14;
-        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_92_33_92_55_end;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_92_33_92_55_else_false:
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_92_33_92_55_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_92_33_92_55_else_false:
         %tmp.15 = 51.5;
         push %tmp.15;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_92_33_92_55_end:
-        %tmp.16 = phi [%tmp.12 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_92_33_92_55_begin] [%tmp.14 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_92_33_92_55_true] [%tmp.15 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_92_33_92_55_else_false] [%tmp.16 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_92_33_92_55_end];
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_92_33_92_55_end:
+        %tmp.16 = phi [%tmp.12 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_92_33_92_55_begin] [%tmp.14 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_92_33_92_55_true] [%tmp.15 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_92_33_92_55_else_false] [%tmp.16 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_92_33_92_55_end];
         %tmp.17 = dup %tmp.9;
         %tmp.18 = aputv %tmp.17 0 %tmp.16;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_92_61_92_83_begin:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_92_61_92_83_begin:
         %tmp.19 = lgetv %lon.2;
         symbol [ lon %tmp.19 92 62 65 ];
         %tmp.20 = null;
         %tmp.21 = ne %tmp.19 %tmp.20;
-        bf %tmp.21 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_92_61_92_83_else_false;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_92_61_92_83_true:
+        bf %tmp.21 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_92_61_92_83_else_false;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_92_61_92_83_true:
         %tmp.22 = lgetv %lon.2;
         symbol [ lon %tmp.22 92 77 80 ];
         %tmp.23 = as %tmp.22 { (!Null) };
         push %tmp.23;
-        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_92_61_92_83_end;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_92_61_92_83_else_false:
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_92_61_92_83_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_92_61_92_83_else_false:
         %tmp.24 = 0.001;
         push %tmp.24;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_92_61_92_83_end:
-        %tmp.25 = phi [%tmp.21 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_92_61_92_83_begin] [%tmp.23 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_92_61_92_83_true] [%tmp.24 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_92_61_92_83_else_false] [%tmp.25 @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_92_61_92_83_end];
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_92_61_92_83_end:
+        %tmp.25 = phi [%tmp.21 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_92_61_92_83_begin] [%tmp.23 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_92_61_92_83_true] [%tmp.24 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_92_61_92_83_else_false] [%tmp.25 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_92_61_92_83_end];
         %tmp.26 = dup %tmp.18;
         %tmp.27 = aputv %tmp.26 1 %tmp.25;
         symbol [ fallback_position ? 92 12 29 ];
         putv self :fallback_position %tmp.27;
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 94 12 ]
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 94 12 ]
         symbol [ Properties %tmp.28 94 39 49 ];
         %tmp.28 = getm $.Toybox.Application.Properties;
         symbol [ getValue %tmp.29 94 50 58 ];
@@ -310,7 +302,7 @@ C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceV
         symbol [ Number %tmp.32 94 87 93 ];
         symbol [ BackgroundUpdateInterval ? 94 12 36 ];
         putv self :BackgroundUpdateInterval %tmp.32;
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 95 12 ]
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 95 12 ]
         symbol [ Properties %tmp.33 95 38 48 ];
         %tmp.33 = getm $.Toybox.Application.Properties;
         symbol [ getValue %tmp.34 95 49 57 ];
@@ -322,22 +314,22 @@ C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceV
         symbol [ Number %tmp.37 95 85 91 ];
         symbol [ AstronomyUpdateInterval ? 95 12 35 ];
         putv self :AstronomyUpdateInterval %tmp.37;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_11_96_8_stop:
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_endTry:
-        jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_finally;
-        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_end;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_catch:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_11_96_8_stop:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_endTry:
+        jsr @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_finally;
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_catch:
         %tmp.38 = exception;
         push %tmp.38;
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 97 8 ]
-        [ "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_catch" "C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_97_8_100_8_end" ]
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 97 8 ]
+        [ "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_catch" "C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_97_8_100_8_end" ]
         %ex.3 = local;
         symbol [ ex %ex.3 97 14 16 ];
         %tmp.39 = dup %tmp.38;
         lputv %ex.3 %tmp.39;
         symbol [ ex %ex.3 97 14 16 ];
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_97_17_100_8_start:
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 98 12 ]
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_97_17_100_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 98 12 ]
         symbol [ System %tmp.40 98 12 18 ];
         %tmp.40 = getm $.Toybox.System;
         symbol [ println %tmp.41 98 19 26 ];
@@ -350,7 +342,7 @@ C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceV
         %tmp.45 = invoke %tmp.43 %tmp.44();
         %tmp.46 = add %tmp.42 %tmp.45;
         invoke %tmp.40 %tmp.41(%tmp.46);
-[ "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc" 99 12 ]
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc" 99 12 ]
         %tmp.47 = newa 2;
         %tmp.48 = 51.5;
         %tmp.49 = dup %tmp.47;
@@ -360,20 +352,20 @@ C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceV
         %tmp.53 = aputv %tmp.52 1 %tmp.51;
         symbol [ fallback_position ? 99 12 29 ];
         putv self :fallback_position %tmp.53;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_97_17_100_8_stop:
-        jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_finally;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_97_17_100_8_stop:
+        jsr @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_finally;
         pop;
-        goto @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_end;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_97_8_100_8_end:
-        try @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_catch @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_97_8_100_8_end @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_97_8_100_8_end @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_finally;
-        jsr @C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_finally;
+        goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_end;
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_97_8_100_8_end:
+        try @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_catch @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_97_8_100_8_end @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_97_8_100_8_end @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_finally;
+        jsr @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_finally;
         throw %tmp.38;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_finally:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_finally:
         jsrret;
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_end:
-C__ANDREA__PROGRAMMI_GARMIN_Watch_face_DynamicWatchface_source_DynamicWatchfaceView_mc_88_29_101_4_stop:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_89_8_100_8_end:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceView_mc_88_29_101_4_stop:
     }
 }
-[ @file = "C:\ANDREA\@PROGRAMMI\GARMIN\Watch-face\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 1; ]
+[ @file = "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceView.mc"; @line = 1; ]
 <init> {
 }
