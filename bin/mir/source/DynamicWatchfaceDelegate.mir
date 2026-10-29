@@ -141,13 +141,30 @@ C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchfac
         %tmp.42 = gt %tmp.40 %tmp.41;
         bf %tmp.42 @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceDelegate_mc_29_13_32_8_if_end;
 C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceDelegate_mc_29_13_32_8_if_true:
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceDelegate_mc_29_24_32_8_start:
+[ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceDelegate.mc" 30 12 ]
+        symbol [ Complications %tmp.43 30 12 25 ];
+        %tmp.43 = getm $.Toybox.Complications;
+        symbol [ exitTo %tmp.44 30 26 32 ];
+        %tmp.44 = getv function %tmp.43 :exitTo;
+        symbol [ Complications %tmp.47 30 37 50 ];
+        %tmp.47 = getm $.Toybox.Complications;
+        symbol [ Id %tmp.48 30 51 53 ];
+        %tmp.48 = getv function ? %tmp.47 :Id;
+        symbol [ Complications %tmp.49 30 54 67 ];
+        %tmp.49 = getm $.Toybox.Complications;
+        symbol [ COMPLICATION_TYPE_TRAINING_STATUS %tmp.50 30 68 101 ];
+        %tmp.50 = getv %tmp.49 :COMPLICATION_TYPE_TRAINING_STATUS;
+        %tmp.45 = newc %tmp.48 (%tmp.50);
+        invoke %tmp.43 %tmp.44(%tmp.45);
+C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceDelegate_mc_29_24_32_8_stop:
         goto @C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceDelegate_mc_29_13_32_8_if_end;
 C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceDelegate_mc_29_13_32_8_if_end:
 C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceDelegate_mc_25_13_32_8_if_end:
 C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceDelegate_mc_21_8_32_8_if_end:
 [ "C:\Users\andre\Documents\@PROGRAMMI\GARMIN\Watch-face\METEO-2.0-(DynamicWatchface)\DynamicWatchface\source\DynamicWatchfaceDelegate.mc" 34 8 ]
-        %tmp.43 = true;
-        ret %tmp.43;
+        %tmp.51 = true;
+        ret %tmp.51;
 C__Users_andre_Documents__PROGRAMMI_GARMIN_Watch_face_METEO_2_0__DynamicWatchface__DynamicWatchface_source_DynamicWatchfaceDelegate_mc_14_49_35_4_stop:
     }
 }

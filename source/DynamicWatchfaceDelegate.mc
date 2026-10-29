@@ -27,7 +27,7 @@ class DynamicWatchfaceDelegate extends WatchUi.WatchFaceDelegate {
         }
         // lower part
         else if(y > 180){   
-            //Complications.exitTo(new Complications.Id(Complications.COMPLICATION_TYPE_TRAINING_STATUS));
+            Complications.exitTo(new Complications.Id(Complications.COMPLICATION_TYPE_TRAINING_STATUS));
 
         }
         
