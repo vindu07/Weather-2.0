@@ -1,13 +1,8 @@
-COSE DA FARE
+TO-DO LIST
 
-SUBITO
+- Touch events -> app opening
 
-Eventi touch -> apertura app
+- More settings
+- Graphics: pixel art...
 
-IN FUTURO
-
-- Aggiungere impostazioni
-- Grafica: Sole bitmap, cielo sfumato in pixel art...
-
-- Meteo da api tipo openweather
-- Campi meteo più strutturati e seri
+- More fields
