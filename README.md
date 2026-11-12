@@ -4,13 +4,13 @@ Here is the source code of my watch face called "Weather 2.0", on the Connect IQ
 
 Main features:
 
-- Dynamic background depending on weather and time of the day
-- Dynamic sun position throughout the day to give a visual reference of the time
-- 4 background landscapes
-- Data fields on the bottom
-- Info fields on left and right
-- Icons with weather condition and moon phase
-- Settings to edit colors, fields, background and several boolean options
+- Dynamic background depending on weather and time of the day.
+- Dynamic sun position throughout the day to give a visual reference of the time.
+- 4 background landscapes.
+- Data fields on the bottom.
+- Info fields on left and right.
+- Icons with weather condition and moon phase.
+- Settings to edit colors, fields, background and several boolean options.
 
 ---
 
@@ -32,6 +32,6 @@ LOWER PART:
 - Weather and moon icons are based on custom bitmap fonts and take information from Astronomy and WeatherMod modules.
 - Battery indicator is a white rounded rectangle filled with another colored rectangle which is proportional to the battery percentage. The colors are customizable on app settings.
 
--The lower part is refreshed at every update, so the weather/moon icons could slightly differ from what is shown on the upper part for this reason.
+- The lower part is refreshed at every update, so the weather/moon icons could slightly differ from what is shown on the upper part for this reason.
 
 
