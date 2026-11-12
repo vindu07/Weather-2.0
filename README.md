@@ -1,11 +1,5 @@
 Here is the source code of my watch face called "Weather 2.0", on the Connect IQ Store at the following link: https://apps.garmin.com/apps/e755e7ff-1b08-46cc-bd74-e9a1cb46053f.
 
-DISCLAIMER:
-
-THIS IS NOT meant to be an example of how to write good Monkey C code, and I am not a professional programmer. 
-
-I TAKE NO RESPONSIBILITY FOR ANY MISUSE OF THIS CODE OR ANY DAMAGE TO DEVICES THAT MAY OCCUR.
-
 ----------------------------------------------------------------------------------------------------------------------------
 
 Main features:
