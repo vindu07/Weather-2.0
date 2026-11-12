@@ -1,26 +1,22 @@
 Here is the source code of my watch face called "Weather 2.0", on the Connect IQ Store at the following link: https://apps.garmin.com/apps/e755e7ff-1b08-46cc-bd74-e9a1cb46053f.
 
-----------------------------------------------------------------------------------------------------------------------------
+---
 
 Main features:
 
--Dynamic background depending on weather and time of the day
--Dynamic sun position throughout the day to give a visual reference of the time
--4 background landscapes
--Data fields on the bottom
--Info fields on left and right
--Icons with weather condition and moon phase
--Settings to edit colors, fields, background and several boolean options
+- Dynamic background depending on weather and time of the day
+- Dynamic sun position throughout the day to give a visual reference of the time
+- 4 background landscapes
+- Data fields on the bottom
+- Info fields on left and right
+- Icons with weather condition and moon phase
+- Settings to edit colors, fields, background and several boolean options
 
-----------------------------------------------------------------------------------------------------------------------------
-
-How it works:
-
-- Everything on the screen is an instance of a custom class that extends WatchUi.Drawable: they are declared in the layout.xml file and, after the initialization, at every update the draw() function is called.
+---
 
 UPPER PART:
 
-- The sky is a rectangle filled with a different color depending on the time of day and the cloud cover. This information is provided by the Astronomy and WeatherMod modules.
+- The sky is a rectangle filled with a different color depending on the time of day and the cloud cover. This information is provided by the SunCalc and WeatherMod modules.
 - The sun is a circle filled in yellow. The position in the sky is calculated from a proportion between the time elapsed since sunrise and the solar day duration.
 - The moon icon is drawn in a fixed position at night.
 - The weather is based on a series of bitmaps in the resources/drawables/ folder. The condition is taken from WeatherMod module, and then the correct bitmaps are drawn on the screen.
